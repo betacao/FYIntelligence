@@ -1,0 +1,15 @@
+//
+//  FYPrefixHeader.pch
+//  FYIntelligence
+//
+//  Created by changxicao on 15/10/9.
+//  Copyright © 2015年 changxicao. All rights reserved.
+//
+
+#ifndef FYPrefixHeader_pch
+#define FYPrefixHeader_pch
+
+#import "FYBaseViewController.h"
+#import "const.h"
+
+#endif /* FYPrefixHeader_pch */

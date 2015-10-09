@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F95A636B1BC7F7BB002B949A /* FYBaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95A636A1BC7F7BB002B949A /* FYBaseNavigationViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F95A636E1BC7F894002B949A /* FYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95A636D1BC7F894002B949A /* FYBaseViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F95A63721BC7F8A5002B949A /* FYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95A63701BC7F8A5002B949A /* FYLoginViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F95A63731BC7F8A5002B949A /* FYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95A63711BC7F8A5002B949A /* FYLoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B31BC7F5CC00520CAA /* main.m */; };
 		F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B61BC7F5CC00520CAA /* AppDelegate.m */; };
 		F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B91BC7F5CC00520CAA /* ViewController.m */; };
@@ -27,6 +31,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F95A63691BC7F7BB002B949A /* FYBaseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYBaseNavigationViewController.h; sourceTree = "<group>"; };
+		F95A636A1BC7F7BB002B949A /* FYBaseNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYBaseNavigationViewController.m; sourceTree = "<group>"; };
+		F95A636C1BC7F894002B949A /* FYBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYBaseViewController.h; sourceTree = "<group>"; };
+		F95A636D1BC7F894002B949A /* FYBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYBaseViewController.m; sourceTree = "<group>"; };
+		F95A636F1BC7F8A5002B949A /* FYLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLoginViewController.h; sourceTree = "<group>"; };
+		F95A63701BC7F8A5002B949A /* FYLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYLoginViewController.m; sourceTree = "<group>"; };
+		F95A63711BC7F8A5002B949A /* FYLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYLoginViewController.xib; sourceTree = "<group>"; };
+		F95A63741BC7F918002B949A /* FYPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYPrefixHeader.pch; sourceTree = "<group>"; };
+		F95A63761BC7FF5B002B949A /* const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = const.h; sourceTree = "<group>"; };
 		F9DEF7AE1BC7F5CC00520CAA /* FYIntelligence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FYIntelligence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DEF7B21BC7F5CC00520CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9DEF7B31BC7F5CC00520CAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -60,6 +73,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F95A63681BC7F7A5002B949A /* FYBaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F95A63691BC7F7BB002B949A /* FYBaseNavigationViewController.h */,
+				F95A636A1BC7F7BB002B949A /* FYBaseNavigationViewController.m */,
+				F95A636C1BC7F894002B949A /* FYBaseViewController.h */,
+				F95A636D1BC7F894002B949A /* FYBaseViewController.m */,
+			);
+			path = FYBaseViewController;
+			sourceTree = "<group>";
+		};
 		F9DEF7A51BC7F5CC00520CAA = {
 			isa = PBXGroup;
 			children = (
@@ -81,10 +105,14 @@
 		F9DEF7B01BC7F5CC00520CAA /* FYIntelligence */ = {
 			isa = PBXGroup;
 			children = (
+				F95A63681BC7F7A5002B949A /* FYBaseViewController */,
 				F9DEF7B51BC7F5CC00520CAA /* AppDelegate.h */,
 				F9DEF7B61BC7F5CC00520CAA /* AppDelegate.m */,
 				F9DEF7B81BC7F5CC00520CAA /* ViewController.h */,
 				F9DEF7B91BC7F5CC00520CAA /* ViewController.m */,
+				F95A636F1BC7F8A5002B949A /* FYLoginViewController.h */,
+				F95A63701BC7F8A5002B949A /* FYLoginViewController.m */,
+				F95A63711BC7F8A5002B949A /* FYLoginViewController.xib */,
 				F9DEF7BB1BC7F5CC00520CAA /* Main.storyboard */,
 				F9DEF7BE1BC7F5CC00520CAA /* Images.xcassets */,
 				F9DEF7C01BC7F5CC00520CAA /* LaunchScreen.xib */,
@@ -98,6 +126,8 @@
 			children = (
 				F9DEF7B21BC7F5CC00520CAA /* Info.plist */,
 				F9DEF7B31BC7F5CC00520CAA /* main.m */,
+				F95A63741BC7F918002B949A /* FYPrefixHeader.pch */,
+				F95A63761BC7FF5B002B949A /* const.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -163,7 +193,7 @@
 		F9DEF7A61BC7F5CC00520CAA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = changxicao;
 				TargetAttributes = {
 					F9DEF7AD1BC7F5CC00520CAA = {
@@ -202,6 +232,7 @@
 				F9DEF7BD1BC7F5CC00520CAA /* Main.storyboard in Resources */,
 				F9DEF7C21BC7F5CC00520CAA /* LaunchScreen.xib in Resources */,
 				F9DEF7BF1BC7F5CC00520CAA /* Images.xcassets in Resources */,
+				F95A63731BC7F8A5002B949A /* FYLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +252,10 @@
 			files = (
 				F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */,
 				F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */,
+				F95A636E1BC7F894002B949A /* FYBaseViewController.m in Sources */,
+				F95A636B1BC7F7BB002B949A /* FYBaseNavigationViewController.m in Sources */,
 				F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */,
+				F95A63721BC7F8A5002B949A /* FYLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +318,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -348,9 +383,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/FYIntelligence/FYPrefixHeader.pch";
 				INFOPLIST_FILE = FYIntelligence/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "beta.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -360,9 +398,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/FYIntelligence/FYPrefixHeader.pch";
 				INFOPLIST_FILE = FYIntelligence/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "beta.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -381,6 +422,7 @@
 				);
 				INFOPLIST_FILE = FYIntelligenceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "beta.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FYIntelligence.app/FYIntelligence";
 			};
@@ -396,6 +438,7 @@
 				);
 				INFOPLIST_FILE = FYIntelligenceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "beta.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FYIntelligence.app/FYIntelligence";
 			};

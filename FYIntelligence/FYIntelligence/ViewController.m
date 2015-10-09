@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "FYLoginViewController.h"
+#import "FYBaseNavigationViewController.h"
 
 @interface ViewController ()
 
@@ -16,7 +18,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    FYLoginViewController *rootController = [[FYLoginViewController alloc] initWithNibName:@"FYLoginViewController" bundle:nil];
+
+    FYBaseNavigationViewController *navController = [[FYBaseNavigationViewController alloc] initWithRootViewController:rootController];
+    [self addChildViewController:navController];
+    [self.view addSubview:navController.view];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning {
