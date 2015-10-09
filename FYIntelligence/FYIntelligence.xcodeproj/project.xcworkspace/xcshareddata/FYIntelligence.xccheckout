@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8868F7FD-3814-43F3-A2E5-075D2B6270FD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FYIntelligence</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EBDD1EC97A67B26D90EB6E8033A9245E7F9030A5</key>
+		<string>https://github.com/caochangxi/FYIntelligence.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FYIntelligence/FYIntelligence.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EBDD1EC97A67B26D90EB6E8033A9245E7F9030A5</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/caochangxi/FYIntelligence.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EBDD1EC97A67B26D90EB6E8033A9245E7F9030A5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EBDD1EC97A67B26D90EB6E8033A9245E7F9030A5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FYIntelligence</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -7,29 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F96010B81BC7F14600EFE0DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F96010B71BC7F14600EFE0DE /* main.m */; };
-		F96010BB1BC7F14600EFE0DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F96010BA1BC7F14600EFE0DE /* AppDelegate.m */; };
-		F96010BE1BC7F14600EFE0DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96010BD1BC7F14600EFE0DE /* ViewController.m */; };
-		F96010C11BC7F14600EFE0DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96010BF1BC7F14600EFE0DE /* Main.storyboard */; };
-		F96010C31BC7F14600EFE0DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F96010C21BC7F14600EFE0DE /* Assets.xcassets */; };
-		F96010C61BC7F14600EFE0DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96010C41BC7F14600EFE0DE /* LaunchScreen.storyboard */; };
+		F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B31BC7F5CC00520CAA /* main.m */; };
+		F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B61BC7F5CC00520CAA /* AppDelegate.m */; };
+		F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B91BC7F5CC00520CAA /* ViewController.m */; };
+		F9DEF7BD1BC7F5CC00520CAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DEF7BB1BC7F5CC00520CAA /* Main.storyboard */; };
+		F9DEF7BF1BC7F5CC00520CAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9DEF7BE1BC7F5CC00520CAA /* Images.xcassets */; };
+		F9DEF7C21BC7F5CC00520CAA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DEF7C01BC7F5CC00520CAA /* LaunchScreen.xib */; };
+		F9DEF7CE1BC7F5CC00520CAA /* FYIntelligenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7CD1BC7F5CC00520CAA /* FYIntelligenceTests.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F9DEF7C81BC7F5CC00520CAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9DEF7A61BC7F5CC00520CAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9DEF7AD1BC7F5CC00520CAA;
+			remoteInfo = FYIntelligence;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		F96010B31BC7F14600EFE0DE /* FYIntelligence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FYIntelligence.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F96010B71BC7F14600EFE0DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F96010B91BC7F14600EFE0DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F96010BA1BC7F14600EFE0DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F96010BC1BC7F14600EFE0DE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F96010BD1BC7F14600EFE0DE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F96010C01BC7F14600EFE0DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F96010C21BC7F14600EFE0DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F96010C51BC7F14600EFE0DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F96010C71BC7F14600EFE0DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9DEF7AE1BC7F5CC00520CAA /* FYIntelligence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FYIntelligence.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9DEF7B21BC7F5CC00520CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9DEF7B31BC7F5CC00520CAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F9DEF7B51BC7F5CC00520CAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F9DEF7B61BC7F5CC00520CAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F9DEF7B81BC7F5CC00520CAA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F9DEF7B91BC7F5CC00520CAA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F9DEF7BC1BC7F5CC00520CAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F9DEF7BE1BC7F5CC00520CAA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F9DEF7C11BC7F5CC00520CAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F9DEF7C71BC7F5CC00520CAA /* FYIntelligenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FYIntelligenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9DEF7CC1BC7F5CC00520CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9DEF7CD1BC7F5CC00520CAA /* FYIntelligenceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYIntelligenceTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F96010B01BC7F14600EFE0DE /* Frameworks */ = {
+		F9DEF7AB1BC7F5CC00520CAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9DEF7C41BC7F5CC00520CAA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,42 +60,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F96010AA1BC7F14600EFE0DE = {
+		F9DEF7A51BC7F5CC00520CAA = {
 			isa = PBXGroup;
 			children = (
-				F96010B51BC7F14600EFE0DE /* FYIntelligence */,
-				F96010B41BC7F14600EFE0DE /* Products */,
+				F9DEF7B01BC7F5CC00520CAA /* FYIntelligence */,
+				F9DEF7CA1BC7F5CC00520CAA /* FYIntelligenceTests */,
+				F9DEF7AF1BC7F5CC00520CAA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F96010B41BC7F14600EFE0DE /* Products */ = {
+		F9DEF7AF1BC7F5CC00520CAA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F96010B31BC7F14600EFE0DE /* FYIntelligence.app */,
+				F9DEF7AE1BC7F5CC00520CAA /* FYIntelligence.app */,
+				F9DEF7C71BC7F5CC00520CAA /* FYIntelligenceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F96010B51BC7F14600EFE0DE /* FYIntelligence */ = {
+		F9DEF7B01BC7F5CC00520CAA /* FYIntelligence */ = {
 			isa = PBXGroup;
 			children = (
-				F96010B91BC7F14600EFE0DE /* AppDelegate.h */,
-				F96010BA1BC7F14600EFE0DE /* AppDelegate.m */,
-				F96010BC1BC7F14600EFE0DE /* ViewController.h */,
-				F96010BD1BC7F14600EFE0DE /* ViewController.m */,
-				F96010BF1BC7F14600EFE0DE /* Main.storyboard */,
-				F96010C21BC7F14600EFE0DE /* Assets.xcassets */,
-				F96010C41BC7F14600EFE0DE /* LaunchScreen.storyboard */,
-				F96010C71BC7F14600EFE0DE /* Info.plist */,
-				F96010B61BC7F14600EFE0DE /* Supporting Files */,
+				F9DEF7B51BC7F5CC00520CAA /* AppDelegate.h */,
+				F9DEF7B61BC7F5CC00520CAA /* AppDelegate.m */,
+				F9DEF7B81BC7F5CC00520CAA /* ViewController.h */,
+				F9DEF7B91BC7F5CC00520CAA /* ViewController.m */,
+				F9DEF7BB1BC7F5CC00520CAA /* Main.storyboard */,
+				F9DEF7BE1BC7F5CC00520CAA /* Images.xcassets */,
+				F9DEF7C01BC7F5CC00520CAA /* LaunchScreen.xib */,
+				F9DEF7B11BC7F5CC00520CAA /* Supporting Files */,
 			);
 			path = FYIntelligence;
 			sourceTree = "<group>";
 		};
-		F96010B61BC7F14600EFE0DE /* Supporting Files */ = {
+		F9DEF7B11BC7F5CC00520CAA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F96010B71BC7F14600EFE0DE /* main.m */,
+				F9DEF7B21BC7F5CC00520CAA /* Info.plist */,
+				F9DEF7B31BC7F5CC00520CAA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9DEF7CA1BC7F5CC00520CAA /* FYIntelligenceTests */ = {
+			isa = PBXGroup;
+			children = (
+				F9DEF7CD1BC7F5CC00520CAA /* FYIntelligenceTests.m */,
+				F9DEF7CB1BC7F5CC00520CAA /* Supporting Files */,
+			);
+			path = FYIntelligenceTests;
+			sourceTree = "<group>";
+		};
+		F9DEF7CB1BC7F5CC00520CAA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9DEF7CC1BC7F5CC00520CAA /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -82,13 +122,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F96010B21BC7F14600EFE0DE /* FYIntelligence */ = {
+		F9DEF7AD1BC7F5CC00520CAA /* FYIntelligence */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F96010CA1BC7F14600EFE0DE /* Build configuration list for PBXNativeTarget "FYIntelligence" */;
+			buildConfigurationList = F9DEF7D11BC7F5CC00520CAA /* Build configuration list for PBXNativeTarget "FYIntelligence" */;
 			buildPhases = (
-				F96010AF1BC7F14600EFE0DE /* Sources */,
-				F96010B01BC7F14600EFE0DE /* Frameworks */,
-				F96010B11BC7F14600EFE0DE /* Resources */,
+				F9DEF7AA1BC7F5CC00520CAA /* Sources */,
+				F9DEF7AB1BC7F5CC00520CAA /* Frameworks */,
+				F9DEF7AC1BC7F5CC00520CAA /* Resources */,
 			);
 			buildRules = (
 			);
@@ -96,24 +136,46 @@
 			);
 			name = FYIntelligence;
 			productName = FYIntelligence;
-			productReference = F96010B31BC7F14600EFE0DE /* FYIntelligence.app */;
+			productReference = F9DEF7AE1BC7F5CC00520CAA /* FYIntelligence.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F9DEF7C61BC7F5CC00520CAA /* FYIntelligenceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9DEF7D41BC7F5CC00520CAA /* Build configuration list for PBXNativeTarget "FYIntelligenceTests" */;
+			buildPhases = (
+				F9DEF7C31BC7F5CC00520CAA /* Sources */,
+				F9DEF7C41BC7F5CC00520CAA /* Frameworks */,
+				F9DEF7C51BC7F5CC00520CAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9DEF7C91BC7F5CC00520CAA /* PBXTargetDependency */,
+			);
+			name = FYIntelligenceTests;
+			productName = FYIntelligenceTests;
+			productReference = F9DEF7C71BC7F5CC00520CAA /* FYIntelligenceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F96010AB1BC7F14600EFE0DE /* Project object */ = {
+		F9DEF7A61BC7F5CC00520CAA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = changxicao;
 				TargetAttributes = {
-					F96010B21BC7F14600EFE0DE = {
-						CreatedOnToolsVersion = 7.0.1;
+					F9DEF7AD1BC7F5CC00520CAA = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					F9DEF7C61BC7F5CC00520CAA = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = F9DEF7AD1BC7F5CC00520CAA;
 					};
 				};
 			};
-			buildConfigurationList = F96010AE1BC7F14600EFE0DE /* Build configuration list for PBXProject "FYIntelligence" */;
+			buildConfigurationList = F9DEF7A91BC7F5CC00520CAA /* Build configuration list for PBXProject "FYIntelligence" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -121,63 +183,87 @@
 				en,
 				Base,
 			);
-			mainGroup = F96010AA1BC7F14600EFE0DE;
-			productRefGroup = F96010B41BC7F14600EFE0DE /* Products */;
+			mainGroup = F9DEF7A51BC7F5CC00520CAA;
+			productRefGroup = F9DEF7AF1BC7F5CC00520CAA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F96010B21BC7F14600EFE0DE /* FYIntelligence */,
+				F9DEF7AD1BC7F5CC00520CAA /* FYIntelligence */,
+				F9DEF7C61BC7F5CC00520CAA /* FYIntelligenceTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F96010B11BC7F14600EFE0DE /* Resources */ = {
+		F9DEF7AC1BC7F5CC00520CAA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F96010C61BC7F14600EFE0DE /* LaunchScreen.storyboard in Resources */,
-				F96010C31BC7F14600EFE0DE /* Assets.xcassets in Resources */,
-				F96010C11BC7F14600EFE0DE /* Main.storyboard in Resources */,
+				F9DEF7BD1BC7F5CC00520CAA /* Main.storyboard in Resources */,
+				F9DEF7C21BC7F5CC00520CAA /* LaunchScreen.xib in Resources */,
+				F9DEF7BF1BC7F5CC00520CAA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9DEF7C51BC7F5CC00520CAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F96010AF1BC7F14600EFE0DE /* Sources */ = {
+		F9DEF7AA1BC7F5CC00520CAA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F96010BE1BC7F14600EFE0DE /* ViewController.m in Sources */,
-				F96010BB1BC7F14600EFE0DE /* AppDelegate.m in Sources */,
-				F96010B81BC7F14600EFE0DE /* main.m in Sources */,
+				F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */,
+				F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */,
+				F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9DEF7C31BC7F5CC00520CAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9DEF7CE1BC7F5CC00520CAA /* FYIntelligenceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F9DEF7C91BC7F5CC00520CAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9DEF7AD1BC7F5CC00520CAA /* FYIntelligence */;
+			targetProxy = F9DEF7C81BC7F5CC00520CAA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		F96010BF1BC7F14600EFE0DE /* Main.storyboard */ = {
+		F9DEF7BB1BC7F5CC00520CAA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F96010C01BC7F14600EFE0DE /* Base */,
+				F9DEF7BC1BC7F5CC00520CAA /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		F96010C41BC7F14600EFE0DE /* LaunchScreen.storyboard */ = {
+		F9DEF7C01BC7F5CC00520CAA /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F96010C51BC7F14600EFE0DE /* Base */,
+				F9DEF7C11BC7F5CC00520CAA /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		F96010C81BC7F14600EFE0DE /* Debug */ = {
+		F9DEF7CF1BC7F5CC00520CAA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -196,9 +282,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -207,20 +292,21 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
-		F96010C91BC7F14600EFE0DE /* Release */ = {
+		F9DEF7D01BC7F5CC00520CAA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -250,56 +336,102 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		F96010CB1BC7F14600EFE0DE /* Debug */ = {
+		F9DEF7D21BC7F5CC00520CAA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = FYIntelligence/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = beta.FYIntelligence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		F96010CC1BC7F14600EFE0DE /* Release */ = {
+		F9DEF7D31BC7F5CC00520CAA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = FYIntelligence/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = beta.FYIntelligence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F9DEF7D51BC7F5CC00520CAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FYIntelligenceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FYIntelligence.app/FYIntelligence";
+			};
+			name = Debug;
+		};
+		F9DEF7D61BC7F5CC00520CAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FYIntelligenceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FYIntelligence.app/FYIntelligence";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F96010AE1BC7F14600EFE0DE /* Build configuration list for PBXProject "FYIntelligence" */ = {
+		F9DEF7A91BC7F5CC00520CAA /* Build configuration list for PBXProject "FYIntelligence" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F96010C81BC7F14600EFE0DE /* Debug */,
-				F96010C91BC7F14600EFE0DE /* Release */,
+				F9DEF7CF1BC7F5CC00520CAA /* Debug */,
+				F9DEF7D01BC7F5CC00520CAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F96010CA1BC7F14600EFE0DE /* Build configuration list for PBXNativeTarget "FYIntelligence" */ = {
+		F9DEF7D11BC7F5CC00520CAA /* Build configuration list for PBXNativeTarget "FYIntelligence" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F96010CB1BC7F14600EFE0DE /* Debug */,
-				F96010CC1BC7F14600EFE0DE /* Release */,
+				F9DEF7D21BC7F5CC00520CAA /* Debug */,
+				F9DEF7D31BC7F5CC00520CAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9DEF7D41BC7F5CC00520CAA /* Build configuration list for PBXNativeTarget "FYIntelligenceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9DEF7D51BC7F5CC00520CAA /* Debug */,
+				F9DEF7D61BC7F5CC00520CAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F96010AB1BC7F14600EFE0DE /* Project object */;
+	rootObject = F9DEF7A61BC7F5CC00520CAA /* Project object */;
 }
