@@ -1,0 +1,305 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F96010B81BC7F14600EFE0DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F96010B71BC7F14600EFE0DE /* main.m */; };
+		F96010BB1BC7F14600EFE0DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F96010BA1BC7F14600EFE0DE /* AppDelegate.m */; };
+		F96010BE1BC7F14600EFE0DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96010BD1BC7F14600EFE0DE /* ViewController.m */; };
+		F96010C11BC7F14600EFE0DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96010BF1BC7F14600EFE0DE /* Main.storyboard */; };
+		F96010C31BC7F14600EFE0DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F96010C21BC7F14600EFE0DE /* Assets.xcassets */; };
+		F96010C61BC7F14600EFE0DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96010C41BC7F14600EFE0DE /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F96010B31BC7F14600EFE0DE /* FYIntelligence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FYIntelligence.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F96010B71BC7F14600EFE0DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F96010B91BC7F14600EFE0DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F96010BA1BC7F14600EFE0DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F96010BC1BC7F14600EFE0DE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F96010BD1BC7F14600EFE0DE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F96010C01BC7F14600EFE0DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F96010C21BC7F14600EFE0DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F96010C51BC7F14600EFE0DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F96010C71BC7F14600EFE0DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F96010B01BC7F14600EFE0DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F96010AA1BC7F14600EFE0DE = {
+			isa = PBXGroup;
+			children = (
+				F96010B51BC7F14600EFE0DE /* FYIntelligence */,
+				F96010B41BC7F14600EFE0DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F96010B41BC7F14600EFE0DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F96010B31BC7F14600EFE0DE /* FYIntelligence.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F96010B51BC7F14600EFE0DE /* FYIntelligence */ = {
+			isa = PBXGroup;
+			children = (
+				F96010B91BC7F14600EFE0DE /* AppDelegate.h */,
+				F96010BA1BC7F14600EFE0DE /* AppDelegate.m */,
+				F96010BC1BC7F14600EFE0DE /* ViewController.h */,
+				F96010BD1BC7F14600EFE0DE /* ViewController.m */,
+				F96010BF1BC7F14600EFE0DE /* Main.storyboard */,
+				F96010C21BC7F14600EFE0DE /* Assets.xcassets */,
+				F96010C41BC7F14600EFE0DE /* LaunchScreen.storyboard */,
+				F96010C71BC7F14600EFE0DE /* Info.plist */,
+				F96010B61BC7F14600EFE0DE /* Supporting Files */,
+			);
+			path = FYIntelligence;
+			sourceTree = "<group>";
+		};
+		F96010B61BC7F14600EFE0DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F96010B71BC7F14600EFE0DE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F96010B21BC7F14600EFE0DE /* FYIntelligence */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F96010CA1BC7F14600EFE0DE /* Build configuration list for PBXNativeTarget "FYIntelligence" */;
+			buildPhases = (
+				F96010AF1BC7F14600EFE0DE /* Sources */,
+				F96010B01BC7F14600EFE0DE /* Frameworks */,
+				F96010B11BC7F14600EFE0DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FYIntelligence;
+			productName = FYIntelligence;
+			productReference = F96010B31BC7F14600EFE0DE /* FYIntelligence.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F96010AB1BC7F14600EFE0DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = changxicao;
+				TargetAttributes = {
+					F96010B21BC7F14600EFE0DE = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = F96010AE1BC7F14600EFE0DE /* Build configuration list for PBXProject "FYIntelligence" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F96010AA1BC7F14600EFE0DE;
+			productRefGroup = F96010B41BC7F14600EFE0DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F96010B21BC7F14600EFE0DE /* FYIntelligence */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F96010B11BC7F14600EFE0DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F96010C61BC7F14600EFE0DE /* LaunchScreen.storyboard in Resources */,
+				F96010C31BC7F14600EFE0DE /* Assets.xcassets in Resources */,
+				F96010C11BC7F14600EFE0DE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F96010AF1BC7F14600EFE0DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F96010BE1BC7F14600EFE0DE /* ViewController.m in Sources */,
+				F96010BB1BC7F14600EFE0DE /* AppDelegate.m in Sources */,
+				F96010B81BC7F14600EFE0DE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F96010BF1BC7F14600EFE0DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F96010C01BC7F14600EFE0DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F96010C41BC7F14600EFE0DE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F96010C51BC7F14600EFE0DE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F96010C81BC7F14600EFE0DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F96010C91BC7F14600EFE0DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F96010CB1BC7F14600EFE0DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FYIntelligence/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = beta.FYIntelligence;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F96010CC1BC7F14600EFE0DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FYIntelligence/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = beta.FYIntelligence;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F96010AE1BC7F14600EFE0DE /* Build configuration list for PBXProject "FYIntelligence" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F96010C81BC7F14600EFE0DE /* Debug */,
+				F96010C91BC7F14600EFE0DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F96010CA1BC7F14600EFE0DE /* Build configuration list for PBXNativeTarget "FYIntelligence" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F96010CB1BC7F14600EFE0DE /* Debug */,
+				F96010CC1BC7F14600EFE0DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F96010AB1BC7F14600EFE0DE /* Project object */;
+}
