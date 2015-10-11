@@ -58,7 +58,7 @@
                     <color key="backgroundColor" red="0.21568627450980393" green="0.62352941176470589" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="81i-N8-xaG">
-                    <rect key="frame" x="227" y="199" width="17" height="17"/>
+                    <rect key="frame" x="233" y="199" width="17" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="blankButton"/>
                     <connections>

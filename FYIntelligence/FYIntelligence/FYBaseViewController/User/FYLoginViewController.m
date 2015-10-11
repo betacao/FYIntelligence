@@ -54,20 +54,20 @@
     }
     self.isRemember = !self.isRemember;
 }
+
 - (IBAction)clickLoginButton:(UIButton *)sender {
 
 }
+
 - (IBAction)clickRegisterButton:(id)sender {
 
 }
+
 - (IBAction)clickForgetButton:(id)sender {
-    
+
 }
 
-- (void)awakeFromNib
-{
-    
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
