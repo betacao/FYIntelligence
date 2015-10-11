@@ -19,6 +19,10 @@
 		F983516A1BCA270A00809E14 /* FYListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351681BCA270A00809E14 /* FYListTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		F983516E1BCA307100809E14 /* FYDeviceInitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F983516C1BCA307100809E14 /* FYDeviceInitViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F983516F1BCA307100809E14 /* FYDeviceInitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F983516D1BCA307100809E14 /* FYDeviceInitViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F98351731BCA333000809E14 /* FYAddDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98351711BCA333000809E14 /* FYAddDeviceViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F98351741BCA333000809E14 /* FYAddDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351721BCA333000809E14 /* FYAddDeviceViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F98351781BCA370400809E14 /* FYJoinNetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98351761BCA370400809E14 /* FYJoinNetViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F98351791BCA370400809E14 /* FYJoinNetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351771BCA370400809E14 /* FYJoinNetViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B31BC7F5CC00520CAA /* main.m */; };
 		F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B61BC7F5CC00520CAA /* AppDelegate.m */; };
 		F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B91BC7F5CC00520CAA /* ViewController.m */; };
@@ -60,6 +64,12 @@
 		F983516B1BCA307100809E14 /* FYDeviceInitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDeviceInitViewController.h; sourceTree = "<group>"; };
 		F983516C1BCA307100809E14 /* FYDeviceInitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYDeviceInitViewController.m; sourceTree = "<group>"; };
 		F983516D1BCA307100809E14 /* FYDeviceInitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYDeviceInitViewController.xib; sourceTree = "<group>"; };
+		F98351701BCA333000809E14 /* FYAddDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYAddDeviceViewController.h; sourceTree = "<group>"; };
+		F98351711BCA333000809E14 /* FYAddDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYAddDeviceViewController.m; sourceTree = "<group>"; };
+		F98351721BCA333000809E14 /* FYAddDeviceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYAddDeviceViewController.xib; sourceTree = "<group>"; };
+		F98351751BCA370400809E14 /* FYJoinNetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYJoinNetViewController.h; sourceTree = "<group>"; };
+		F98351761BCA370400809E14 /* FYJoinNetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYJoinNetViewController.m; sourceTree = "<group>"; };
+		F98351771BCA370400809E14 /* FYJoinNetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYJoinNetViewController.xib; sourceTree = "<group>"; };
 		F9DEF7AE1BC7F5CC00520CAA /* FYIntelligence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FYIntelligence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DEF7B21BC7F5CC00520CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9DEF7B31BC7F5CC00520CAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -129,6 +139,12 @@
 				F983516B1BCA307100809E14 /* FYDeviceInitViewController.h */,
 				F983516C1BCA307100809E14 /* FYDeviceInitViewController.m */,
 				F983516D1BCA307100809E14 /* FYDeviceInitViewController.xib */,
+				F98351701BCA333000809E14 /* FYAddDeviceViewController.h */,
+				F98351711BCA333000809E14 /* FYAddDeviceViewController.m */,
+				F98351721BCA333000809E14 /* FYAddDeviceViewController.xib */,
+				F98351751BCA370400809E14 /* FYJoinNetViewController.h */,
+				F98351761BCA370400809E14 /* FYJoinNetViewController.m */,
+				F98351771BCA370400809E14 /* FYJoinNetViewController.xib */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -281,10 +297,12 @@
 				F983516F1BCA307100809E14 /* FYDeviceInitViewController.xib in Resources */,
 				F983515A1BCA0B0B00809E14 /* FYLoginViewController.xib in Resources */,
 				F9DEF7C21BC7F5CC00520CAA /* LaunchScreen.xib in Resources */,
+				F98351741BCA333000809E14 /* FYAddDeviceViewController.xib in Resources */,
 				F98351651BCA26E400809E14 /* FYListViewController.xib in Resources */,
 				F983516A1BCA270A00809E14 /* FYListTableViewCell.xib in Resources */,
 				F983515F1BCA0B5C00809E14 /* FYRegisterViewController.xib in Resources */,
 				F9DEF7BF1BC7F5CC00520CAA /* Images.xcassets in Resources */,
+				F98351791BCA370400809E14 /* FYJoinNetViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F98351691BCA270A00809E14 /* FYListTableViewCell.m in Sources */,
+				F98351781BCA370400809E14 /* FYJoinNetViewController.m in Sources */,
 				F983516E1BCA307100809E14 /* FYDeviceInitViewController.m in Sources */,
 				F983515E1BCA0B5C00809E14 /* FYRegisterViewController.m in Sources */,
 				F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */,
@@ -312,6 +331,7 @@
 				F95A636E1BC7F894002B949A /* FYBaseViewController.m in Sources */,
 				F95A636B1BC7F7BB002B949A /* FYBaseNavigationViewController.m in Sources */,
 				F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */,
+				F98351731BCA333000809E14 /* FYAddDeviceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

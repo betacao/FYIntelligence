@@ -38,12 +38,18 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="unselect_week"/>
                     <state key="highlighted" image="selected_week"/>
+                    <connections>
+                        <action selector="joinNet:" destination="-1" eventType="touchUpInside" id="Zs9-aL-FLs"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fgX-Wq-eaZ">
                     <rect key="frame" x="210" y="415" width="25" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="unselect_week"/>
                     <state key="highlighted" image="selected_week"/>
+                    <connections>
+                        <action selector="deviceLogin:" destination="-1" eventType="touchUpInside" id="AE1-un-Gae"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>

@@ -7,6 +7,8 @@
 //
 
 #import "FYDeviceInitViewController.h"
+#import "FYAddDeviceViewController.h"
+#import "FYJoinNetViewController.h"
 
 @interface FYDeviceInitViewController ()
 
@@ -17,6 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"设备初始化";
+}
+
+- (IBAction)joinNet:(UIButton *)sender {
+    FYJoinNetViewController *controller = [[FYJoinNetViewController alloc] initWithNibName:@"FYJoinNetViewController" bundle:nil];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction)deviceLogin:(UIButton *)sender {
+    FYAddDeviceViewController *controller = [[FYAddDeviceViewController alloc] initWithNibName:@"FYAddDeviceViewController" bundle:nil];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
