@@ -13,6 +13,11 @@
 @property (weak, nonatomic) IBOutlet UIView *lineView;
 @property (weak, nonatomic) IBOutlet UITextField *userField;
 @property (weak, nonatomic) IBOutlet UITextField *pwdField;
+@property (weak, nonatomic) IBOutlet UIButton *rememberPwdButton;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
+@property (weak, nonatomic) IBOutlet UIButton *fogetButton;
+@property (assign, nonatomic) BOOL isRemember;
 
 @end
 
@@ -30,11 +35,33 @@
     CGRect frame = self.lineView.frame;
     frame.size.height = 0.5f;
     self.lineView.frame = frame;
+
+    self.loginButton.layer.masksToBounds = YES;
+    self.loginButton.layer.cornerRadius = 2.0f;
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+}
+
+- (IBAction)clickRememberButton:(UIButton *)sender {
+    if(self.isRemember){
+        [self.rememberPwdButton setImage:[UIImage imageNamed:@"blankButton"] forState:UIControlStateNormal];
+    } else{
+        [self.rememberPwdButton setImage:[UIImage imageNamed:@"selectButton"] forState:UIControlStateNormal];
+    }
+    self.isRemember = !self.isRemember;
+}
+- (IBAction)clickLoginButton:(UIButton *)sender {
+
+}
+- (IBAction)clickRegisterButton:(id)sender {
+
+}
+- (IBAction)clickForgetButton:(id)sender {
+    
 }
 
 - (void)awakeFromNib

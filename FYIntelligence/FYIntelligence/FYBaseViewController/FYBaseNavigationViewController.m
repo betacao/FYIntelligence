@@ -18,6 +18,10 @@
     [super viewDidLoad];
     [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+
+    UIColor *color = [UIColor whiteColor];
+    NSDictionary * dict=[NSDictionary dictionaryWithObject:color forKey:NSForegroundColorAttributeName];
+    self.navigationBar.titleTextAttributes = dict;
 }
 
 - (BOOL)prefersStatusBarHidden
