@@ -13,6 +13,12 @@
 		F983515A1BCA0B0B00809E14 /* FYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351581BCA0B0B00809E14 /* FYLoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F983515E1BCA0B5C00809E14 /* FYRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F983515C1BCA0B5C00809E14 /* FYRegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F983515F1BCA0B5C00809E14 /* FYRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F983515D1BCA0B5C00809E14 /* FYRegisterViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F98351641BCA26E400809E14 /* FYListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98351621BCA26E400809E14 /* FYListViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F98351651BCA26E400809E14 /* FYListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351631BCA26E400809E14 /* FYListViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F98351691BCA270A00809E14 /* FYListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F98351671BCA270A00809E14 /* FYListTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		F983516A1BCA270A00809E14 /* FYListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351681BCA270A00809E14 /* FYListTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		F983516E1BCA307100809E14 /* FYDeviceInitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F983516C1BCA307100809E14 /* FYDeviceInitViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F983516F1BCA307100809E14 /* FYDeviceInitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F983516D1BCA307100809E14 /* FYDeviceInitViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B31BC7F5CC00520CAA /* main.m */; };
 		F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B61BC7F5CC00520CAA /* AppDelegate.m */; };
 		F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B91BC7F5CC00520CAA /* ViewController.m */; };
@@ -45,6 +51,15 @@
 		F983515B1BCA0B5C00809E14 /* FYRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYRegisterViewController.h; sourceTree = "<group>"; };
 		F983515C1BCA0B5C00809E14 /* FYRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYRegisterViewController.m; sourceTree = "<group>"; };
 		F983515D1BCA0B5C00809E14 /* FYRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYRegisterViewController.xib; sourceTree = "<group>"; };
+		F98351611BCA26E400809E14 /* FYListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYListViewController.h; sourceTree = "<group>"; };
+		F98351621BCA26E400809E14 /* FYListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYListViewController.m; sourceTree = "<group>"; };
+		F98351631BCA26E400809E14 /* FYListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYListViewController.xib; sourceTree = "<group>"; };
+		F98351661BCA270A00809E14 /* FYListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYListTableViewCell.h; sourceTree = "<group>"; };
+		F98351671BCA270A00809E14 /* FYListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYListTableViewCell.m; sourceTree = "<group>"; };
+		F98351681BCA270A00809E14 /* FYListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYListTableViewCell.xib; sourceTree = "<group>"; };
+		F983516B1BCA307100809E14 /* FYDeviceInitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDeviceInitViewController.h; sourceTree = "<group>"; };
+		F983516C1BCA307100809E14 /* FYDeviceInitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYDeviceInitViewController.m; sourceTree = "<group>"; };
+		F983516D1BCA307100809E14 /* FYDeviceInitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYDeviceInitViewController.xib; sourceTree = "<group>"; };
 		F9DEF7AE1BC7F5CC00520CAA /* FYIntelligence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FYIntelligence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DEF7B21BC7F5CC00520CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9DEF7B31BC7F5CC00520CAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -102,6 +117,22 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		F98351601BCA26C800809E14 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				F98351611BCA26E400809E14 /* FYListViewController.h */,
+				F98351621BCA26E400809E14 /* FYListViewController.m */,
+				F98351631BCA26E400809E14 /* FYListViewController.xib */,
+				F98351661BCA270A00809E14 /* FYListTableViewCell.h */,
+				F98351671BCA270A00809E14 /* FYListTableViewCell.m */,
+				F98351681BCA270A00809E14 /* FYListTableViewCell.xib */,
+				F983516B1BCA307100809E14 /* FYDeviceInitViewController.h */,
+				F983516C1BCA307100809E14 /* FYDeviceInitViewController.m */,
+				F983516D1BCA307100809E14 /* FYDeviceInitViewController.xib */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 		F9DEF7A51BC7F5CC00520CAA = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +154,7 @@
 		F9DEF7B01BC7F5CC00520CAA /* FYIntelligence */ = {
 			isa = PBXGroup;
 			children = (
+				F98351601BCA26C800809E14 /* List */,
 				F98351551BCA0B0B00809E14 /* User */,
 				F95A63681BC7F7A5002B949A /* FYBaseViewController */,
 				F9DEF7B51BC7F5CC00520CAA /* AppDelegate.h */,
@@ -246,8 +278,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9DEF7BD1BC7F5CC00520CAA /* Main.storyboard in Resources */,
+				F983516F1BCA307100809E14 /* FYDeviceInitViewController.xib in Resources */,
 				F983515A1BCA0B0B00809E14 /* FYLoginViewController.xib in Resources */,
 				F9DEF7C21BC7F5CC00520CAA /* LaunchScreen.xib in Resources */,
+				F98351651BCA26E400809E14 /* FYListViewController.xib in Resources */,
+				F983516A1BCA270A00809E14 /* FYListTableViewCell.xib in Resources */,
 				F983515F1BCA0B5C00809E14 /* FYRegisterViewController.xib in Resources */,
 				F9DEF7BF1BC7F5CC00520CAA /* Images.xcassets in Resources */,
 			);
@@ -267,9 +302,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F98351691BCA270A00809E14 /* FYListTableViewCell.m in Sources */,
+				F983516E1BCA307100809E14 /* FYDeviceInitViewController.m in Sources */,
 				F983515E1BCA0B5C00809E14 /* FYRegisterViewController.m in Sources */,
 				F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */,
 				F98351591BCA0B0B00809E14 /* FYLoginViewController.m in Sources */,
+				F98351641BCA26E400809E14 /* FYListViewController.m in Sources */,
 				F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */,
 				F95A636E1BC7F894002B949A /* FYBaseViewController.m in Sources */,
 				F95A636B1BC7F7BB002B949A /* FYBaseNavigationViewController.m in Sources */,

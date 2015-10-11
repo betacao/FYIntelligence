@@ -8,6 +8,7 @@
 
 #import "FYLoginViewController.h"
 #import "FYRegisterViewController.h"
+#import "FYListViewController.h"
 
 @interface FYLoginViewController ()
 @property (weak, nonatomic) IBOutlet UIView *inputBgView;
@@ -40,6 +41,11 @@
     self.loginButton.layer.masksToBounds = YES;
     self.loginButton.layer.cornerRadius = 2.0f;
 
+    UIImage *normalImage = [UIImage imageNamed:@"btn_login_normal"];
+    UIImage *pressImage = [UIImage imageNamed:@"btn_login_press"];
+    [self.loginButton setBackgroundImage:[normalImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
+    [self.loginButton setBackgroundImage:[pressImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateHighlighted];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -57,7 +63,10 @@
 }
 
 - (IBAction)clickLoginButton:(UIButton *)sender {
-
+    FYListViewController *controller = [[FYListViewController alloc] initWithNibName:@"FYListViewController" bundle:nil];
+    if(controller){
+        [self.navigationController pushViewController:controller animated:YES];
+    }
 }
 
 - (IBAction)clickRegisterButton:(id)sender {
@@ -68,7 +77,10 @@
 }
 
 - (IBAction)clickForgetButton:(id)sender {
-
+    FYRegisterViewController *controller = [[FYRegisterViewController alloc] initWithNibName:@"FYRegisterViewController" bundle:nil];
+    if(controller){
+        [self.navigationController pushViewController:controller animated:YES];
+    }
 }
 
 

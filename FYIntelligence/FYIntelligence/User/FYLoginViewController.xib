@@ -77,7 +77,6 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="登录" backgroundImage="btn_login_normal"/>
-                    <state key="highlighted" backgroundImage="btn_login_press"/>
                     <connections>
                         <action selector="clickLoginButton:" destination="-1" eventType="touchUpInside" id="W2t-d6-B2P"/>
                     </connections>
@@ -112,8 +111,7 @@
     </objects>
     <resources>
         <image name="blankButton" width="17" height="17"/>
-        <image name="btn_login_normal" width="400" height="200"/>
-        <image name="btn_login_press" width="400" height="200"/>
+        <image name="btn_login_normal" width="33" height="33"/>
         <image name="input_pwd" width="17" height="17"/>
         <image name="input_user" width="17" height="17"/>
     </resources>

@@ -42,6 +42,11 @@
 
     self.registerButton.layer.masksToBounds = YES;
     self.registerButton.layer.cornerRadius = 2.0f;
+
+    UIImage *normalImage = [UIImage imageNamed:@"btn_login_normal"];
+    UIImage *pressImage = [UIImage imageNamed:@"btn_login_press"];
+    [self.registerButton setBackgroundImage:[normalImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
+    [self.registerButton setBackgroundImage:[pressImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateHighlighted];
 }
 
 - (void)didReceiveMemoryWarning {

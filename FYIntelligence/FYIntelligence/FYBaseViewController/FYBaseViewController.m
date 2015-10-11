@@ -22,6 +22,7 @@
     UIImage *selectedImage = [UIImage imageNamed:@"backButton_selected"];
     [leftButton setImage:normalImage forState:UIControlStateNormal];
     [leftButton setImage:selectedImage forState:UIControlStateHighlighted];
+    [leftButton addTarget:self action:@selector(backButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [leftButton sizeToFit];
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
@@ -31,24 +32,14 @@
     [self.view sendSubviewToBack:bgImageView];
 }
 
+- (void)backButtonClick:(UIButton *)button
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
