@@ -9,6 +9,7 @@
 #import "FYListViewController.h"
 #import "FYListTableViewCell.h"
 #import "FYDeviceInitViewController.h"
+#import "FYEnterPINViewController.h"
 
 @interface FYListViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -54,6 +55,7 @@
     FYListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FYListTableViewCell"];
     if(!cell){
         cell = [[[NSBundle mainBundle] loadNibNamed:@"FYListTableViewCell" owner:self options:nil] lastObject];
+//        cell.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     }
     return cell;
 }
@@ -65,7 +67,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
+    [self addChildViewController:controller];
+    [self.view addSubview:controller.view];
 }
 
 - (void)didReceiveMemoryWarning {
