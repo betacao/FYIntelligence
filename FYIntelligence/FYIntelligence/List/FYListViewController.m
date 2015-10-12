@@ -55,7 +55,7 @@
     FYListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FYListTableViewCell"];
     if(!cell){
         cell = [[[NSBundle mainBundle] loadNibNamed:@"FYListTableViewCell" owner:self options:nil] lastObject];
-//        cell.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+//        cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     }
     return cell;
 }

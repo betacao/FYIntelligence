@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.frame = CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight);
     self.view.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.3f];
     self.bgView.backgroundColor = [UIColor colorWithWhite:0.8f alpha:0.5f];
 }

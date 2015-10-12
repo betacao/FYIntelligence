@@ -23,11 +23,11 @@
             <subviews>
                 <view contentMode="scaleToFill" id="yTh-XS-dBG">
                     <rect key="frame" x="13" y="110" width="294" height="80"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" id="9Tv-WF-d6F">
                             <rect key="frame" x="0.0" y="40" width="294" height="1"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.25882352939999997" green="0.63529411759999999" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="input_user" id="QkI-Lg-78A">
@@ -40,14 +40,14 @@
                         </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入7位设备ID号" minimumFontSize="17" id="rQg-TK-VQI">
                             <rect key="frame" x="33" y="5" width="253" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入4位pin码" minimumFontSize="17" id="rFK-Ia-yB2">
                             <rect key="frame" x="33" y="45" width="253" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits"/>
@@ -57,7 +57,7 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2D1-3h-QW2">
                     <rect key="frame" x="13" y="236" width="294" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="确认" backgroundImage="btn_login_normal"/>
                 </button>
@@ -83,7 +83,7 @@
     </objects>
     <resources>
         <image name="blankButton" width="17" height="17"/>
-        <image name="btn_login_normal" width="33" height="33"/>
+        <image name="btn_login_normal" width="400" height="200"/>
         <image name="input_pwd" width="17" height="17"/>
         <image name="input_user" width="17" height="17"/>
     </resources>
