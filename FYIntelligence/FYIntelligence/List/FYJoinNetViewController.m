@@ -7,6 +7,7 @@
 //
 
 #import "FYJoinNetViewController.h"
+#import <SystemConfiguration/CaptiveNetwork.h>
 
 @interface FYJoinNetViewController ()
 
@@ -41,6 +42,35 @@
     UIImage *pressImage = [UIImage imageNamed:@"btn_login_press"];
     [self.loginButton setBackgroundImage:[normalImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
     [self.loginButton setBackgroundImage:[pressImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateHighlighted];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    __weak typeof(self)weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [weakSelf getDeviceSSID:^(NSString *ssid) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                weakSelf.userField.text = ssid;
+            });
+        }];
+    });
+}
+
+- (void)getDeviceSSID:(void(^)(NSString *ssid))completion
+{
+    NSArray *ifs = (__bridge id)CNCopySupportedInterfaces();
+    id info = nil;
+    for (NSString *ifnam in ifs) {
+        info = (__bridge id)CNCopyCurrentNetworkInfo((__bridge CFStringRef)ifnam);
+        if (info && [info count]) {
+            break;
+        }
+    }
+    NSDictionary *dctySSID = (NSDictionary *)info;
+    NSString *ssid = [[dctySSID objectForKey:@"SSID"] lowercaseString];
+    completion(ssid);
+    
 }
 
 - (void)didReceiveMemoryWarning {

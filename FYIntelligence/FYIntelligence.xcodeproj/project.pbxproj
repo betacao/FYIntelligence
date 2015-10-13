@@ -25,6 +25,7 @@
 		F98351791BCA370400809E14 /* FYJoinNetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351771BCA370400809E14 /* FYJoinNetViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F983517E1BCA3FAE00809E14 /* FYEnterPINViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F983517C1BCA3FAE00809E14 /* FYEnterPINViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F983517F1BCA3FAE00809E14 /* FYEnterPINViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F983517D1BCA3FAE00809E14 /* FYEnterPINViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F9A1E05C1BCCF6AE00A92B90 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A1E05B1BCCF6AE00A92B90 /* SystemConfiguration.framework */; };
 		F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B31BC7F5CC00520CAA /* main.m */; };
 		F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B61BC7F5CC00520CAA /* AppDelegate.m */; };
 		F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B91BC7F5CC00520CAA /* ViewController.m */; };
@@ -77,6 +78,7 @@
 		F983517B1BCA3FAE00809E14 /* FYEnterPINViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYEnterPINViewController.h; sourceTree = "<group>"; };
 		F983517C1BCA3FAE00809E14 /* FYEnterPINViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYEnterPINViewController.m; sourceTree = "<group>"; };
 		F983517D1BCA3FAE00809E14 /* FYEnterPINViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYEnterPINViewController.xib; sourceTree = "<group>"; };
+		F9A1E05B1BCCF6AE00A92B90 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F9DEF7AE1BC7F5CC00520CAA /* FYIntelligence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FYIntelligence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DEF7B21BC7F5CC00520CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9DEF7B31BC7F5CC00520CAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9A1E05C1BCCF6AE00A92B90 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +213,7 @@
 		F9DEF7B11BC7F5CC00520CAA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F9A1E05B1BCCF6AE00A92B90 /* SystemConfiguration.framework */,
 				F9DEF7B21BC7F5CC00520CAA /* Info.plist */,
 				F9DEF7B31BC7F5CC00520CAA /* main.m */,
 				F95A63741BC7F918002B949A /* FYPrefixHeader.pch */,
