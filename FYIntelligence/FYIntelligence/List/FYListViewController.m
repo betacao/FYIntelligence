@@ -10,8 +10,9 @@
 #import "FYListTableViewCell.h"
 #import "FYDeviceInitViewController.h"
 #import "FYEnterPINViewController.h"
+#import "FYDeviceManagerViewController.h"
 
-@interface FYListViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface FYListViewController ()<UITableViewDataSource,UITableViewDelegate,FYEnterPINDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
@@ -55,7 +56,6 @@
     FYListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FYListTableViewCell"];
     if(!cell){
         cell = [[[NSBundle mainBundle] loadNibNamed:@"FYListTableViewCell" owner:self options:nil] lastObject];
-//        cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     }
     return cell;
 }
@@ -68,8 +68,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
+    controller.delegate = self;
     [self addChildViewController:controller];
     [self.view addSubview:controller.view];
+}
+
+#pragma mark FYEnterPINDelegate
+
+- (void)didEnterAllPIN:(NSString *)pinNumber
+{
+    FYDeviceManagerViewController *controller = [[FYDeviceManagerViewController alloc] initWithNibName:@"FYDeviceManagerViewController" bundle:nil];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

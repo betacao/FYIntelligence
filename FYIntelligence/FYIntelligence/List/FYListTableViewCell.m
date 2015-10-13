@@ -34,13 +34,7 @@
 
 - (void)layoutSubviews
 {
-//    CGRect frame = self.contentView.frame;
-//    frame.size.width = kScreenWidth;
-//    self.contentView.frame = frame;
     [super layoutSubviews];
-    //    self.contentView.frame = self.bounds;
-//    self.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin;
-//    self.contentView.autoresizingMask = self.autoresizingMask;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

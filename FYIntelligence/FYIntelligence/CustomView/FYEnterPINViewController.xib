@@ -8,6 +8,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYEnterPINViewController">
             <connections>
                 <outlet property="bgView" destination="G6y-31-dcx" id="T4t-RE-H55"/>
+                <outlet property="lineView1" destination="yrJ-F6-IW6" id="ldW-Bx-jhs"/>
+                <outlet property="lineView2" destination="DyF-k7-wUG" id="6FU-zd-b6Q"/>
+                <outlet property="lineView3" destination="YKU-J0-wpM" id="Lf1-bl-Uxd"/>
                 <outlet property="textField1" destination="jFr-JD-a7R" id="1jR-kn-IGO"/>
                 <outlet property="textField2" destination="Z8a-a1-z2z" id="0uv-zb-3Q0"/>
                 <outlet property="textField3" destination="ZK5-qQ-2Xl" id="sJt-eD-uRk"/>
@@ -21,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" id="G6y-31-dcx">
-                    <rect key="frame" x="40" y="200" width="240" height="80"/>
+                    <rect key="frame" x="85" y="200" width="150" height="80"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入设备PIN码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jm7-be-9Kt">
@@ -34,7 +37,7 @@
                         <view contentMode="scaleToFill" id="yrJ-F6-IW6">
                             <rect key="frame" x="63" y="51" width="10" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="textField_Bg" id="jFr-JD-a7R">
                             <rect key="frame" x="33" y="40" width="24" height="24"/>
@@ -75,12 +78,12 @@
                         <view contentMode="scaleToFill" id="DyF-k7-wUG">
                             <rect key="frame" x="115" y="51" width="10" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <view contentMode="scaleToFill" id="YKU-J0-wpM">
                             <rect key="frame" x="165" y="51" width="10" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>

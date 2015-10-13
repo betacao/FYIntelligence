@@ -32,6 +32,8 @@
 		F9DEF7BF1BC7F5CC00520CAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9DEF7BE1BC7F5CC00520CAA /* Images.xcassets */; };
 		F9DEF7C21BC7F5CC00520CAA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DEF7C01BC7F5CC00520CAA /* LaunchScreen.xib */; };
 		F9DEF7CE1BC7F5CC00520CAA /* FYIntelligenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7CD1BC7F5CC00520CAA /* FYIntelligenceTests.m */; };
+		F9F90D061BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F90D041BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F9F90D071BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F90D051BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,9 @@
 		F9DEF7C71BC7F5CC00520CAA /* FYIntelligenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FYIntelligenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DEF7CC1BC7F5CC00520CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9DEF7CD1BC7F5CC00520CAA /* FYIntelligenceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYIntelligenceTests.m; sourceTree = "<group>"; };
+		F9F90D031BCBA5DC0036F9B7 /* FYDeviceManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDeviceManagerViewController.h; sourceTree = "<group>"; };
+		F9F90D041BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYDeviceManagerViewController.m; sourceTree = "<group>"; };
+		F9F90D051BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYDeviceManagerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +192,7 @@
 			children = (
 				F983517A1BCA3F0C00809E14 /* CustomView */,
 				F98351601BCA26C800809E14 /* List */,
+				F9F90D021BCBA5BA0036F9B7 /* Manager */,
 				F98351551BCA0B0B00809E14 /* User */,
 				F95A63681BC7F7A5002B949A /* FYBaseViewController */,
 				F9DEF7B51BC7F5CC00520CAA /* AppDelegate.h */,
@@ -227,6 +233,16 @@
 				F9DEF7CC1BC7F5CC00520CAA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9F90D021BCBA5BA0036F9B7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F9F90D031BCBA5DC0036F9B7 /* FYDeviceManagerViewController.h */,
+				F9F90D041BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m */,
+				F9F90D051BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +335,7 @@
 				F983516A1BCA270A00809E14 /* FYListTableViewCell.xib in Resources */,
 				F983515F1BCA0B5C00809E14 /* FYRegisterViewController.xib in Resources */,
 				F983517F1BCA3FAE00809E14 /* FYEnterPINViewController.xib in Resources */,
+				F9F90D071BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib in Resources */,
 				F9DEF7BF1BC7F5CC00520CAA /* Images.xcassets in Resources */,
 				F98351791BCA370400809E14 /* FYJoinNetViewController.xib in Resources */,
 			);
@@ -349,6 +366,7 @@
 				F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */,
 				F95A636E1BC7F894002B949A /* FYBaseViewController.m in Sources */,
 				F95A636B1BC7F7BB002B949A /* FYBaseNavigationViewController.m in Sources */,
+				F9F90D061BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m in Sources */,
 				F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */,
 				F98351731BCA333000809E14 /* FYAddDeviceViewController.m in Sources */,
 			);
@@ -478,7 +496,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu SHGOO Technology Co., Ltd";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xie jian (A35C7Q22SB)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FYIntelligence/FYPrefixHeader.pch";
 				INFOPLIST_FILE = FYIntelligence/Info.plist;
@@ -486,7 +504,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniuquan.FYIntelligence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "690ae0fe-3269-4801-97b3-b26b209573f0";
+				PROVISIONING_PROFILE = "15e03961-9655-42e6-b689-1e0a5edc7e77";
 			};
 			name = Debug;
 		};
@@ -495,7 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu SHGOO Technology Co., Ltd";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xie jian (A35C7Q22SB)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FYIntelligence/FYPrefixHeader.pch";
 				INFOPLIST_FILE = FYIntelligence/Info.plist;
@@ -503,7 +521,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniuquan.FYIntelligence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "690ae0fe-3269-4801-97b3-b26b209573f0";
+				PROVISIONING_PROFILE = "15e03961-9655-42e6-b689-1e0a5edc7e77";
 			};
 			name = Release;
 		};
