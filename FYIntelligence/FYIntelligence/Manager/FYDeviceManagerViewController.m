@@ -18,9 +18,14 @@
     [super viewDidLoad];
 }
 
+- (void)backButtonClick:(UIButton *)button
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
-    return UIInterfaceOrientationMaskLandscapeLeft;
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (BOOL)shouldAutorotate

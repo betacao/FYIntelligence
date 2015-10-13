@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface FYBaseViewController : UIViewController
-
+- (void)backButtonClick:(UIButton *)button;
 @end

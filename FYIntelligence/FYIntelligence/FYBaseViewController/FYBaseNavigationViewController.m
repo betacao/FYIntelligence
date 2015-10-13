@@ -24,9 +24,18 @@
     self.navigationBar.titleTextAttributes = dict;
 }
 
-- (BOOL)prefersStatusBarHidden
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return [[self topViewController] supportedInterfaceOrientations];
+}
+
+- (BOOL)shouldAutorotate
 {
     return YES;
+}
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return [[self topViewController] preferredInterfaceOrientationForPresentation];
 }
 
 

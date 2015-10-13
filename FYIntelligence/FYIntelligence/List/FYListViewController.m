@@ -78,7 +78,8 @@
 - (void)didEnterAllPIN:(NSString *)pinNumber
 {
     FYDeviceManagerViewController *controller = [[FYDeviceManagerViewController alloc] initWithNibName:@"FYDeviceManagerViewController" bundle:nil];
-    [self.navigationController pushViewController:controller animated:YES];
+    FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
