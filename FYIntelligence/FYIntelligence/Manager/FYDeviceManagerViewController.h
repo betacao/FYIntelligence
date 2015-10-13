@@ -6,7 +6,7 @@
 //  Copyright © 2015年 changxicao. All rights reserved.
 //
 
-#import "FYBaseViewController.h"
+#import "FYBaseNavigationViewController.h"
 
 @interface FYDeviceManagerViewController : FYBaseViewController
 

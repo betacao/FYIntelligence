@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F95113BF1BCD45D60058C7B2 /* FYParamSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95113BD1BCD45D60058C7B2 /* FYParamSettingViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F95113C01BCD45D60058C7B2 /* FYParamSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95113BE1BCD45D60058C7B2 /* FYParamSettingViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F95113C41BCD464A0058C7B2 /* FYParamSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F95113C21BCD464A0058C7B2 /* FYParamSettingTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		F95113C51BCD464A0058C7B2 /* FYParamSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95113C31BCD464A0058C7B2 /* FYParamSettingTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		F95A636B1BC7F7BB002B949A /* FYBaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95A636A1BC7F7BB002B949A /* FYBaseNavigationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F95A636E1BC7F894002B949A /* FYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95A636D1BC7F894002B949A /* FYBaseViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F98351591BCA0B0B00809E14 /* FYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98351571BCA0B0B00809E14 /* FYLoginViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -48,6 +52,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F95113BC1BCD45D60058C7B2 /* FYParamSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYParamSettingViewController.h; sourceTree = "<group>"; };
+		F95113BD1BCD45D60058C7B2 /* FYParamSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYParamSettingViewController.m; sourceTree = "<group>"; };
+		F95113BE1BCD45D60058C7B2 /* FYParamSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYParamSettingViewController.xib; sourceTree = "<group>"; };
+		F95113C11BCD464A0058C7B2 /* FYParamSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYParamSettingTableViewCell.h; sourceTree = "<group>"; };
+		F95113C21BCD464A0058C7B2 /* FYParamSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYParamSettingTableViewCell.m; sourceTree = "<group>"; };
+		F95113C31BCD464A0058C7B2 /* FYParamSettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYParamSettingTableViewCell.xib; sourceTree = "<group>"; };
 		F95A63691BC7F7BB002B949A /* FYBaseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYBaseNavigationViewController.h; sourceTree = "<group>"; };
 		F95A636A1BC7F7BB002B949A /* FYBaseNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYBaseNavigationViewController.m; sourceTree = "<group>"; };
 		F95A636C1BC7F894002B949A /* FYBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYBaseViewController.h; sourceTree = "<group>"; };
@@ -245,6 +255,12 @@
 				F9F90D031BCBA5DC0036F9B7 /* FYDeviceManagerViewController.h */,
 				F9F90D041BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m */,
 				F9F90D051BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib */,
+				F95113BC1BCD45D60058C7B2 /* FYParamSettingViewController.h */,
+				F95113BD1BCD45D60058C7B2 /* FYParamSettingViewController.m */,
+				F95113BE1BCD45D60058C7B2 /* FYParamSettingViewController.xib */,
+				F95113C11BCD464A0058C7B2 /* FYParamSettingTableViewCell.h */,
+				F95113C21BCD464A0058C7B2 /* FYParamSettingTableViewCell.m */,
+				F95113C31BCD464A0058C7B2 /* FYParamSettingTableViewCell.xib */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -334,6 +350,7 @@
 				F983516F1BCA307100809E14 /* FYDeviceInitViewController.xib in Resources */,
 				F983515A1BCA0B0B00809E14 /* FYLoginViewController.xib in Resources */,
 				F9DEF7C21BC7F5CC00520CAA /* LaunchScreen.xib in Resources */,
+				F95113C01BCD45D60058C7B2 /* FYParamSettingViewController.xib in Resources */,
 				F98351741BCA333000809E14 /* FYAddDeviceViewController.xib in Resources */,
 				F98351651BCA26E400809E14 /* FYListViewController.xib in Resources */,
 				F983516A1BCA270A00809E14 /* FYListTableViewCell.xib in Resources */,
@@ -342,6 +359,7 @@
 				F9F90D071BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib in Resources */,
 				F9DEF7BF1BC7F5CC00520CAA /* Images.xcassets in Resources */,
 				F98351791BCA370400809E14 /* FYJoinNetViewController.xib in Resources */,
+				F95113C51BCD464A0058C7B2 /* FYParamSettingTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,9 +382,11 @@
 				F983516E1BCA307100809E14 /* FYDeviceInitViewController.m in Sources */,
 				F983515E1BCA0B5C00809E14 /* FYRegisterViewController.m in Sources */,
 				F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */,
+				F95113BF1BCD45D60058C7B2 /* FYParamSettingViewController.m in Sources */,
 				F98351591BCA0B0B00809E14 /* FYLoginViewController.m in Sources */,
 				F98351641BCA26E400809E14 /* FYListViewController.m in Sources */,
 				F983517E1BCA3FAE00809E14 /* FYEnterPINViewController.m in Sources */,
+				F95113C41BCD464A0058C7B2 /* FYParamSettingTableViewCell.m in Sources */,
 				F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */,
 				F95A636E1BC7F894002B949A /* FYBaseViewController.m in Sources */,
 				F95A636B1BC7F7BB002B949A /* FYBaseNavigationViewController.m in Sources */,
