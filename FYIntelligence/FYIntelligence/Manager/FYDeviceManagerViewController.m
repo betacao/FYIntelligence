@@ -33,18 +33,28 @@
 
     self.paramButton.layer.masksToBounds = YES;
     self.paramButton.layer.cornerRadius = 2.0f;
+    [self.paramButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"F0E68C"]]forState:UIControlStateNormal];
+    [self.paramButton setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]forState:UIControlStateHighlighted];
 
     self.userAddButton.layer.masksToBounds = YES;
     self.userAddButton.layer.cornerRadius = 2.0f;
+    [self.userAddButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"8C7EEB"]]forState:UIControlStateNormal];
+    [self.userAddButton setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]forState:UIControlStateHighlighted];
 
     self.userWarmButton.layer.masksToBounds = YES;
     self.userWarmButton.layer.cornerRadius = 2.0f;
+    [self.userWarmButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"FF4500"]]forState:UIControlStateNormal];
+    [self.userWarmButton setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]forState:UIControlStateHighlighted];
 
     self.temCircleButton.layer.masksToBounds = YES;
     self.temCircleButton.layer.cornerRadius = 2.0f;
+    [self.temCircleButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"C0C0C0"]]forState:UIControlStateNormal];
+    [self.temCircleButton setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]forState:UIControlStateHighlighted];
 
     self.waterCircleButton.layer.masksToBounds = YES;
     self.waterCircleButton.layer.cornerRadius = 2.0f;
+    [self.waterCircleButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"8FBC8F"]]forState:UIControlStateNormal];
+    [self.waterCircleButton setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]forState:UIControlStateHighlighted];
 }
 
 - (void)backButtonClick:(UIButton *)button

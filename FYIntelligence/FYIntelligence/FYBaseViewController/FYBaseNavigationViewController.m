@@ -38,6 +38,11 @@
     return [[self topViewController] preferredInterfaceOrientationForPresentation];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

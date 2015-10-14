@@ -8,6 +8,7 @@
 
 #import "FYParamSettingViewController.h"
 #import "FYParamSettingTableViewCell.h"
+#import "FYSDSSViewController.h"
 
 @interface FYParamSettingViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -25,6 +26,11 @@
     self.titleArray = @[@"手动上水",@"定时上水",@"温控进水",@"手动加热",@"定时加热",@"恒温加热",@"管道循环",@"防冻保护",@"预设报警",@"恒水位",@"集热器温差循环"];
     self.imageArray = @[@"sdss",@"dsss",@"wkjs",@"sdjr",@"dsjr",@"hwjr",@"gdxh",@"fdbh",@"ysbj",@"hsw",@"wcxh"];
     [self.tableView setTableFooterView:[[UIView alloc] init]];
+}
+
+- (void)backButtonClick:(UIButton *)button
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,6 +55,20 @@
     [cell loadCellTitle:[self.titleArray objectAtIndex:indexPath.row]];
     [cell loadCellImage:[UIImage imageNamed:[self.imageArray objectAtIndex:indexPath.row]]];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case 0:{
+            FYSDSSViewController *controller = [[FYSDSSViewController alloc] initWithNibName:@"FYSDSSViewController" bundle:nil];
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+            break;
+
+        default:
+            break;
+    }
 }
 
 

@@ -11,5 +11,7 @@
 
 #import "FYBaseViewController.h"
 #import "const.h"
+#import "UIColor+FYColor.h"
+#import "UIImage+FYImage.h"
 
 #endif /* FYPrefixHeader_pch */
