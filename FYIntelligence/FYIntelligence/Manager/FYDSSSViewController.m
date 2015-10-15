@@ -7,8 +7,19 @@
 //
 
 #import "FYDSSSViewController.h"
+#import "FYPickerView.h"
+#import "FYDatePickerView.h"
 
 @interface FYDSSSViewController ()
+@property (weak, nonatomic) IBOutlet UISwitch *switch1;
+@property (weak, nonatomic) IBOutlet UISwitch *switch2;
+@property (weak, nonatomic) IBOutlet UISwitch *switch3;
+@property (weak, nonatomic) IBOutlet UIButton *timeButton1;
+@property (weak, nonatomic) IBOutlet UIButton *timeButton2;
+@property (weak, nonatomic) IBOutlet UIButton *timeButton3;
+@property (weak, nonatomic) IBOutlet UIButton *positionButton1;
+@property (weak, nonatomic) IBOutlet UIButton *positionButton2;
+@property (weak, nonatomic) IBOutlet UIButton *positionButton3;
 
 @end
 
@@ -16,22 +27,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.title = @"定时上水";
+}
+- (IBAction)positionButton1Click:(UIButton *)sender {
+    FYPickerView *pickView = [[FYPickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight)];
+    [pickView loadDataArray:@[@"50%", @"80%", @"100%"]];
+    [self.view.window addSubview:pickView];
+}
+
+- (IBAction)timeButton1Click:(UIButton *)sender
+{
+    FYDatePickerView *pickView = [[FYDatePickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight)];
+//    [pickView loadDataArray:@[@"50%", @"80%", @"100%"]];
+    [self.view.window addSubview:pickView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

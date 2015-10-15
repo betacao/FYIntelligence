@@ -9,6 +9,7 @@
 #import "FYParamSettingViewController.h"
 #import "FYParamSettingTableViewCell.h"
 #import "FYSDSSViewController.h"
+#import "FYDSSSViewController.h"
 
 @interface FYParamSettingViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -65,7 +66,10 @@
             [self.navigationController pushViewController:controller animated:YES];
         }
             break;
-
+        case 1:{
+            FYDSSSViewController *controller = [[FYDSSSViewController alloc] initWithNibName:@"FYDSSSViewController" bundle:nil];
+            [self.navigationController pushViewController:controller animated:YES];
+        }
         default:
             break;
     }

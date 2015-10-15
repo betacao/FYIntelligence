@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F93F982D1BCE6E3300FD46A8 /* FYPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F93F982C1BCE6E3300FD46A8 /* FYPickerView.m */; settings = {ASSET_TAGS = (); }; };
+		F93F98301BCE7C2800FD46A8 /* FYDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F93F982F1BCE7C2800FD46A8 /* FYDatePickerView.m */; settings = {ASSET_TAGS = (); }; };
 		F95113BF1BCD45D60058C7B2 /* FYParamSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95113BD1BCD45D60058C7B2 /* FYParamSettingViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F95113C01BCD45D60058C7B2 /* FYParamSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95113BE1BCD45D60058C7B2 /* FYParamSettingViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F95113C41BCD464A0058C7B2 /* FYParamSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F95113C21BCD464A0058C7B2 /* FYParamSettingTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -58,6 +60,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F93F982B1BCE6E3300FD46A8 /* FYPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYPickerView.h; sourceTree = "<group>"; };
+		F93F982C1BCE6E3300FD46A8 /* FYPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYPickerView.m; sourceTree = "<group>"; };
+		F93F982E1BCE7C2800FD46A8 /* FYDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDatePickerView.h; sourceTree = "<group>"; };
+		F93F982F1BCE7C2800FD46A8 /* FYDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYDatePickerView.m; sourceTree = "<group>"; };
 		F95113BC1BCD45D60058C7B2 /* FYParamSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYParamSettingViewController.h; sourceTree = "<group>"; };
 		F95113BD1BCD45D60058C7B2 /* FYParamSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYParamSettingViewController.m; sourceTree = "<group>"; };
 		F95113BE1BCD45D60058C7B2 /* FYParamSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYParamSettingViewController.xib; sourceTree = "<group>"; };
@@ -205,6 +211,10 @@
 				F983517B1BCA3FAE00809E14 /* FYEnterPINViewController.h */,
 				F983517C1BCA3FAE00809E14 /* FYEnterPINViewController.m */,
 				F983517D1BCA3FAE00809E14 /* FYEnterPINViewController.xib */,
+				F93F982B1BCE6E3300FD46A8 /* FYPickerView.h */,
+				F93F982C1BCE6E3300FD46A8 /* FYPickerView.m */,
+				F93F982E1BCE7C2800FD46A8 /* FYDatePickerView.h */,
+				F93F982F1BCE7C2800FD46A8 /* FYDatePickerView.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -427,10 +437,12 @@
 				F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */,
 				F96E2F911BCE27BA00B6AF4B /* UIColor+FYColor.m in Sources */,
 				F95A636E1BC7F894002B949A /* FYBaseViewController.m in Sources */,
+				F93F982D1BCE6E3300FD46A8 /* FYPickerView.m in Sources */,
 				F95A636B1BC7F7BB002B949A /* FYBaseNavigationViewController.m in Sources */,
 				F96E2F981BCE385500B6AF4B /* FYSDSSViewController.m in Sources */,
 				F9F90D061BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m in Sources */,
 				F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */,
+				F93F98301BCE7C2800FD46A8 /* FYDatePickerView.m in Sources */,
 				F96E2F941BCE284600B6AF4B /* UIImage+FYImage.m in Sources */,
 				F98351731BCA333000809E14 /* FYAddDeviceViewController.m in Sources */,
 			);
