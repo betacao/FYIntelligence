@@ -10,6 +10,7 @@
 #import "FYParamSettingTableViewCell.h"
 #import "FYSDSSViewController.h"
 #import "FYDSSSViewController.h"
+#import "FYWKJSViewController.h"
 #import "FYSDJRViewController.h"
 #import "FYDSJRViewController.h"
 #import "FYHWJRViewController.h"
@@ -76,6 +77,11 @@
             break;
         case 1:{
             FYDSSSViewController *controller = [[FYDSSSViewController alloc] initWithNibName:@"FYDSSSViewController" bundle:nil];
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+            break;
+        case 2:{
+            FYWKJSViewController *controller = [[FYWKJSViewController alloc] initWithNibName:@"FYWKJSViewController" bundle:nil];
             [self.navigationController pushViewController:controller animated:YES];
         }
             break;
