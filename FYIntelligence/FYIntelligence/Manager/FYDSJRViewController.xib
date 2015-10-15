@@ -5,17 +5,17 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYDSSSViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYDSJRViewController">
             <connections>
-                <outlet property="positionButton1" destination="Tu3-IU-iuY" id="36g-Za-KrU"/>
-                <outlet property="positionButton2" destination="eTW-Mg-q3U" id="Pz7-9b-JRb"/>
-                <outlet property="positionButton3" destination="0tC-Xj-JGI" id="zwX-85-2s8"/>
-                <outlet property="switch1" destination="7Tx-o4-wmM" id="NZc-wZ-AMr"/>
-                <outlet property="switch2" destination="4DA-Vg-xWX" id="pi4-DA-8kD"/>
-                <outlet property="switch3" destination="Sus-6Z-8y1" id="TyU-yb-FF2"/>
-                <outlet property="timeButton1" destination="1tl-BJ-8N9" id="t1X-pD-5zF"/>
-                <outlet property="timeButton2" destination="7jE-7m-c55" id="uiw-BM-4mH"/>
-                <outlet property="timeButton3" destination="j9l-VK-UmE" id="T83-c8-iUv"/>
+                <outlet property="positionButton1" destination="uHh-at-y8W" id="ZoG-du-rwR"/>
+                <outlet property="positionButton2" destination="7C6-BO-wBs" id="5bF-Z3-3GI"/>
+                <outlet property="positionButton3" destination="RGk-Vj-2iW" id="evf-Mi-L9p"/>
+                <outlet property="switch1" destination="DP1-j6-9zb" id="iDM-zp-dBF"/>
+                <outlet property="switch2" destination="Vix-eZ-UFc" id="f9T-Ub-MbO"/>
+                <outlet property="switch3" destination="Mco-aA-Jn2" id="4D3-Cb-fjf"/>
+                <outlet property="timeButton1" destination="n1s-vv-jgk" id="NO1-tc-ez8"/>
+                <outlet property="timeButton2" destination="I4R-S2-6Ji" id="mlB-JK-tol"/>
+                <outlet property="timeButton3" destination="3J7-Nx-yxz" id="oog-3H-in0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,111 +24,111 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sxshow" id="0Up-Sb-QjM">
-                    <rect key="frame" x="45" y="80" width="240" height="180"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xe3-qq-XVf">
-                    <rect key="frame" x="13" y="500" width="294" height="40"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="确定" backgroundImage="btn_login_normal"/>
-                    <state key="highlighted" backgroundImage="btn_login_press"/>
-                </button>
-                <view contentMode="scaleToFill" id="qJ7-r0-eiz">
+                <view contentMode="scaleToFill" id="8w1-ac-iuY">
                     <rect key="frame" x="0.0" y="286" width="320" height="160"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="定时上水" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lQf-uj-MGB">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="定时加热" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QQc-3A-Ek3">
                             <rect key="frame" x="33" y="0.0" width="64" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上水时间" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vth-Fi-FoT">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加热时间" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iCn-65-fzn">
                             <rect key="frame" x="133" y="0.0" width="64" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上水水位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KYj-oa-TgR">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加热温度" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M9j-sr-Jmb">
                             <rect key="frame" x="233" y="0.0" width="64" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="7Tx-o4-wmM">
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="DP1-j6-9zb">
                             <rect key="frame" x="41" y="30" width="51" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </switch>
-                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="4DA-Vg-xWX">
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="Vix-eZ-UFc">
                             <rect key="frame" x="41" y="75" width="51" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </switch>
-                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="Sus-6Z-8y1">
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="Mco-aA-Jn2">
                             <rect key="frame" x="41" y="120" width="51" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </switch>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1tl-BJ-8N9">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n1s-vv-jgk">
                             <rect key="frame" x="142" y="31" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="13:00"/>
                             <connections>
-                                <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="P8b-5H-e4T"/>
+                                <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="xYx-JG-aiJ"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7jE-7m-c55">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="I4R-S2-6Ji">
                             <rect key="frame" x="142" y="76" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="13:00"/>
                             <connections>
-                                <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="bZW-MZ-4qg"/>
+                                <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="bcJ-p3-krh"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j9l-VK-UmE">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3J7-Nx-yxz">
                             <rect key="frame" x="142" y="121" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="13:00"/>
                             <connections>
-                                <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="mM0-Da-WtU"/>
+                                <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="60F-GL-L2M"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tu3-IU-iuY">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uHh-at-y8W">
                             <rect key="frame" x="242" y="31" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="50%"/>
                             <connections>
-                                <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="lEC-Dk-MVb"/>
+                                <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="uyp-ml-YIf"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eTW-Mg-q3U">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7C6-BO-wBs">
                             <rect key="frame" x="242" y="76" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="50%"/>
                             <connections>
-                                <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="1PS-IH-XcP"/>
+                                <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="7KL-Wt-k0N"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0tC-Xj-JGI">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RGk-Vj-2iW">
                             <rect key="frame" x="242" y="121" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="50%"/>
                             <connections>
-                                <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="v5y-cX-SR5"/>
+                                <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="NWn-hX-dsP"/>
                             </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JCq-7e-Yv7">
+                    <rect key="frame" x="13" y="500" width="294" height="40"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="确定" backgroundImage="btn_login_normal"/>
+                    <state key="highlighted" backgroundImage="btn_login_press"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sxshow" id="Dez-Mw-uot">
+                    <rect key="frame" x="45" y="80" width="240" height="180"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="243" y="239"/>

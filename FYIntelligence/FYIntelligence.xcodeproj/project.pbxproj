@@ -21,6 +21,18 @@
 		F96E2F991BCE385500B6AF4B /* FYSDSSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96E2F971BCE385500B6AF4B /* FYSDSSViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F96E2FE31BCE6A7600B6AF4B /* FYDSSSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96E2FE11BCE6A7600B6AF4B /* FYDSSSViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F96E2FE41BCE6A7600B6AF4B /* FYDSSSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96E2FE21BCE6A7600B6AF4B /* FYDSSSViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F973409D1BCFE8B2006D1740 /* FYHWJRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F973409B1BCFE8B2006D1740 /* FYHWJRViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F973409E1BCFE8B2006D1740 /* FYHWJRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F973409C1BCFE8B2006D1740 /* FYHWJRViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F97340A21BCFECEF006D1740 /* FYGDXHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340A01BCFECEF006D1740 /* FYGDXHViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F97340A31BCFECEF006D1740 /* FYGDXHViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340A11BCFECEF006D1740 /* FYGDXHViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F97340A71BCFED4E006D1740 /* FYFDBHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340A51BCFED4E006D1740 /* FYFDBHViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F97340A81BCFED4E006D1740 /* FYFDBHViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340A61BCFED4E006D1740 /* FYFDBHViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F97340AC1BCFED60006D1740 /* FYYSBJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340AA1BCFED60006D1740 /* FYYSBJViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F97340AD1BCFED60006D1740 /* FYYSBJViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340AB1BCFED60006D1740 /* FYYSBJViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F97340B11BCFED73006D1740 /* FYHSWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340AF1BCFED73006D1740 /* FYHSWViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F97340B21BCFED73006D1740 /* FYHSWViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340B01BCFED73006D1740 /* FYHSWViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F97340B61BCFED8F006D1740 /* FYWCXHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340B41BCFED8F006D1740 /* FYWCXHViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F97340B71BCFED8F006D1740 /* FYWCXHViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340B51BCFED8F006D1740 /* FYWCXHViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F98351591BCA0B0B00809E14 /* FYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98351571BCA0B0B00809E14 /* FYLoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F983515A1BCA0B0B00809E14 /* FYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351581BCA0B0B00809E14 /* FYLoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F983515E1BCA0B5C00809E14 /* FYRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F983515C1BCA0B5C00809E14 /* FYRegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -37,6 +49,10 @@
 		F98351791BCA370400809E14 /* FYJoinNetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351771BCA370400809E14 /* FYJoinNetViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F983517E1BCA3FAE00809E14 /* FYEnterPINViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F983517C1BCA3FAE00809E14 /* FYEnterPINViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F983517F1BCA3FAE00809E14 /* FYEnterPINViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F983517D1BCA3FAE00809E14 /* FYEnterPINViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F98B9FF41BCF928200B5FEAF /* FYSDJRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98B9FF21BCF928200B5FEAF /* FYSDJRViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F98B9FF51BCF928200B5FEAF /* FYSDJRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98B9FF31BCF928200B5FEAF /* FYSDJRViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F98B9FF91BCF9D0300B5FEAF /* FYDSJRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98B9FF71BCF9D0300B5FEAF /* FYDSJRViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F98B9FFA1BCF9D0300B5FEAF /* FYDSJRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98B9FF81BCF9D0300B5FEAF /* FYDSJRViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F9A1E05C1BCCF6AE00A92B90 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A1E05B1BCCF6AE00A92B90 /* SystemConfiguration.framework */; };
 		F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B31BC7F5CC00520CAA /* main.m */; };
 		F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B61BC7F5CC00520CAA /* AppDelegate.m */; };
@@ -86,6 +102,24 @@
 		F96E2FE01BCE6A7600B6AF4B /* FYDSSSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDSSSViewController.h; sourceTree = "<group>"; };
 		F96E2FE11BCE6A7600B6AF4B /* FYDSSSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYDSSSViewController.m; sourceTree = "<group>"; };
 		F96E2FE21BCE6A7600B6AF4B /* FYDSSSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYDSSSViewController.xib; sourceTree = "<group>"; };
+		F973409A1BCFE8B2006D1740 /* FYHWJRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHWJRViewController.h; sourceTree = "<group>"; };
+		F973409B1BCFE8B2006D1740 /* FYHWJRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHWJRViewController.m; sourceTree = "<group>"; };
+		F973409C1BCFE8B2006D1740 /* FYHWJRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYHWJRViewController.xib; sourceTree = "<group>"; };
+		F973409F1BCFECEF006D1740 /* FYGDXHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYGDXHViewController.h; sourceTree = "<group>"; };
+		F97340A01BCFECEF006D1740 /* FYGDXHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYGDXHViewController.m; sourceTree = "<group>"; };
+		F97340A11BCFECEF006D1740 /* FYGDXHViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYGDXHViewController.xib; sourceTree = "<group>"; };
+		F97340A41BCFED4E006D1740 /* FYFDBHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYFDBHViewController.h; sourceTree = "<group>"; };
+		F97340A51BCFED4E006D1740 /* FYFDBHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYFDBHViewController.m; sourceTree = "<group>"; };
+		F97340A61BCFED4E006D1740 /* FYFDBHViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYFDBHViewController.xib; sourceTree = "<group>"; };
+		F97340A91BCFED60006D1740 /* FYYSBJViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYYSBJViewController.h; sourceTree = "<group>"; };
+		F97340AA1BCFED60006D1740 /* FYYSBJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYYSBJViewController.m; sourceTree = "<group>"; };
+		F97340AB1BCFED60006D1740 /* FYYSBJViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYYSBJViewController.xib; sourceTree = "<group>"; };
+		F97340AE1BCFED73006D1740 /* FYHSWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHSWViewController.h; sourceTree = "<group>"; };
+		F97340AF1BCFED73006D1740 /* FYHSWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHSWViewController.m; sourceTree = "<group>"; };
+		F97340B01BCFED73006D1740 /* FYHSWViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYHSWViewController.xib; sourceTree = "<group>"; };
+		F97340B31BCFED8F006D1740 /* FYWCXHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYWCXHViewController.h; sourceTree = "<group>"; };
+		F97340B41BCFED8F006D1740 /* FYWCXHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYWCXHViewController.m; sourceTree = "<group>"; };
+		F97340B51BCFED8F006D1740 /* FYWCXHViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYWCXHViewController.xib; sourceTree = "<group>"; };
 		F98351561BCA0B0B00809E14 /* FYLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLoginViewController.h; sourceTree = "<group>"; };
 		F98351571BCA0B0B00809E14 /* FYLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYLoginViewController.m; sourceTree = "<group>"; };
 		F98351581BCA0B0B00809E14 /* FYLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYLoginViewController.xib; sourceTree = "<group>"; };
@@ -110,6 +144,12 @@
 		F983517B1BCA3FAE00809E14 /* FYEnterPINViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYEnterPINViewController.h; sourceTree = "<group>"; };
 		F983517C1BCA3FAE00809E14 /* FYEnterPINViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYEnterPINViewController.m; sourceTree = "<group>"; };
 		F983517D1BCA3FAE00809E14 /* FYEnterPINViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYEnterPINViewController.xib; sourceTree = "<group>"; };
+		F98B9FF11BCF928200B5FEAF /* FYSDJRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYSDJRViewController.h; sourceTree = "<group>"; };
+		F98B9FF21BCF928200B5FEAF /* FYSDJRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYSDJRViewController.m; sourceTree = "<group>"; };
+		F98B9FF31BCF928200B5FEAF /* FYSDJRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYSDJRViewController.xib; sourceTree = "<group>"; };
+		F98B9FF61BCF9D0300B5FEAF /* FYDSJRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDSJRViewController.h; sourceTree = "<group>"; };
+		F98B9FF71BCF9D0300B5FEAF /* FYDSJRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYDSJRViewController.m; sourceTree = "<group>"; };
+		F98B9FF81BCF9D0300B5FEAF /* FYDSJRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYDSJRViewController.xib; sourceTree = "<group>"; };
 		F9A1E05B1BCCF6AE00A92B90 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F9DEF7AE1BC7F5CC00520CAA /* FYIntelligence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FYIntelligence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DEF7B21BC7F5CC00520CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -305,6 +345,30 @@
 				F96E2FE01BCE6A7600B6AF4B /* FYDSSSViewController.h */,
 				F96E2FE11BCE6A7600B6AF4B /* FYDSSSViewController.m */,
 				F96E2FE21BCE6A7600B6AF4B /* FYDSSSViewController.xib */,
+				F98B9FF11BCF928200B5FEAF /* FYSDJRViewController.h */,
+				F98B9FF21BCF928200B5FEAF /* FYSDJRViewController.m */,
+				F98B9FF31BCF928200B5FEAF /* FYSDJRViewController.xib */,
+				F98B9FF61BCF9D0300B5FEAF /* FYDSJRViewController.h */,
+				F98B9FF71BCF9D0300B5FEAF /* FYDSJRViewController.m */,
+				F98B9FF81BCF9D0300B5FEAF /* FYDSJRViewController.xib */,
+				F973409A1BCFE8B2006D1740 /* FYHWJRViewController.h */,
+				F973409B1BCFE8B2006D1740 /* FYHWJRViewController.m */,
+				F973409C1BCFE8B2006D1740 /* FYHWJRViewController.xib */,
+				F973409F1BCFECEF006D1740 /* FYGDXHViewController.h */,
+				F97340A01BCFECEF006D1740 /* FYGDXHViewController.m */,
+				F97340A11BCFECEF006D1740 /* FYGDXHViewController.xib */,
+				F97340A41BCFED4E006D1740 /* FYFDBHViewController.h */,
+				F97340A51BCFED4E006D1740 /* FYFDBHViewController.m */,
+				F97340A61BCFED4E006D1740 /* FYFDBHViewController.xib */,
+				F97340A91BCFED60006D1740 /* FYYSBJViewController.h */,
+				F97340AA1BCFED60006D1740 /* FYYSBJViewController.m */,
+				F97340AB1BCFED60006D1740 /* FYYSBJViewController.xib */,
+				F97340AE1BCFED73006D1740 /* FYHSWViewController.h */,
+				F97340AF1BCFED73006D1740 /* FYHSWViewController.m */,
+				F97340B01BCFED73006D1740 /* FYHSWViewController.xib */,
+				F97340B31BCFED8F006D1740 /* FYWCXHViewController.h */,
+				F97340B41BCFED8F006D1740 /* FYWCXHViewController.m */,
+				F97340B51BCFED8F006D1740 /* FYWCXHViewController.xib */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -391,18 +455,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9DEF7BD1BC7F5CC00520CAA /* Main.storyboard in Resources */,
+				F97340B71BCFED8F006D1740 /* FYWCXHViewController.xib in Resources */,
 				F983516F1BCA307100809E14 /* FYDeviceInitViewController.xib in Resources */,
+				F97340A31BCFECEF006D1740 /* FYGDXHViewController.xib in Resources */,
 				F983515A1BCA0B0B00809E14 /* FYLoginViewController.xib in Resources */,
 				F9DEF7C21BC7F5CC00520CAA /* LaunchScreen.xib in Resources */,
 				F96E2FE41BCE6A7600B6AF4B /* FYDSSSViewController.xib in Resources */,
+				F98B9FF51BCF928200B5FEAF /* FYSDJRViewController.xib in Resources */,
+				F97340B21BCFED73006D1740 /* FYHSWViewController.xib in Resources */,
 				F95113C01BCD45D60058C7B2 /* FYParamSettingViewController.xib in Resources */,
 				F98351741BCA333000809E14 /* FYAddDeviceViewController.xib in Resources */,
 				F98351651BCA26E400809E14 /* FYListViewController.xib in Resources */,
 				F983516A1BCA270A00809E14 /* FYListTableViewCell.xib in Resources */,
+				F97340AD1BCFED60006D1740 /* FYYSBJViewController.xib in Resources */,
+				F973409E1BCFE8B2006D1740 /* FYHWJRViewController.xib in Resources */,
 				F983515F1BCA0B5C00809E14 /* FYRegisterViewController.xib in Resources */,
 				F96E2F991BCE385500B6AF4B /* FYSDSSViewController.xib in Resources */,
+				F97340A81BCFED4E006D1740 /* FYFDBHViewController.xib in Resources */,
 				F983517F1BCA3FAE00809E14 /* FYEnterPINViewController.xib in Resources */,
 				F9F90D071BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib in Resources */,
+				F98B9FFA1BCF9D0300B5FEAF /* FYDSJRViewController.xib in Resources */,
 				F9DEF7BF1BC7F5CC00520CAA /* Images.xcassets in Resources */,
 				F98351791BCA370400809E14 /* FYJoinNetViewController.xib in Resources */,
 				F95113C51BCD464A0058C7B2 /* FYParamSettingTableViewCell.xib in Resources */,
@@ -425,10 +497,15 @@
 			files = (
 				F96E2FE31BCE6A7600B6AF4B /* FYDSSSViewController.m in Sources */,
 				F98351691BCA270A00809E14 /* FYListTableViewCell.m in Sources */,
+				F98B9FF91BCF9D0300B5FEAF /* FYDSJRViewController.m in Sources */,
+				F97340AC1BCFED60006D1740 /* FYYSBJViewController.m in Sources */,
 				F98351781BCA370400809E14 /* FYJoinNetViewController.m in Sources */,
 				F983516E1BCA307100809E14 /* FYDeviceInitViewController.m in Sources */,
 				F983515E1BCA0B5C00809E14 /* FYRegisterViewController.m in Sources */,
+				F98B9FF41BCF928200B5FEAF /* FYSDJRViewController.m in Sources */,
 				F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */,
+				F97340B11BCFED73006D1740 /* FYHSWViewController.m in Sources */,
+				F97340A71BCFED4E006D1740 /* FYFDBHViewController.m in Sources */,
 				F95113BF1BCD45D60058C7B2 /* FYParamSettingViewController.m in Sources */,
 				F98351591BCA0B0B00809E14 /* FYLoginViewController.m in Sources */,
 				F98351641BCA26E400809E14 /* FYListViewController.m in Sources */,
@@ -439,12 +516,15 @@
 				F95A636E1BC7F894002B949A /* FYBaseViewController.m in Sources */,
 				F93F982D1BCE6E3300FD46A8 /* FYPickerView.m in Sources */,
 				F95A636B1BC7F7BB002B949A /* FYBaseNavigationViewController.m in Sources */,
+				F97340A21BCFECEF006D1740 /* FYGDXHViewController.m in Sources */,
 				F96E2F981BCE385500B6AF4B /* FYSDSSViewController.m in Sources */,
+				F97340B61BCFED8F006D1740 /* FYWCXHViewController.m in Sources */,
 				F9F90D061BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m in Sources */,
 				F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */,
 				F93F98301BCE7C2800FD46A8 /* FYDatePickerView.m in Sources */,
 				F96E2F941BCE284600B6AF4B /* UIImage+FYImage.m in Sources */,
 				F98351731BCA333000809E14 /* FYAddDeviceViewController.m in Sources */,
+				F973409D1BCFE8B2006D1740 /* FYHWJRViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

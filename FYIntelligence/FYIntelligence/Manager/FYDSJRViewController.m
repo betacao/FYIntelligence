@@ -1,16 +1,16 @@
 //
-//  FYDSSSViewController.m
+//  FYDSJRViewController.m
 //  FYIntelligence
 //
-//  Created by changxicao on 15/10/14.
+//  Created by changxicao on 15/10/15.
 //  Copyright © 2015年 changxicao. All rights reserved.
 //
 
-#import "FYDSSSViewController.h"
+#import "FYDSJRViewController.h"
 #import "FYPickerView.h"
 #import "FYDatePickerView.h"
 
-@interface FYDSSSViewController ()<FYPickerViewDelegate ,FYDatePickerViewDelegate>
+@interface FYDSJRViewController ()<FYPickerViewDelegate ,FYDatePickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UISwitch *switch1;
 @property (weak, nonatomic) IBOutlet UISwitch *switch2;
@@ -24,15 +24,15 @@
 
 @end
 
-@implementation FYDSSSViewController
+@implementation FYDSJRViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"定时上水";
+    self.title = @"定时加热";
 }
 - (IBAction)positionButtonClick:(UIButton *)sender {
     FYPickerView *pickView = [[FYPickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight)];
-    [pickView loadDataArray:@[@"50%", @"80%", @"100%"]];
+    [pickView loadDataArray:@[@"40°C", @"45°C", @"50°C", @"55°C", @"60°C", @"65°C", @"70°C"]];
     pickView.responseObject = sender;
     pickView.delegate = self;
     [self.view.window addSubview:pickView];

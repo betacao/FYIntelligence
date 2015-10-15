@@ -10,6 +10,14 @@
 #import "FYParamSettingTableViewCell.h"
 #import "FYSDSSViewController.h"
 #import "FYDSSSViewController.h"
+#import "FYSDJRViewController.h"
+#import "FYDSJRViewController.h"
+#import "FYHWJRViewController.h"
+#import "FYGDXHViewController.h"
+#import "FYFDBHViewController.h"
+#import "FYYSBJViewController.h"
+#import "FYHSWViewController.h"
+#import "FYWCXHViewController.h"
 
 @interface FYParamSettingViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -70,6 +78,47 @@
             FYDSSSViewController *controller = [[FYDSSSViewController alloc] initWithNibName:@"FYDSSSViewController" bundle:nil];
             [self.navigationController pushViewController:controller animated:YES];
         }
+            break;
+        case 3:{
+            FYSDJRViewController *controller = [[FYSDJRViewController alloc] initWithNibName:@"FYSDJRViewController" bundle:nil];
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+            break;
+        case 4:{
+            FYDSJRViewController *controller = [[FYDSJRViewController alloc] initWithNibName:@"FYDSJRViewController" bundle:nil];
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+            break;
+        case 5:{
+            FYHWJRViewController *controller = [[FYHWJRViewController alloc] initWithNibName:@"FYHWJRViewController" bundle:nil];
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+            break;
+        case 6:{
+            FYGDXHViewController *controller = [[FYGDXHViewController alloc] initWithNibName:@"FYGDXHViewController" bundle:nil];
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+            break;
+        case 7:{
+            FYFDBHViewController *controller = [[FYFDBHViewController alloc] initWithNibName:@"FYFDBHViewController" bundle:nil];
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+            break;
+        case 8:{
+            FYYSBJViewController *controller = [[FYYSBJViewController alloc] initWithNibName:@"FYYSBJViewController" bundle:nil];
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+            break;
+        case 9:{
+            FYHSWViewController *controller = [[FYHSWViewController alloc] initWithNibName:@"FYHSWViewController" bundle:nil];
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+            break;
+        case 10:{
+            FYWCXHViewController *controller = [[FYWCXHViewController alloc] initWithNibName:@"FYWCXHViewController" bundle:nil];
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+            break;
         default:
             break;
     }

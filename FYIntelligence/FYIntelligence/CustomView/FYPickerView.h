@@ -10,12 +10,14 @@
 
 @protocol FYPickerViewDelegate <NSObject>
 
-- (void)didSelectItem:(NSString *)itemString;
+- (void)object:(UIButton *)button didSelectItem:(NSString *)itemString;
 
 @end
 
 @interface FYPickerView : UIView
 
+@property (assign, nonatomic) id<FYPickerViewDelegate> delegate;
+@property (weak, nonatomic) UIButton *responseObject;
 - (void)loadDataArray:(NSArray *)array;
 
 @end

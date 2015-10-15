@@ -32,6 +32,7 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setBackgroundImage:[UIImage imageNamed:@"btn_normal"] forState:UIControlStateNormal];
         [button setBackgroundImage:[UIImage imageNamed:@"btn_press"] forState:UIControlStateHighlighted];
+        [button addTarget:self action:@selector(didSelectString:) forControlEvents:UIControlEventTouchUpInside];
         [button setTitle:@"确认" forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:14.0f];
@@ -41,7 +42,6 @@
         frame.origin.y = 160.0f * YFACTOR;
         button.frame = frame;
         [view addSubview:button];
-
 
         view.backgroundColor = [UIColor colorWithWhite:0.5f alpha:0.5f];
         view.center = self.center;
@@ -56,6 +56,7 @@
     self.dataArray = array;
     [self.pickerView reloadAllComponents];
     [self.pickerView selectRow:self.dataArray.count / 2 inComponent:0 animated:NO];
+    self.selectString = [self.dataArray objectAtIndex: self.dataArray.count / 2];
 }
 
 - (UIPickerView *)pickerView
@@ -87,6 +88,14 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     self.selectString = [self.dataArray objectAtIndex:row]; 
+}
+
+- (void)didSelectString:(UIButton *)button
+{
+    if(self.delegate && [self.delegate respondsToSelector:@selector(object:didSelectItem:)]){
+        [self.delegate object:self.responseObject didSelectItem:self.selectString];
+        [self removeFromSuperview];
+    }
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

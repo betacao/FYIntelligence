@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FYDatePickerView : UIView
+@protocol FYDatePickerViewDelegate <NSObject>
 
+- (void)object:(UIButton *)button didSelectDate:(NSString *)date;
+
+@end
+
+@interface FYDatePickerView : UIView
+@property (assign, nonatomic) id<FYDatePickerViewDelegate> delegate;
+@property (weak, nonatomic) UIButton *responseObject;
 @end
