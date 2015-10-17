@@ -9,6 +9,7 @@
 #import "FYLoginViewController.h"
 #import "FYRegisterViewController.h"
 #import "FYListViewController.h"
+#import "FYForgrtPWDViewController.h"
 
 @interface FYLoginViewController ()
 @property (weak, nonatomic) IBOutlet UIView *inputBgView;
@@ -77,7 +78,7 @@
 }
 
 - (IBAction)clickForgetButton:(id)sender {
-    FYRegisterViewController *controller = [[FYRegisterViewController alloc] initWithNibName:@"FYRegisterViewController" bundle:nil];
+    FYForgrtPWDViewController *controller = [[FYForgrtPWDViewController alloc] initWithNibName:@"FYForgrtPWDViewController" bundle:nil];
     if(controller){
         [self.navigationController pushViewController:controller animated:YES];
     }

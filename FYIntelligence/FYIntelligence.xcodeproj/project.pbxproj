@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F91C1BED1BD23767002FC017 /* FYForgrtPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F91C1BEB1BD23767002FC017 /* FYForgrtPWDViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F91C1BEE1BD23767002FC017 /* FYForgrtPWDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91C1BEC1BD23767002FC017 /* FYForgrtPWDViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F93F982D1BCE6E3300FD46A8 /* FYPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F93F982C1BCE6E3300FD46A8 /* FYPickerView.m */; settings = {ASSET_TAGS = (); }; };
 		F93F98301BCE7C2800FD46A8 /* FYDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F93F982F1BCE7C2800FD46A8 /* FYDatePickerView.m */; settings = {ASSET_TAGS = (); }; };
 		F95113BF1BCD45D60058C7B2 /* FYParamSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95113BD1BCD45D60058C7B2 /* FYParamSettingViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -78,6 +80,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F91C1BEA1BD23767002FC017 /* FYForgrtPWDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYForgrtPWDViewController.h; sourceTree = "<group>"; };
+		F91C1BEB1BD23767002FC017 /* FYForgrtPWDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYForgrtPWDViewController.m; sourceTree = "<group>"; };
+		F91C1BEC1BD23767002FC017 /* FYForgrtPWDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYForgrtPWDViewController.xib; sourceTree = "<group>"; };
 		F93F982B1BCE6E3300FD46A8 /* FYPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYPickerView.h; sourceTree = "<group>"; };
 		F93F982C1BCE6E3300FD46A8 /* FYPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYPickerView.m; sourceTree = "<group>"; };
 		F93F982E1BCE7C2800FD46A8 /* FYDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDatePickerView.h; sourceTree = "<group>"; };
@@ -221,6 +226,9 @@
 				F983515B1BCA0B5C00809E14 /* FYRegisterViewController.h */,
 				F983515C1BCA0B5C00809E14 /* FYRegisterViewController.m */,
 				F983515D1BCA0B5C00809E14 /* FYRegisterViewController.xib */,
+				F91C1BEA1BD23767002FC017 /* FYForgrtPWDViewController.h */,
+				F91C1BEB1BD23767002FC017 /* FYForgrtPWDViewController.m */,
+				F91C1BEC1BD23767002FC017 /* FYForgrtPWDViewController.xib */,
 				F98351561BCA0B0B00809E14 /* FYLoginViewController.h */,
 				F98351571BCA0B0B00809E14 /* FYLoginViewController.m */,
 				F98351581BCA0B0B00809E14 /* FYLoginViewController.xib */,
@@ -465,6 +473,7 @@
 				F9DEF7BD1BC7F5CC00520CAA /* Main.storyboard in Resources */,
 				F97340B71BCFED8F006D1740 /* FYWCXHViewController.xib in Resources */,
 				F983516F1BCA307100809E14 /* FYDeviceInitViewController.xib in Resources */,
+				F91C1BEE1BD23767002FC017 /* FYForgrtPWDViewController.xib in Resources */,
 				F97340A31BCFECEF006D1740 /* FYGDXHViewController.xib in Resources */,
 				F983515A1BCA0B0B00809E14 /* FYLoginViewController.xib in Resources */,
 				F9DEF7C21BC7F5CC00520CAA /* LaunchScreen.xib in Resources */,
@@ -523,6 +532,7 @@
 				F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */,
 				F96E2F911BCE27BA00B6AF4B /* UIColor+FYColor.m in Sources */,
 				F95A636E1BC7F894002B949A /* FYBaseViewController.m in Sources */,
+				F91C1BED1BD23767002FC017 /* FYForgrtPWDViewController.m in Sources */,
 				F97340BB1BCFEE65006D1740 /* FYWKJSViewController.m in Sources */,
 				F93F982D1BCE6E3300FD46A8 /* FYPickerView.m in Sources */,
 				F95A636B1BC7F7BB002B949A /* FYBaseNavigationViewController.m in Sources */,

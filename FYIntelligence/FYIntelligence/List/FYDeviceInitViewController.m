@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"设备初始化";
+    self.title = @"添加设备";
 }
 
 - (IBAction)joinNet:(UIButton *)sender {
