@@ -31,8 +31,8 @@
     self.title = @"定时上水";
 }
 - (IBAction)positionButtonClick:(UIButton *)sender {
-    FYPickerView *pickView = [[FYPickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight)];
-    [pickView loadDataArray:@[@"50%", @"80%", @"100%"]];
+    FYPickerView *pickView = [[FYPickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight) unit:@"水位"];
+    [pickView loadDataArray:@[@"50", @"80", @"100"]];
     pickView.responseObject = sender;
     pickView.delegate = self;
     [self.view.window addSubview:pickView];

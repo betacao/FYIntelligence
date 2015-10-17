@@ -60,7 +60,7 @@
 - (NSArray *)minutesArray
 {
     if(!_minutesArray){
-        _minutesArray = @[@"00分", @"05分", @"10分", @"15分", @"20分", @"25分", @"30分", @"35分", @"40分", @"45分", @"50分", @"55分"];
+        _minutesArray = @[@"00分", @"10分", @"20分", @"30分", @"40分", @"50分"];
     }
     return _minutesArray;
 }

@@ -120,7 +120,7 @@
                             <rect key="frame" x="257" y="31" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="50%"/>
+                            <state key="normal" title="50℃"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="oNQ-Id-c41"/>
                             </connections>
@@ -129,7 +129,7 @@
                             <rect key="frame" x="257" y="76" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="50%"/>
+                            <state key="normal" title="50℃"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="2AT-5z-CIP"/>
                             </connections>
@@ -138,7 +138,7 @@
                             <rect key="frame" x="257" y="121" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="50%"/>
+                            <state key="normal" title="50℃"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="XWD-Yh-e7q"/>
                             </connections>
@@ -155,10 +155,6 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sxshow" id="V7h-JX-4hK">
-                    <rect key="frame" x="45" y="80" width="240" height="180"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="45Z-xU-IVw">
                     <rect key="frame" x="13" y="500" width="294" height="40"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -166,6 +162,10 @@
                     <state key="normal" title="确定" backgroundImage="btn_login_normal"/>
                     <state key="highlighted" backgroundImage="btn_login_press"/>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainshow" id="V7h-JX-4hK">
+                    <rect key="frame" x="0.0" y="80" width="320" height="180"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="243" y="239"/>
@@ -174,6 +174,6 @@
     <resources>
         <image name="btn_login_normal" width="400" height="200"/>
         <image name="btn_login_press" width="400" height="200"/>
-        <image name="sxshow" width="244" height="442"/>
+        <image name="mainshow" width="512" height="252"/>
     </resources>
 </document>

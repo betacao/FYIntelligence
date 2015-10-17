@@ -92,7 +92,7 @@
                             <rect key="frame" x="242" y="31" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="50%"/>
+                            <state key="normal" title="50℃"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="uyp-ml-YIf"/>
                             </connections>
@@ -101,7 +101,7 @@
                             <rect key="frame" x="242" y="76" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="50%"/>
+                            <state key="normal" title="50℃"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="7KL-Wt-k0N"/>
                             </connections>
@@ -110,7 +110,7 @@
                             <rect key="frame" x="242" y="121" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="50%"/>
+                            <state key="normal" title="50℃"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="NWn-hX-dsP"/>
                             </connections>
@@ -125,8 +125,8 @@
                     <state key="normal" title="确定" backgroundImage="btn_login_normal"/>
                     <state key="highlighted" backgroundImage="btn_login_press"/>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sxshow" id="Dez-Mw-uot">
-                    <rect key="frame" x="45" y="80" width="240" height="180"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hwjrshow" id="Dez-Mw-uot">
+                    <rect key="frame" x="0.0" y="80" width="320" height="180"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
@@ -137,6 +137,6 @@
     <resources>
         <image name="btn_login_normal" width="400" height="200"/>
         <image name="btn_login_press" width="400" height="200"/>
-        <image name="sxshow" width="244" height="442"/>
+        <image name="hwjrshow" width="512" height="319"/>
     </resources>
 </document>

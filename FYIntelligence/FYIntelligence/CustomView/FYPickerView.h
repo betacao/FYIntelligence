@@ -19,5 +19,6 @@
 @property (assign, nonatomic) id<FYPickerViewDelegate> delegate;
 @property (weak, nonatomic) UIButton *responseObject;
 - (void)loadDataArray:(NSArray *)array;
+- (instancetype)initWithFrame:(CGRect)frame unit:(NSString *)unit;
 
 @end

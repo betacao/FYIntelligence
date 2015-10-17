@@ -18,13 +18,13 @@
 
 @implementation FYPickerView
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame unit:(NSString *)unit
 {
     self = [super initWithFrame:frame];
     if(self){
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 200.0f * XFACTOR, 200.0f * YFACTOR)];
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(150.0f * XFACTOR, 0.0f, 40.0f * XFACTOR, 150.0f * YFACTOR)];
-        label.text = @"水位";
+        label.text = unit;
         label.textColor = [UIColor whiteColor];
         [view addSubview:label];
         [view addSubview:self.pickerView];

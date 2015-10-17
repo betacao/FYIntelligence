@@ -34,7 +34,7 @@
     self.title = @"恒温加热";
 }
 - (IBAction)positionButtonClick:(UIButton *)sender {
-    FYPickerView *pickView = [[FYPickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight)];
+    FYPickerView *pickView = [[FYPickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight) unit:@""];
     [pickView loadDataArray:@[@"25°C", @"26°C", @"27°C", @"28°C", @"29°C", @"30°C", @"31°C", @"32°C", @"33°C", @"34°C", @"35°C", @"36°C", @"37°C", @"38°C", @"39°C", @"40°C"]];
     pickView.responseObject = sender;
     pickView.delegate = self;

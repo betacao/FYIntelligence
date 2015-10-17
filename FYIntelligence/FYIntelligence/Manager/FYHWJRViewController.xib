@@ -120,7 +120,7 @@
                             <rect key="frame" x="257" y="31" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="50%"/>
+                            <state key="normal" title="50℃"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="T55-vi-0Yv"/>
                             </connections>
@@ -129,7 +129,7 @@
                             <rect key="frame" x="257" y="76" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="50%"/>
+                            <state key="normal" title="50℃"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="E7e-2i-IbJ"/>
                             </connections>
@@ -138,7 +138,7 @@
                             <rect key="frame" x="257" y="121" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="50%"/>
+                            <state key="normal" title="50℃"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="5Ql-kK-FyD"/>
                             </connections>
@@ -155,8 +155,8 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sxshow" id="BZ3-oG-vNM">
-                    <rect key="frame" x="45" y="80" width="240" height="180"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hwjrshow" id="BZ3-oG-vNM">
+                    <rect key="frame" x="0.0" y="80" width="320" height="180"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Oy2-tJ-iQk">
@@ -174,6 +174,6 @@
     <resources>
         <image name="btn_login_normal" width="400" height="200"/>
         <image name="btn_login_press" width="400" height="200"/>
-        <image name="sxshow" width="244" height="442"/>
+        <image name="hwjrshow" width="512" height="319"/>
     </resources>
 </document>

@@ -71,8 +71,9 @@
 {
     switch (indexPath.row) {
         case 0:{
-            FYSDSSViewController *controller = [[FYSDSSViewController alloc] initWithNibName:@"FYSDSSViewController" bundle:nil];
-            [self.navigationController pushViewController:controller animated:YES];
+//            FYSDSSViewController *controller = [[FYSDSSViewController alloc] initWithNibName:@"FYSDSSViewController" bundle:nil];
+//            [self.navigationController pushViewController:controller animated:YES];
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
             break;
         case 1:{

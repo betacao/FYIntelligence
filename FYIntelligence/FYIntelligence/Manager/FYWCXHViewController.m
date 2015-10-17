@@ -8,7 +8,13 @@
 
 #import "FYWCXHViewController.h"
 
-@interface FYWCXHViewController ()
+@interface FYWCXHViewController ()<UIPickerViewDataSource, UIPickerViewDelegate>
+@property (weak, nonatomic) IBOutlet UIPickerView *startPickView;
+@property (weak, nonatomic) IBOutlet UIPickerView *endPickView;
+@property (weak, nonatomic) IBOutlet UIPickerView *protectPickView;
+@property (strong, nonatomic) NSArray *startArray;
+@property (strong, nonatomic) NSArray *endArray;
+@property (strong, nonatomic) NSArray *protectArray;
 
 @end
 
@@ -16,22 +22,47 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.startArray = @[@"7℃", @"8℃", @"9℃", @"10℃", @"11℃", @"12℃", @"13℃", @"14℃", @"15℃"];
+    self.endArray = @[@"2℃", @"3℃", @"4℃", @"5℃"];
+    self.protectArray = @[@"50℃", @"55℃", @"60℃", @"65℃", @"70℃", @"75℃", @"80℃", @"85℃", @"90℃"];
+    self.title = @"集热器温差循环";
 }
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    if([pickerView isEqual:self.startPickView]){
+        return self.startArray.count;
+    } else if([pickerView isEqual:self.endPickView]){
+        return self.endArray.count;
+    } else{
+        return self.protectArray.count;
+    }
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    if([pickerView isEqual:self.startPickView]){
+        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.startArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        return string;
+    } else if([pickerView isEqual:self.endPickView]){
+        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.endArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        return string;
+    } else{
+        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.protectArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        return string;
+    }
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
