@@ -10,6 +10,9 @@
 #import "FYParamSettingViewController.h"
 
 @interface FYDeviceManagerViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
+
 @property (weak, nonatomic) IBOutlet UIButton *paramButton;
 @property (weak, nonatomic) IBOutlet UIButton *userAddButton;
 @property (weak, nonatomic) IBOutlet UIButton *userWarmButton;
@@ -57,6 +60,12 @@
     [self.waterCircleButton setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]forState:UIControlStateHighlighted];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.mainImageView.image = [UIImage imageNamed:@"mainShow"];
+}
+
 - (void)backButtonClick:(UIButton *)button
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -68,6 +77,57 @@
     FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
     [self presentViewController:nav animated:YES completion:nil];
 }
+
+- (IBAction)clickAddWater:(UIButton *)sender
+{
+    UIImage *image0 = [UIImage imageNamed:@"aaction_ss_hx0"];
+    UIImage *image1 = [UIImage imageNamed:@"aaction_ss_hx1"];
+    UIImage *image2 = [UIImage imageNamed:@"aaction_ss_hx2"];
+    UIImage *image3 = [UIImage imageNamed:@"aaction_ss_hx3"];
+    UIImage *image4 = [UIImage imageNamed:@"aaction_ss_hx4"];
+    UIImage *image5 = [UIImage imageNamed:@"aaction_ss_hx5"];
+    UIImage *image6 = [UIImage imageNamed:@"aaction_ss_hx6"];
+    UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4, image5, image6] duration:6.0f];
+    self.mainImageView.image = image;
+    
+}
+
+- (IBAction)clickUserWarm:(UIButton *)sender
+{
+    UIImage *image0 = [UIImage imageNamed:@"aaction_jiare_hx0"];
+    UIImage *image1 = [UIImage imageNamed:@"aaction_jiare_hx1"];
+    UIImage *image2 = [UIImage imageNamed:@"aaction_jiare_hx2"];
+    UIImage *image3 = [UIImage imageNamed:@"aaction_jiare_hx3"];
+    UIImage *image4 = [UIImage imageNamed:@"aaction_jiare_hx4"];
+    UIImage *image5 = [UIImage imageNamed:@"aaction_jiare_hx5"];
+    UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4, image5] duration:6.0f];
+    self.mainImageView.image = image;
+}
+
+- (IBAction)clickTemCircle:(UIButton *)sender
+{
+    UIImage *image0 = [UIImage imageNamed:@"aaction_wcxh_hx0"];
+    UIImage *image1 = [UIImage imageNamed:@"aaction_wcxh_hx5"];
+    UIImage *image2 = [UIImage imageNamed:@"aaction_wcxh_hx10"];
+    UIImage *image3 = [UIImage imageNamed:@"aaction_wcxh_hx15"];
+    UIImage *image4 = [UIImage imageNamed:@"aaction_wcxh_hx20"];
+    UIImage *image5 = [UIImage imageNamed:@"aaction_wcxh_hx25"];
+    UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4, image5] duration:6.0f];
+    self.mainImageView.image = image;
+}
+
+- (IBAction)clickWaterCircle:(UIButton *)sender
+{
+    UIImage *image0 = [UIImage imageNamed:@"aaction_gdhs_hx0"];
+    UIImage *image1 = [UIImage imageNamed:@"aaction_gdhs_hx1"];
+    UIImage *image2 = [UIImage imageNamed:@"aaction_gdhs_hx4"];
+    UIImage *image3 = [UIImage imageNamed:@"aaction_gdhs_hx8"];
+    UIImage *image4 = [UIImage imageNamed:@"aaction_gdhs_hx12"];
+    UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4] duration:6.0f];
+    self.mainImageView.image = image;
+
+}
+
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
