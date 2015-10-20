@@ -11,6 +11,7 @@
 @interface FYSDSSViewController ()<UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (strong, nonatomic) NSArray *dataArray;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 
 @end
@@ -38,6 +39,24 @@
 {
     NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.dataArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     return string;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    switch (row) {
+        case 0:{
+            self.imageView.image = [UIImage imageNamed:@"shuiwei_50"];
+        }
+            break;
+        case 1:{
+            self.imageView.image = [UIImage imageNamed:@"shuiwei_80"];
+        }
+            break;
+        default:{
+            self.imageView.image = [UIImage imageNamed:@"sxshow"];
+        }
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

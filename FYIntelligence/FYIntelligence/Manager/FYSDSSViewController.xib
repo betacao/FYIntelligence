@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYSDSSViewController">
             <connections>
+                <outlet property="imageView" destination="zbr-aM-PVU" id="92B-Kp-KM3"/>
                 <outlet property="pickerView" destination="BBx-c2-lcv" id="FVE-9c-mWz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -16,8 +17,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sxshow" id="zbr-aM-PVU">
-                    <rect key="frame" x="40" y="80" width="240" height="180"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shuiwei_80" id="zbr-aM-PVU">
+                    <rect key="frame" x="0.0" y="80" width="320" height="180"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <pickerView contentMode="scaleToFill" id="BBx-c2-lcv">
@@ -50,6 +51,6 @@
     <resources>
         <image name="btn_login_normal" width="400" height="200"/>
         <image name="btn_login_press" width="400" height="200"/>
-        <image name="sxshow" width="244" height="442"/>
+        <image name="shuiwei_80" width="244" height="442"/>
     </resources>
 </document>
