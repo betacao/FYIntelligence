@@ -96,14 +96,16 @@
         [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:kPassWord];
     }
     [[NSUserDefaults standardUserDefaults] synchronize];
-    [[FYNetWork shareNetEngine] sendRequest:[kLoginAddress stringByAppendingFormat:@"%@#%@#",userName,pwd] rootController:self complete:^(NSDictionary *dic) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [[FYNetWork shareNetEngine] sendRequest:[kLoginAddress stringByAppendingFormat:@"%@#%@#",userName,pwd] complete:^(NSDictionary *dic) {
+        NSString *string = [dic objectForKey:kResponseString];
+        if([string rangeOfString:@"SUCCESS"].location != NSNotFound){
             FYListViewController *controller = [[FYListViewController alloc] initWithNibName:@"FYListViewController" bundle:nil];
             if(controller){
                 [weakSelf.navigationController pushViewController:controller animated:YES];
             }
-        });
+        } else{
+            [FYProgressHUD showMessageWithText:@"登录失败"];
+        }
     }];
 }
 

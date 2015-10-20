@@ -275,6 +275,9 @@ typedef void (^MBProgressHUDCompletionBlock)();
 - (void)showAnimated:(BOOL)animated whileExecutingBlock:(dispatch_block_t)block onQueue:(dispatch_queue_t)queue
 		  completionBlock:(MBProgressHUDCompletionBlock)completion;
 
+
+- (void)adjustFontToWidth;
+
 /**
  * A block that gets called after the HUD was completely hidden.
  */

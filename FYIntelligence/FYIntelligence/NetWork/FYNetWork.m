@@ -12,7 +12,6 @@
 @interface FYNetWork()
 @property (strong, nonatomic) GCDAsyncSocket *sendTcpSocket;
 @property (copy, nonatomic) FYNetWorkFinishBlock finishBlock;
-@property (weak, nonatomic) UIViewController *controller;
 @end
 
 @implementation FYNetWork
@@ -40,27 +39,25 @@
 }
 
 
-- (void)sendRequest:(NSString *)request rootController:(UIViewController *)controller complete:(void (^)(NSDictionary *))block
+- (void)sendRequest:(NSString *)request complete:(void (^)(NSDictionary *))block
 {
     NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
-    self.controller = controller;
     // 发送消息 这里不需要知道对象的ip地址和端口
     [self.sendTcpSocket writeData:data withTimeout:60 tag:100];
     self.finishBlock = block;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        // 开始发送
-        [MBProgressHUD showHUDAddedTo:self.controller.view animated:YES];
-    });
+    [FYProgressHUD showLoadingWithMessage:@"请稍等..."];
 }
 
 #pragma mark - 代理方法表示连接成功/失败 回调函数
-- (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port {
+- (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port
+{
     NSLog(@"连接成功");
     // 等待数据来啊
     [sock readDataWithTimeout:-1 tag:200];;
 }
 // 如果对象关闭了 这里也会调用
-- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
+- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err
+{
     NSLog(@"连接失败 %@", err);
     // 断线重连
     NSString *host = kHostAddress;
@@ -69,19 +66,25 @@
 }
 
 
-- (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag {
-    [MBProgressHUD hideHUDForView:self.controller.view animated:YES];
+- (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag
+{
     NSLog(@"消息发送成功");
 }
-- (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
+
+- (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
+{
+    [FYProgressHUD hideHud];
+    __weak typeof(self) weakSelf = self;
     NSString *ip = [sock connectedHost];
     uint16_t port = [sock connectedPort];
     NSString *s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"接收到服务器返回的数据 tcp [%@:%d] %@", ip, port, s);
-    if(self.finishBlock){
-        self.finishBlock(@{kResponseString:s});
-        self.finishBlock = nil;
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if(weakSelf.finishBlock){
+            weakSelf.finishBlock(@{kResponseString:s});
+            weakSelf.finishBlock = nil;
+        }
+    });
     [sock readDataWithTimeout:-1 tag:200];;
 }
 

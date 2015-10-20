@@ -420,6 +420,12 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 	[self show:animated];
 }
 
+- (void)adjustFontToWidth
+{
+    label.adjustsFontSizeToFitWidth = YES;
+}
+
+
 #endif
 
 - (void)launchExecution {

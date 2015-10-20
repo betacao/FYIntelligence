@@ -16,6 +16,6 @@ typedef void (^FYNetWorkFinishBlock) (NSDictionary *dicionary);
 
 - (void)createClientTcpSocket;
 
-- (void)sendRequest:(NSString *)request rootController:(UIViewController *)controller complete:(void(^)(NSDictionary *dic))block;
+- (void)sendRequest:(NSString *)request complete:(void(^)(NSDictionary *dic))block;
 
 @end

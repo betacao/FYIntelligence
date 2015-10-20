@@ -14,6 +14,11 @@
 
 @implementation AppDelegate
 
++ (AppDelegate *)currentAppdelegate
+{
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[FYNetWork shareNetEngine] createClientTcpSocket];

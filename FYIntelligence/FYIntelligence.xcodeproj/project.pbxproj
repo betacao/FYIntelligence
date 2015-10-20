@@ -65,6 +65,7 @@
 		F9B441C71BD4F2DA005148D1 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441C21BD4F2DA005148D1 /* AsyncUdpSocket.m */; settings = {ASSET_TAGS = (); }; };
 		F9B441C81BD4F2DA005148D1 /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = F9B441C31BD4F2DA005148D1 /* Documentation.html */; settings = {ASSET_TAGS = (); }; };
 		F9B441CC1BD4F339005148D1 /* FYNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441CB1BD4F339005148D1 /* FYNetWork.m */; settings = {ASSET_TAGS = (); }; };
+		F9DE29101BD5E2BF0009F667 /* FYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DE290F1BD5E2BF0009F667 /* FYProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
 		F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B31BC7F5CC00520CAA /* main.m */; };
 		F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B61BC7F5CC00520CAA /* AppDelegate.m */; };
 		F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B91BC7F5CC00520CAA /* ViewController.m */; };
@@ -182,6 +183,8 @@
 		F9B441C31BD4F2DA005148D1 /* Documentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Documentation.html; sourceTree = "<group>"; };
 		F9B441CA1BD4F339005148D1 /* FYNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYNetWork.h; sourceTree = "<group>"; };
 		F9B441CB1BD4F339005148D1 /* FYNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYNetWork.m; sourceTree = "<group>"; };
+		F9DE290E1BD5E2BF0009F667 /* FYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYProgressHUD.h; sourceTree = "<group>"; };
+		F9DE290F1BD5E2BF0009F667 /* FYProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYProgressHUD.m; sourceTree = "<group>"; };
 		F9DEF7AE1BC7F5CC00520CAA /* FYIntelligence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FYIntelligence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DEF7B21BC7F5CC00520CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9DEF7B31BC7F5CC00520CAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -282,6 +285,8 @@
 		F983517A1BCA3F0C00809E14 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				F9DE290E1BD5E2BF0009F667 /* FYProgressHUD.h */,
+				F9DE290F1BD5E2BF0009F667 /* FYProgressHUD.m */,
 				F9579BC01BD5162300EA071C /* MBProgressHUD.h */,
 				F9579BC11BD5162300EA071C /* MBProgressHUD.m */,
 				F983517B1BCA3FAE00809E14 /* FYEnterPINViewController.h */,
@@ -613,6 +618,7 @@
 				F96E2F981BCE385500B6AF4B /* FYSDSSViewController.m in Sources */,
 				F97340B61BCFED8F006D1740 /* FYWCXHViewController.m in Sources */,
 				F9F90D061BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m in Sources */,
+				F9DE29101BD5E2BF0009F667 /* FYProgressHUD.m in Sources */,
 				F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */,
 				F93F98301BCE7C2800FD46A8 /* FYDatePickerView.m in Sources */,
 				F96E2F941BCE284600B6AF4B /* UIImage+FYImage.m in Sources */,
