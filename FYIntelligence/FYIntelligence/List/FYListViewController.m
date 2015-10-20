@@ -11,9 +11,12 @@
 #import "FYDeviceInitViewController.h"
 #import "FYEnterPINViewController.h"
 #import "FYDeviceManagerViewController.h"
+#import "FYDevice.h"
 
 @interface FYListViewController ()<UITableViewDataSource,UITableViewDelegate,FYEnterPINDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (assign, nonatomic) NSInteger deviceCount;
+@property (strong, nonatomic) NSMutableArray *deviceArray;
 @end
 
 @implementation FYListViewController
@@ -21,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"设备列表";
+    self.deviceArray = [NSMutableArray array];
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *normalImage = [UIImage imageNamed:@"right_add"];
@@ -31,6 +35,50 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
 
     [self.tableView setTableFooterView:[[UIView alloc] init]];
+
+    [self loadData];
+}
+
+- (void)loadData
+{
+    __weak typeof(self) weakSelf = self;
+    NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
+    [[FYNetWork shareNetEngine] sendRequest:[NSString stringWithFormat:@"%@%@#",kListAddress,userName] complete:^(NSDictionary *dic) {
+        NSString *string = [dic objectForKey:kResponseString];
+        NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\d+" options:0 error:nil];
+        NSMutableArray *results = [NSMutableArray array];
+        [regularExpression enumerateMatchesInString:string options:0 range:NSMakeRange(0, string.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+            [results addObject:result];
+        }];
+        NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
+            if (obj1.range.location > obj2.range.location) {
+                return (NSComparisonResult)NSOrderedDescending;
+            } else if (obj1.range.location < obj2.range.location) {
+                return (NSComparisonResult)NSOrderedAscending;
+            }
+            return (NSComparisonResult)NSOrderedSame;
+        };
+        NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+        NSTextCheckingResult *result = [MResult firstObject];
+        NSString *resultString = [string substringWithRange:result.range];
+        weakSelf.deviceCount = [resultString integerValue];
+        for (NSInteger i = 1; i <= (MResult.count - 1) / 3; i++) {
+            FYDevice *device = [[FYDevice alloc] init];
+
+            result = [MResult objectAtIndex:(i * 1)];
+            device.deviceID = [string substringWithRange:result.range];
+
+            result = [MResult objectAtIndex:(i * 2)];
+            device.deviceTD = (FYDeviceType)[[string substringWithRange:result.range] integerValue];
+
+            result = [MResult objectAtIndex:(i * 3)];
+            device.deviceCondition = (FYDeviceCondition)[[string substringWithRange:result.range] integerValue];
+
+            [self.deviceArray addObject:device];
+        }
+        [weakSelf.tableView reloadData];
+        NSLog(@"%@",weakSelf.deviceArray);
+    }];
 }
 
 - (void)gotoDeviceInitViewController
@@ -48,7 +96,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return self.deviceCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -57,6 +105,8 @@
     if(!cell){
         cell = [[[NSBundle mainBundle] loadNibNamed:@"FYListTableViewCell" owner:self options:nil] lastObject];
     }
+    FYDevice *device = [self.deviceArray objectAtIndex:indexPath.row];
+    [cell loadDataWithDevice:device];
     return cell;
 }
 
@@ -67,10 +117,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
-    controller.delegate = self;
-    [self addChildViewController:controller];
-    [self.view addSubview:controller.view];
+    FYDeviceManagerViewController *controller = [[FYDeviceManagerViewController alloc] initWithNibName:@"FYDeviceManagerViewController" bundle:nil];
+    FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 #pragma mark FYEnterPINDelegate

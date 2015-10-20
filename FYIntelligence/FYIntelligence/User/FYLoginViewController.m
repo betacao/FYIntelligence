@@ -96,7 +96,7 @@
         [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:kPassWord];
     }
     [[NSUserDefaults standardUserDefaults] synchronize];
-    [[FYNetWork shareNetEngine] sendRequest:[kLoginAddress stringByAppendingFormat:@"%@#%@#",userName,pwd] complete:^(NSDictionary *dic) {
+    [[FYNetWork shareNetEngine] sendRequest:[NSString stringWithFormat:@"%@%@#%@#",kLoginAddress,userName,pwd] complete:^(NSDictionary *dic) {
         NSString *string = [dic objectForKey:kResponseString];
         if([string rangeOfString:@"SUCCESS"].location != NSNotFound){
             FYListViewController *controller = [[FYListViewController alloc] initWithNibName:@"FYListViewController" bundle:nil];

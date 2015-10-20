@@ -21,4 +21,5 @@
 #define kHostAddress @"112.124.35.155"
 #define kHostPort 11104
 #define kLoginAddress @"fyzn2015#1#6#"
+#define kListAddress @"fyzn2015#1#8#"
 #endif /* const_h */

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class FYDevice;
 
 @interface FYListTableViewCell : UITableViewCell
+
+- (void)loadDataWithDevice:(FYDevice *)device;
 
 @end

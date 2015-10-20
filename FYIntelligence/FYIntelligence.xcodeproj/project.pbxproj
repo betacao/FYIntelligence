@@ -66,6 +66,7 @@
 		F9B441C81BD4F2DA005148D1 /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = F9B441C31BD4F2DA005148D1 /* Documentation.html */; settings = {ASSET_TAGS = (); }; };
 		F9B441CC1BD4F339005148D1 /* FYNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441CB1BD4F339005148D1 /* FYNetWork.m */; settings = {ASSET_TAGS = (); }; };
 		F9DE29101BD5E2BF0009F667 /* FYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DE290F1BD5E2BF0009F667 /* FYProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
+		F9DE29131BD61AE60009F667 /* FYDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DE29121BD61AE60009F667 /* FYDevice.m */; settings = {ASSET_TAGS = (); }; };
 		F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B31BC7F5CC00520CAA /* main.m */; };
 		F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B61BC7F5CC00520CAA /* AppDelegate.m */; };
 		F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B91BC7F5CC00520CAA /* ViewController.m */; };
@@ -185,6 +186,8 @@
 		F9B441CB1BD4F339005148D1 /* FYNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYNetWork.m; sourceTree = "<group>"; };
 		F9DE290E1BD5E2BF0009F667 /* FYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYProgressHUD.h; sourceTree = "<group>"; };
 		F9DE290F1BD5E2BF0009F667 /* FYProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYProgressHUD.m; sourceTree = "<group>"; };
+		F9DE29111BD61AE60009F667 /* FYDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDevice.h; sourceTree = "<group>"; };
+		F9DE29121BD61AE60009F667 /* FYDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYDevice.m; sourceTree = "<group>"; };
 		F9DEF7AE1BC7F5CC00520CAA /* FYIntelligence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FYIntelligence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DEF7B21BC7F5CC00520CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9DEF7B31BC7F5CC00520CAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -263,6 +266,8 @@
 		F98351601BCA26C800809E14 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				F9DE29111BD61AE60009F667 /* FYDevice.h */,
+				F9DE29121BD61AE60009F667 /* FYDevice.m */,
 				F98351611BCA26E400809E14 /* FYListViewController.h */,
 				F98351621BCA26E400809E14 /* FYListViewController.m */,
 				F98351631BCA26E400809E14 /* FYListViewController.xib */,
@@ -606,6 +611,7 @@
 				F98351641BCA26E400809E14 /* FYListViewController.m in Sources */,
 				F983517E1BCA3FAE00809E14 /* FYEnterPINViewController.m in Sources */,
 				F95113C41BCD464A0058C7B2 /* FYParamSettingTableViewCell.m in Sources */,
+				F9DE29131BD61AE60009F667 /* FYDevice.m in Sources */,
 				F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */,
 				F96E2F911BCE27BA00B6AF4B /* UIColor+FYColor.m in Sources */,
 				F95A636E1BC7F894002B949A /* FYBaseViewController.m in Sources */,

@@ -7,6 +7,8 @@
 //
 
 #import "FYListTableViewCell.h"
+#import "FYDevice.h"
+
 @interface FYListTableViewCell()
 @property (weak, nonatomic) IBOutlet UILabel *deviceID;
 @property (weak, nonatomic) IBOutlet UILabel *deviceTD;
@@ -30,6 +32,32 @@
 
     [self.connectButton setBackgroundImage:[normalImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
     [self.connectButton setBackgroundImage:[pressImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateHighlighted];
+}
+
+- (void)loadDataWithDevice:(FYDevice *)device
+{
+    self.deviceID.text = device.deviceID;
+    NSString *deviceTD = @"";
+    switch (device.deviceTD) {
+        case DeviceTypeSun:
+            deviceTD = @"太阳能";
+            break;
+
+        default:
+            break;
+    }
+    NSString *deviceCondition = @"";
+    switch (device.deviceCondition) {
+        case deviceConditionOff:
+            deviceCondition = @"离线";
+            break;
+
+        default:
+            deviceCondition = @"在线";
+            break;
+    }
+    self.deviceTD.text = deviceTD;
+    self.deviceState.text = deviceCondition;
 }
 
 - (void)layoutSubviews
