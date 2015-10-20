@@ -14,4 +14,11 @@
 
 #define XFACTOR kScreenWidth / 320.0f
 #define YFACTOR kScreenHeight / 568.0f
+#define kRememberUserName @"rememberUserName"
+#define kUserName @"userName"
+#define kPassWord @"passWord"
+#define kResponseString @"responseString"
+#define kHostAddress @"112.124.35.155"
+#define kHostPort 11104
+#define kLoginAddress @"fyzn2015#1#6#"
 #endif /* const_h */

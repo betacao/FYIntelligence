@@ -46,6 +46,18 @@
     UIImage *pressImage = [UIImage imageNamed:@"btn_login_press"];
     [self.loginButton setBackgroundImage:[normalImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
     [self.loginButton setBackgroundImage:[pressImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateHighlighted];
+    BOOL isRememberUser = [[NSUserDefaults standardUserDefaults] boolForKey:kRememberUserName];
+    if(isRememberUser){
+        self.isRemember = YES;
+        [self.rememberPwdButton setImage:[UIImage imageNamed:@"selectButton"] forState:UIControlStateNormal];
+    } else{
+        self.isRemember = NO;
+        [self.rememberPwdButton setImage:[UIImage imageNamed:@"blankButton"] forState:UIControlStateNormal];
+    }
+    NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
+    self.userField.text = userName;
+    NSString *pwd = [[NSUserDefaults standardUserDefaults] objectForKey:kPassWord];
+    self.pwdField.text = pwd;
 
 }
 
@@ -55,19 +67,44 @@
 }
 
 - (IBAction)clickRememberButton:(UIButton *)sender {
-    if(self.isRemember){
-        [self.rememberPwdButton setImage:[UIImage imageNamed:@"blankButton"] forState:UIControlStateNormal];
-    } else{
-        [self.rememberPwdButton setImage:[UIImage imageNamed:@"selectButton"] forState:UIControlStateNormal];
-    }
     self.isRemember = !self.isRemember;
+    if(self.isRemember){
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kRememberUserName];
+        [self.rememberPwdButton setImage:[UIImage imageNamed:@"selectButton"] forState:UIControlStateNormal];
+    } else{
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kRememberUserName];
+        [self.rememberPwdButton setImage:[UIImage imageNamed:@"blankButton"] forState:UIControlStateNormal];
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (IBAction)clickLoginButton:(UIButton *)sender {
-    FYListViewController *controller = [[FYListViewController alloc] initWithNibName:@"FYListViewController" bundle:nil];
-    if(controller){
-        [self.navigationController pushViewController:controller animated:YES];
+    __weak typeof(self) weakSelf = self;
+    NSString *userName = self.userField.text;
+    NSString *pwd = self.pwdField.text;
+    if(userName.length == 0){
+        return;
     }
+    if(pwd.length == 0){
+        return;
+    }
+    if(self.isRemember){
+        [[NSUserDefaults standardUserDefaults] setObject:userName forKey:kUserName];
+        [[NSUserDefaults standardUserDefaults] setObject:pwd forKey:kPassWord];
+    } else{
+        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:kUserName];
+        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:kPassWord];
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [[FYNetWork shareNetEngine] sendRequest:[kLoginAddress stringByAppendingFormat:@"%@#%@#",userName,pwd] rootController:self complete:^(NSDictionary *dic) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            FYListViewController *controller = [[FYListViewController alloc] initWithNibName:@"FYListViewController" bundle:nil];
+            if(controller){
+                [weakSelf.navigationController pushViewController:controller animated:YES];
+            }
+        });
+    }];
 }
 
 - (IBAction)clickRegisterButton:(id)sender {

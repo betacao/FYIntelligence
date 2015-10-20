@@ -13,5 +13,7 @@
 #import "const.h"
 #import "UIColor+FYColor.h"
 #import "UIImage+FYImage.h"
+#import "FYNetWork.h"
+#import "MBProgressHUD.h"
 
 #endif /* FYPrefixHeader_pch */
