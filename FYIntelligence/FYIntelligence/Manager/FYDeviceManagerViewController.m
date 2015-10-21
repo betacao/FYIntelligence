@@ -8,6 +8,7 @@
 
 #import "FYDeviceManagerViewController.h"
 #import "FYParamSettingViewController.h"
+#import "FYAboutViewController.h"
 
 @interface FYDeviceManagerViewController ()
 
@@ -31,7 +32,7 @@
     UIImage *normalImage = [UIImage imageNamed:@"right_about"];
     [rightButton setImage:normalImage forState:UIControlStateNormal];
     [rightButton sizeToFit];
-
+    [rightButton addTarget:self action:@selector(rightButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
 
     self.paramButton.layer.masksToBounds = YES;
@@ -69,6 +70,13 @@
 - (void)backButtonClick:(UIButton *)button
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)rightButtonClick:(UIButton *)button
+{
+    FYAboutViewController *controller = [[FYAboutViewController alloc] initWithNibName:@"FYAboutViewController" bundle:nil];
+    FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (IBAction)clickParamButton:(UIButton *)button
