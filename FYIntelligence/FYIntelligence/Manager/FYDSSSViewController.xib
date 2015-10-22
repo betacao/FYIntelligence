@@ -76,7 +76,7 @@
                             <rect key="frame" x="142" y="31" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="13:00"/>
+                            <state key="normal" title="3:00"/>
                             <connections>
                                 <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="P8b-5H-e4T"/>
                             </connections>
@@ -85,7 +85,7 @@
                             <rect key="frame" x="142" y="76" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="13:00"/>
+                            <state key="normal" title="09:00"/>
                             <connections>
                                 <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="bZW-MZ-4qg"/>
                             </connections>
@@ -94,7 +94,7 @@
                             <rect key="frame" x="142" y="121" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="13:00"/>
+                            <state key="normal" title="15:30"/>
                             <connections>
                                 <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="mM0-Da-WtU"/>
                             </connections>
@@ -112,7 +112,7 @@
                             <rect key="frame" x="242" y="76" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="50"/>
+                            <state key="normal" title="100"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="1PS-IH-XcP"/>
                             </connections>
@@ -121,7 +121,7 @@
                             <rect key="frame" x="242" y="121" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="50"/>
+                            <state key="normal" title="100"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="v5y-cX-SR5"/>
                             </connections>

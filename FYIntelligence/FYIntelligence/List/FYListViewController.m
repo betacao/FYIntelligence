@@ -43,7 +43,7 @@
 {
     __weak typeof(self) weakSelf = self;
     NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
-    [[FYNetWork shareNetEngine] sendRequest:[NSString stringWithFormat:@"%@%@#",kListAddress,userName] complete:^(NSDictionary *dic) {
+    [[FYTCPNetWork shareNetEngine] sendRequest:[NSString stringWithFormat:@"%@%@#",kListAddress,userName] complete:^(NSDictionary *dic) {
         NSString *string = [dic objectForKey:kResponseString];
         NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\d+" options:0 error:nil];
         NSMutableArray *results = [NSMutableArray array];
@@ -119,6 +119,8 @@
 {
     FYDeviceManagerViewController *controller = [[FYDeviceManagerViewController alloc] initWithNibName:@"FYDeviceManagerViewController" bundle:nil];
     FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
+    FYDevice *device = [self.deviceArray objectAtIndex:indexPath.row];
+    controller.deviceID = device.deviceID;
     [self presentViewController:nav animated:YES completion:nil];
 }
 

@@ -13,6 +13,7 @@
                 <outlet property="pwdField" destination="rFK-Ia-yB2" id="Qci-e3-PCb"/>
                 <outlet property="rememberPwdButton" destination="Bk7-v6-xNb" id="PK7-io-RV5"/>
                 <outlet property="userField" destination="rQg-TK-VQI" id="8Un-vf-56L"/>
+                <outlet property="userNameLabel" destination="ZDl-sR-dy6" id="yWD-l5-DMl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^FYNetWorkFinishBlock) (NSDictionary *dicionary);
+typedef void (^FYTCPNetWorkFinishBlock) (NSDictionary *dicionary);
 
-@interface FYNetWork : NSObject
+@interface FYTCPNetWork : NSObject
 
 + (instancetype) shareNetEngine;
 

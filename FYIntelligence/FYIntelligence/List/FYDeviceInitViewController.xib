@@ -25,7 +25,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kPW-fG-BcL">
                     <rect key="frame" x="78" y="225" width="56" height="56"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="NO" backgroundImage="fnothing"/>
+                    <state key="normal" backgroundImage="select_no"/>
                     <connections>
                         <action selector="joinNet:" destination="-1" eventType="touchUpInside" id="Zs9-aL-FLs"/>
                     </connections>
@@ -33,7 +33,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fgX-Wq-eaZ">
                     <rect key="frame" x="178" y="225" width="56" height="56"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="YES" backgroundImage="fnothing"/>
+                    <state key="normal" backgroundImage="select_yes"/>
                     <connections>
                         <action selector="deviceLogin:" destination="-1" eventType="touchUpInside" id="AE1-un-Gae"/>
                     </connections>
@@ -58,6 +58,7 @@
         </view>
     </objects>
     <resources>
-        <image name="fnothing" width="28" height="28"/>
+        <image name="select_no" width="75" height="75"/>
+        <image name="select_yes" width="75" height="75"/>
     </resources>
 </document>

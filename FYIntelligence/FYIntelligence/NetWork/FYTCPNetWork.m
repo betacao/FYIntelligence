@@ -6,19 +6,19 @@
 //  Copyright © 2015年 changxicao. All rights reserved.
 //
 
-#import "FYNetWork.h"
+#import "FYTCPNetWork.h"
 #import "GCDAsyncSocket.h"
 
-@interface FYNetWork()
+@interface FYTCPNetWork()
 @property (strong, nonatomic) GCDAsyncSocket *sendTcpSocket;
-@property (copy, nonatomic) FYNetWorkFinishBlock finishBlock;
+@property (copy, nonatomic) FYTCPNetWorkFinishBlock finishBlock;
 @end
 
-@implementation FYNetWork
+@implementation FYTCPNetWork
 
 + (instancetype) shareNetEngine
 {
-    static FYNetWork *sharedEngine = nil;
+    static FYTCPNetWork *sharedEngine = nil;
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
         sharedEngine = [[self alloc] init];
@@ -33,7 +33,7 @@
     self.sendTcpSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dQueue socketQueue:nil];
     // 2. 连接服务器端. 只有连接成功后才能相互通讯 如果60s连接不上就出错
     NSString *host = kHostAddress;
-    uint16_t port = kHostPort;
+    uint16_t port = kTCPHostPort;
     [self.sendTcpSocket connectToHost:host onPort:port withTimeout:60 error:nil];
     // 连接必须服务器在线
 }
@@ -61,7 +61,7 @@
     NSLog(@"连接失败 %@", err);
     // 断线重连
     NSString *host = kHostAddress;
-    uint16_t port = kHostPort;
+    uint16_t port = kTCPHostPort;
     [self.sendTcpSocket connectToHost:host onPort:port withTimeout:60 error:nil];
 }
 
@@ -87,6 +87,8 @@
     });
     [sock readDataWithTimeout:-1 tag:200];;
 }
+
+//- (void)soc
 
 
 @end

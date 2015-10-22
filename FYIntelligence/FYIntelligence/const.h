@@ -9,6 +9,8 @@
 #ifndef const_h
 #define const_h
 
+#define kAppDelegate [AppDelegate currentAppdelegate]
+
 #define kScreenWidth CGRectGetWidth([UIScreen mainScreen].bounds)
 #define kScreenHeight CGRectGetHeight([UIScreen mainScreen].bounds)
 
@@ -19,7 +21,10 @@
 #define kPassWord @"passWord"
 #define kResponseString @"responseString"
 #define kHostAddress @"112.124.35.155"
-#define kHostPort 11104
+#define kTCPHostPort 11104
+#define kUDPHostPort 11102
 #define kLoginAddress @"fyzn2015#1#6#"
 #define kListAddress @"fyzn2015#1#8#"
+
+#define kNoPINString @"ICP2P0259#%@#U#G7S3#%@#%@#%@#"
 #endif /* const_h */

@@ -13,7 +13,8 @@
 #import "const.h"
 #import "UIColor+FYColor.h"
 #import "UIImage+FYImage.h"
-#import "FYNetWork.h"
+#import "FYTCPNetWork.h"
+#import "FYUDPNetWork.h"
 #import "FYProgressHUD.h"
 #import "AppDelegate.h"
 

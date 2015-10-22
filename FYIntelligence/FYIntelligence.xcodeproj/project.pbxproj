@@ -61,12 +61,13 @@
 		F99463AD1BD6822E008B9F54 /* FYAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99463AB1BD6822E008B9F54 /* FYAboutViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F99463AE1BD6822E008B9F54 /* FYAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99463AC1BD6822E008B9F54 /* FYAboutViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F9A1E05C1BCCF6AE00A92B90 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A1E05B1BCCF6AE00A92B90 /* SystemConfiguration.framework */; };
+		F9B0636E1BD7A41A00471DF4 /* FYUDPNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B0636D1BD7A41A00471DF4 /* FYUDPNetWork.m */; settings = {ASSET_TAGS = (); }; };
 		F9B441C41BD4F2DA005148D1 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441BB1BD4F2DA005148D1 /* GCDAsyncSocket.m */; settings = {ASSET_TAGS = (); }; };
 		F9B441C51BD4F2DA005148D1 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441BD1BD4F2DA005148D1 /* GCDAsyncUdpSocket.m */; settings = {ASSET_TAGS = (); }; };
 		F9B441C61BD4F2DA005148D1 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441C01BD4F2DA005148D1 /* AsyncSocket.m */; settings = {ASSET_TAGS = (); }; };
 		F9B441C71BD4F2DA005148D1 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441C21BD4F2DA005148D1 /* AsyncUdpSocket.m */; settings = {ASSET_TAGS = (); }; };
 		F9B441C81BD4F2DA005148D1 /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = F9B441C31BD4F2DA005148D1 /* Documentation.html */; settings = {ASSET_TAGS = (); }; };
-		F9B441CC1BD4F339005148D1 /* FYNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441CB1BD4F339005148D1 /* FYNetWork.m */; settings = {ASSET_TAGS = (); }; };
+		F9B441CC1BD4F339005148D1 /* FYTCPNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441CB1BD4F339005148D1 /* FYTCPNetWork.m */; settings = {ASSET_TAGS = (); }; };
 		F9DE29101BD5E2BF0009F667 /* FYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DE290F1BD5E2BF0009F667 /* FYProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
 		F9DE29131BD61AE60009F667 /* FYDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DE29121BD61AE60009F667 /* FYDevice.m */; settings = {ASSET_TAGS = (); }; };
 		F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B31BC7F5CC00520CAA /* main.m */; };
@@ -177,6 +178,8 @@
 		F99463AB1BD6822E008B9F54 /* FYAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYAboutViewController.m; sourceTree = "<group>"; };
 		F99463AC1BD6822E008B9F54 /* FYAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYAboutViewController.xib; sourceTree = "<group>"; };
 		F9A1E05B1BCCF6AE00A92B90 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F9B0636C1BD7A41A00471DF4 /* FYUDPNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYUDPNetWork.h; sourceTree = "<group>"; };
+		F9B0636D1BD7A41A00471DF4 /* FYUDPNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYUDPNetWork.m; sourceTree = "<group>"; };
 		F9B441B81BD4F2DA005148D1 /* CocoaAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaAsyncSocket.h; sourceTree = "<group>"; };
 		F9B441BA1BD4F2DA005148D1 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		F9B441BB1BD4F2DA005148D1 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
@@ -187,8 +190,8 @@
 		F9B441C11BD4F2DA005148D1 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
 		F9B441C21BD4F2DA005148D1 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
 		F9B441C31BD4F2DA005148D1 /* Documentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Documentation.html; sourceTree = "<group>"; };
-		F9B441CA1BD4F339005148D1 /* FYNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYNetWork.h; sourceTree = "<group>"; };
-		F9B441CB1BD4F339005148D1 /* FYNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYNetWork.m; sourceTree = "<group>"; };
+		F9B441CA1BD4F339005148D1 /* FYTCPNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYTCPNetWork.h; sourceTree = "<group>"; };
+		F9B441CB1BD4F339005148D1 /* FYTCPNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYTCPNetWork.m; sourceTree = "<group>"; };
 		F9DE290E1BD5E2BF0009F667 /* FYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYProgressHUD.h; sourceTree = "<group>"; };
 		F9DE290F1BD5E2BF0009F667 /* FYProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYProgressHUD.m; sourceTree = "<group>"; };
 		F9DE29111BD61AE60009F667 /* FYDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDevice.h; sourceTree = "<group>"; };
@@ -349,8 +352,10 @@
 		F9B441C91BD4F323005148D1 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
-				F9B441CA1BD4F339005148D1 /* FYNetWork.h */,
-				F9B441CB1BD4F339005148D1 /* FYNetWork.m */,
+				F9B441CA1BD4F339005148D1 /* FYTCPNetWork.h */,
+				F9B441CB1BD4F339005148D1 /* FYTCPNetWork.m */,
+				F9B0636C1BD7A41A00471DF4 /* FYUDPNetWork.h */,
+				F9B0636D1BD7A41A00471DF4 /* FYUDPNetWork.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -620,6 +625,7 @@
 				F98351591BCA0B0B00809E14 /* FYLoginViewController.m in Sources */,
 				F98351641BCA26E400809E14 /* FYListViewController.m in Sources */,
 				F983517E1BCA3FAE00809E14 /* FYEnterPINViewController.m in Sources */,
+				F9B0636E1BD7A41A00471DF4 /* FYUDPNetWork.m in Sources */,
 				F95113C41BCD464A0058C7B2 /* FYParamSettingTableViewCell.m in Sources */,
 				F9DE29131BD61AE60009F667 /* FYDevice.m in Sources */,
 				F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */,
@@ -640,7 +646,7 @@
 				F96E2F941BCE284600B6AF4B /* UIImage+FYImage.m in Sources */,
 				F98351731BCA333000809E14 /* FYAddDeviceViewController.m in Sources */,
 				F973409D1BCFE8B2006D1740 /* FYHWJRViewController.m in Sources */,
-				F9B441CC1BD4F339005148D1 /* FYNetWork.m in Sources */,
+				F9B441CC1BD4F339005148D1 /* FYTCPNetWork.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

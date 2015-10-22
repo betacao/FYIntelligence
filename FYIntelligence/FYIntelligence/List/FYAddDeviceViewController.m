@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *pwdField;
 @property (weak, nonatomic) IBOutlet UIButton *rememberPwdButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (assign, nonatomic) BOOL isRemember;
 
 @end
@@ -25,6 +26,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"添加设备";
+
+    NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
+    self.userNameLabel.text = [self.userNameLabel.text stringByAppendingString:userName];
+    [self.userNameLabel sizeToFit];
 
     self.inputBgView.layer.masksToBounds = YES;
     self.inputBgView.layer.cornerRadius = 2.0f;
