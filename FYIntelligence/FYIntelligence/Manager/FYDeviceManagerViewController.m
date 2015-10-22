@@ -89,6 +89,7 @@
 
 - (IBAction)clickAddWater:(UIButton *)sender
 {
+    //手动上水
     UIImage *image0 = [UIImage imageNamed:@"aaction_ss_hx0"];
     UIImage *image1 = [UIImage imageNamed:@"aaction_ss_hx1"];
     UIImage *image2 = [UIImage imageNamed:@"aaction_ss_hx2"];
@@ -100,14 +101,20 @@
     self.mainImageView.image = image;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
     NSString *requset = [NSString stringWithFormat:kNoPINString,self.deviceID,self.userName,globleString,@"cmd_sdss"];
-    [[FYUDPNetWork shareNetEngine] sendRequest:requset complete:^(NSDictionary *dic) {
+    [[FYUDPNetWork shareNetEngine] sendRequest:requset complete:^(BOOL finish, NSString *responseString) {
+        if(finish){
 
+        } else{
+
+        }
     }];
+    
     
 }
 
 - (IBAction)clickUserWarm:(UIButton *)sender
 {
+    //手动加热
     UIImage *image0 = [UIImage imageNamed:@"aaction_jiare_hx0"];
     UIImage *image1 = [UIImage imageNamed:@"aaction_jiare_hx1"];
     UIImage *image2 = [UIImage imageNamed:@"aaction_jiare_hx2"];
@@ -116,10 +123,20 @@
     UIImage *image5 = [UIImage imageNamed:@"aaction_jiare_hx5"];
     UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4, image5] duration:6.0f];
     self.mainImageView.image = image;
+    NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
+    NSString *requset = [NSString stringWithFormat:kNoPINString,self.deviceID,self.userName,globleString,@"cmd_sdjr"];
+    [[FYUDPNetWork shareNetEngine] sendRequest:requset complete:^(BOOL finish, NSString *responseString) {
+        if(finish){
+
+        } else{
+
+        }
+    }];
 }
 
 - (IBAction)clickTemCircle:(UIButton *)sender
 {
+    //温差循环
     UIImage *image0 = [UIImage imageNamed:@"aaction_wcxh_hx0"];
     UIImage *image1 = [UIImage imageNamed:@"aaction_wcxh_hx5"];
     UIImage *image2 = [UIImage imageNamed:@"aaction_wcxh_hx10"];
@@ -128,10 +145,20 @@
     UIImage *image5 = [UIImage imageNamed:@"aaction_wcxh_hx25"];
     UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4, image5] duration:6.0f];
     self.mainImageView.image = image;
+    NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
+    NSString *requset = [NSString stringWithFormat:kNoPINString,self.deviceID,self.userName,globleString,@"cmd_wcxh"];
+    [[FYUDPNetWork shareNetEngine] sendRequest:requset complete:^(BOOL finish, NSString *responseString) {
+        if(finish){
+
+        } else{
+
+        }
+    }];
 }
 
 - (IBAction)clickWaterCircle:(UIButton *)sender
 {
+    //管道回水
     UIImage *image0 = [UIImage imageNamed:@"aaction_gdhs_hx0"];
     UIImage *image1 = [UIImage imageNamed:@"aaction_gdhs_hx1"];
     UIImage *image2 = [UIImage imageNamed:@"aaction_gdhs_hx4"];
@@ -139,7 +166,19 @@
     UIImage *image4 = [UIImage imageNamed:@"aaction_gdhs_hx12"];
     UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4] duration:6.0f];
     self.mainImageView.image = image;
+    NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
+    NSString *requset = [NSString stringWithFormat:kNoPINString,self.deviceID,self.userName,globleString,@"cmd_gdhs"];
+    [[FYUDPNetWork shareNetEngine] sendRequest:requset complete:^(BOOL finish, NSString *responseString) {
+        if(finish){
 
+        } else{
+            NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,self.deviceID,self.userName];
+            [[FYTCPNetWork shareNetEngine] sendRequest:requset complete:^(NSDictionary *dic) {
+
+            }];
+        }
+
+    }];
 }
 
 

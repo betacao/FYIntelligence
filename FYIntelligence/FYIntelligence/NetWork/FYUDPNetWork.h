@@ -13,7 +13,7 @@ typedef NS_ENUM(NSInteger, FYUDPSendType)
     FYUDPSendTypePIN
 };
 
-typedef void (^FYUDPNetWorkFinishBlock) (NSDictionary *dicionary);
+typedef void (^FYUDPNetWorkFinishBlock) (BOOL finish, NSString *reponseString);
 
 @interface FYUDPNetWork : NSObject
 
@@ -21,5 +21,5 @@ typedef void (^FYUDPNetWorkFinishBlock) (NSDictionary *dicionary);
 
 - (void)createClientUdpSocket;
 
-- (void)sendRequest:(NSString *)request complete:(void(^)(NSDictionary *dic))block;
+- (void)sendRequest:(NSString *)request complete:(void(^)(BOOL finish, NSString *responseString))block;
 @end

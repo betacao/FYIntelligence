@@ -24,12 +24,7 @@
 
     if (!hasShow) {
         if ([NSThread currentThread].isMainThread) {
-            UIViewController *controller = [AppDelegate currentAppdelegate].window.rootViewController;
-            if ([controller isKindOfClass:[UINavigationController class]]) {
-                UINavigationController *nav = (UINavigationController *)[AppDelegate currentAppdelegate].window.rootViewController;
-                UIViewController *topController = [nav.viewControllers lastObject];
-                controller = topController;
-            }
+            UIViewController *controller = [self getCurrentVC];
             MBProgressHUD  *HUD = [[MBProgressHUD alloc] initWithView:controller.view];
             HUD.yOffset = -50;
             [controller.view addSubview:HUD];
@@ -42,18 +37,45 @@
     }
 }
 
++ (UIViewController *)getCurrentVC
+{
+    UIViewController *result = nil;
+
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    if (window.windowLevel != UIWindowLevelNormal)
+    {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows)
+        {
+            if (tmpWin.windowLevel == UIWindowLevelNormal)
+            {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+
+    UIView *frontView = [[window subviews] objectAtIndex:0];
+    id nextResponder = [frontView nextResponder];
+
+    if ([nextResponder isKindOfClass:[UIViewController class]])
+        result = nextResponder;
+    else
+        result = window.rootViewController;
+
+    return result;
+}
+
+
 - (void)showHudWithMessage:(NSString *)message
 {
-    if ([[AppDelegate currentAppdelegate].window.rootViewController isKindOfClass:[UINavigationController class]]){
-        UINavigationController *nav = (UINavigationController *)[AppDelegate currentAppdelegate].window.rootViewController;
-        UIViewController *topView = [nav.viewControllers lastObject];
-        MBProgressHUD  *HUD = [[MBProgressHUD alloc] initWithView:topView.view];
-        HUD.yOffset = -50;
-        [topView.view addSubview:HUD];
-        HUD.mode = MBProgressHUDModeIndeterminate;
-        HUD.labelText = message;
-        [HUD show:YES];
-    }
+    UIView *view = [AppDelegate currentAppdelegate].window;
+    MBProgressHUD  *HUD = [[MBProgressHUD alloc] initWithView:view];
+    HUD.yOffset = -50;
+    [view addSubview:HUD];
+    HUD.mode = MBProgressHUDModeIndeterminate;
+    HUD.labelText = message;
+    [HUD show:YES];
 }
 
 + (void)showMessageWithText:(NSString *)text
@@ -94,12 +116,7 @@
 
 + (void)hidesHud
 {
-    UIViewController *controller = [AppDelegate currentAppdelegate].window.rootViewController;
-    if ([controller isKindOfClass:[UINavigationController class]]){
-        UINavigationController *nav = (UINavigationController *)[AppDelegate currentAppdelegate].window.rootViewController;
-        UIViewController *topController = [nav.viewControllers lastObject];
-        controller = topController;
-    }
+    UIViewController *controller = [self getCurrentVC];
     for (UIView *subView in controller.view.subviews) {
         if ([subView isKindOfClass:[MBProgressHUD class]]){
             [subView removeFromSuperview];

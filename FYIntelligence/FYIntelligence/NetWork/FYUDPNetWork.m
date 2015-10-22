@@ -61,20 +61,47 @@
 
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext
 {
+    [FYProgressHUD hideHud];
     [self.timer setFireDate:[NSDate distantFuture]];
     self.sendTimes = 0;
     self.sendMessage = nil;
     self.isSending = NO;
     NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"udp string:%@",string);
-//    st
+
+    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
+    NSMutableArray *results = [NSMutableArray array];
+    [regularExpression enumerateMatchesInString:string options:0 range:NSMakeRange(0, string.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+        [results addObject:result];
+    }];
+    NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
+        if (obj1.range.location > obj2.range.location) {
+            return (NSComparisonResult)NSOrderedDescending;
+        } else if (obj1.range.location < obj2.range.location) {
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    };
+    NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+    NSTextCheckingResult *result = [MResult firstObject];
+    NSString *globleString = [string substringWithRange:result.range];
+    NSLog(@"globleString = %@",globleString);
+    result = [MResult lastObject];
+    NSString *responeString = [string substringWithRange:result.range];
+    NSLog(@"success = %@",responeString);
+    NSInteger globleNumber = [[globleString substringFromIndex:6] integerValue];
+    NSLog(@"globleNumber = %ld",(long)globleNumber);
+    if(globleNumber == kAppDelegate.globleNumber){
+        kAppDelegate.globleNumber++;
+        self.finishBlock(YES, responeString);
+    }
 }
 
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didSendDataWithTag:(long)tag
 {
     
 }
-- (void)sendRequest:(NSString *)request complete:(void (^)(NSDictionary *))block
+- (void)sendRequest:(NSString *)request complete:(void (^)(BOOL, NSString *))block
 {
     if(self.isSending){
         return;
@@ -89,7 +116,10 @@
 
 - (void)fireSendMessage
 {
-    if(!self.sendMessage && self.sendTimes > 20){
+    if(!self.sendMessage || self.sendTimes >= 20){
+        [self.timer setFireDate:[NSDate distantFuture]];
+        self.isSending = NO;
+        self.finishBlock(NO,nil);
         return;
     }
     self.sendTimes++;
@@ -99,5 +129,6 @@
     uint16_t port = kUDPHostPort;
     [self.sendUdpSocket sendData:self.sendMessage toHost:host port:port withTimeout:0 tag:0];
 }
+
 
 @end
