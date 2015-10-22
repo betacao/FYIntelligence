@@ -13,6 +13,10 @@
 
 @property (strong, nonatomic) GCDAsyncUdpSocket *sendUdpSocket;
 @property (copy, nonatomic) FYUDPNetWorkFinishBlock finishBlock;
+@property (strong, nonatomic) NSTimer *timer;
+@property (strong, nonatomic) NSData *sendMessage;
+@property (assign, nonatomic) NSInteger sendTimes;
+@property (assign, nonatomic) BOOL isSending;
 
 @end
 
@@ -47,10 +51,23 @@
     NSLog(@"Udp Echo server started on port %hu", [self.sendUdpSocket localPort]);
 }
 
+- (NSTimer *)timer
+{
+    if(!_timer){
+        _timer = [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(fireSendMessage) userInfo:nil repeats:YES];
+    }
+    return _timer;
+}
+
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext
 {
+    [self.timer setFireDate:[NSDate distantFuture]];
+    self.sendTimes = 0;
+    self.sendMessage = nil;
+    self.isSending = NO;
     NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"udp string:%@",string);
+//    st
 }
 
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didSendDataWithTag:(long)tag
@@ -59,29 +76,28 @@
 }
 - (void)sendRequest:(NSString *)request complete:(void (^)(NSDictionary *))block
 {
+    if(self.isSending){
+        return;
+    }
+    self.isSending = YES;
     NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
-    // 发送消息 这里不需要知道对象的ip地址和端口
-    NSString *host = kHostAddress;
-    uint16_t port = kUDPHostPort;
-    [self.sendUdpSocket sendData:data toHost:host port:port withTimeout:0 tag:0];
+    [self.timer setFireDate:[NSDate date]];
+    self.sendMessage = data;
     self.finishBlock = block;
     [FYProgressHUD showLoadingWithMessage:@"请稍等..."];
 }
 
-- (void)sendCmd:(NSString *)cmd type:(FYUDPSendType)type
+- (void)fireSendMessage
 {
-    switch (type) {
-        case FYUDPSendTypeNone:
-        {
-// NSString *string = [NSString stringWithFormat:kNoPINString,self.de]
-        }
-            break;
-
-        default:
-        {
-
-        }
-            break;
+    if(!self.sendMessage && self.sendTimes > 20){
+        return;
     }
+    self.sendTimes++;
+    NSLog(@"send times %ld",(long)self.sendTimes);
+    // 发送消息 这里不需要知道对象的ip地址和端口
+    NSString *host = kHostAddress;
+    uint16_t port = kUDPHostPort;
+    [self.sendUdpSocket sendData:self.sendMessage toHost:host port:port withTimeout:0 tag:0];
 }
+
 @end

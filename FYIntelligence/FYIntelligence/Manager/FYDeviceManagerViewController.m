@@ -98,7 +98,7 @@
     UIImage *image6 = [UIImage imageNamed:@"aaction_ss_hx6"];
     UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4, image5, image6] duration:6.0f];
     self.mainImageView.image = image;
-    NSString *globleString = [NSString stringWithFormat:@"accept%ld",(long)kAppDelegate.globleNumber];
+    NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
     NSString *requset = [NSString stringWithFormat:kNoPINString,self.deviceID,self.userName,globleString,@"cmd_sdss"];
     [[FYUDPNetWork shareNetEngine] sendRequest:requset complete:^(NSDictionary *dic) {
 

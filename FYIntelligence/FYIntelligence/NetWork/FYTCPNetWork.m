@@ -9,7 +9,7 @@
 #import "FYTCPNetWork.h"
 #import "GCDAsyncSocket.h"
 
-@interface FYTCPNetWork()
+@interface FYTCPNetWork()<GCDAsyncSocketDelegate>
 @property (strong, nonatomic) GCDAsyncSocket *sendTcpSocket;
 @property (copy, nonatomic) FYTCPNetWorkFinishBlock finishBlock;
 @end
@@ -88,7 +88,7 @@
     [sock readDataWithTimeout:-1 tag:200];;
 }
 
-//- (void)soc
+//- (void)so
 
 
 @end

@@ -21,7 +21,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.globleNumber = 0;
+    self.globleNumber = 1;
     [[FYTCPNetWork shareNetEngine] createClientTcpSocket];
     [[FYUDPNetWork shareNetEngine] createClientUdpSocket];
     return YES;

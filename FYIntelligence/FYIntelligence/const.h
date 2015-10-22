@@ -26,5 +26,5 @@
 #define kLoginAddress @"fyzn2015#1#6#"
 #define kListAddress @"fyzn2015#1#8#"
 
-#define kNoPINString @"ICP2P0259#%@#U#G7S3#%@#%@#%@#"
+#define kNoPINString @"ICP2P0259#%@#U#G7S3#%@#%@#%@$#"
 #endif /* const_h */

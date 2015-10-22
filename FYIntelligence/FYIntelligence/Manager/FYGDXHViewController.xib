@@ -120,7 +120,7 @@
                             <rect key="frame" x="257" y="31" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="55℃"/>
+                            <state key="normal" title="42℃"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="oNQ-Id-c41"/>
                             </connections>
@@ -129,7 +129,7 @@
                             <rect key="frame" x="257" y="76" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="55℃"/>
+                            <state key="normal" title="42℃"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="2AT-5z-CIP"/>
                             </connections>
@@ -138,7 +138,7 @@
                             <rect key="frame" x="257" y="121" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="55℃"/>
+                            <state key="normal" title="42℃"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="XWD-Yh-e7q"/>
                             </connections>
