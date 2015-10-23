@@ -58,7 +58,33 @@
 
 - (IBAction)sendMessage:(id)sender
 {
+    NSString *isOn1 = self.switch1.isOn ? @"1" : @"0";
+    NSString *hour1 = [self.timeButton1.titleLabel.text substringToIndex:[self.timeButton1.titleLabel.text rangeOfString:@":"].location];
+    NSString *minute1 = [self.timeButton1.titleLabel.text substringFromIndex:[self.timeButton1.titleLabel.text rangeOfString:@":"].location + 1];
+    NSString *tem1 = [self.positionButton1.titleLabel.text substringToIndex:2];
 
+    NSString *isOn2 = self.switch2.isOn ? @"1" : @"0";
+    NSString *hour2 = [self.timeButton2.titleLabel.text substringToIndex:[self.timeButton2.titleLabel.text rangeOfString:@":"].location];
+    NSString *minute2 = [self.timeButton2.titleLabel.text substringFromIndex:[self.timeButton2.titleLabel.text rangeOfString:@":"].location + 1];
+    NSString *tem2 = [self.positionButton2.titleLabel.text substringToIndex:2];
+
+    NSString *isOn3 = self.switch3.isOn ? @"1" : @"0";
+    NSString *hour3 = [self.timeButton3.titleLabel.text substringToIndex:[self.timeButton3.titleLabel.text rangeOfString:@":"].location];
+    NSString *minute3 = [self.timeButton3.titleLabel.text substringFromIndex:[self.timeButton3.titleLabel.text rangeOfString:@":"].location + 1];
+    NSString *tem3 = [self.positionButton3.titleLabel.text substringToIndex:2];
+
+    NSString *string = [NSString stringWithFormat:kDSJRCmd, isOn1, hour1, minute1, tem1, isOn2, hour2, minute2, tem2, isOn3, hour3, minute3, tem3];
+    NSString *UDPRequest = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),string];
+    [[FYUDPNetWork shareNetEngine] sendRequest:UDPRequest complete:^(BOOL finish, NSString *responseString) {
+        if(finish){
+
+        } else{
+            NSString *TCPRequest = [NSString stringWithFormat:kAppDelegate.deviceID, kNeedPINClearCmd,kAppDelegate.userName,kAppDelegate.pinNumber];
+            [[FYTCPNetWork shareNetEngine] sendRequest:TCPRequest complete:^(NSDictionary *dic) {
+
+            }];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
