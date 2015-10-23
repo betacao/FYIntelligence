@@ -50,6 +50,10 @@
     }
 }
 
+- (IBAction)sendMessage:(id)sender
+{
+
+}
 
 
 - (void)didReceiveMemoryWarning {

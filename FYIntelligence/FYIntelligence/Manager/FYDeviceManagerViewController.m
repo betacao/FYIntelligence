@@ -105,7 +105,10 @@
         if(finish){
 
         } else{
+            NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,self.deviceID,self.userName];
+            [[FYTCPNetWork shareNetEngine] sendRequest:requset complete:^(NSDictionary *dic) {
 
+            }];
         }
     }];
     
@@ -129,7 +132,10 @@
         if(finish){
 
         } else{
+            NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,self.deviceID,self.userName];
+            [[FYTCPNetWork shareNetEngine] sendRequest:requset complete:^(NSDictionary *dic) {
 
+            }];
         }
     }];
 }
@@ -151,7 +157,10 @@
         if(finish){
 
         } else{
+            NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,self.deviceID,self.userName];
+            [[FYTCPNetWork shareNetEngine] sendRequest:requset complete:^(NSDictionary *dic) {
 
+            }];
         }
     }];
 }

@@ -56,6 +56,11 @@
     [button setTitle:date forState:UIControlStateNormal];
 }
 
+- (IBAction)sendMessage:(id)sender
+{
+
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

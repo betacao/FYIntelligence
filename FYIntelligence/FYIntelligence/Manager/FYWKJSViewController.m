@@ -51,6 +51,10 @@
 }
 
 
+- (IBAction)sendMessage:(id)sender
+{
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

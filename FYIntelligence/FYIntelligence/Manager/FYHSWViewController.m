@@ -40,6 +40,11 @@
     return string;
 }
 
+- (IBAction)sendMessage:(id)sender
+{
+
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
