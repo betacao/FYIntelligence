@@ -73,12 +73,15 @@
     NSString *minute3 = [self.timeButton3.titleLabel.text substringFromIndex:[self.timeButton3.titleLabel.text rangeOfString:@":"].location];
     NSString *tem3 = [self.positionButton3.titleLabel.text substringToIndex:2];
 
-    NSString *request = [NSString stringWithFormat:kDSJRString, isOn1, hour1, minute1, tem1, isOn2, hour2, minute2, tem2, isOn3, hour3, minute3, tem3];
-    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
+    NSString *UDPRequest = [NSString stringWithFormat:kDSJRCmd, isOn1, hour1, minute1, tem1, isOn2, hour2, minute2, tem2, isOn3, hour3, minute3, tem3];
+    [[FYUDPNetWork shareNetEngine] sendRequest:UDPRequest complete:^(BOOL finish, NSString *responseString) {
         if(finish){
 
         } else{
+            NSString *TCPRequest = [NSString stringWithFormat:kAppDelegate.deviceID, kNeedPINClearCmd,kAppDelegate.userName,kAppDelegate.pinNumber];
+            [[FYTCPNetWork shareNetEngine] sendRequest:TCPRequest complete:^(NSDictionary *dic) {
 
+            }];
         }
     }];
 }

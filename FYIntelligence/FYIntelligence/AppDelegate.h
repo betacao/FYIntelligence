@@ -14,6 +14,8 @@
 @property (assign, nonatomic) NSInteger globleNumber;
 @property (strong, nonatomic) NSString *pinNumber;
 @property (assign, nonatomic) BOOL isRemember;
+@property (strong, nonatomic) NSString *deviceID;
+@property (strong, nonatomic) NSString *userName;
 
 + (AppDelegate *)currentAppdelegate;
 

@@ -27,7 +27,9 @@
 #define kListAddress @"fyzn2015#1#8#"
 
 #define kNoPINString @"ICP2P0259#%@#U#G7S3#%@#%@#%@$#"
-#define kNoPINClearCmd @"1#11#%@#G7S3#%@#"
+#define kNoPINClearCmd @"1#11#%@#G7S3#%@$#"
 
-#define kDSJRString @"config_dsjr$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$"
+#define kNeedPINString @"ICP2P0259#%@#U#%@#%@#%@#%@$#"
+#define kNeedPINClearCmd @"1#11#%@#%@#%@$#"
+#define kDSJRCmd @"config_dsjr$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@"
 #endif /* const_h */

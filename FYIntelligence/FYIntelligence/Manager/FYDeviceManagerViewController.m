@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *userWarmButton;
 @property (weak, nonatomic) IBOutlet UIButton *temCircleButton;
 @property (weak, nonatomic) IBOutlet UIButton *waterCircleButton;
-@property (strong, nonatomic) NSString *userName;
 
 @end
 
@@ -28,7 +27,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"飞羽智能";
-    self.userName = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *normalImage = [UIImage imageNamed:@"right_about"];
     [rightButton setImage:normalImage forState:UIControlStateNormal];
@@ -100,12 +98,12 @@
     UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4, image5, image6] duration:6.0f];
     self.mainImageView.image = image;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-    NSString *request = [NSString stringWithFormat:kNoPINString,self.deviceID,self.userName,globleString,@"cmd_sdss"];
+    NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_sdss"];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         if(finish){
 
         } else{
-            NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,self.deviceID,self.userName];
+            NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,kAppDelegate.deviceID,kAppDelegate.userName];
             [[FYTCPNetWork shareNetEngine] sendRequest:requset complete:^(NSDictionary *dic) {
 
             }];
@@ -127,12 +125,12 @@
     UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4, image5] duration:6.0f];
     self.mainImageView.image = image;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-    NSString *request = [NSString stringWithFormat:kNoPINString,self.deviceID,self.userName,globleString,@"cmd_sdjr"];
+    NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_sdjr"];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         if(finish){
 
         } else{
-            NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,self.deviceID,self.userName];
+            NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,kAppDelegate.deviceID,kAppDelegate.userName];
             [[FYTCPNetWork shareNetEngine] sendRequest:requset complete:^(NSDictionary *dic) {
 
             }];
@@ -152,12 +150,12 @@
     UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4, image5] duration:6.0f];
     self.mainImageView.image = image;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-    NSString *request = [NSString stringWithFormat:kNoPINString,self.deviceID,self.userName,globleString,@"cmd_wcxh"];
+    NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_wcxh"];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         if(finish){
 
         } else{
-            NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,self.deviceID,self.userName];
+            NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,kAppDelegate.deviceID,kAppDelegate.userName];
             [[FYTCPNetWork shareNetEngine] sendRequest:requset complete:^(NSDictionary *dic) {
 
             }];
@@ -176,12 +174,12 @@
     UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4] duration:6.0f];
     self.mainImageView.image = image;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-    NSString *request = [NSString stringWithFormat:kNoPINString,self.deviceID,self.userName,globleString,@"cmd_gdhs"];
+    NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_gdhs"];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         if(finish){
 
         } else{
-            NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,self.deviceID,self.userName];
+            NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,kAppDelegate.deviceID,kAppDelegate.userName];
             [[FYTCPNetWork shareNetEngine] sendRequest:requset complete:^(NSDictionary *dic) {
 
             }];

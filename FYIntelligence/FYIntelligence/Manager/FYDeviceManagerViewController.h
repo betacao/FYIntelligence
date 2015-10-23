@@ -9,5 +9,4 @@
 #import "FYBaseNavigationViewController.h"
 
 @interface FYDeviceManagerViewController : FYBaseViewController
-@property (strong, nonatomic) NSString *deviceID;
 @end

@@ -26,9 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"添加设备";
-
-    NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
-    self.userNameLabel.text = [self.userNameLabel.text stringByAppendingString:userName];
+    self.userNameLabel.text = [self.userNameLabel.text stringByAppendingString:kAppDelegate.userName];
     [self.userNameLabel sizeToFit];
 
     self.inputBgView.layer.masksToBounds = YES;
