@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (assign, nonatomic) NSInteger globleNumber;
+@property (strong, nonatomic) NSString *pinNumber;
+@property (assign, nonatomic) BOOL isRemember;
 
 + (AppDelegate *)currentAppdelegate;
 

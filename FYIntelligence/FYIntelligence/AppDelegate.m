@@ -22,6 +22,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.globleNumber = 1;
+    self.pinNumber = @"";
+    self.isRemember = NO;
     [[FYTCPNetWork shareNetEngine] createClientTcpSocket];
     [[FYUDPNetWork shareNetEngine] createClientUdpSocket];
     return YES;

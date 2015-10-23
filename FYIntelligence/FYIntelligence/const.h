@@ -28,4 +28,6 @@
 
 #define kNoPINString @"ICP2P0259#%@#U#G7S3#%@#%@#%@$#"
 #define kNoPINClearCmd @"1#11#%@#G7S3#%@#"
+
+#define kDSJRString @"config_dsjr$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$"
 #endif /* const_h */

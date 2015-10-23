@@ -108,11 +108,11 @@
 
 - (void)enterAllPIN
 {
-    if(self.delegate && [self.delegate respondsToSelector:@selector(didEnterAllPIN:)]){
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didEnterAllPIN:index:)]){
         [self.view removeFromSuperview];
         [self removeFromParentViewController];
         NSString *pin = [NSString stringWithFormat:@"%@%@%@%@",self.textField1.text,self.textField2.text,self.textField3.text,self.textField4.text];
-        [self.delegate didEnterAllPIN:pin];
+        [self.delegate didEnterAllPIN:pin index:self.index];
     }
 }
 

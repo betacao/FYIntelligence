@@ -100,8 +100,8 @@
     UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4, image5, image6] duration:6.0f];
     self.mainImageView.image = image;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-    NSString *requset = [NSString stringWithFormat:kNoPINString,self.deviceID,self.userName,globleString,@"cmd_sdss"];
-    [[FYUDPNetWork shareNetEngine] sendRequest:requset complete:^(BOOL finish, NSString *responseString) {
+    NSString *request = [NSString stringWithFormat:kNoPINString,self.deviceID,self.userName,globleString,@"cmd_sdss"];
+    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         if(finish){
 
         } else{
@@ -124,8 +124,8 @@
     UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4, image5] duration:6.0f];
     self.mainImageView.image = image;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-    NSString *requset = [NSString stringWithFormat:kNoPINString,self.deviceID,self.userName,globleString,@"cmd_sdjr"];
-    [[FYUDPNetWork shareNetEngine] sendRequest:requset complete:^(BOOL finish, NSString *responseString) {
+    NSString *request = [NSString stringWithFormat:kNoPINString,self.deviceID,self.userName,globleString,@"cmd_sdjr"];
+    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         if(finish){
 
         } else{
@@ -146,8 +146,8 @@
     UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4, image5] duration:6.0f];
     self.mainImageView.image = image;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-    NSString *requset = [NSString stringWithFormat:kNoPINString,self.deviceID,self.userName,globleString,@"cmd_wcxh"];
-    [[FYUDPNetWork shareNetEngine] sendRequest:requset complete:^(BOOL finish, NSString *responseString) {
+    NSString *request = [NSString stringWithFormat:kNoPINString,self.deviceID,self.userName,globleString,@"cmd_wcxh"];
+    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         if(finish){
 
         } else{
@@ -167,8 +167,8 @@
     UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4] duration:6.0f];
     self.mainImageView.image = image;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-    NSString *requset = [NSString stringWithFormat:kNoPINString,self.deviceID,self.userName,globleString,@"cmd_gdhs"];
-    [[FYUDPNetWork shareNetEngine] sendRequest:requset complete:^(BOOL finish, NSString *responseString) {
+    NSString *request = [NSString stringWithFormat:kNoPINString,self.deviceID,self.userName,globleString,@"cmd_gdhs"];
+    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         if(finish){
 
         } else{

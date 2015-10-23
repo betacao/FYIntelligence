@@ -19,8 +19,9 @@
 #import "FYYSBJViewController.h"
 #import "FYHSWViewController.h"
 #import "FYWCXHViewController.h"
+#import "FYEnterPINViewController.h"
 
-@interface FYParamSettingViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface FYParamSettingViewController ()<UITableViewDataSource, UITableViewDelegate, FYEnterPINDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *titleArray;
@@ -69,7 +70,22 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (indexPath.row) {
+
+    if(kAppDelegate.pinNumber.length == 0){
+        FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
+        controller.delegate = self;
+        controller.index = indexPath.row;
+        [self addChildViewController:controller];
+        [self.view addSubview:controller.view];
+        return;
+    }
+    [self didSelectViewController:indexPath.row];
+
+}
+
+- (void)didSelectViewController:(NSInteger)index
+{
+    switch (index) {
         case 0:{
             FYSDSSViewController *controller = [[FYSDSSViewController alloc] initWithNibName:@"FYSDSSViewController" bundle:nil];
             [self.navigationController pushViewController:controller animated:YES];
@@ -130,6 +146,10 @@
     }
 }
 
-
+- (void)didEnterAllPIN:(NSString *)pinNumber index:(NSInteger)index
+{
+    kAppDelegate.pinNumber = pinNumber;
+    [self didSelectViewController:index];
+}
 
 @end

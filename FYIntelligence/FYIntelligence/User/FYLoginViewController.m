@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
 @property (weak, nonatomic) IBOutlet UIButton *fogetButton;
-@property (assign, nonatomic) BOOL isRemember;
 
 @end
 
@@ -48,11 +47,14 @@
     [self.loginButton setBackgroundImage:[pressImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateHighlighted];
     BOOL isRememberUser = [[NSUserDefaults standardUserDefaults] boolForKey:kRememberUserName];
     if(isRememberUser){
-        self.isRemember = YES;
+        kAppDelegate.isRemember = YES;
         [self.rememberPwdButton setImage:[UIImage imageNamed:@"selectButton"] forState:UIControlStateNormal];
     } else{
-        self.isRemember = NO;
+        kAppDelegate.isRemember = NO;
         [self.rememberPwdButton setImage:[UIImage imageNamed:@"blankButton"] forState:UIControlStateNormal];
+        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:kUserName];
+        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:kPassWord];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
     self.userField.text = userName;
@@ -67,8 +69,8 @@
 }
 
 - (IBAction)clickRememberButton:(UIButton *)sender {
-    self.isRemember = !self.isRemember;
-    if(self.isRemember){
+    kAppDelegate.isRemember = !kAppDelegate.isRemember;
+    if(kAppDelegate.isRemember){
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kRememberUserName];
         [self.rememberPwdButton setImage:[UIImage imageNamed:@"selectButton"] forState:UIControlStateNormal];
     } else{
@@ -88,13 +90,8 @@
     if(pwd.length == 0){
         return;
     }
-    if(self.isRemember){
-        [[NSUserDefaults standardUserDefaults] setObject:userName forKey:kUserName];
-        [[NSUserDefaults standardUserDefaults] setObject:pwd forKey:kPassWord];
-    } else{
-        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:kUserName];
-        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:kPassWord];
-    }
+    [[NSUserDefaults standardUserDefaults] setObject:userName forKey:kUserName];
+    [[NSUserDefaults standardUserDefaults] setObject:pwd forKey:kPassWord];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [[FYTCPNetWork shareNetEngine] sendRequest:[NSString stringWithFormat:@"%@%@#%@#",kLoginAddress,userName,pwd] complete:^(NSDictionary *dic) {
         NSString *string = [dic objectForKey:kResponseString];

@@ -59,6 +59,12 @@
     }
 }
 
+- (IBAction)sendMessage:(id)sender
+{
+//    NSString *request = [NSString stringWithFormat:];
+//    [[FYUDPNetWork shareNetEngine] sendRequest:<#(NSString *)#> complete:<#^(BOOL finish, NSString *responseString)block#>]
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

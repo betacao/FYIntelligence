@@ -9,11 +9,10 @@
 #import "FYListViewController.h"
 #import "FYListTableViewCell.h"
 #import "FYDeviceInitViewController.h"
-#import "FYEnterPINViewController.h"
 #import "FYDeviceManagerViewController.h"
 #import "FYDevice.h"
 
-@interface FYListViewController ()<UITableViewDataSource,UITableViewDelegate,FYEnterPINDelegate>
+@interface FYListViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) NSInteger deviceCount;
 @property (strong, nonatomic) NSMutableArray *deviceArray;

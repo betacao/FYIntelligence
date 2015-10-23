@@ -56,6 +56,17 @@
     [button setTitle:date forState:UIControlStateNormal];
 }
 
+- (IBAction)sendMessage:(id)sender
+{
+    NSString *request = [NSString stringWithFormat:kDSJRString,@(1),]
+    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
+        if(finish){
+
+        } else{
+
+        }
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
