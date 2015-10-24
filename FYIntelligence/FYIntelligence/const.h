@@ -33,37 +33,37 @@
 #define kNeedPINClearCmd @"fyzn2015#1#11#%@#%@#%@#"
 //定时加热
 #define kDSJRCmd @"config_dsjr$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@"
-#define kGETDSJRCmd @"read_dsjr_config$"
+#define kGETDSJRCmd @"read_dsjr_config"
 //定时上水
 #define kDSSSCmd @"config_dsss$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@"
-#define kGETDSSSCmd @"read_dsss_config$"
+#define kGETDSSSCmd @"read_dsss_config"
 //防冻保护
 #define kFDBHCmd @"config_fdbh$%@$%@"
-#define kGETFDBHCmd @"read_fdbh_config$"
+#define kGETFDBHCmd @"read_fdbh_config"
 //管道循环
 #define kGDXHCmd @"config_gdxh$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@"
-#define kGETGDXHCmd @"read_gdxh_config$"
+#define kGETGDXHCmd @"read_gdxh_config"
 //恒水位
 #define kHSWCmd @"config_hsw$%@"
-#define kGETHSWCmd @"read_hsw_config$"
+#define kGETHSWCmd @"read_hsw_config"
 //恒温加热
 #define kHWJRCmd @"config_hwjr$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@"
-#define kGETHWJRCmd @"read_hwjr_config$"
+#define kGETHWJRCmd @"read_hwjr_config"
 //手动加热
 #define kSDJRCmd @"config_sdjr$%@"
-#define kGETSDJRCmd @"read_sdjr_config$"
+#define kGETSDJRCmd @"read_sdjr_config"
 //手动上水
 #define kSDSSCmd @"config_sdss$%@"
-#define kGETSDSSCmd @"read_sdss_config$"
+#define kGETSDSSCmd @"read_sdss_config"
 //温差循环
 #define kWCXHCmd @"config_wcxh$%@$%@$%@"
-#define kGETWCXHCmd @"read_wcxh_config$"
+#define kGETWCXHCmd @"read_wcxh_config"
 //温控进水
 #define kWKJSCmd @"config_wkjs$%@$%@"
-#define kGETWKJSCmd @"read_wkjs_config$"
+#define kGETWKJSCmd @"read_wkjs_config"
 //预设报警
 #define kYSBJCmd @"config_ysbj$%@$%@$%@$%@$%@"
-#define kGETYSBJCmd @"read_ysbj_config$"
+#define kGETYSBJCmd @"read_ysbj_config"
 
 //注册指令
 #define kRegisterCmd @"fyzn2015#1#7#%@#%@#0#1#0#"

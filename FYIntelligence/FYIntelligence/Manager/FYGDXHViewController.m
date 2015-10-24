@@ -32,6 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"管道循环";
+    [self getInfo];
 }
 - (IBAction)positionButtonClick:(UIButton *)sender {
     FYPickerView *pickView = [[FYPickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight)unit:@""];
@@ -57,6 +58,54 @@
 - (void)object:(UIButton *)button didSelectDate:(NSString *)date
 {
     [button setTitle:date forState:UIControlStateNormal];
+}
+
+- (void)getInfo
+{
+    NSString *request = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),kGETDSJRCmd];
+    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
+        NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
+        NSMutableArray *results = [NSMutableArray array];
+        [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+            [results addObject:result];
+        }];
+        NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
+            if (obj1.range.location > obj2.range.location) {
+                return (NSComparisonResult)NSOrderedDescending;
+            } else if (obj1.range.location < obj2.range.location) {
+                return (NSComparisonResult)NSOrderedAscending;
+            }
+            return (NSComparisonResult)NSOrderedSame;
+        };
+        NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+
+        NSString *isOn1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+        [self.switch1 setOn: [isOn1 isEqualToString:@"1"] ? YES : NO];
+        NSString *hour11 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
+        NSString *minute11 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+        [self.timeButton1 setTitle:[NSString stringWithFormat:@"%@:%@",hour11, minute11] forState:UIControlStateNormal];
+        NSString *hour12 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
+        NSString *minute12 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+        [self.timeButton4 setTitle:[NSString stringWithFormat:@"%@:%@",hour12, minute12] forState:UIControlStateNormal];
+        NSString *tem1 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range] stringByAppendingString:@""];
+        [self.positionButton1 setTitle:tem1 forState:UIControlStateNormal];
+
+        NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
+        [self.switch2 setOn: [isOn2 isEqualToString:@"1"] ? YES : NO];
+        NSString *hour2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range];
+        NSString *minute2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:6]).range];
+        [self.timeButton2 setTitle:[NSString stringWithFormat:@"%@:%@",hour2, minute2] forState:UIControlStateNormal];
+        NSString *tem2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:7]).range];
+        [self.positionButton2 setTitle:tem2 forState:UIControlStateNormal];
+
+        NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:8]).range];
+        [self.switch3 setOn: [isOn3 isEqualToString:@"1"] ? YES : NO];
+        NSString *hour3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:9]).range];
+        NSString *minute3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:10]).range];
+        [self.timeButton3 setTitle:[NSString stringWithFormat:@"%@:%@",hour3, minute3] forState:UIControlStateNormal];
+        NSString *tem3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:11]).range];
+        [self.positionButton3 setTitle:tem3 forState:UIControlStateNormal];
+    }];
 }
 
 - (IBAction)sendMessage:(id)sender

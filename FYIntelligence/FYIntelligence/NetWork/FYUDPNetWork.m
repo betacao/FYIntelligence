@@ -86,14 +86,27 @@
     NSTextCheckingResult *result = [MResult firstObject];
     NSString *globleString = [string substringWithRange:result.range];
     NSLog(@"globleString = %@",globleString);
-    result = [MResult lastObject];
-    NSString *responeString = [string substringWithRange:result.range];
-    NSLog(@"success = %@",responeString);
+
     NSInteger globleNumber = [[globleString substringFromIndex:6] integerValue];
     NSLog(@"globleNumber = %ld",(long)globleNumber);
+
+    NSString *responeString = @"";
+    for (NSInteger index = 1; index <= MResult.count - 1; index++) {
+        result = [MResult objectAtIndex:index];
+        responeString = [responeString stringByAppendingFormat:@"%@&",[string substringWithRange:result.range]];
+    }
+    NSLog(@"success = %@",responeString);
+    __weak typeof(self) weakSelf = self;
+
     if(globleNumber == kAppDelegate.globleNumber){
         kAppDelegate.globleNumber++;
-        self.finishBlock(YES, responeString);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.finishBlock(YES, responeString);
+        });
+    }else{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.finishBlock(NO, @"ERROR");
+        });
     }
 }
 

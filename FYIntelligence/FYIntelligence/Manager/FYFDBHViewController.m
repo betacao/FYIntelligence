@@ -25,8 +25,9 @@
     self.positionArray = @[@"1", @"2", @"3", @"4", @"5"];
     self.temArray = @[@"6", @"7", @"8", @"9", @"10"];
     self.startValue = [self.positionArray firstObject];
-    self.endValue = [self.positionArray firstObject];
+    self.endValue = [self.temArray firstObject];
     self.title = @"防冻保护";
+    [self getInfo];
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
@@ -61,6 +62,33 @@
     } else{
         self.startValue = [self.positionArray objectAtIndex:row];
     }
+}
+
+- (void)getInfo
+{
+    NSString *request = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),kGETFDBHCmd];
+    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
+        NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
+        NSMutableArray *results = [NSMutableArray array];
+        [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+            [results addObject:result];
+        }];
+        NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
+            if (obj1.range.location > obj2.range.location) {
+                return (NSComparisonResult)NSOrderedDescending;
+            } else if (obj1.range.location < obj2.range.location) {
+                return (NSComparisonResult)NSOrderedAscending;
+            }
+            return (NSComparisonResult)NSOrderedSame;
+        };
+        NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+
+        NSString *value1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+        [self.postionPickView selectRow:[self.positionArray indexOfObject:value1] inComponent:0 animated:NO];
+        NSString *value2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
+        [self.temPickView selectRow:[self.temArray indexOfObject:value2] inComponent:0 animated:NO];
+
+    }];
 }
 
 - (IBAction)sendMessage:(id)sender
