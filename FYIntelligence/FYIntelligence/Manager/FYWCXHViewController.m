@@ -26,9 +26,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.startArray = @[@"7℃", @"8℃", @"9℃", @"10℃", @"11℃", @"12℃", @"13℃", @"14℃", @"15℃"];
-    self.endArray = @[@"2℃", @"3℃", @"4℃", @"5℃"];
-    self.protectArray = @[@"50℃", @"55℃", @"60℃", @"65℃", @"70℃", @"75℃", @"80℃", @"85℃", @"90℃"];
+    self.startArray = @[@"7°C", @"8°C", @"9°C", @"10°C", @"11°C", @"12°C", @"13°C", @"14°C", @"15°C"];
+    self.endArray = @[@"2°C", @"3°C", @"4°C", @"5°C"];
+    self.protectArray = @[@"50°C", @"55°C", @"60°C", @"65°C", @"70°C", @"75°C", @"80°C", @"85°C", @"90°C"];
     self.title = @"集热器温差循环";
     self.firstValue = [self.startArray firstObject];
     self.secondValue = [self.endArray firstObject];
@@ -55,13 +55,13 @@
 {
     if([pickerView isEqual:self.startPickView]){
         NSString *value = [self.startArray objectAtIndex:row];
-        self.firstValue = [value substringToIndex:[value rangeOfString:@"℃"].location];
+        self.firstValue = [value substringToIndex:[value rangeOfString:@"°C"].location];
     } else if([pickerView isEqual:self.endPickView]){
         NSString *value = [self.endArray objectAtIndex:row];
-        self.secondValue = [value substringToIndex:[value rangeOfString:@"℃"].location];
+        self.secondValue = [value substringToIndex:[value rangeOfString:@"°C"].location];
     } else{
         NSString *value = [self.protectArray objectAtIndex:row];
-        self.thirdValue = [value substringToIndex:[value rangeOfString:@"℃"].location];
+        self.thirdValue = [value substringToIndex:[value rangeOfString:@"°C"].location];
     }
 }
 

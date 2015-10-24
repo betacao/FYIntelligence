@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.positionArray = @[@"20", @"50", @"80"];
-    self.temArray = @[@"35℃", @"40℃", @"45℃", @"50℃"];
+    self.temArray = @[@"35°C", @"40°C", @"45°C", @"50°C"];
     self.title = @"预设报警";
     self.firstValue = [self.positionArray firstObject];
     self.secondValue = [self.temArray firstObject];
@@ -62,7 +62,7 @@
 {
     if([pickerView isEqual:self.temPickView]){
         NSString *value = [self.temArray objectAtIndex:row];
-        self.secondValue = [value substringToIndex:[value rangeOfString:@"℃"].location];
+        self.secondValue = [value substringToIndex:[value rangeOfString:@"°C"].location];
 
     } else{
         self.firstValue = [self.positionArray objectAtIndex:row];
