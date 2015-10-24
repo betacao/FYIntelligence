@@ -71,7 +71,7 @@
         NSString *hour1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
         NSString *minute1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
         [self.timeButton1 setTitle:[NSString stringWithFormat:@"%@:%@",hour1, minute1] forState:UIControlStateNormal];
-        NSString *tem1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
+        NSString *tem1 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range] stringByAppendingString:@"°C"];
         [self.positionButton1 setTitle:tem1 forState:UIControlStateNormal];
 
         NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
@@ -79,7 +79,7 @@
         NSString *hour2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range];
         NSString *minute2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:6]).range];
         [self.timeButton2 setTitle:[NSString stringWithFormat:@"%@:%@",hour2, minute2] forState:UIControlStateNormal];
-        NSString *tem2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:7]).range];
+        NSString *tem2 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:7]).range] stringByAppendingString:@"°C"];
         [self.positionButton2 setTitle:tem2 forState:UIControlStateNormal];
 
         NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:8]).range];
@@ -87,7 +87,7 @@
         NSString *hour3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:9]).range];
         NSString *minute3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:10]).range];
         [self.timeButton3 setTitle:[NSString stringWithFormat:@"%@:%@",hour3, minute3] forState:UIControlStateNormal];
-        NSString *tem3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:11]).range];
+        NSString *tem3 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:11]).range] stringByAppendingString:@"°C"];
         [self.positionButton3 setTitle:tem3 forState:UIControlStateNormal];
     }];
 }
