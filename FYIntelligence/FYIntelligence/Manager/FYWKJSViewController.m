@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *temPickView;
 @property (strong, nonatomic) NSArray *positionArray;
 @property (strong, nonatomic) NSArray *temArray;
+@property (strong, nonatomic) NSString *firstValue;
+@property (strong, nonatomic) NSString *secondValue;
 
 @end
 
@@ -20,9 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.temArray = @[@"6", @"7", @"8", @"9", @"10", @"11", @"12", @"13", @"14", @"15"];
+
     self.positionArray = @[@"50", @"55", @"60", @"65", @"70", @"75", @"80"];
+    self.temArray = @[@"6", @"7", @"8", @"9", @"10", @"11", @"12", @"13", @"14", @"15"];
     self.title = @"温控进水";
+    self.firstValue = [self.positionArray firstObject];
+    self.secondValue = [self.temArray firstObject];
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
@@ -39,6 +44,15 @@
     return 1;
 }
 
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    if([pickerView isEqual:self.temPickView]){
+        self.secondValue = [self.temArray objectAtIndex:row];
+    } else{
+        self.firstValue = [self.positionArray objectAtIndex:row];
+    }
+}
+
 - (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     if([pickerView isEqual:self.temPickView]){
@@ -53,7 +67,18 @@
 
 - (IBAction)sendMessage:(id)sender
 {
+    NSString *string = [NSString stringWithFormat:kWKJSCmd, self.firstValue, self.secondValue];
+    NSString *UDPRequest = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),string];
+    [[FYUDPNetWork shareNetEngine] sendRequest:UDPRequest complete:^(BOOL finish, NSString *responseString) {
+        if(finish){
 
+        } else{
+            NSString *TCPRequest = [NSString stringWithFormat:kAppDelegate.deviceID, kNeedPINClearCmd,kAppDelegate.userName,kAppDelegate.pinNumber];
+            [[FYTCPNetWork shareNetEngine] sendRequest:TCPRequest complete:^(NSDictionary *dic) {
+
+            }];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -16,6 +16,10 @@
 @property (strong, nonatomic) NSArray *endArray;
 @property (strong, nonatomic) NSArray *protectArray;
 
+@property (strong, nonatomic) NSString *firstValue;
+@property (strong, nonatomic) NSString *secondValue;
+@property (strong, nonatomic) NSString *thirdValue;
+
 @end
 
 @implementation FYWCXHViewController
@@ -26,6 +30,9 @@
     self.endArray = @[@"2℃", @"3℃", @"4℃", @"5℃"];
     self.protectArray = @[@"50℃", @"55℃", @"60℃", @"65℃", @"70℃", @"75℃", @"80℃", @"85℃", @"90℃"];
     self.title = @"集热器温差循环";
+    self.firstValue = [self.startArray firstObject];
+    self.secondValue = [self.endArray firstObject];
+    self.thirdValue = [self.protectArray firstObject];
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
@@ -42,6 +49,20 @@
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 1;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    if([pickerView isEqual:self.startPickView]){
+        NSString *value = [self.startArray objectAtIndex:row];
+        self.firstValue = [value substringToIndex:[value rangeOfString:@"℃"].location];
+    } else if([pickerView isEqual:self.endPickView]){
+        NSString *value = [self.endArray objectAtIndex:row];
+        self.secondValue = [value substringToIndex:[value rangeOfString:@"℃"].location];
+    } else{
+        NSString *value = [self.protectArray objectAtIndex:row];
+        self.thirdValue = [value substringToIndex:[value rangeOfString:@"℃"].location];
+    }
 }
 
 - (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
@@ -61,7 +82,18 @@
 
 - (IBAction)sendMessage:(id)sender
 {
+    NSString *string = [NSString stringWithFormat:kWCXHCmd, self.firstValue, self.secondValue, self.thirdValue];
+    NSString *UDPRequest = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),string];
+    [[FYUDPNetWork shareNetEngine] sendRequest:UDPRequest complete:^(BOOL finish, NSString *responseString) {
+        if(finish){
 
+        } else{
+            NSString *TCPRequest = [NSString stringWithFormat:kAppDelegate.deviceID, kNeedPINClearCmd,kAppDelegate.userName,kAppDelegate.pinNumber];
+            [[FYTCPNetWork shareNetEngine] sendRequest:TCPRequest complete:^(NSDictionary *dic) {
+
+            }];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

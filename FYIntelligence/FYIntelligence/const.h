@@ -38,11 +38,11 @@
 //防冻保护
 #define kFDBHCmd @"config_fdbh$%@$%@"
 //管道循环
-#define kGDXHCmd @"config_gdxh$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@"
+#define kGDXHCmd @"config_gdxh$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@"
 //恒水位
 #define kHSWCmd @"config_hsw$%@"
 //恒温加热
-#define kHWJRCmd @"config_hwjr$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@"
+#define kHWJRCmd @"config_hwjr$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@"
 //手动加热
 #define kSDJRCmd @"config_sdjr$%@"
 //手动上水
