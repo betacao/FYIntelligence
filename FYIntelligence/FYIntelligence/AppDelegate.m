@@ -26,6 +26,7 @@
     self.isRemember = NO;
     [[FYTCPNetWork shareNetEngine] createClientTcpSocket];
     [[FYUDPNetWork shareNetEngine] createClientUdpSocket];
+    [[FYTCPSpecialNetWork shareNetEngine] createClientTcpSocket];
     return YES;
 }
 

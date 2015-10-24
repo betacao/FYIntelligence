@@ -7,69 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F91C1BED1BD23767002FC017 /* FYForgrtPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F91C1BEB1BD23767002FC017 /* FYForgrtPWDViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F91C1BEE1BD23767002FC017 /* FYForgrtPWDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91C1BEC1BD23767002FC017 /* FYForgrtPWDViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F93F982D1BCE6E3300FD46A8 /* FYPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F93F982C1BCE6E3300FD46A8 /* FYPickerView.m */; settings = {ASSET_TAGS = (); }; };
-		F93F98301BCE7C2800FD46A8 /* FYDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F93F982F1BCE7C2800FD46A8 /* FYDatePickerView.m */; settings = {ASSET_TAGS = (); }; };
-		F95113BF1BCD45D60058C7B2 /* FYParamSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95113BD1BCD45D60058C7B2 /* FYParamSettingViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F95113C01BCD45D60058C7B2 /* FYParamSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95113BE1BCD45D60058C7B2 /* FYParamSettingViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F95113C41BCD464A0058C7B2 /* FYParamSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F95113C21BCD464A0058C7B2 /* FYParamSettingTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		F95113C51BCD464A0058C7B2 /* FYParamSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95113C31BCD464A0058C7B2 /* FYParamSettingTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
-		F9579BC21BD5162300EA071C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F9579BC11BD5162300EA071C /* MBProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
-		F95A636B1BC7F7BB002B949A /* FYBaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95A636A1BC7F7BB002B949A /* FYBaseNavigationViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F95A636E1BC7F894002B949A /* FYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95A636D1BC7F894002B949A /* FYBaseViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F96E2F911BCE27BA00B6AF4B /* UIColor+FYColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F96E2F901BCE27BA00B6AF4B /* UIColor+FYColor.m */; settings = {ASSET_TAGS = (); }; };
-		F96E2F941BCE284600B6AF4B /* UIImage+FYImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F96E2F931BCE284600B6AF4B /* UIImage+FYImage.m */; settings = {ASSET_TAGS = (); }; };
-		F96E2F981BCE385500B6AF4B /* FYSDSSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96E2F961BCE385500B6AF4B /* FYSDSSViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F96E2F991BCE385500B6AF4B /* FYSDSSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96E2F971BCE385500B6AF4B /* FYSDSSViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F96E2FE31BCE6A7600B6AF4B /* FYDSSSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96E2FE11BCE6A7600B6AF4B /* FYDSSSViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F96E2FE41BCE6A7600B6AF4B /* FYDSSSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96E2FE21BCE6A7600B6AF4B /* FYDSSSViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F973409D1BCFE8B2006D1740 /* FYHWJRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F973409B1BCFE8B2006D1740 /* FYHWJRViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F973409E1BCFE8B2006D1740 /* FYHWJRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F973409C1BCFE8B2006D1740 /* FYHWJRViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F97340A21BCFECEF006D1740 /* FYGDXHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340A01BCFECEF006D1740 /* FYGDXHViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F97340A31BCFECEF006D1740 /* FYGDXHViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340A11BCFECEF006D1740 /* FYGDXHViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F97340A71BCFED4E006D1740 /* FYFDBHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340A51BCFED4E006D1740 /* FYFDBHViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F97340A81BCFED4E006D1740 /* FYFDBHViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340A61BCFED4E006D1740 /* FYFDBHViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F97340AC1BCFED60006D1740 /* FYYSBJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340AA1BCFED60006D1740 /* FYYSBJViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F97340AD1BCFED60006D1740 /* FYYSBJViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340AB1BCFED60006D1740 /* FYYSBJViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F97340B11BCFED73006D1740 /* FYHSWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340AF1BCFED73006D1740 /* FYHSWViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F97340B21BCFED73006D1740 /* FYHSWViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340B01BCFED73006D1740 /* FYHSWViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F97340B61BCFED8F006D1740 /* FYWCXHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340B41BCFED8F006D1740 /* FYWCXHViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F97340B71BCFED8F006D1740 /* FYWCXHViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340B51BCFED8F006D1740 /* FYWCXHViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F97340BB1BCFEE65006D1740 /* FYWKJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340B91BCFEE65006D1740 /* FYWKJSViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F97340BC1BCFEE65006D1740 /* FYWKJSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340BA1BCFEE65006D1740 /* FYWKJSViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F98351591BCA0B0B00809E14 /* FYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98351571BCA0B0B00809E14 /* FYLoginViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F983515A1BCA0B0B00809E14 /* FYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351581BCA0B0B00809E14 /* FYLoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F983515E1BCA0B5C00809E14 /* FYRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F983515C1BCA0B5C00809E14 /* FYRegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F983515F1BCA0B5C00809E14 /* FYRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F983515D1BCA0B5C00809E14 /* FYRegisterViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F98351641BCA26E400809E14 /* FYListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98351621BCA26E400809E14 /* FYListViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F98351651BCA26E400809E14 /* FYListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351631BCA26E400809E14 /* FYListViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F98351691BCA270A00809E14 /* FYListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F98351671BCA270A00809E14 /* FYListTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		F983516A1BCA270A00809E14 /* FYListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351681BCA270A00809E14 /* FYListTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
-		F983516E1BCA307100809E14 /* FYDeviceInitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F983516C1BCA307100809E14 /* FYDeviceInitViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F983516F1BCA307100809E14 /* FYDeviceInitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F983516D1BCA307100809E14 /* FYDeviceInitViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F98351731BCA333000809E14 /* FYAddDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98351711BCA333000809E14 /* FYAddDeviceViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F98351741BCA333000809E14 /* FYAddDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351721BCA333000809E14 /* FYAddDeviceViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F98351781BCA370400809E14 /* FYJoinNetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98351761BCA370400809E14 /* FYJoinNetViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F98351791BCA370400809E14 /* FYJoinNetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351771BCA370400809E14 /* FYJoinNetViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F983517E1BCA3FAE00809E14 /* FYEnterPINViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F983517C1BCA3FAE00809E14 /* FYEnterPINViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F983517F1BCA3FAE00809E14 /* FYEnterPINViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F983517D1BCA3FAE00809E14 /* FYEnterPINViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F98B9FF41BCF928200B5FEAF /* FYSDJRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98B9FF21BCF928200B5FEAF /* FYSDJRViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F98B9FF51BCF928200B5FEAF /* FYSDJRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98B9FF31BCF928200B5FEAF /* FYSDJRViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F98B9FF91BCF9D0300B5FEAF /* FYDSJRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98B9FF71BCF9D0300B5FEAF /* FYDSJRViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F98B9FFA1BCF9D0300B5FEAF /* FYDSJRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98B9FF81BCF9D0300B5FEAF /* FYDSJRViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F99463AD1BD6822E008B9F54 /* FYAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99463AB1BD6822E008B9F54 /* FYAboutViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F99463AE1BD6822E008B9F54 /* FYAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99463AC1BD6822E008B9F54 /* FYAboutViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F91C1BED1BD23767002FC017 /* FYForgrtPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F91C1BEB1BD23767002FC017 /* FYForgrtPWDViewController.m */; };
+		F91C1BEE1BD23767002FC017 /* FYForgrtPWDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91C1BEC1BD23767002FC017 /* FYForgrtPWDViewController.xib */; };
+		F93F982D1BCE6E3300FD46A8 /* FYPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F93F982C1BCE6E3300FD46A8 /* FYPickerView.m */; };
+		F93F98301BCE7C2800FD46A8 /* FYDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F93F982F1BCE7C2800FD46A8 /* FYDatePickerView.m */; };
+		F95113BF1BCD45D60058C7B2 /* FYParamSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95113BD1BCD45D60058C7B2 /* FYParamSettingViewController.m */; };
+		F95113C01BCD45D60058C7B2 /* FYParamSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95113BE1BCD45D60058C7B2 /* FYParamSettingViewController.xib */; };
+		F95113C41BCD464A0058C7B2 /* FYParamSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F95113C21BCD464A0058C7B2 /* FYParamSettingTableViewCell.m */; };
+		F95113C51BCD464A0058C7B2 /* FYParamSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95113C31BCD464A0058C7B2 /* FYParamSettingTableViewCell.xib */; };
+		F9579BC21BD5162300EA071C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F9579BC11BD5162300EA071C /* MBProgressHUD.m */; };
+		F95A636B1BC7F7BB002B949A /* FYBaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95A636A1BC7F7BB002B949A /* FYBaseNavigationViewController.m */; };
+		F95A636E1BC7F894002B949A /* FYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95A636D1BC7F894002B949A /* FYBaseViewController.m */; };
+		F96E2F911BCE27BA00B6AF4B /* UIColor+FYColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F96E2F901BCE27BA00B6AF4B /* UIColor+FYColor.m */; };
+		F96E2F941BCE284600B6AF4B /* UIImage+FYImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F96E2F931BCE284600B6AF4B /* UIImage+FYImage.m */; };
+		F96E2F981BCE385500B6AF4B /* FYSDSSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96E2F961BCE385500B6AF4B /* FYSDSSViewController.m */; };
+		F96E2F991BCE385500B6AF4B /* FYSDSSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96E2F971BCE385500B6AF4B /* FYSDSSViewController.xib */; };
+		F96E2FE31BCE6A7600B6AF4B /* FYDSSSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96E2FE11BCE6A7600B6AF4B /* FYDSSSViewController.m */; };
+		F96E2FE41BCE6A7600B6AF4B /* FYDSSSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96E2FE21BCE6A7600B6AF4B /* FYDSSSViewController.xib */; };
+		F973409D1BCFE8B2006D1740 /* FYHWJRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F973409B1BCFE8B2006D1740 /* FYHWJRViewController.m */; };
+		F973409E1BCFE8B2006D1740 /* FYHWJRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F973409C1BCFE8B2006D1740 /* FYHWJRViewController.xib */; };
+		F97340A21BCFECEF006D1740 /* FYGDXHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340A01BCFECEF006D1740 /* FYGDXHViewController.m */; };
+		F97340A31BCFECEF006D1740 /* FYGDXHViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340A11BCFECEF006D1740 /* FYGDXHViewController.xib */; };
+		F97340A71BCFED4E006D1740 /* FYFDBHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340A51BCFED4E006D1740 /* FYFDBHViewController.m */; };
+		F97340A81BCFED4E006D1740 /* FYFDBHViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340A61BCFED4E006D1740 /* FYFDBHViewController.xib */; };
+		F97340AC1BCFED60006D1740 /* FYYSBJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340AA1BCFED60006D1740 /* FYYSBJViewController.m */; };
+		F97340AD1BCFED60006D1740 /* FYYSBJViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340AB1BCFED60006D1740 /* FYYSBJViewController.xib */; };
+		F97340B11BCFED73006D1740 /* FYHSWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340AF1BCFED73006D1740 /* FYHSWViewController.m */; };
+		F97340B21BCFED73006D1740 /* FYHSWViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340B01BCFED73006D1740 /* FYHSWViewController.xib */; };
+		F97340B61BCFED8F006D1740 /* FYWCXHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340B41BCFED8F006D1740 /* FYWCXHViewController.m */; };
+		F97340B71BCFED8F006D1740 /* FYWCXHViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340B51BCFED8F006D1740 /* FYWCXHViewController.xib */; };
+		F97340BB1BCFEE65006D1740 /* FYWKJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340B91BCFEE65006D1740 /* FYWKJSViewController.m */; };
+		F97340BC1BCFEE65006D1740 /* FYWKJSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340BA1BCFEE65006D1740 /* FYWKJSViewController.xib */; };
+		F98351591BCA0B0B00809E14 /* FYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98351571BCA0B0B00809E14 /* FYLoginViewController.m */; };
+		F983515A1BCA0B0B00809E14 /* FYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351581BCA0B0B00809E14 /* FYLoginViewController.xib */; };
+		F983515E1BCA0B5C00809E14 /* FYRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F983515C1BCA0B5C00809E14 /* FYRegisterViewController.m */; };
+		F983515F1BCA0B5C00809E14 /* FYRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F983515D1BCA0B5C00809E14 /* FYRegisterViewController.xib */; };
+		F98351641BCA26E400809E14 /* FYListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98351621BCA26E400809E14 /* FYListViewController.m */; };
+		F98351651BCA26E400809E14 /* FYListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351631BCA26E400809E14 /* FYListViewController.xib */; };
+		F98351691BCA270A00809E14 /* FYListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F98351671BCA270A00809E14 /* FYListTableViewCell.m */; };
+		F983516A1BCA270A00809E14 /* FYListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351681BCA270A00809E14 /* FYListTableViewCell.xib */; };
+		F983516E1BCA307100809E14 /* FYDeviceInitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F983516C1BCA307100809E14 /* FYDeviceInitViewController.m */; };
+		F983516F1BCA307100809E14 /* FYDeviceInitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F983516D1BCA307100809E14 /* FYDeviceInitViewController.xib */; };
+		F98351731BCA333000809E14 /* FYAddDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98351711BCA333000809E14 /* FYAddDeviceViewController.m */; };
+		F98351741BCA333000809E14 /* FYAddDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351721BCA333000809E14 /* FYAddDeviceViewController.xib */; };
+		F98351781BCA370400809E14 /* FYJoinNetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98351761BCA370400809E14 /* FYJoinNetViewController.m */; };
+		F98351791BCA370400809E14 /* FYJoinNetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351771BCA370400809E14 /* FYJoinNetViewController.xib */; };
+		F983517E1BCA3FAE00809E14 /* FYEnterPINViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F983517C1BCA3FAE00809E14 /* FYEnterPINViewController.m */; };
+		F983517F1BCA3FAE00809E14 /* FYEnterPINViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F983517D1BCA3FAE00809E14 /* FYEnterPINViewController.xib */; };
+		F98B9FF41BCF928200B5FEAF /* FYSDJRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98B9FF21BCF928200B5FEAF /* FYSDJRViewController.m */; };
+		F98B9FF51BCF928200B5FEAF /* FYSDJRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98B9FF31BCF928200B5FEAF /* FYSDJRViewController.xib */; };
+		F98B9FF91BCF9D0300B5FEAF /* FYDSJRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98B9FF71BCF9D0300B5FEAF /* FYDSJRViewController.m */; };
+		F98B9FFA1BCF9D0300B5FEAF /* FYDSJRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98B9FF81BCF9D0300B5FEAF /* FYDSJRViewController.xib */; };
+		F99463AD1BD6822E008B9F54 /* FYAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99463AB1BD6822E008B9F54 /* FYAboutViewController.m */; };
+		F99463AE1BD6822E008B9F54 /* FYAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99463AC1BD6822E008B9F54 /* FYAboutViewController.xib */; };
 		F9A1E05C1BCCF6AE00A92B90 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A1E05B1BCCF6AE00A92B90 /* SystemConfiguration.framework */; };
-		F9B0636E1BD7A41A00471DF4 /* FYUDPNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B0636D1BD7A41A00471DF4 /* FYUDPNetWork.m */; settings = {ASSET_TAGS = (); }; };
-		F9B441C41BD4F2DA005148D1 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441BB1BD4F2DA005148D1 /* GCDAsyncSocket.m */; settings = {ASSET_TAGS = (); }; };
-		F9B441C51BD4F2DA005148D1 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441BD1BD4F2DA005148D1 /* GCDAsyncUdpSocket.m */; settings = {ASSET_TAGS = (); }; };
-		F9B441C61BD4F2DA005148D1 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441C01BD4F2DA005148D1 /* AsyncSocket.m */; settings = {ASSET_TAGS = (); }; };
-		F9B441C71BD4F2DA005148D1 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441C21BD4F2DA005148D1 /* AsyncUdpSocket.m */; settings = {ASSET_TAGS = (); }; };
-		F9B441C81BD4F2DA005148D1 /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = F9B441C31BD4F2DA005148D1 /* Documentation.html */; settings = {ASSET_TAGS = (); }; };
-		F9B441CC1BD4F339005148D1 /* FYTCPNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441CB1BD4F339005148D1 /* FYTCPNetWork.m */; settings = {ASSET_TAGS = (); }; };
-		F9DE29101BD5E2BF0009F667 /* FYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DE290F1BD5E2BF0009F667 /* FYProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
-		F9DE29131BD61AE60009F667 /* FYDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DE29121BD61AE60009F667 /* FYDevice.m */; settings = {ASSET_TAGS = (); }; };
+		F9B0636E1BD7A41A00471DF4 /* FYUDPNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B0636D1BD7A41A00471DF4 /* FYUDPNetWork.m */; };
+		F9B441C41BD4F2DA005148D1 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441BB1BD4F2DA005148D1 /* GCDAsyncSocket.m */; };
+		F9B441C51BD4F2DA005148D1 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441BD1BD4F2DA005148D1 /* GCDAsyncUdpSocket.m */; };
+		F9B441C61BD4F2DA005148D1 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441C01BD4F2DA005148D1 /* AsyncSocket.m */; };
+		F9B441C71BD4F2DA005148D1 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441C21BD4F2DA005148D1 /* AsyncUdpSocket.m */; };
+		F9B441C81BD4F2DA005148D1 /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = F9B441C31BD4F2DA005148D1 /* Documentation.html */; };
+		F9B441CC1BD4F339005148D1 /* FYTCPNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441CB1BD4F339005148D1 /* FYTCPNetWork.m */; };
+		F9CEB4891BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F9CEB4881BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.m */; };
+		F9DE29101BD5E2BF0009F667 /* FYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DE290F1BD5E2BF0009F667 /* FYProgressHUD.m */; };
+		F9DE29131BD61AE60009F667 /* FYDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DE29121BD61AE60009F667 /* FYDevice.m */; };
 		F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B31BC7F5CC00520CAA /* main.m */; };
 		F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B61BC7F5CC00520CAA /* AppDelegate.m */; };
 		F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B91BC7F5CC00520CAA /* ViewController.m */; };
@@ -77,8 +78,8 @@
 		F9DEF7BF1BC7F5CC00520CAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9DEF7BE1BC7F5CC00520CAA /* Images.xcassets */; };
 		F9DEF7C21BC7F5CC00520CAA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DEF7C01BC7F5CC00520CAA /* LaunchScreen.xib */; };
 		F9DEF7CE1BC7F5CC00520CAA /* FYIntelligenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7CD1BC7F5CC00520CAA /* FYIntelligenceTests.m */; };
-		F9F90D061BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F90D041BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F9F90D071BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F90D051BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F9F90D061BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F90D041BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m */; };
+		F9F90D071BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F90D051BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +193,8 @@
 		F9B441C31BD4F2DA005148D1 /* Documentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Documentation.html; sourceTree = "<group>"; };
 		F9B441CA1BD4F339005148D1 /* FYTCPNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYTCPNetWork.h; sourceTree = "<group>"; };
 		F9B441CB1BD4F339005148D1 /* FYTCPNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYTCPNetWork.m; sourceTree = "<group>"; };
+		F9CEB4871BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYTCPSpecialNetWork.h; sourceTree = "<group>"; };
+		F9CEB4881BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYTCPSpecialNetWork.m; sourceTree = "<group>"; };
 		F9DE290E1BD5E2BF0009F667 /* FYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYProgressHUD.h; sourceTree = "<group>"; };
 		F9DE290F1BD5E2BF0009F667 /* FYProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYProgressHUD.m; sourceTree = "<group>"; };
 		F9DE29111BD61AE60009F667 /* FYDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDevice.h; sourceTree = "<group>"; };
@@ -356,6 +359,8 @@
 				F9B441CB1BD4F339005148D1 /* FYTCPNetWork.m */,
 				F9B0636C1BD7A41A00471DF4 /* FYUDPNetWork.h */,
 				F9B0636D1BD7A41A00471DF4 /* FYUDPNetWork.m */,
+				F9CEB4871BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.h */,
+				F9CEB4881BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -608,6 +613,7 @@
 				F99463AD1BD6822E008B9F54 /* FYAboutViewController.m in Sources */,
 				F96E2FE31BCE6A7600B6AF4B /* FYDSSSViewController.m in Sources */,
 				F98351691BCA270A00809E14 /* FYListTableViewCell.m in Sources */,
+				F9CEB4891BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.m in Sources */,
 				F98B9FF91BCF9D0300B5FEAF /* FYDSJRViewController.m in Sources */,
 				F9B441C71BD4F2DA005148D1 /* AsyncUdpSocket.m in Sources */,
 				F97340AC1BCFED60006D1740 /* FYYSBJViewController.m in Sources */,

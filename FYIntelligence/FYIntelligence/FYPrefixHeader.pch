@@ -17,5 +17,6 @@
 #import "FYUDPNetWork.h"
 #import "FYProgressHUD.h"
 #import "AppDelegate.h"
+#import "FYTCPSpecialNetWork.h"
 
 #endif /* FYPrefixHeader_pch */

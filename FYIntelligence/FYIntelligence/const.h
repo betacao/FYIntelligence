@@ -67,5 +67,7 @@
 
 //注册指令
 #define kRegisterCmd @"fyzn2015#1#7#%@#%@#0#1#0#"
+//添加设备
+#define kAddDeviceCmd @"LOCAL_GET_ID"
 
 #endif /* const_h */

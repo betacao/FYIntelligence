@@ -1,4 +1,14 @@
 //
+//  FYTCPSpecialNetWork.m
+//  FYIntelligence
+//
+//  Created by changxicao on 15/10/24.
+//  Copyright © 2015年 changxicao. All rights reserved.
+//
+
+#import "FYTCPSpecialNetWork.h"
+
+//
 //  FYNetWork.m
 //  FYIntelligence
 //
@@ -9,16 +19,16 @@
 #import "FYTCPNetWork.h"
 #import "GCDAsyncSocket.h"
 
-@interface FYTCPNetWork()<GCDAsyncSocketDelegate>
+@interface FYTCPSpecialNetWork()<GCDAsyncSocketDelegate>
 @property (strong, nonatomic) GCDAsyncSocket *sendTcpSocket;
-@property (copy, nonatomic) FYTCPNetWorkFinishBlock finishBlock;
+@property (copy, nonatomic) FYTCPSpecialNetWorkFinishBlock finishBlock;
 @end
 
-@implementation FYTCPNetWork
+@implementation FYTCPSpecialNetWork
 
 + (instancetype) shareNetEngine
 {
-    static FYTCPNetWork *sharedEngine = nil;
+    static FYTCPSpecialNetWork *sharedEngine = nil;
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
         sharedEngine = [[self alloc] init];
@@ -28,12 +38,12 @@
 
 - (void)createClientTcpSocket
 {
-    dispatch_queue_t dQueue = dispatch_queue_create("client tdp socket", NULL);
+    dispatch_queue_t dQueue = dispatch_queue_create("client special tdp socket", NULL);
     // 1. 创建一个 udp socket用来和服务端进行通讯
     self.sendTcpSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dQueue socketQueue:nil];
     // 2. 连接服务器端. 只有连接成功后才能相互通讯 如果60s连接不上就出错
     NSString *host = kHostAddress;
-    uint16_t port = kTCPHostPort;
+    uint16_t port = 180;
     [self.sendTcpSocket connectToHost:host onPort:port withTimeout:60 error:nil];
     // 连接必须服务器在线
 }

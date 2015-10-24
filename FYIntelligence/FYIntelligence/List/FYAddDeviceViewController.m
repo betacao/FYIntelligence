@@ -56,6 +56,11 @@
         [self.rememberPwdButton setImage:[UIImage imageNamed:@"selectButton"] forState:UIControlStateNormal];
     }
     self.isRemember = !self.isRemember;
+    NSString *request = [NSString stringWithFormat:@"%@",kAddDeviceCmd];
+    [[FYTCPSpecialNetWork shareNetEngine] sendRequest:request complete:^(NSDictionary *dic) {
+        NSString *string = [dic objectForKey:kResponseString];
+        NSLog(@"%@",string);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
