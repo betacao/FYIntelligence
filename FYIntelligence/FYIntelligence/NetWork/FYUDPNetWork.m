@@ -118,6 +118,7 @@
 {
     if(!self.sendMessage || self.sendTimes >= 20){
         [self.timer setFireDate:[NSDate distantFuture]];
+        self.sendTimes = 0;
         self.isSending = NO;
         self.finishBlock(NO,nil);
         return;

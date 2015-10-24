@@ -49,6 +49,29 @@
     [self.registerButton setBackgroundImage:[pressImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateHighlighted];
 }
 
+
+- (IBAction)registerUserInfo:(id)sender
+{
+    if (![self.comfirmPwdField.text isEqualToString:self.pwdField.text]) {
+        return;
+    }
+    NSString *userName = self.userField.text;
+    NSString *pwd = self.pwdField.text;
+    NSString *request = [NSString stringWithFormat:kRegisterCmd,userName, pwd];
+    [[FYTCPNetWork shareNetEngine] sendRequest:request complete:^(NSDictionary *dic) {
+        NSString *responseString = [dic objectForKey:kResponseString];
+        NSLog(@"%@",responseString);
+        if([responseString rangeOfString:@"SUCCESS"].location != NSNotFound){
+            __weak typeof(self)weakSelf = self;
+            [FYProgressHUD showMessageWithText:@"注册成功"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.2f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+            });
+        } else{
+            [FYProgressHUD showMessageWithText:@"注册失败"];
+        }
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

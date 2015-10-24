@@ -56,6 +56,15 @@
     [button setTitle:date forState:UIControlStateNormal];
 }
 
+
+- (void)getInfo
+{
+//    NSString *request = [
+//    [[FYUDPNetWork shareNetEngine] sendRequest:@"" complete:^(BOOL finish, NSString *responseString) {
+//
+//    }];
+}
+
 - (IBAction)sendMessage:(id)sender
 {
     NSString *isOn1 = self.switch1.isOn ? @"1" : @"0";

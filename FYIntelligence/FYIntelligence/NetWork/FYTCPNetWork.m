@@ -43,7 +43,7 @@
 {
     NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
     // 发送消息 这里不需要知道对象的ip地址和端口
-    [self.sendTcpSocket writeData:data withTimeout:60 tag:100];
+    [self.sendTcpSocket writeData:data withTimeout:60 tag:0];
     self.finishBlock = block;
     [FYProgressHUD showLoadingWithMessage:@"请稍等..."];
 }
@@ -53,7 +53,7 @@
 {
     NSLog(@"连接成功");
     // 等待数据来啊
-    [sock readDataWithTimeout:-1 tag:200];;
+    [sock readDataWithTimeout:-1 tag:0];;
 }
 // 如果对象关闭了 这里也会调用
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err
@@ -85,7 +85,7 @@
             weakSelf.finishBlock = nil;
         }
     });
-    [sock readDataWithTimeout:-1 tag:200];;
+    [sock readDataWithTimeout:-1 tag:0];;
 }
 
 //- (void)so
