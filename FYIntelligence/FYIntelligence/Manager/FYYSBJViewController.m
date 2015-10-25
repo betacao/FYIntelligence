@@ -74,35 +74,39 @@
 {
     NSString *request = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),kGETYSBJCmd];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
-        NSMutableArray *results = [NSMutableArray array];
-        [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
-            [results addObject:result];
-        }];
-        NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
-            if (obj1.range.location > obj2.range.location) {
-                return (NSComparisonResult)NSOrderedDescending;
-            } else if (obj1.range.location < obj2.range.location) {
-                return (NSComparisonResult)NSOrderedAscending;
-            }
-            return (NSComparisonResult)NSOrderedSame;
-        };
-        NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+        if(responseString.length > 0){
+            NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
+            NSMutableArray *results = [NSMutableArray array];
+            [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+                [results addObject:result];
+            }];
+            NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
+                if (obj1.range.location > obj2.range.location) {
+                    return (NSComparisonResult)NSOrderedDescending;
+                } else if (obj1.range.location < obj2.range.location) {
+                    return (NSComparisonResult)NSOrderedAscending;
+                }
+                return (NSComparisonResult)NSOrderedSame;
+            };
+            NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
 
-        NSString *value1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
-        [self.postionPickView selectRow:[self.positionArray indexOfObject:value1] inComponent:0 animated:NO];
+            NSString *value1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+            [self.postionPickView selectRow:[self.positionArray indexOfObject:value1] inComponent:0 animated:NO];
 
-        NSString *isOn1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
-        [self.switch1 setOn: [isOn1 isEqualToString:@"1"] ? YES : NO];
+            NSString *isOn1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
+            [self.switch1 setOn: [isOn1 isEqualToString:@"1"] ? YES : NO];
 
-        NSString *value2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
-        [self.temPickView selectRow:[self.temArray indexOfObject:value2] inComponent:0 animated:NO];
+            NSString *value2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
+            [self.temPickView selectRow:[self.temArray indexOfObject:value2] inComponent:0 animated:NO];
 
-        NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
-        [self.switch2 setOn: [isOn2 isEqualToString:@"1"] ? YES : NO];
+            NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
+            [self.switch2 setOn: [isOn2 isEqualToString:@"1"] ? YES : NO];
 
-        NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range];
-        [self.switch3 setOn: [isOn3 isEqualToString:@"1"] ? YES : NO];
+            NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range];
+            [self.switch3 setOn: [isOn3 isEqualToString:@"1"] ? YES : NO];
+        }else{
+            [FYProgressHUD showMessageWithText:@"获取初始值失败"];
+        }
     }];
 }
 

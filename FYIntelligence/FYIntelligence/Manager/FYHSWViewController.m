@@ -24,6 +24,7 @@
     self.dataArray = @[@"50", @"80", @"100"];
     [self.pickerView selectRow:self.dataArray.count / 2 inComponent:0 animated:NO];
     self.selectedValue = [self.dataArray objectAtIndex:self.dataArray.count / 2];
+    [self getInfo];
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
@@ -51,24 +52,28 @@
 {
     NSString *request = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),kGETHSWCmd];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
-        NSMutableArray *results = [NSMutableArray array];
-        [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
-            [results addObject:result];
-        }];
-        NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
-            if (obj1.range.location > obj2.range.location) {
-                return (NSComparisonResult)NSOrderedDescending;
-            } else if (obj1.range.location < obj2.range.location) {
-                return (NSComparisonResult)NSOrderedAscending;
-            }
-            return (NSComparisonResult)NSOrderedSame;
-        };
-        NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+        if(responseString.length > 0){
+            NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
+            NSMutableArray *results = [NSMutableArray array];
+            [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+                [results addObject:result];
+            }];
+            NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
+                if (obj1.range.location > obj2.range.location) {
+                    return (NSComparisonResult)NSOrderedDescending;
+                } else if (obj1.range.location < obj2.range.location) {
+                    return (NSComparisonResult)NSOrderedAscending;
+                }
+                return (NSComparisonResult)NSOrderedSame;
+            };
+            NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
 
-        NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+            NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
 
-        [self.pickerView selectRow:[self.dataArray indexOfObject:value] inComponent:0 animated:NO];
+            [self.pickerView selectRow:[self.dataArray indexOfObject:value] inComponent:0 animated:NO];
+        }else{
+            [FYProgressHUD showMessageWithText:@"获取初始值失败"];
+        }
     }];
 }
 

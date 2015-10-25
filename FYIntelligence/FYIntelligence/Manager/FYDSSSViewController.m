@@ -62,44 +62,48 @@
 {
     NSString *request = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),kGETDSSSCmd];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
-        NSMutableArray *results = [NSMutableArray array];
-        [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
-            [results addObject:result];
-        }];
-        NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
-            if (obj1.range.location > obj2.range.location) {
-                return (NSComparisonResult)NSOrderedDescending;
-            } else if (obj1.range.location < obj2.range.location) {
-                return (NSComparisonResult)NSOrderedAscending;
-            }
-            return (NSComparisonResult)NSOrderedSame;
-        };
-        NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+        if(responseString.length > 0){
+            NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
+            NSMutableArray *results = [NSMutableArray array];
+            [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+                [results addObject:result];
+            }];
+            NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
+                if (obj1.range.location > obj2.range.location) {
+                    return (NSComparisonResult)NSOrderedDescending;
+                } else if (obj1.range.location < obj2.range.location) {
+                    return (NSComparisonResult)NSOrderedAscending;
+                }
+                return (NSComparisonResult)NSOrderedSame;
+            };
+            NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
 
-        NSString *isOn1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
-        [self.switch1 setOn: [isOn1 isEqualToString:@"1"] ? YES : NO];
-        NSString *hour1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
-        NSString *minute1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
-        [self.timeButton1 setTitle:[NSString stringWithFormat:@"%@:%@",hour1, minute1] forState:UIControlStateNormal];
-        NSString *tem1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
-        [self.positionButton1 setTitle:tem1 forState:UIControlStateNormal];
+            NSString *isOn1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+            [self.switch1 setOn: [isOn1 isEqualToString:@"1"] ? YES : NO];
+            NSString *hour1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
+            NSString *minute1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+            [self.timeButton1 setTitle:[NSString stringWithFormat:@"%@:%@",hour1, minute1] forState:UIControlStateNormal];
+            NSString *tem1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
+            [self.positionButton1 setTitle:tem1 forState:UIControlStateNormal];
 
-        NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
-        [self.switch2 setOn: [isOn2 isEqualToString:@"1"] ? YES : NO];
-        NSString *hour2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range];
-        NSString *minute2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:6]).range];
-        [self.timeButton2 setTitle:[NSString stringWithFormat:@"%@:%@",hour2, minute2] forState:UIControlStateNormal];
-        NSString *tem2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:7]).range];
-        [self.positionButton2 setTitle:tem2 forState:UIControlStateNormal];
+            NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
+            [self.switch2 setOn: [isOn2 isEqualToString:@"1"] ? YES : NO];
+            NSString *hour2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range];
+            NSString *minute2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:6]).range];
+            [self.timeButton2 setTitle:[NSString stringWithFormat:@"%@:%@",hour2, minute2] forState:UIControlStateNormal];
+            NSString *tem2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:7]).range];
+            [self.positionButton2 setTitle:tem2 forState:UIControlStateNormal];
 
-        NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:8]).range];
-        [self.switch3 setOn: [isOn3 isEqualToString:@"1"] ? YES : NO];
-        NSString *hour3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:9]).range];
-        NSString *minute3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:10]).range];
-        [self.timeButton3 setTitle:[NSString stringWithFormat:@"%@:%@",hour3, minute3] forState:UIControlStateNormal];
-        NSString *tem3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:11]).range];
-        [self.positionButton3 setTitle:tem3 forState:UIControlStateNormal];
+            NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:8]).range];
+            [self.switch3 setOn: [isOn3 isEqualToString:@"1"] ? YES : NO];
+            NSString *hour3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:9]).range];
+            NSString *minute3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:10]).range];
+            [self.timeButton3 setTitle:[NSString stringWithFormat:@"%@:%@",hour3, minute3] forState:UIControlStateNormal];
+            NSString *tem3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:11]).range];
+            [self.positionButton3 setTitle:tem3 forState:UIControlStateNormal];
+        }else{
+            [FYProgressHUD showMessageWithText:@"获取初始值失败"];
+        }
     }];
 }
 

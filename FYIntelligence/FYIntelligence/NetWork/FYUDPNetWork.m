@@ -61,7 +61,7 @@
 
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext
 {
-    [FYProgressHUD hideHud];
+//    [FYProgressHUD hideHud];
     [self.timer setFireDate:[NSDate distantFuture]];
     self.sendTimes = 0;
     self.sendMessage = nil;
@@ -105,7 +105,7 @@
         });
     }else{
         dispatch_async(dispatch_get_main_queue(), ^{
-            weakSelf.finishBlock(NO, @"ERROR");
+            weakSelf.finishBlock(NO, @"");
         });
     }
 }
@@ -124,7 +124,7 @@
     [self.timer setFireDate:[NSDate date]];
     self.sendMessage = data;
     self.finishBlock = block;
-    [FYProgressHUD showLoadingWithMessage:@"请稍等..."];
+//    [FYProgressHUD showLoadingWithMessage:@"请稍等..."];
 }
 
 - (void)fireSendMessage
@@ -133,7 +133,7 @@
         [self.timer setFireDate:[NSDate distantFuture]];
         self.sendTimes = 0;
         self.isSending = NO;
-        self.finishBlock(NO,nil);
+        self.finishBlock(NO,@"");
         return;
     }
     self.sendTimes++;

@@ -81,7 +81,7 @@
 
 - (void)getInfo
 {
-    NSString *request = [NSString stringWithFormat:@"%@",kMainViewCmd];
+    NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,@(kAppDelegate.globleNumber),kMainViewCmd];
     [[FYUDPSpecialNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
 
     }];
