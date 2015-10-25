@@ -27,6 +27,7 @@
     [[FYTCPNetWork shareNetEngine] createClientTcpSocket];
     [[FYUDPNetWork shareNetEngine] createClientUdpSocket];
     [[FYTCPSpecialNetWork shareNetEngine] createClientTcpSocket];
+    [[FYUDPSpecialNetWork shareNetEngine] createClientUdpSocket];
     return YES;
 }
 

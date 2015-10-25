@@ -58,6 +58,7 @@
     self.waterCircleButton.layer.cornerRadius = 2.0f;
     [self.waterCircleButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"8FBC8F"]]forState:UIControlStateNormal];
     [self.waterCircleButton setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]forState:UIControlStateHighlighted];
+    [self getInfo];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -76,6 +77,14 @@
     FYAboutViewController *controller = [[FYAboutViewController alloc] initWithNibName:@"FYAboutViewController" bundle:nil];
     FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
     [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (void)getInfo
+{
+    NSString *request = [NSString stringWithFormat:@"%@",kMainViewCmd];
+    [[FYUDPSpecialNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
+
+    }];
 }
 
 - (IBAction)clickParamButton:(UIButton *)button

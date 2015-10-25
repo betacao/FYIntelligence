@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		F91C1BED1BD23767002FC017 /* FYForgrtPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F91C1BEB1BD23767002FC017 /* FYForgrtPWDViewController.m */; };
 		F91C1BEE1BD23767002FC017 /* FYForgrtPWDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91C1BEC1BD23767002FC017 /* FYForgrtPWDViewController.xib */; };
+		F93EC1F71BDC6BFF00B59E26 /* FYUDPSpecialNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EC1F61BDC6BFF00B59E26 /* FYUDPSpecialNetWork.m */; };
+		F93EC2111BDCE3CD00B59E26 /* ESP_ByteUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EC1FA1BDCE3CD00B59E26 /* ESP_ByteUtil.m */; };
+		F93EC2121BDCE3CD00B59E26 /* ESP_CRC8.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EC1FC1BDCE3CD00B59E26 /* ESP_CRC8.m */; };
+		F93EC2131BDCE3CD00B59E26 /* ESPDataCode.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EC1FE1BDCE3CD00B59E26 /* ESPDataCode.m */; };
+		F93EC2141BDCE3CD00B59E26 /* ESPDatumCode.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EC2001BDCE3CD00B59E26 /* ESPDatumCode.m */; };
+		F93EC2151BDCE3CD00B59E26 /* ESPGuideCode.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EC2021BDCE3CD00B59E26 /* ESPGuideCode.m */; };
+		F93EC2161BDCE3CD00B59E26 /* ESPMagicCode.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EC2041BDCE3CD00B59E26 /* ESPMagicCode.m */; };
+		F93EC2171BDCE3CD00B59E26 /* ESPPrefixCode.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EC2061BDCE3CD00B59E26 /* ESPPrefixCode.m */; };
+		F93EC2181BDCE3CD00B59E26 /* ESPTouchGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EC2081BDCE3CD00B59E26 /* ESPTouchGenerator.m */; };
+		F93EC2191BDCE3CD00B59E26 /* ESPTouchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EC20A1BDCE3CD00B59E26 /* ESPTouchResult.m */; };
+		F93EC21A1BDCE3CD00B59E26 /* ESPTouchTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EC20C1BDCE3CD00B59E26 /* ESPTouchTask.m */; };
+		F93EC21B1BDCE3CD00B59E26 /* ESPUDPSocketClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EC20E1BDCE3CD00B59E26 /* ESPUDPSocketClient.m */; };
+		F93EC21C1BDCE3CD00B59E26 /* ESPUDPSocketServer.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EC2101BDCE3CD00B59E26 /* ESPUDPSocketServer.m */; };
 		F93F982D1BCE6E3300FD46A8 /* FYPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F93F982C1BCE6E3300FD46A8 /* FYPickerView.m */; };
 		F93F98301BCE7C2800FD46A8 /* FYDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F93F982F1BCE7C2800FD46A8 /* FYDatePickerView.m */; };
 		F95113BF1BCD45D60058C7B2 /* FYParamSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95113BD1BCD45D60058C7B2 /* FYParamSettingViewController.m */; };
@@ -96,6 +109,32 @@
 		F91C1BEA1BD23767002FC017 /* FYForgrtPWDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYForgrtPWDViewController.h; sourceTree = "<group>"; };
 		F91C1BEB1BD23767002FC017 /* FYForgrtPWDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYForgrtPWDViewController.m; sourceTree = "<group>"; };
 		F91C1BEC1BD23767002FC017 /* FYForgrtPWDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYForgrtPWDViewController.xib; sourceTree = "<group>"; };
+		F93EC1F51BDC6BFF00B59E26 /* FYUDPSpecialNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYUDPSpecialNetWork.h; sourceTree = "<group>"; };
+		F93EC1F61BDC6BFF00B59E26 /* FYUDPSpecialNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYUDPSpecialNetWork.m; sourceTree = "<group>"; };
+		F93EC1F91BDCE3CD00B59E26 /* ESP_ByteUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESP_ByteUtil.h; sourceTree = "<group>"; };
+		F93EC1FA1BDCE3CD00B59E26 /* ESP_ByteUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESP_ByteUtil.m; sourceTree = "<group>"; };
+		F93EC1FB1BDCE3CD00B59E26 /* ESP_CRC8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESP_CRC8.h; sourceTree = "<group>"; };
+		F93EC1FC1BDCE3CD00B59E26 /* ESP_CRC8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESP_CRC8.m; sourceTree = "<group>"; };
+		F93EC1FD1BDCE3CD00B59E26 /* ESPDataCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPDataCode.h; sourceTree = "<group>"; };
+		F93EC1FE1BDCE3CD00B59E26 /* ESPDataCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPDataCode.m; sourceTree = "<group>"; };
+		F93EC1FF1BDCE3CD00B59E26 /* ESPDatumCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPDatumCode.h; sourceTree = "<group>"; };
+		F93EC2001BDCE3CD00B59E26 /* ESPDatumCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPDatumCode.m; sourceTree = "<group>"; };
+		F93EC2011BDCE3CD00B59E26 /* ESPGuideCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPGuideCode.h; sourceTree = "<group>"; };
+		F93EC2021BDCE3CD00B59E26 /* ESPGuideCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPGuideCode.m; sourceTree = "<group>"; };
+		F93EC2031BDCE3CD00B59E26 /* ESPMagicCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPMagicCode.h; sourceTree = "<group>"; };
+		F93EC2041BDCE3CD00B59E26 /* ESPMagicCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPMagicCode.m; sourceTree = "<group>"; };
+		F93EC2051BDCE3CD00B59E26 /* ESPPrefixCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPPrefixCode.h; sourceTree = "<group>"; };
+		F93EC2061BDCE3CD00B59E26 /* ESPPrefixCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPPrefixCode.m; sourceTree = "<group>"; };
+		F93EC2071BDCE3CD00B59E26 /* ESPTouchGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPTouchGenerator.h; sourceTree = "<group>"; };
+		F93EC2081BDCE3CD00B59E26 /* ESPTouchGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPTouchGenerator.m; sourceTree = "<group>"; };
+		F93EC2091BDCE3CD00B59E26 /* ESPTouchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPTouchResult.h; sourceTree = "<group>"; };
+		F93EC20A1BDCE3CD00B59E26 /* ESPTouchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPTouchResult.m; sourceTree = "<group>"; };
+		F93EC20B1BDCE3CD00B59E26 /* ESPTouchTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPTouchTask.h; sourceTree = "<group>"; };
+		F93EC20C1BDCE3CD00B59E26 /* ESPTouchTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPTouchTask.m; sourceTree = "<group>"; };
+		F93EC20D1BDCE3CD00B59E26 /* ESPUDPSocketClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPUDPSocketClient.h; sourceTree = "<group>"; };
+		F93EC20E1BDCE3CD00B59E26 /* ESPUDPSocketClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPUDPSocketClient.m; sourceTree = "<group>"; };
+		F93EC20F1BDCE3CD00B59E26 /* ESPUDPSocketServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPUDPSocketServer.h; sourceTree = "<group>"; };
+		F93EC2101BDCE3CD00B59E26 /* ESPUDPSocketServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPUDPSocketServer.m; sourceTree = "<group>"; };
 		F93F982B1BCE6E3300FD46A8 /* FYPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYPickerView.h; sourceTree = "<group>"; };
 		F93F982C1BCE6E3300FD46A8 /* FYPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYPickerView.m; sourceTree = "<group>"; };
 		F93F982E1BCE7C2800FD46A8 /* FYDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDatePickerView.h; sourceTree = "<group>"; };
@@ -236,6 +275,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F93EC1F81BDCE3CD00B59E26 /* ESP */ = {
+			isa = PBXGroup;
+			children = (
+				F93EC1F91BDCE3CD00B59E26 /* ESP_ByteUtil.h */,
+				F93EC1FA1BDCE3CD00B59E26 /* ESP_ByteUtil.m */,
+				F93EC1FB1BDCE3CD00B59E26 /* ESP_CRC8.h */,
+				F93EC1FC1BDCE3CD00B59E26 /* ESP_CRC8.m */,
+				F93EC1FD1BDCE3CD00B59E26 /* ESPDataCode.h */,
+				F93EC1FE1BDCE3CD00B59E26 /* ESPDataCode.m */,
+				F93EC1FF1BDCE3CD00B59E26 /* ESPDatumCode.h */,
+				F93EC2001BDCE3CD00B59E26 /* ESPDatumCode.m */,
+				F93EC2011BDCE3CD00B59E26 /* ESPGuideCode.h */,
+				F93EC2021BDCE3CD00B59E26 /* ESPGuideCode.m */,
+				F93EC2031BDCE3CD00B59E26 /* ESPMagicCode.h */,
+				F93EC2041BDCE3CD00B59E26 /* ESPMagicCode.m */,
+				F93EC2051BDCE3CD00B59E26 /* ESPPrefixCode.h */,
+				F93EC2061BDCE3CD00B59E26 /* ESPPrefixCode.m */,
+				F93EC2071BDCE3CD00B59E26 /* ESPTouchGenerator.h */,
+				F93EC2081BDCE3CD00B59E26 /* ESPTouchGenerator.m */,
+				F93EC2091BDCE3CD00B59E26 /* ESPTouchResult.h */,
+				F93EC20A1BDCE3CD00B59E26 /* ESPTouchResult.m */,
+				F93EC20B1BDCE3CD00B59E26 /* ESPTouchTask.h */,
+				F93EC20C1BDCE3CD00B59E26 /* ESPTouchTask.m */,
+				F93EC20D1BDCE3CD00B59E26 /* ESPUDPSocketClient.h */,
+				F93EC20E1BDCE3CD00B59E26 /* ESPUDPSocketClient.m */,
+				F93EC20F1BDCE3CD00B59E26 /* ESPUDPSocketServer.h */,
+				F93EC2101BDCE3CD00B59E26 /* ESPUDPSocketServer.m */,
+			);
+			path = ESP;
+			sourceTree = "<group>";
+		};
 		F95A63681BC7F7A5002B949A /* FYBaseViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +431,8 @@
 				F9B0636D1BD7A41A00471DF4 /* FYUDPNetWork.m */,
 				F9CEB4871BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.h */,
 				F9CEB4881BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.m */,
+				F93EC1F51BDC6BFF00B59E26 /* FYUDPSpecialNetWork.h */,
+				F93EC1F61BDC6BFF00B59E26 /* FYUDPSpecialNetWork.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -386,6 +458,7 @@
 		F9DEF7B01BC7F5CC00520CAA /* FYIntelligence */ = {
 			isa = PBXGroup;
 			children = (
+				F93EC1F81BDCE3CD00B59E26 /* ESP */,
 				F9B441C91BD4F323005148D1 /* NetWork */,
 				F9B441B71BD4F2DA005148D1 /* SocketKit */,
 				F96E2F8B1BCE275300B6AF4B /* Category */,
@@ -618,39 +691,52 @@
 				F9B441C71BD4F2DA005148D1 /* AsyncUdpSocket.m in Sources */,
 				F97340AC1BCFED60006D1740 /* FYYSBJViewController.m in Sources */,
 				F98351781BCA370400809E14 /* FYJoinNetViewController.m in Sources */,
+				F93EC2121BDCE3CD00B59E26 /* ESP_CRC8.m in Sources */,
 				F983516E1BCA307100809E14 /* FYDeviceInitViewController.m in Sources */,
 				F9579BC21BD5162300EA071C /* MBProgressHUD.m in Sources */,
 				F9B441C61BD4F2DA005148D1 /* AsyncSocket.m in Sources */,
+				F93EC2181BDCE3CD00B59E26 /* ESPTouchGenerator.m in Sources */,
 				F983515E1BCA0B5C00809E14 /* FYRegisterViewController.m in Sources */,
 				F98B9FF41BCF928200B5FEAF /* FYSDJRViewController.m in Sources */,
 				F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */,
 				F9B441C41BD4F2DA005148D1 /* GCDAsyncSocket.m in Sources */,
+				F93EC2131BDCE3CD00B59E26 /* ESPDataCode.m in Sources */,
 				F97340B11BCFED73006D1740 /* FYHSWViewController.m in Sources */,
 				F97340A71BCFED4E006D1740 /* FYFDBHViewController.m in Sources */,
 				F95113BF1BCD45D60058C7B2 /* FYParamSettingViewController.m in Sources */,
+				F93EC2171BDCE3CD00B59E26 /* ESPPrefixCode.m in Sources */,
 				F98351591BCA0B0B00809E14 /* FYLoginViewController.m in Sources */,
 				F98351641BCA26E400809E14 /* FYListViewController.m in Sources */,
+				F93EC21C1BDCE3CD00B59E26 /* ESPUDPSocketServer.m in Sources */,
+				F93EC21B1BDCE3CD00B59E26 /* ESPUDPSocketClient.m in Sources */,
 				F983517E1BCA3FAE00809E14 /* FYEnterPINViewController.m in Sources */,
+				F93EC2111BDCE3CD00B59E26 /* ESP_ByteUtil.m in Sources */,
 				F9B0636E1BD7A41A00471DF4 /* FYUDPNetWork.m in Sources */,
 				F95113C41BCD464A0058C7B2 /* FYParamSettingTableViewCell.m in Sources */,
+				F93EC1F71BDC6BFF00B59E26 /* FYUDPSpecialNetWork.m in Sources */,
 				F9DE29131BD61AE60009F667 /* FYDevice.m in Sources */,
 				F9DEF7B71BC7F5CC00520CAA /* AppDelegate.m in Sources */,
 				F96E2F911BCE27BA00B6AF4B /* UIColor+FYColor.m in Sources */,
 				F95A636E1BC7F894002B949A /* FYBaseViewController.m in Sources */,
+				F93EC2161BDCE3CD00B59E26 /* ESPMagicCode.m in Sources */,
 				F91C1BED1BD23767002FC017 /* FYForgrtPWDViewController.m in Sources */,
 				F97340BB1BCFEE65006D1740 /* FYWKJSViewController.m in Sources */,
 				F9B441C51BD4F2DA005148D1 /* GCDAsyncUdpSocket.m in Sources */,
+				F93EC2191BDCE3CD00B59E26 /* ESPTouchResult.m in Sources */,
 				F93F982D1BCE6E3300FD46A8 /* FYPickerView.m in Sources */,
 				F95A636B1BC7F7BB002B949A /* FYBaseNavigationViewController.m in Sources */,
 				F97340A21BCFECEF006D1740 /* FYGDXHViewController.m in Sources */,
 				F96E2F981BCE385500B6AF4B /* FYSDSSViewController.m in Sources */,
 				F97340B61BCFED8F006D1740 /* FYWCXHViewController.m in Sources */,
+				F93EC2141BDCE3CD00B59E26 /* ESPDatumCode.m in Sources */,
 				F9F90D061BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m in Sources */,
+				F93EC21A1BDCE3CD00B59E26 /* ESPTouchTask.m in Sources */,
 				F9DE29101BD5E2BF0009F667 /* FYProgressHUD.m in Sources */,
 				F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */,
 				F93F98301BCE7C2800FD46A8 /* FYDatePickerView.m in Sources */,
 				F96E2F941BCE284600B6AF4B /* UIImage+FYImage.m in Sources */,
 				F98351731BCA333000809E14 /* FYAddDeviceViewController.m in Sources */,
+				F93EC2151BDCE3CD00B59E26 /* ESPGuideCode.m in Sources */,
 				F973409D1BCFE8B2006D1740 /* FYHWJRViewController.m in Sources */,
 				F9B441CC1BD4F339005148D1 /* FYTCPNetWork.m in Sources */,
 			);
