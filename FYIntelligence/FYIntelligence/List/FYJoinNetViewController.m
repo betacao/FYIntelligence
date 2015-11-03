@@ -8,14 +8,24 @@
 
 #import "FYJoinNetViewController.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
+#import "ESPTouchTask.h"
+#import "ESPTouchResult.h"
+#define HEIGHT_KEYBOARD 216
+#define HEIGHT_TEXT_FIELD 30
+#define HEIGHT_SPACE (6+HEIGHT_TEXT_FIELD)
 
-@interface FYJoinNetViewController ()
+@interface FYJoinNetViewController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *inputBgView;
 @property (weak, nonatomic) IBOutlet UIView *lineView;
 @property (weak, nonatomic) IBOutlet UITextField *userField;
 @property (weak, nonatomic) IBOutlet UITextField *pwdField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+// to cancel ESPTouchTask when
+@property (atomic, strong) ESPTouchTask *esptouchTask;
+// the state of the confirm/cancel button
+@property (nonatomic, assign) BOOL isConfirmState;
+
 
 @end
 
@@ -30,6 +40,8 @@
 
     [self.userField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [self.pwdField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    self.pwdField.delegate = self;
+    self.pwdField.keyboardType = UIKeyboardTypeASCIICapable;
 
     CGRect frame = self.lineView.frame;
     frame.size.height = 0.5f;
@@ -42,6 +54,10 @@
     UIImage *pressImage = [UIImage imageNamed:@"btn_login_press"];
     [self.loginButton setBackgroundImage:[normalImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
     [self.loginButton setBackgroundImage:[pressImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateHighlighted];
+
+    self.isConfirmState = NO;
+    [self enableConfirmBtn];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -73,9 +89,106 @@
     
 }
 
+- (IBAction)confirm:(id)sender
+{
+    if (self.isConfirmState){
+        [FYProgressHUD showLoadingWithMessage:@"请稍等..."];
+        [self enableCancelBtn];
+        NSLog(@"do confirm action...");
+        dispatch_queue_t  queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        dispatch_async(queue, ^{
+            NSLog(@"do the execute work...");
+            ESPTouchResult *esptouchResult = [self executeForResult];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [FYProgressHUD hideHud];
+                [self enableConfirmBtn];
+                if (!esptouchResult.isCancelled){
+                    [[[UIAlertView alloc] initWithTitle:@"Execute Result" message:[esptouchResult description] delegate:nil cancelButtonTitle:@"I know" otherButtonTitles: nil] show];
+                }
+            });
+        });
+    } else{
+        [FYProgressHUD hideHud];
+        [self enableConfirmBtn];
+        NSLog(@"do cancel action...");
+        [self cancel];
+    }
+}
+- (void) cancel
+{
+    if (self.esptouchTask != nil){
+        [self.esptouchTask interrupt];
+    }
+}
+
+
+
+- (void)enableConfirmBtn
+{
+    self.isConfirmState = YES;
+    [self.loginButton setTitle:@"确认" forState:UIControlStateNormal];
+}
+
+- (void)enableCancelBtn
+{
+    self.isConfirmState = NO;
+    [self.loginButton setTitle:@"取消" forState:UIControlStateNormal];
+}
+
+- (BOOL) execute
+{
+    NSString *apSsid = self.userField.text;
+    NSString *apPwd = self.pwdField.text;
+    self.esptouchTask = [[ESPTouchTask alloc]initWithApSsid:apSsid andApPwd:apPwd];
+    BOOL result = [self.esptouchTask execute];
+    NSLog(@"execute() result is: %@",result?@"YES":@"NO");
+    return result;
+}
+
+- (ESPTouchResult *) executeForResult
+{
+    NSString *apSsid = self.userField.text;
+    NSString *apPwd = self.pwdField.text;
+    self.esptouchTask = [[ESPTouchTask alloc]initWithApSsid:apSsid andApPwd:apPwd];
+    ESPTouchResult * esptouchResult = [self.esptouchTask executeForResult];
+    NSLog(@"executeForResult() result is: %@",esptouchResult);
+    return esptouchResult;
+}
+
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if (![self.pwdField isExclusiveTouch]){
+        [self.pwdField resignFirstResponder];
+    }
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    CGRect frame = textField.frame;
+    NSInteger offset = frame.origin.y - (self.view.frame.size.height - (HEIGHT_KEYBOARD+HEIGHT_SPACE));
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    if(offset > 0){
+        self.view.frame = CGRectMake(0.0f, -offset, self.view.frame.size.width, self.view.frame.size.height);
+    }
+    [UIView commitAnimations];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.view.frame =CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

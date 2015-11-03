@@ -27,8 +27,8 @@
         [self addSubview:view];
 
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setBackgroundImage:[UIImage imageNamed:@"btn_normal"] forState:UIControlStateNormal];
-        [button setBackgroundImage:[UIImage imageNamed:@"btn_press"] forState:UIControlStateHighlighted];
+        [button setBackgroundImage:[UIImage imageNamed:@"sw_bj"] forState:UIControlStateNormal];
+        [button setBackgroundImage:[UIImage imageNamed:@"sw_bj"] forState:UIControlStateHighlighted];
         [button addTarget:self action:@selector(didSelectDate:) forControlEvents:UIControlEventTouchUpInside];
         [button setTitle:@"确认" forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

@@ -30,8 +30,8 @@
         [view addSubview:self.pickerView];
 
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setBackgroundImage:[UIImage imageNamed:@"btn_normal"] forState:UIControlStateNormal];
-        [button setBackgroundImage:[UIImage imageNamed:@"btn_press"] forState:UIControlStateHighlighted];
+        [button setBackgroundImage:[UIImage imageNamed:@"sw_bj"] forState:UIControlStateNormal];
+        [button setBackgroundImage:[UIImage imageNamed:@"sw_bj"] forState:UIControlStateHighlighted];
         [button addTarget:self action:@selector(didSelectString:) forControlEvents:UIControlEventTouchUpInside];
         [button setTitle:@"确认" forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -102,6 +102,7 @@
 {
     if(index != NSNotFound){
         [self.pickerView selectRow:index inComponent:0 animated:NO];
+        self.selectString = [self.dataArray objectAtIndex:index];
     }
 }
 
