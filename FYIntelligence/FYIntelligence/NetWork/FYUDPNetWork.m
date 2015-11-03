@@ -14,6 +14,7 @@
 @property (strong, nonatomic) GCDAsyncUdpSocket *sendUdpSocket;
 @property (copy, nonatomic) FYUDPNetWorkFinishBlock finishBlock;
 @property (strong, nonatomic) NSTimer *timer;
+@property (strong, nonatomic) NSTimer *specialTimer;
 @property (strong, nonatomic) NSData *sendMessage;
 @property (assign, nonatomic) NSInteger sendTimes;
 @property (assign, nonatomic) BOOL isSending;
@@ -59,9 +60,16 @@
     return _timer;
 }
 
+- (NSTimer *)specialTimer
+{
+    if(!_specialTimer){
+        _specialTimer = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(fireSendMessage) userInfo:nil repeats:YES];
+    }
+    return _specialTimer;
+}
+
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext
 {
-//    [FYProgressHUD hideHud];
     [self.timer setFireDate:[NSDate distantFuture]];
     self.sendTimes = 0;
     self.sendMessage = nil;
@@ -114,6 +122,7 @@
 {
     
 }
+
 - (void)sendRequest:(NSString *)request complete:(void (^)(BOOL, NSString *))block
 {
     if(self.isSending){
@@ -124,7 +133,6 @@
     [self.timer setFireDate:[NSDate date]];
     self.sendMessage = data;
     self.finishBlock = block;
-//    [FYProgressHUD showLoadingWithMessage:@"请稍等..."];
 }
 
 - (void)fireSendMessage

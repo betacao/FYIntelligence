@@ -63,10 +63,10 @@
         for (NSInteger i = 1; i <= (MResult.count - 1) / 3; i++) {
             FYDevice *device = [[FYDevice alloc] init];
 
-            result = [MResult objectAtIndex:(i * 1)];
+            result = [MResult objectAtIndex:(i * 3 - 2)];
             device.deviceID = [string substringWithRange:result.range];
 
-            result = [MResult objectAtIndex:(i * 2)];
+            result = [MResult objectAtIndex:(i * 3 - 1)];
             device.deviceTD = (FYDeviceType)[[string substringWithRange:result.range] integerValue];
 
             result = [MResult objectAtIndex:(i * 3)];
