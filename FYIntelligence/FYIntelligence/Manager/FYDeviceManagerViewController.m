@@ -88,7 +88,31 @@
 {
     NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,@(kAppDelegate.globleNumber),kMainViewCmd];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
+        if(responseString.length > 0){
+            NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
+            NSMutableArray *results = [NSMutableArray array];
+            [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+                [results addObject:result];
+            }];
+            NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
+                if (obj1.range.location > obj2.range.location) {
+                    return (NSComparisonResult)NSOrderedDescending;
+                } else if (obj1.range.location < obj2.range.location) {
+                    return (NSComparisonResult)NSOrderedAscending;
+                }
+                return (NSComparisonResult)NSOrderedSame;
+            };
+            NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+            NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+            [self.firstButton setTitle:value forState:UIControlStateNormal];
+            value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
+            [self.secondButton setTitle:value forState:UIControlStateNormal];
+            value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+            [self.thirdButton setTitle:value forState:UIControlStateNormal];
+            value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
+            [self.fourthButton setTitle:value forState:UIControlStateNormal];
 
+        }
     }];
 }
 

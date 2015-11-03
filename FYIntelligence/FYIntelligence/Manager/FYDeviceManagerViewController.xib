@@ -85,8 +85,8 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
-                    <state key="normal" title="40" backgroundImage="sw_bj">
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" backgroundImage="sw_bj">
                         <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
@@ -95,8 +95,8 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
-                    <state key="normal" title="90" backgroundImage="sw_bj">
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" backgroundImage="sw_bj">
                         <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
@@ -105,8 +105,8 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
-                    <state key="normal" title="40" backgroundImage="sw_bj">
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" backgroundImage="sw_bj">
                         <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
@@ -115,8 +115,8 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
-                    <state key="normal" title="40" backgroundImage="sw_bj">
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" backgroundImage="sw_bj">
                         <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
