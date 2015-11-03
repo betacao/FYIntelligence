@@ -33,9 +33,14 @@
 }
 - (IBAction)positionButtonClick:(UIButton *)sender {
     FYPickerView *pickView = [[FYPickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight) unit:@""];
-    [pickView loadDataArray:@[@"40°C", @"45°C", @"50°C", @"55°C", @"60°C", @"65°C", @"70°C"]];
+    NSArray *array = @[@"40°C", @"45°C", @"50°C", @"55°C", @"60°C", @"65°C", @"70°C"];
+    [pickView loadDataArray:array];
     pickView.responseObject = sender;
     pickView.delegate = self;
+    NSString *title = sender.titleLabel.text;
+    NSInteger index = [array indexOfObject:title];
+    [pickView selectIndex:index];
+
     [self.view.window addSubview:pickView];
 }
 
@@ -44,6 +49,14 @@
     FYDatePickerView *pickView = [[FYDatePickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight)];
     pickView.responseObject = sender;
     pickView.delegate = self;
+    NSString *title = sender.titleLabel.text;
+    pickView.selectString = title;
+    NSString *hour = [[title substringToIndex:[title rangeOfString:@":"].location] stringByAppendingString:@"时"];
+    NSString *mintue = [[title substringFromIndex:[title rangeOfString:@":"].location + 1] stringByAppendingString:@"分"];
+    NSInteger hourIndex = [pickView.hoursArray indexOfObject:hour];
+    NSInteger mintueIndex = [pickView.minutesArray indexOfObject:mintue];
+    [pickView selectIndexs:@[@(hourIndex), @(mintueIndex)] forComponents:@[@(0), @(1)]];
+
     [self.view.window addSubview:pickView];
 }
 

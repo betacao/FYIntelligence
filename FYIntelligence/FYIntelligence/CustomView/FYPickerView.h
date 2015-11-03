@@ -20,5 +20,5 @@
 @property (weak, nonatomic) UIButton *responseObject;
 - (void)loadDataArray:(NSArray *)array;
 - (instancetype)initWithFrame:(CGRect)frame unit:(NSString *)unit;
-
+- (void)selectIndex:(NSInteger)index;
 @end

@@ -36,9 +36,13 @@
 }
 - (IBAction)positionButtonClick:(UIButton *)sender {
     FYPickerView *pickView = [[FYPickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight)unit:@""];
-    [pickView loadDataArray:@[@"25°C", @"26°C", @"27°C", @"28°C", @"29°C", @"30°C", @"31°C", @"32°C", @"33°C", @"34°C", @"35°C", @"36°C", @"37°C", @"38°C", @"39°C", @"40°C", @"41°C", @"42°C", @"43°C", @"44°C", @"45°C", @"46°C", @"47°C", @"48°C", @"49°C", @"50°C"]];
+    NSArray *array = @[@"25°C", @"26°C", @"27°C", @"28°C", @"29°C", @"30°C", @"31°C", @"32°C", @"33°C", @"34°C", @"35°C", @"36°C", @"37°C", @"38°C", @"39°C", @"40°C", @"41°C", @"42°C", @"43°C", @"44°C", @"45°C", @"46°C", @"47°C", @"48°C", @"49°C", @"50°C"];
+    [pickView loadDataArray:array];
     pickView.responseObject = sender;
     pickView.delegate = self;
+    NSString *title = sender.titleLabel.text;
+    NSInteger index = [array indexOfObject:title];
+    [pickView selectIndex:index];
     [self.view.window addSubview:pickView];
 }
 
@@ -47,6 +51,13 @@
     FYDatePickerView *pickView = [[FYDatePickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight)];
     pickView.responseObject = sender;
     pickView.delegate = self;
+    NSString *title = sender.titleLabel.text;
+    pickView.selectString = title;
+    NSString *hour = [[title substringToIndex:[title rangeOfString:@":"].location] stringByAppendingString:@"时"];
+    NSString *mintue = [[title substringFromIndex:[title rangeOfString:@":"].location + 1] stringByAppendingString:@"分"];
+    NSInteger hourIndex = [pickView.hoursArray indexOfObject:hour];
+    NSInteger mintueIndex = [pickView.minutesArray indexOfObject:mintue];
+    [pickView selectIndexs:@[@(hourIndex), @(mintueIndex)] forComponents:@[@(0), @(1)]];
     [self.view.window addSubview:pickView];
 }
 

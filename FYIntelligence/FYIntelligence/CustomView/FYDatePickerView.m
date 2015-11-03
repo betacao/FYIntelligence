@@ -11,9 +11,6 @@
 @interface FYDatePickerView ()<UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (strong, nonatomic) UIPickerView *pickerView;
-@property (strong, nonatomic) NSArray *hoursArray;
-@property (strong, nonatomic) NSArray *minutesArray;
-@property (strong, nonatomic) NSString *selectString;
 
 @end
 
@@ -42,8 +39,6 @@
         frame.origin.y = 160.0f * YFACTOR;
         button.frame = frame;
         [view addSubview:button];
-
-        self.selectString = @"00:00";
         self.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.3f];
     }
     return self;
@@ -122,6 +117,15 @@
     if(self.delegate && [self.delegate respondsToSelector:@selector(object:didSelectDate:)]){
         [self.delegate object:self.responseObject didSelectDate:self.selectString];
         [self removeFromSuperview];
+    }
+}
+
+- (void)selectIndexs:(NSArray *)indexs forComponents:(NSArray *)components
+{
+    for (NSInteger i = 0;i < indexs.count; i++){
+        NSInteger row = [[indexs objectAtIndex:i] integerValue];
+        NSInteger component = [[components objectAtIndex:i] integerValue];
+        [self.pickerView selectRow:row inComponent:component animated:NO];
     }
 }
 @end

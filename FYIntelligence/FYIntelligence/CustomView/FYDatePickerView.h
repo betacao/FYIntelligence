@@ -17,4 +17,9 @@
 @interface FYDatePickerView : UIView
 @property (assign, nonatomic) id<FYDatePickerViewDelegate> delegate;
 @property (weak, nonatomic) UIButton *responseObject;
+@property (strong, nonatomic) NSArray *hoursArray;
+@property (strong, nonatomic) NSArray *minutesArray;
+@property (strong, nonatomic) NSString *selectString;
+
+- (void)selectIndexs:(NSArray *)indexs forComponents:(NSArray *)components;
 @end

@@ -98,6 +98,11 @@
     }
 }
 
+- (void)selectIndex:(NSInteger)index
+{
+    [self.pickerView selectRow:index inComponent:0 animated:NO];
+}
+
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [super touchesEnded:touches withEvent:event];
