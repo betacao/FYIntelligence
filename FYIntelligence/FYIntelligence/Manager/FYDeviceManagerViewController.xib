@@ -7,9 +7,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYDeviceManagerViewController">
             <connections>
+                <outlet property="firstButton" destination="VJ3-vi-5SB" id="Xou-cF-ury"/>
+                <outlet property="fourthButton" destination="VQc-Dw-bU6" id="AlE-8g-1zO"/>
                 <outlet property="mainImageView" destination="qWg-aE-sE0" id="Q1o-re-i3W"/>
                 <outlet property="paramButton" destination="SB6-1y-gf3" id="6sc-F1-huY"/>
+                <outlet property="secondButton" destination="f94-ie-jdF" id="srN-1k-ge9"/>
                 <outlet property="temCircleButton" destination="N5y-7B-uRx" id="lkr-s7-FfW"/>
+                <outlet property="thirdButton" destination="ips-uW-Y64" id="kmS-fW-yFE"/>
                 <outlet property="userAddButton" destination="n92-Bj-w9g" id="wDN-Jg-wcg"/>
                 <outlet property="userWarmButton" destination="RuF-y0-glz" id="Ske-OC-pbT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -77,12 +81,42 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VJ3-vi-5SB">
-                    <rect key="frame" x="42" y="67" width="80" height="40"/>
+                    <rect key="frame" x="55" y="69" width="50" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <animations/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
-                    <state key="normal" title="40">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
+                    <state key="normal" title="40" backgroundImage="sw_bj">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="f94-ie-jdF">
+                    <rect key="frame" x="176" y="157" width="50" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
+                    <state key="normal" title="90" backgroundImage="sw_bj">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ips-uW-Y64">
+                    <rect key="frame" x="432" y="69" width="50" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
+                    <state key="normal" title="40" backgroundImage="sw_bj">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VQc-Dw-bU6">
+                    <rect key="frame" x="335" y="89" width="50" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
+                    <state key="normal" title="40" backgroundImage="sw_bj">
                         <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
@@ -90,10 +124,11 @@
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-            <point key="canvasLocation" x="147" y="217"/>
+            <point key="canvasLocation" x="-9" y="163"/>
         </view>
     </objects>
     <resources>
-        <image name="mainShow" width="512" height="210"/>
+        <image name="mainShow" width="700" height="287"/>
+        <image name="sw_bj" width="40" height="25"/>
     </resources>
 </document>

@@ -19,6 +19,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *userWarmButton;
 @property (weak, nonatomic) IBOutlet UIButton *temCircleButton;
 @property (weak, nonatomic) IBOutlet UIButton *waterCircleButton;
+@property (weak, nonatomic) IBOutlet UIButton *firstButton;
+@property (weak, nonatomic) IBOutlet UIButton *secondButton;
+@property (weak, nonatomic) IBOutlet UIButton *thirdButton;
+@property (weak, nonatomic) IBOutlet UIButton *fourthButton;
+
 
 @end
 
