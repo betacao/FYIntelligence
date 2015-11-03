@@ -100,7 +100,9 @@
 
 - (void)selectIndex:(NSInteger)index
 {
-    [self.pickerView selectRow:index inComponent:0 animated:NO];
+    if(index != NSNotFound){
+        [self.pickerView selectRow:index inComponent:0 animated:NO];
+    }
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

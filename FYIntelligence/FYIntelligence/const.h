@@ -44,7 +44,7 @@
 #define kGDXHCmd @"config_gdxh$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@"
 #define kGETGDXHCmd @"read_gdxh_config"
 //恒水位
-#define kHSWCmd @"config_hsw$%@"
+#define kHSWCmd @"config_hsw$%@$%@"
 #define kGETHSWCmd @"read_hsw_config"
 //恒温加热
 #define kHWJRCmd @"config_hwjr$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@"

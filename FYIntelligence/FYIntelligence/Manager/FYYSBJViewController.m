@@ -96,13 +96,14 @@
             NSString *isOn1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
             [self.switch1 setOn: [isOn1 isEqualToString:@"1"] ? YES : NO];
 
-            NSString *value2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
-            [self.temPickView selectRow:[self.temArray indexOfObject:value2] inComponent:0 animated:NO];
+            NSString *value2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+            NSInteger index = [self.temArray indexOfObject:value2] != NSNotFound ? [self.temArray indexOfObject:value2] : 0;
+            [self.temPickView selectRow:index inComponent:0 animated:NO];
 
-            NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
+            NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
             [self.switch2 setOn: [isOn2 isEqualToString:@"1"] ? YES : NO];
 
-            NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range];
+            NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
             [self.switch3 setOn: [isOn3 isEqualToString:@"1"] ? YES : NO];
         }else{
             [FYProgressHUD showMessageWithText:@"获取初始值失败"];

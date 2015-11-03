@@ -24,6 +24,7 @@
     self.dataArray = @[@"40", @"45", @"50", @"55", @"60", @"65", @"70", @"75"];
     [self.pickerView selectRow:self.dataArray.count / 2 inComponent:0 animated:NO];
     self.selectedValue = [self.dataArray objectAtIndex:self.dataArray.count / 2];
+    [self getInfo];
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component

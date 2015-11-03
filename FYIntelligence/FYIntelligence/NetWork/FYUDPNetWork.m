@@ -149,7 +149,7 @@
     // 发送消息 这里不需要知道对象的ip地址和端口
     NSString *host = kHostAddress;
     uint16_t port = kUDPHostPort;
-    [self.sendUdpSocket sendData:self.sendMessage toHost:host port:port withTimeout:0 tag:0];
+    [self.sendUdpSocket sendData:self.sendMessage toHost:host port:port withTimeout:0 tag:100];
 }
 
 

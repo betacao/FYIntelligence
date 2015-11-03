@@ -7,11 +7,11 @@
 //
 
 #import "FYUDPSpecialNetWork.h"
-#import "GCDAsyncUdpSocket.h"
+#import "AsyncUdpSocket.h"
 
-@interface FYUDPSpecialNetWork ()<GCDAsyncUdpSocketDelegate>
+@interface FYUDPSpecialNetWork ()<AsyncUdpSocketDelegate>
 
-@property (strong, nonatomic) GCDAsyncUdpSocket *sendUdpSocket;
+@property (strong, nonatomic) AsyncUdpSocket *sendUdpSocket;
 @property (copy, nonatomic) FYUDPNetWorkFinishBlock finishBlock;
 @property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic) NSData *sendMessage;
@@ -35,20 +35,14 @@
 
 - (void)createClientUdpSocket
 {
-    dispatch_queue_t dQueue = dispatch_queue_create("client udp socket", NULL);
-    self.sendUdpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dQueue socketQueue:nil];
+    self.sendUdpSocket = [[AsyncUdpSocket alloc] initWithDelegate:self];
+    NSString *address = kHostAddress;
     uint16_t port = kUDPHostPort;
     NSError *error = nil;
-    if (![self.sendUdpSocket bindToPort:port error:&error]){
-        NSLog(@"Error starting server (bind): %@", error);
-        return;
+    [self.sendUdpSocket bindToAddress:address port:port error:&error];
+    if (error) {
+        NSLog(@"%@",error.description);
     }
-    if (![self.sendUdpSocket beginReceiving:&error]){
-        [self.sendUdpSocket close];
-        NSLog(@"Error starting server (recv): %@", error);
-        return;
-    }
-    NSLog(@"Udp Echo server started on port %hu", [self.sendUdpSocket localPort]);
 }
 
 - (NSTimer *)timer
@@ -59,7 +53,7 @@
     return _timer;
 }
 
-- (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext
+- (BOOL)onUdpSocket:(AsyncUdpSocket *)sock didReceiveData:(NSData *)data withTag:(long)tag fromHost:(NSString *)host port:(UInt16)port
 {
     NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"udp string:%@",string);
@@ -98,17 +92,16 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             weakSelf.finishBlock(YES, responeString);
         });
+        return YES;
     }else{
         dispatch_async(dispatch_get_main_queue(), ^{
             weakSelf.finishBlock(NO, @"ERROR");
         });
+        return NO;
     }
 }
 
-- (void)udpSocket:(GCDAsyncUdpSocket *)sock didSendDataWithTag:(long)tag
-{
 
-}
 - (void)sendRequest:(NSString *)request complete:(void (^)(BOOL, NSString *))block
 {
     if(self.isSending){

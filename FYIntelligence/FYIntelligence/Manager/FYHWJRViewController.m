@@ -98,37 +98,37 @@
             NSString *hour11 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
             NSString *minute11 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
             [self.timeButton1 setTitle:[NSString stringWithFormat:@"%@:%@",hour11, minute11] forState:UIControlStateNormal];
-            NSString *hour12 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
-            NSString *minute12 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+            NSString *hour12 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
+            NSString *minute12 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
             [self.timeButton4 setTitle:[NSString stringWithFormat:@"%@:%@",hour12, minute12] forState:UIControlStateNormal];
-            NSString *tem1 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range] stringByAppendingString:@"°C"];
+            NSString *tem1 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range] stringByAppendingString:@"°C"];
             [self.positionButton1 setTitle:tem1 forState:UIControlStateNormal];
 
-            NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
+            NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:6]).range];
             [self.switch2 setOn: [isOn2 isEqualToString:@"1"] ? YES : NO];
-            NSString *hour21 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range];
-            NSString *minute21 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:6]).range];
+            NSString *hour21 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:7]).range];
+            NSString *minute21 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:8]).range];
             [self.timeButton2 setTitle:[NSString stringWithFormat:@"%@:%@",hour21, minute21] forState:UIControlStateNormal];
 
-            NSString *hour22 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
-            NSString *minute22 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+            NSString *hour22 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:9]).range];
+            NSString *minute22 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:10]).range];
             [self.timeButton5 setTitle:[NSString stringWithFormat:@"%@:%@",hour22, minute22] forState:UIControlStateNormal];
 
-            NSString *tem2 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:7]).range] stringByAppendingString:@"°C"];
+            NSString *tem2 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:11]).range] stringByAppendingString:@"°C"];
             [self.positionButton2 setTitle:tem2 forState:UIControlStateNormal];
 
-            NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:8]).range];
+            NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:12]).range];
             [self.switch3 setOn: [isOn3 isEqualToString:@"1"] ? YES : NO];
-            NSString *hour31 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:9]).range];
-            NSString *minute31 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:10]).range];
+            NSString *hour31 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:13]).range];
+            NSString *minute31 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:14]).range];
             [self.timeButton3 setTitle:[NSString stringWithFormat:@"%@:%@",hour31, minute31] forState:UIControlStateNormal];
 
 
-            NSString *hour32 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
-            NSString *minute32 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+            NSString *hour32 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:15]).range];
+            NSString *minute32 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:16]).range];
             [self.timeButton6 setTitle:[NSString stringWithFormat:@"%@:%@",hour32, minute32] forState:UIControlStateNormal];
 
-            NSString *tem3 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:11]).range] stringByAppendingString:@"°C"];
+            NSString *tem3 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:17]).range] stringByAppendingString:@"°C"];
             [self.positionButton3 setTitle:tem3 forState:UIControlStateNormal];
         } else{
             [FYProgressHUD showMessageWithText:@"获取初始值失败"];
