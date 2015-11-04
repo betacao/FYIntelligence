@@ -20,7 +20,7 @@
     [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
 
     UIColor *color = [UIColor whiteColor];
-    NSDictionary * dict=[NSDictionary dictionaryWithObject:color forKey:NSForegroundColorAttributeName];
+    NSDictionary * dict = [NSDictionary dictionaryWithObject:color forKey:NSForegroundColorAttributeName];
     self.navigationBar.titleTextAttributes = dict;
 }
 

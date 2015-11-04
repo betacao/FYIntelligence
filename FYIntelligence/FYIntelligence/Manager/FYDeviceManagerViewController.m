@@ -103,13 +103,13 @@
                 return (NSComparisonResult)NSOrderedSame;
             };
             NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
-            NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+            NSString *value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range] stringByAppendingString:@"°C"];
             [self.firstButton setTitle:value forState:UIControlStateNormal];
-            value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
-            [self.secondButton setTitle:value forState:UIControlStateNormal];
             value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+            [self.secondButton setTitle:value forState:UIControlStateNormal];
+            value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range] stringByAppendingString:@"°C"];
             [self.thirdButton setTitle:value forState:UIControlStateNormal];
-            value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
+            value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range] stringByAppendingString:@"°C"];;
             [self.fourthButton setTitle:value forState:UIControlStateNormal];
 
         }
