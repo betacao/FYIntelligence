@@ -100,9 +100,6 @@
             [weakSelf.nextField becomeFirstResponder];
         }
     });
-    if(textField.text.length > 0){
-        return NO;
-    }
     return YES;
 }
 
