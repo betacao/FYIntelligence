@@ -41,7 +41,7 @@
 
     self.paramButton.layer.masksToBounds = YES;
     self.paramButton.layer.cornerRadius = 2.0f;
-    [self.paramButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"F0E68C"]]forState:UIControlStateNormal];
+    [self.paramButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"DEB887"]]forState:UIControlStateNormal];
     [self.paramButton setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]forState:UIControlStateHighlighted];
 
     self.userAddButton.layer.masksToBounds = YES;

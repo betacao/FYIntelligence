@@ -50,6 +50,8 @@
 		F97340B71BCFED8F006D1740 /* FYWCXHViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340B51BCFED8F006D1740 /* FYWCXHViewController.xib */; };
 		F97340BB1BCFEE65006D1740 /* FYWKJSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F97340B91BCFEE65006D1740 /* FYWKJSViewController.m */; };
 		F97340BC1BCFEE65006D1740 /* FYWKJSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97340BA1BCFEE65006D1740 /* FYWKJSViewController.xib */; };
+		F981582C1BEDC78C0038F18A /* FYConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F981582A1BEDC78C0038F18A /* FYConfigViewController.m */; };
+		F981582D1BEDC78C0038F18A /* FYConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F981582B1BEDC78C0038F18A /* FYConfigViewController.xib */; };
 		F98351591BCA0B0B00809E14 /* FYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98351571BCA0B0B00809E14 /* FYLoginViewController.m */; };
 		F983515A1BCA0B0B00809E14 /* FYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98351581BCA0B0B00809E14 /* FYLoginViewController.xib */; };
 		F983515E1BCA0B5C00809E14 /* FYRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F983515C1BCA0B5C00809E14 /* FYRegisterViewController.m */; };
@@ -181,6 +183,9 @@
 		F97340B81BCFEE65006D1740 /* FYWKJSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYWKJSViewController.h; sourceTree = "<group>"; };
 		F97340B91BCFEE65006D1740 /* FYWKJSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYWKJSViewController.m; sourceTree = "<group>"; };
 		F97340BA1BCFEE65006D1740 /* FYWKJSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYWKJSViewController.xib; sourceTree = "<group>"; };
+		F98158291BEDC78C0038F18A /* FYConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYConfigViewController.h; sourceTree = "<group>"; };
+		F981582A1BEDC78C0038F18A /* FYConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYConfigViewController.m; sourceTree = "<group>"; };
+		F981582B1BEDC78C0038F18A /* FYConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYConfigViewController.xib; sourceTree = "<group>"; };
 		F98351561BCA0B0B00809E14 /* FYLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLoginViewController.h; sourceTree = "<group>"; };
 		F98351571BCA0B0B00809E14 /* FYLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYLoginViewController.m; sourceTree = "<group>"; };
 		F98351581BCA0B0B00809E14 /* FYLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYLoginViewController.xib; sourceTree = "<group>"; };
@@ -364,6 +369,9 @@
 				F98351751BCA370400809E14 /* FYJoinNetViewController.h */,
 				F98351761BCA370400809E14 /* FYJoinNetViewController.m */,
 				F98351771BCA370400809E14 /* FYJoinNetViewController.xib */,
+				F98158291BEDC78C0038F18A /* FYConfigViewController.h */,
+				F981582A1BEDC78C0038F18A /* FYConfigViewController.m */,
+				F981582B1BEDC78C0038F18A /* FYConfigViewController.xib */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -636,6 +644,7 @@
 				F9DEF7BD1BC7F5CC00520CAA /* Main.storyboard in Resources */,
 				F97340B71BCFED8F006D1740 /* FYWCXHViewController.xib in Resources */,
 				F983516F1BCA307100809E14 /* FYDeviceInitViewController.xib in Resources */,
+				F981582D1BEDC78C0038F18A /* FYConfigViewController.xib in Resources */,
 				F91C1BEE1BD23767002FC017 /* FYForgrtPWDViewController.xib in Resources */,
 				F9B441C81BD4F2DA005148D1 /* Documentation.html in Resources */,
 				F97340A31BCFECEF006D1740 /* FYGDXHViewController.xib in Resources */,
@@ -701,6 +710,7 @@
 				F95113BF1BCD45D60058C7B2 /* FYParamSettingViewController.m in Sources */,
 				F93EC2171BDCE3CD00B59E26 /* ESPPrefixCode.m in Sources */,
 				F98351591BCA0B0B00809E14 /* FYLoginViewController.m in Sources */,
+				F981582C1BEDC78C0038F18A /* FYConfigViewController.m in Sources */,
 				F98351641BCA26E400809E14 /* FYListViewController.m in Sources */,
 				F93EC21C1BDCE3CD00B59E26 /* ESPUDPSocketServer.m in Sources */,
 				F93EC21B1BDCE3CD00B59E26 /* ESPUDPSocketClient.m in Sources */,
