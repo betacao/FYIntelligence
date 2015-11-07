@@ -13,8 +13,9 @@
 
 @property (strong, nonatomic) GCDAsyncUdpSocket *sendUdpSocket;
 @property (copy, nonatomic) FYUDPNetWorkFinishBlock finishBlock;
+@property (copy, nonatomic) FYUDPNetWorkFinishBlock mainBlock;
 @property (strong, nonatomic) NSTimer *timer;
-@property (strong, nonatomic) NSTimer *specialTimer;
+@property (strong, nonatomic) NSTimer *mainTimer;
 @property (strong, nonatomic) NSData *sendMessage;
 @property (assign, nonatomic) NSInteger sendTimes;
 @property (assign, nonatomic) BOOL isSending;
@@ -49,7 +50,6 @@
         NSLog(@"Error starting server (recv): %@", error);
         return;
     }
-    NSLog(@"Udp Echo server started on port %hu", [self.sendUdpSocket localPort]);
 }
 
 - (NSTimer *)timer
@@ -60,12 +60,12 @@
     return _timer;
 }
 
-- (NSTimer *)specialTimer
+- (NSTimer *)mainTimer
 {
-    if(!_specialTimer){
-        _specialTimer = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(fireSendMessage) userInfo:nil repeats:YES];
+    if(!_mainTimer){
+        _mainTimer = [NSTimer scheduledTimerWithTimeInterval:10.0f target:self selector:@selector(mainSendMessage) userInfo:nil repeats:YES];
     }
-    return _specialTimer;
+    return _mainTimer;
 }
 
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext
@@ -150,6 +150,11 @@
     NSString *host = kHostAddress;
     uint16_t port = kUDPHostPort;
     [self.sendUdpSocket sendData:self.sendMessage toHost:host port:port withTimeout:0 tag:100];
+}
+
+- (void)mainSendMessage
+{
+
 }
 
 

@@ -83,14 +83,22 @@
     }
 }
 
-- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
 {
     if(component == 0){
-        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.hoursArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:1.0f alpha:1.0f] ,NSFontAttributeName:[UIFont systemFontOfSize:18.0f]}];
-        return string;
+        UILabel *label = [[UILabel alloc] init];
+        label.font = [UIFont systemFontOfSize:28.0f];
+        label.textColor = [UIColor whiteColor];
+        label.text = [self.hoursArray objectAtIndex:row];
+        [label sizeToFit];
+        return label;
     } else{
-        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.minutesArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:1.0f alpha:1.0f] ,NSFontAttributeName:[UIFont systemFontOfSize:18.0f]}];
-        return string;
+        UILabel *label = [[UILabel alloc] init];
+        label.font = [UIFont systemFontOfSize:28.0f];
+        label.textColor = [UIColor whiteColor];
+        label.text = [self.minutesArray objectAtIndex:row];
+        [label sizeToFit];
+        return label;
     }
 }
 

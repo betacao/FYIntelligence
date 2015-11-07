@@ -79,10 +79,14 @@
     return 1;
 }
 
-- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
 {
-    NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.dataArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:1.0f alpha:1.0f] ,NSFontAttributeName:[UIFont systemFontOfSize:18.0f]}];
-    return string;
+    UILabel *label = [[UILabel alloc] init];
+    label.font = [UIFont systemFontOfSize:28.0f];
+    label.textColor = [UIColor whiteColor];
+    label.text = [self.dataArray objectAtIndex:row];
+    [label sizeToFit];
+    return label;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component

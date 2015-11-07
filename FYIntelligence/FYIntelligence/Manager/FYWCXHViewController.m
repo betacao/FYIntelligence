@@ -66,17 +66,29 @@
     }
 }
 
-- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
 {
     if([pickerView isEqual:self.startPickView]){
-        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.startArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor] ,NSFontAttributeName:[UIFont systemFontOfSize:18.0f]}];
-        return string;
+        UILabel *label = [[UILabel alloc] init];
+        label.font = [UIFont systemFontOfSize:28.0f];
+        label.textColor = [UIColor whiteColor];
+        label.text = [self.startArray objectAtIndex:row];
+        [label sizeToFit];
+        return label;
     } else if([pickerView isEqual:self.endPickView]){
-        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.endArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor] ,NSFontAttributeName:[UIFont systemFontOfSize:18.0f]}];
-        return string;
+        UILabel *label = [[UILabel alloc] init];
+        label.font = [UIFont systemFontOfSize:28.0f];
+        label.textColor = [UIColor whiteColor];
+        label.text = [self.endArray objectAtIndex:row];
+        [label sizeToFit];
+        return label;
     } else{
-        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.protectArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor] ,NSFontAttributeName:[UIFont systemFontOfSize:18.0f]}];
-        return string;
+        UILabel *label = [[UILabel alloc] init];
+        label.font = [UIFont systemFontOfSize:28.0f];
+        label.textColor = [UIColor whiteColor];
+        label.text = [self.protectArray objectAtIndex:row];
+        [label sizeToFit];
+        return label;
     }
 }
 

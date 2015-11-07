@@ -46,7 +46,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关闭温差" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Iqc-tt-UwQ">
-                            <rect key="frame" x="220" y="0.0" width="64" height="21"/>
+                            <rect key="frame" x="196" y="0.0" width="64" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -63,7 +63,7 @@
                             </connections>
                         </pickerView>
                         <pickerView contentMode="scaleToFill" id="I8A-Bn-HOn">
-                            <rect key="frame" x="220" y="29" width="64" height="123"/>
+                            <rect key="frame" x="196" y="29" width="64" height="123"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <connections>
