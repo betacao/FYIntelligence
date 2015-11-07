@@ -21,5 +21,7 @@ typedef void (^FYUDPNetWorkFinishBlock) (BOOL finish, NSString *reponseString);
 
 - (void)createClientUdpSocket;
 
+- (void)refreshUdpSocket;
+
 - (void)sendRequest:(NSString *)request complete:(void(^)(BOOL finish, NSString *responseString))block;
 @end

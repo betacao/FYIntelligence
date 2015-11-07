@@ -52,6 +52,16 @@
     }
 }
 
+- (void)refreshUdpSocket
+{
+    NSError *error = nil;
+    if (![self.sendUdpSocket beginReceiving:&error]){
+        [self.sendUdpSocket close];
+        NSLog(@"Error starting server (recv): %@", error);
+        return;
+    }
+}
+
 - (NSTimer *)timer
 {
     if(!_timer){

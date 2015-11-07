@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView *lineView2;
 @property (weak, nonatomic) IBOutlet UIView *lineView3;
 @property (strong, nonatomic) UITextField *nextField;
+@property (assign, nonatomic) BOOL hasAll;
 
 @end
 
@@ -89,27 +90,36 @@
         self.nextField = self.textField1;
     }
 }
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if(self.textField1.text.length > 0 && self.textField2.text.length > 0 && self.textField3.text.length > 0 && self.textField4.text.length > 0){
+        [self.textField1 resignFirstResponder];
+        [self.textField2 resignFirstResponder];
+        [self.textField3 resignFirstResponder];
+        [self.textField4 resignFirstResponder];
+        [self performSelector:@selector(enterAllPIN) withObject:nil afterDelay:0.5f];
+    }
+}
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     __weak typeof(self) weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.001f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if(weakSelf.textField1.text.length > 0 && weakSelf.textField2.text.length > 0 && weakSelf.textField3.text.length > 0 && weakSelf.textField4.text.length > 0){
-            [weakSelf enterAllPIN];
-        } else{
-            [weakSelf.nextField becomeFirstResponder];
-        }
+        [weakSelf.nextField becomeFirstResponder];
     });
     return YES;
 }
 
 - (void)enterAllPIN
 {
-    if(self.delegate && [self.delegate respondsToSelector:@selector(didEnterAllPIN:index:)]){
-        [self.view removeFromSuperview];
-        [self removeFromParentViewController];
-        NSString *pin = [NSString stringWithFormat:@"%@%@%@%@",self.textField1.text,self.textField2.text,self.textField3.text,self.textField4.text];
-        [self.delegate didEnterAllPIN:pin index:self.index];
+    if(!self.hasAll){
+        self.hasAll = YES;
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didEnterAllPIN:index:)]){
+            [self.view removeFromSuperview];
+            [self removeFromParentViewController];
+            NSString *pin = [NSString stringWithFormat:@"%@%@%@%@",self.textField1.text,self.textField2.text,self.textField3.text,self.textField4.text];
+            [self.delegate didEnterAllPIN:pin index:self.index];
+        }
     }
 }
 
