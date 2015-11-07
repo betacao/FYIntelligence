@@ -7,6 +7,7 @@
 //
 
 #import "FYBaseNavigationViewController.h"
+#import "FYDeviceManagerViewController.h"
 
 @interface FYBaseNavigationViewController ()<UINavigationControllerDelegate>
 
@@ -31,7 +32,11 @@
 
 - (BOOL)shouldAutorotate
 {
-    return YES;
+    UIViewController *controller = self.topViewController;
+    if ([controller isKindOfClass:[FYDeviceManagerViewController class]]) {
+        return YES;
+    }
+    return NO;
 }
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
 {

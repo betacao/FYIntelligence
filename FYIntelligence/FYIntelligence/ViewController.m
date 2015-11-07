@@ -18,12 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 
     FYLoginViewController *rootController = [[FYLoginViewController alloc] initWithNibName:@"FYLoginViewController" bundle:nil];
 
     FYBaseNavigationViewController *navController = [[FYBaseNavigationViewController alloc] initWithRootViewController:rootController];
-    [self addChildViewController:navController];
-    [self.view addSubview:navController.view];
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle

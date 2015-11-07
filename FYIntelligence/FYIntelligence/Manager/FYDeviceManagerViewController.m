@@ -226,11 +226,6 @@
     }];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-
-}
-
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
