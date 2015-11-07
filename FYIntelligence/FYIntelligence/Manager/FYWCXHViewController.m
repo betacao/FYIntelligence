@@ -69,13 +69,13 @@
 - (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     if([pickerView isEqual:self.startPickView]){
-        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.startArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.startArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor] ,NSFontAttributeName:[UIFont systemFontOfSize:18.0f]}];
         return string;
     } else if([pickerView isEqual:self.endPickView]){
-        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.endArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.endArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor] ,NSFontAttributeName:[UIFont systemFontOfSize:18.0f]}];
         return string;
     } else{
-        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.protectArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.protectArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor] ,NSFontAttributeName:[UIFont systemFontOfSize:18.0f]}];
         return string;
     }
 }

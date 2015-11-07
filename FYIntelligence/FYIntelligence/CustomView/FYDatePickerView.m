@@ -22,7 +22,7 @@
     if(self){
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 200.0f * XFACTOR, 200.0f * YFACTOR)];
         [view addSubview:self.pickerView];
-        view.backgroundColor = [UIColor colorWithWhite:0.5f alpha:0.5f];
+        view.backgroundColor = [UIColor colorWithHexString:@"345654" alpha:0.9f];
         view.center = self.center;
         [self addSubview:view];
 
@@ -32,7 +32,7 @@
         [button addTarget:self action:@selector(didSelectDate:) forControlEvents:UIControlEventTouchUpInside];
         [button setTitle:@"确认" forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+        button.titleLabel.font = [UIFont systemFontOfSize:16.0f];
         [button sizeToFit];
         CGRect frame = button.frame;
         frame.origin.x = (200.0f * XFACTOR - CGRectGetWidth(frame)) / 2.0f;
@@ -86,10 +86,10 @@
 - (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     if(component == 0){
-        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.hoursArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:1.0f alpha:1.0f]}];
+        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.hoursArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:1.0f alpha:1.0f] ,NSFontAttributeName:[UIFont systemFontOfSize:18.0f]}];
         return string;
     } else{
-        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.minutesArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:1.0f alpha:1.0f]}];
+        NSAttributedString *string = [[NSAttributedString alloc] initWithString:[self.minutesArray objectAtIndex:row] attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:1.0f alpha:1.0f] ,NSFontAttributeName:[UIFont systemFontOfSize:18.0f]}];
         return string;
     }
 }
