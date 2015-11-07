@@ -164,7 +164,12 @@
 
 - (void)mainSendMessage
 {
-
+    NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,@(kAppDelegate.globleNumber),kMainViewCmd];
+    NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *host = kHostAddress;
+    uint16_t port = kUDPHostPort;
+    [self.sendUdpSocket sendData:data toHost:host port:port withTimeout:0 tag:0];
+    
 }
 
 

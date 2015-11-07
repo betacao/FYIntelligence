@@ -226,10 +226,15 @@
     }];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+
+}
+
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
-    return UIInterfaceOrientationMaskAll;
+    return UIInterfaceOrientationMaskLandscapeLeft;
 }
 
 - (BOOL)shouldAutorotate

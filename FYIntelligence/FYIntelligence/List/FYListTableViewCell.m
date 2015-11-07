@@ -70,7 +70,7 @@
 - (IBAction)clickConfig:(id)sender
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(clickCongfigButton:)]) {
-//        [self.delegate clickCongfigButton:self.currentDevice];
+        [self.delegate clickCongfigButton:self.currentDevice];
     }
 }
 
