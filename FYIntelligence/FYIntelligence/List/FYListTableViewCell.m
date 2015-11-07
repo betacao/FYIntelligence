@@ -10,6 +10,7 @@
 #import "FYDevice.h"
 
 @interface FYListTableViewCell()
+@property (strong, nonatomic) FYDevice *currentDevice;
 @property (weak, nonatomic) IBOutlet UILabel *deviceID;
 @property (weak, nonatomic) IBOutlet UILabel *deviceTD;
 @property (weak, nonatomic) IBOutlet UILabel *deviceState;
@@ -36,6 +37,7 @@
 
 - (void)loadDataWithDevice:(FYDevice *)device
 {
+    self.currentDevice = device;
     self.deviceID.text = device.deviceID;
     NSString *deviceTD = @"";
     switch (device.deviceTD) {
@@ -67,7 +69,9 @@
 
 - (IBAction)clickConfig:(id)sender
 {
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(clickCongfigButton:)]) {
+//        [self.delegate clickCongfigButton:self.currentDevice];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

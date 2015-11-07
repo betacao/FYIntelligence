@@ -10,9 +10,10 @@
 #import "FYListTableViewCell.h"
 #import "FYDeviceInitViewController.h"
 #import "FYDeviceManagerViewController.h"
+#import "FYConfigViewController.h"
 #import "FYDevice.h"
 
-@interface FYListViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface FYListViewController ()<UITableViewDataSource,UITableViewDelegate, FYListDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) NSInteger deviceCount;
 @property (strong, nonatomic) NSMutableArray *deviceArray;
@@ -103,6 +104,7 @@
     if(!cell){
         cell = [[[NSBundle mainBundle] loadNibNamed:@"FYListTableViewCell" owner:self options:nil] lastObject];
     }
+    cell.delegate = self;
     FYDevice *device = [self.deviceArray objectAtIndex:indexPath.row];
     [cell loadDataWithDevice:device];
     return cell;
@@ -120,6 +122,13 @@
     FYDevice *device = [self.deviceArray objectAtIndex:indexPath.row];
     kAppDelegate.deviceID = device.deviceID;
     [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (void)clickCongfigButton:(FYDevice *)device
+{
+    FYConfigViewController *controller = [[FYConfigViewController alloc] initWithNibName:@"FYConfigViewController" bundle:nil];
+    [self addChildViewController:controller];
+    [self.view addSubview:controller.view];
 }
 
 #pragma mark FYEnterPINDelegate
