@@ -30,16 +30,16 @@
         [view addSubview:self.pickerView];
 
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setBackgroundImage:[UIImage imageNamed:@"sw_bj"] forState:UIControlStateNormal];
-        [button setBackgroundImage:[UIImage imageNamed:@"sw_bj"] forState:UIControlStateHighlighted];
+        button.backgroundColor = [UIColor colorWithHexString:@"FFD700"];
         [button addTarget:self action:@selector(didSelectString:) forControlEvents:UIControlEventTouchUpInside];
         [button setTitle:@"确认" forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:16.0f];
-        [button sizeToFit];
         CGRect frame = button.frame;
+        frame.size.width = 60.0f * XFACTOR;
+        frame.size.height = 30.0f * XFACTOR;
         frame.origin.x = (200.0f * XFACTOR - CGRectGetWidth(frame)) / 2.0f;
-        frame.origin.y = 160.0f * YFACTOR;
+        frame.origin.y = 160.0f * XFACTOR;
         button.frame = frame;
         [view addSubview:button];
 
