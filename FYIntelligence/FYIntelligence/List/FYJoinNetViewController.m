@@ -73,6 +73,12 @@
     });
 }
 
+- (void)backButtonClick:(UIButton *)button
+{
+    NSArray *array = self.navigationController.viewControllers;
+    UIViewController *controller = [array objectAtIndex:1];
+    [self.navigationController popToViewController:controller animated:YES];
+}
 - (void)getDeviceSSID:(void(^)(NSString *ssid))completion
 {
     NSArray *ifs = (__bridge id)CNCopySupportedInterfaces();
@@ -103,6 +109,7 @@
                 [FYProgressHUD hideHud];
                 [self enableConfirmBtn];
                 if (!esptouchResult.isCancelled){
+                    kAppDelegate.ESPDescription = [esptouchResult description];
                     [[[UIAlertView alloc] initWithTitle:@"Execute Result" message:[esptouchResult description] delegate:nil cancelButtonTitle:@"I know" otherButtonTitles: nil] show];
                 }
             });

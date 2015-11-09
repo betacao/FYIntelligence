@@ -105,8 +105,15 @@
 {
     __weak typeof(self) weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.001f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [weakSelf.nextField becomeFirstResponder];
+        if ([weakSelf.nextField isEqual:weakSelf.textField1]) {
+            [textField resignFirstResponder];
+        } else{
+            [weakSelf.nextField becomeFirstResponder];
+        }
     });
+    if (textField.text.length > 0) {
+        return NO;
+    }
     return YES;
 }
 

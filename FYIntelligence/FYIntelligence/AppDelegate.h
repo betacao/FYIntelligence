@@ -16,6 +16,7 @@
 @property (assign, nonatomic) BOOL isRemember;
 @property (strong, nonatomic) NSString *deviceID;
 @property (strong, nonatomic) NSString *userName;
+@property (strong, nonatomic) NSString *ESPDescription;
 
 + (AppDelegate *)currentAppdelegate;
 

@@ -37,8 +37,8 @@
 
 - (void)createClientUdpSocket
 {
-    dispatch_queue_t dQueue = dispatch_queue_create("client udp socket", NULL);
-    self.sendUdpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dQueue socketQueue:nil];
+//    dispatch_queue_t dQueue = dispatch_queue_create("client udp socket", NULL);
+    self.sendUdpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     uint16_t port = kUDPHostPort;
     NSError *error = nil;
     if (![self.sendUdpSocket bindToPort:port error:&error]){
@@ -54,12 +54,15 @@
 
 - (void)refreshUdpSocket
 {
-    NSError *error = nil;
-    if (![self.sendUdpSocket beginReceiving:&error]){
-        [self.sendUdpSocket close];
-        NSLog(@"Error starting server (recv): %@", error);
-        return;
-    }
+    self.sendUdpSocket = nil;
+    [self createClientUdpSocket];
+}
+
+- (void)requestMainData:(void (^)(BOOL, NSString *))block
+{
+    self.mainTimer = [NSTimer scheduledTimerWithTimeInterval:10.0f target:self selector:@selector(mainSendMessage) userInfo:nil repeats:YES];
+    [self.mainTimer fire];
+    self.mainBlock = block;
 }
 
 - (NSTimer *)timer
@@ -70,20 +73,8 @@
     return _timer;
 }
 
-- (NSTimer *)mainTimer
-{
-    if(!_mainTimer){
-        _mainTimer = [NSTimer scheduledTimerWithTimeInterval:10.0f target:self selector:@selector(mainSendMessage) userInfo:nil repeats:YES];
-    }
-    return _mainTimer;
-}
-
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext
 {
-    [self.timer setFireDate:[NSDate distantFuture]];
-    self.sendTimes = 0;
-    self.sendMessage = nil;
-    self.isSending = NO;
     NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"udp string:%@",string);
 
@@ -103,27 +94,41 @@
     NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
     NSTextCheckingResult *result = [MResult firstObject];
     NSString *globleString = [string substringWithRange:result.range];
-    NSLog(@"globleString = %@",globleString);
-
     NSInteger globleNumber = [[globleString substringFromIndex:6] integerValue];
     NSLog(@"globleNumber = %ld",(long)globleNumber);
 
-    NSString *responeString = @"";
-    for (NSInteger index = 1; index <= MResult.count - 1; index++) {
-        result = [MResult objectAtIndex:index];
-        responeString = [responeString stringByAppendingFormat:@"%@&",[string substringWithRange:result.range]];
-    }
-    NSLog(@"success = %@",responeString);
-    __weak typeof(self) weakSelf = self;
+    result = [MResult objectAtIndex:1];
+    NSString *type = [string substringWithRange:result.range];
 
-    if(globleNumber == kAppDelegate.globleNumber){
+    if (![type isEqualToString:@"0"]) {
+        [self.timer setFireDate:[NSDate distantFuture]];
+        self.sendTimes = 0;
+        self.sendMessage = nil;
+        self.isSending = NO;
+        NSString *responeString = @"";
+        for (NSInteger index = 2; index <= MResult.count - 2; index++) {
+            result = [MResult objectAtIndex:index];
+            responeString = [responeString stringByAppendingFormat:@"%@&",[string substringWithRange:result.range]];
+        }
+        NSLog(@"success = %@",responeString);
+        __weak typeof(self) weakSelf = self;
         kAppDelegate.globleNumber++;
         dispatch_async(dispatch_get_main_queue(), ^{
-            weakSelf.finishBlock(YES, responeString);
+            if (weakSelf.finishBlock) {
+                weakSelf.finishBlock(YES, responeString);
+            }
         });
-    }else{
+    } else{
+        NSString *responeString = @"";
+        for (NSInteger index = 2; index <= MResult.count - 2; index++) {
+            result = [MResult objectAtIndex:index];
+            responeString = [responeString stringByAppendingFormat:@"%@&",[string substringWithRange:result.range]];
+        }
+        NSLog(@"success = %@",responeString);
+        __weak typeof(self) weakSelf = self;
+        kAppDelegate.globleNumber++;
         dispatch_async(dispatch_get_main_queue(), ^{
-            weakSelf.finishBlock(NO, @"");
+            weakSelf.mainBlock(YES, responeString);
         });
     }
 }
@@ -159,7 +164,7 @@
     // 发送消息 这里不需要知道对象的ip地址和端口
     NSString *host = kHostAddress;
     uint16_t port = kUDPHostPort;
-    [self.sendUdpSocket sendData:self.sendMessage toHost:host port:port withTimeout:0 tag:100];
+    [self.sendUdpSocket sendData:self.sendMessage toHost:host port:port withTimeout:-1 tag:0];
 }
 
 - (void)mainSendMessage
@@ -168,7 +173,7 @@
     NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
     NSString *host = kHostAddress;
     uint16_t port = kUDPHostPort;
-    [self.sendUdpSocket sendData:data toHost:host port:port withTimeout:0 tag:0];
+    [self.sendUdpSocket sendData:data toHost:host port:port withTimeout:-1 tag:0];
     
 }
 
