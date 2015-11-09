@@ -34,7 +34,7 @@
                     <animations/>
                 </imageView>
                 <view contentMode="scaleToFill" id="inf-54-Wgu">
-                    <rect key="frame" x="0.0" y="286" width="320" height="160"/>
+                    <rect key="frame" x="0.0" y="250" width="320" height="160"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="防冻启动" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IbT-fx-EPh">
@@ -54,8 +54,8 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <pickerView contentMode="scaleToFill" id="wvM-8K-nht">
-                            <rect key="frame" x="40" y="29" width="64" height="123"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="40" y="29" width="64" height="90"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="6r3-WC-f0E"/>
@@ -63,8 +63,8 @@
                             </connections>
                         </pickerView>
                         <pickerView contentMode="scaleToFill" id="jhh-bd-jzp">
-                            <rect key="frame" x="216" y="29" width="64" height="123"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="216" y="29" width="64" height="90"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="Rb7-rG-qmv"/>

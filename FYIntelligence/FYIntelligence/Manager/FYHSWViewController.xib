@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYHSWViewController">
             <connections>
-                <outlet property="pickerView" destination="j47-OB-Cwo" id="KeZ-HV-icv"/>
+                <outlet property="pickerView" destination="fhT-Bd-s3E" id="V7l-uZ-UU0"/>
                 <outlet property="view" destination="Zng-Ew-ACR" id="gDV-3x-hWy"/>
             </connections>
         </placeholder>
@@ -16,14 +16,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Et-fH-lJJ">
-                    <rect key="frame" x="208" y="316" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sxshow" id="oNa-2t-xjQ">
                     <rect key="frame" x="0.0" y="80" width="320" height="180"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -44,19 +36,27 @@
                     <rect key="frame" x="0.0" y="275" width="320" height="80"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <pickerView contentMode="scaleToFill" id="j47-OB-Cwo">
-                            <rect key="frame" x="120" y="0.0" width="80" height="80"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <animations/>
-                            <connections>
-                                <outlet property="dataSource" destination="-1" id="QVc-eT-NdV"/>
-                                <outlet property="delegate" destination="-1" id="g81-KE-3Yo"/>
-                            </connections>
-                        </pickerView>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="uu8-nj-Ilt">
                             <rect key="frame" x="51" y="24" width="51" height="31"/>
                             <animations/>
                         </switch>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MsR-cE-0Mu">
+                            <rect key="frame" x="208" y="30" width="42" height="21"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <pickerView contentMode="scaleToFill" id="fhT-Bd-s3E">
+                            <rect key="frame" x="120" y="0.0" width="80" height="80"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="4C5-3E-MQb"/>
+                                <outlet property="delegate" destination="-1" id="Z9C-aU-qL3"/>
+                            </connections>
+                        </pickerView>
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

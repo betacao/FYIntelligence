@@ -54,7 +54,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <pickerView contentMode="scaleToFill" id="28K-jf-xQS">
-                            <rect key="frame" x="60" y="29" width="64" height="123"/>
+                            <rect key="frame" x="60" y="29" width="64" height="90"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <connections>
@@ -63,7 +63,7 @@
                             </connections>
                         </pickerView>
                         <pickerView contentMode="scaleToFill" id="I8A-Bn-HOn">
-                            <rect key="frame" x="196" y="29" width="64" height="123"/>
+                            <rect key="frame" x="196" y="29" width="64" height="90"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <connections>

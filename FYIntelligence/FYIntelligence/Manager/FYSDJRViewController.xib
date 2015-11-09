@@ -23,7 +23,7 @@
                 </imageView>
                 <pickerView contentMode="scaleToFill" id="Lvl-xM-jTg">
                     <rect key="frame" x="118" y="320" width="80" height="80"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <animations/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="2uD-J1-UKu"/>

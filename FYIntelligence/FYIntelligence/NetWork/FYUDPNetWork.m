@@ -96,39 +96,50 @@
     NSString *globleString = [string substringWithRange:result.range];
     NSInteger globleNumber = [[globleString substringFromIndex:6] integerValue];
     NSLog(@"globleNumber = %ld",(long)globleNumber);
+    __weak typeof(self) weakSelf = self;
 
-    result = [MResult objectAtIndex:1];
-    NSString *type = [string substringWithRange:result.range];
+    if (MResult.count > 1) {
+        result = [MResult objectAtIndex:1];
+        NSString *type = [string substringWithRange:result.range];
 
-    if (![type isEqualToString:@"0"]) {
+        if (![type isEqualToString:@"0"]) {
+            [self.timer setFireDate:[NSDate distantFuture]];
+            self.sendTimes = 0;
+            self.sendMessage = nil;
+            self.isSending = NO;
+            NSString *responeString = @"";
+            for (NSInteger index = 2; index <= MResult.count - 2; index++) {
+                result = [MResult objectAtIndex:index];
+                responeString = [responeString stringByAppendingFormat:@"%@&",[string substringWithRange:result.range]];
+            }
+            NSLog(@"success = %@",responeString);
+            kAppDelegate.globleNumber++;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (weakSelf.finishBlock) {
+                    weakSelf.finishBlock(YES, responeString);
+                }
+            });
+        } else{
+            NSString *responeString = @"";
+            for (NSInteger index = 2; index <= MResult.count - 2; index++) {
+                result = [MResult objectAtIndex:index];
+                responeString = [responeString stringByAppendingFormat:@"%@&",[string substringWithRange:result.range]];
+            }
+            NSLog(@"success = %@",responeString);
+            __weak typeof(self) weakSelf = self;
+            kAppDelegate.globleNumber++;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                weakSelf.mainBlock(YES, responeString);
+            });
+        }
+    } else{
         [self.timer setFireDate:[NSDate distantFuture]];
         self.sendTimes = 0;
         self.sendMessage = nil;
         self.isSending = NO;
-        NSString *responeString = @"";
-        for (NSInteger index = 2; index <= MResult.count - 2; index++) {
-            result = [MResult objectAtIndex:index];
-            responeString = [responeString stringByAppendingFormat:@"%@&",[string substringWithRange:result.range]];
-        }
-        NSLog(@"success = %@",responeString);
-        __weak typeof(self) weakSelf = self;
         kAppDelegate.globleNumber++;
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (weakSelf.finishBlock) {
-                weakSelf.finishBlock(YES, responeString);
-            }
-        });
-    } else{
-        NSString *responeString = @"";
-        for (NSInteger index = 2; index <= MResult.count - 2; index++) {
-            result = [MResult objectAtIndex:index];
-            responeString = [responeString stringByAppendingFormat:@"%@&",[string substringWithRange:result.range]];
-        }
-        NSLog(@"success = %@",responeString);
-        __weak typeof(self) weakSelf = self;
-        kAppDelegate.globleNumber++;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            weakSelf.mainBlock(YES, responeString);
+            [FYProgressHUD showMessageWithText:globleString];
         });
     }
 }

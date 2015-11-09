@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sEq-5x-PrU">
-                    <rect key="frame" x="13" y="450" width="294" height="40"/>
+                    <rect key="frame" x="13" y="475" width="294" height="40"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -63,8 +63,8 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <pickerView contentMode="scaleToFill" id="hsd-nT-7A0">
-                            <rect key="frame" x="20" y="29" width="64" height="123"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="20" y="29" width="64" height="90"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="btC-RU-UYG"/>
@@ -72,8 +72,8 @@
                             </connections>
                         </pickerView>
                         <pickerView contentMode="scaleToFill" id="cb8-5b-FQa">
-                            <rect key="frame" x="128" y="29" width="64" height="123"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="128" y="29" width="64" height="90"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="58r-1T-wix"/>
@@ -81,8 +81,8 @@
                             </connections>
                         </pickerView>
                         <pickerView contentMode="scaleToFill" id="C6d-a8-izM">
-                            <rect key="frame" x="236" y="29" width="64" height="123"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="236" y="29" width="64" height="90"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="OF5-XB-Qoy"/>
@@ -93,8 +93,16 @@
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="说明：高温-低温≥启动温差 循环启动 高温-低温≤循环停止" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N0q-Xh-8CX">
-                    <rect key="frame" x="69" y="523" width="182" height="37"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="说明: 高温-低温≥启动温差 循环启动" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N0q-Xh-8CX">
+                    <rect key="frame" x="69" y="523" width="182" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="         高温-低温≤启动温差 循环停止" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EHQ-dj-ERz">
+                    <rect key="frame" x="69" y="540" width="182" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
