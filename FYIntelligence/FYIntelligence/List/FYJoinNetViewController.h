@@ -9,5 +9,5 @@
 #import "FYBaseViewController.h"
 
 @interface FYJoinNetViewController : FYBaseViewController
-
+@property (strong, nonatomic) NSString *bssid;
 @end

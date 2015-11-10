@@ -23,6 +23,21 @@
 @property (weak, nonatomic) IBOutlet UIButton *secondButton;
 @property (weak, nonatomic) IBOutlet UIButton *thirdButton;
 @property (weak, nonatomic) IBOutlet UIButton *fourthButton;
+@property (strong, nonatomic) UIImage *image0;
+@property (strong, nonatomic) UIImage *image1;
+@property (strong, nonatomic) UIImage *image2;
+@property (strong, nonatomic) UIImage *image3;
+@property (strong, nonatomic) UIImage *image4;
+@property (strong, nonatomic) UIImage *image5;
+@property (strong, nonatomic) UIImage *image6;
+@property (strong, nonatomic) UIImage *image7;
+@property (strong, nonatomic) UIImage *image8;
+@property (strong, nonatomic) UIImage *image9;
+@property (strong, nonatomic) UIImage *image10;
+@property (strong, nonatomic) UIImage *image11;
+@property (strong, nonatomic) UIImage *image12;
+@property (strong, nonatomic) UIImage *image13;
+
 
 
 @end
@@ -66,6 +81,8 @@
     [self getInfo];
 }
 
+
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
@@ -84,9 +101,107 @@
     [self presentViewController:nav animated:YES completion:nil];
 }
 
+- (UIImage *)image0
+{
+    if (!_image0) {
+        _image0 = [UIImage imageNamed:@"aaction_gdhs_hx0"];
+    }
+    return _image0;
+}
+- (UIImage *)image1
+{
+    if (!_image1) {
+        _image1 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_gdhs_hx0"], [UIImage imageNamed:@"aaction_gdhs_hx1"], [UIImage imageNamed:@"aaction_gdhs_hx4"], [UIImage imageNamed:@"aaction_gdhs_hx8"], [UIImage imageNamed:@"aaction_gdhs_hx12"]] duration:4.0f];
+    }
+    return _image1;
+}
+- (UIImage *)image2
+{
+    if (!_image2) {
+        _image2 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_wcxh_hx0"], [UIImage imageNamed:@"aaction_wcxh_hx5"], [UIImage imageNamed:@"aaction_wcxh_hx10"], [UIImage imageNamed:@"aaction_wcxh_hx15"], [UIImage imageNamed:@"aaction_wcxh_hx20"], [UIImage imageNamed:@"aaction_wcxh_hx25"]] duration:4.0f];
+    }
+    return _image2;
+}
+- (UIImage *)image3
+{
+    if (!_image3) {
+        _image3 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_wcxh_hs0"], [UIImage imageNamed:@"aaction_wcxh_hs1"], [UIImage imageNamed:@"aaction_wcxh_hs2"], [UIImage imageNamed:@"aaction_wcxh_hs3"]] duration:4.0f];
+    }
+    return _image3;
+}
+- (UIImage *)image4
+{
+    if (!_image4) {
+        _image4 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_jiare_hx0"], [UIImage imageNamed:@"aaction_jiare_hx1"], [UIImage imageNamed:@"aaction_jiare_hx2"], [UIImage imageNamed:@"aaction_jiare_hx3"], [UIImage imageNamed:@"aaction_jiare_hx4"], [UIImage imageNamed:@"aaction_jiare_hx5"]] duration:4.0f];
+    }
+    return _image4;
+}
+- (UIImage *)image5
+{
+    if (!_image5) {
+        _image5 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_jiare_hs0"], [UIImage imageNamed:@"aaction_jiare_hs1"], [UIImage imageNamed:@"aaction_jiare_hs2"], [UIImage imageNamed:@"aaction_jiare_hs3"]] duration:4.0f];
+    }
+    return _image5;
+}
+- (UIImage *)image6
+{
+    if (!_image6) {
+
+    }
+    return _image6;
+}
+- (UIImage *)image7
+{
+    if (!_image7) {
+        _image7 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_jiare_hs_wcxh0"], [UIImage imageNamed:@"aaction_jiare_hs_wcxh1"], [UIImage imageNamed:@"aaction_jiare_hs_wcxh2"], [UIImage imageNamed:@"aaction_jiare_hs_wcxh3"]] duration:4.0f];
+    }
+    return _image7;
+}
+- (UIImage *)image8
+{
+    if (!_image8) {
+        _image8 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_ss_hx0"], [UIImage imageNamed:@"aaction_ss_hx1"], [UIImage imageNamed:@"aaction_ss_hx2"], [UIImage imageNamed:@"aaction_ss_hx3"], [UIImage imageNamed:@"aaction_ss_hx4"], [UIImage imageNamed:@"aaction_ss_hx5"], [UIImage imageNamed:@"aaction_ss_hx6"]] duration:4.0f];
+    }
+    return _image8;
+}
+- (UIImage *)image9
+{
+    if (!_image9) {
+        _image9 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_ss_hs0"], [UIImage imageNamed:@"aaction_ss_hs1"], [UIImage imageNamed:@"aaction_ss_hs2"], [UIImage imageNamed:@"aaction_ss_hs3"]] duration:4.0f];
+    }
+    return _image9;
+}
+- (UIImage *)image10
+{
+    if (!_image10) {
+
+    }
+    return _image10;
+}
+- (UIImage *)image11
+{
+    if (!_image11) {
+
+    }
+    return _image11;
+}
+- (UIImage *)image12
+{
+    if (!_image12) {
+        _image12 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_jiare_ss0"], [UIImage imageNamed:@"aaction_jiare_ss1"], [UIImage imageNamed:@"aaction_jiare_ss2"], [UIImage imageNamed:@"aaction_jiare_ss3"]] duration:4.0f];
+    }
+    return _image12;
+}
+- (UIImage *)image13
+{
+    if (!_image13) {
+        _image13 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_jiare_hs_ss0"], [UIImage imageNamed:@"aaction_jiare_hs_ss1"], [UIImage imageNamed:@"aaction_jiare_hs_ss2"], [UIImage imageNamed:@"aaction_jiare_hs_ss3"]] duration:4.0f];
+    }
+    return _image13;
+}
+
 - (void)getInfo
 {
-//    NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,@(kAppDelegate.globleNumber),kMainViewCmd];
     [[FYUDPNetWork shareNetEngine] requestMainData:^(BOOL finish, NSString *responseString) {
         if(responseString.length > 0){
             NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];

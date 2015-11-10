@@ -73,7 +73,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="确认" backgroundImage="btn_login_normal"/>
                     <connections>
-                        <action selector="confirm:" destination="-1" eventType="touchUpInside" id="p27-hZ-brD"/>
+                        <action selector="tapConfirmCancelBtn:" destination="-1" eventType="touchUpInside" id="woW-xr-GRW"/>
                     </connections>
                 </button>
             </subviews>

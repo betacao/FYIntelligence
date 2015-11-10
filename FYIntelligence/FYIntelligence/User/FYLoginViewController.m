@@ -60,7 +60,7 @@
     self.userField.text = kAppDelegate.userName;
     NSString *pwd = [[NSUserDefaults standardUserDefaults] objectForKey:kPassWord];
     self.pwdField.text = pwd;
-
+    kAppDelegate.userPWD = pwd;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -91,6 +91,7 @@
         return;
     }
     kAppDelegate.userName = userName;
+    kAppDelegate.userPWD = pwd;
     [[NSUserDefaults standardUserDefaults] setObject:userName forKey:kUserName];
     [[NSUserDefaults standardUserDefaults] setObject:pwd forKey:kPassWord];
     [[NSUserDefaults standardUserDefaults] synchronize];

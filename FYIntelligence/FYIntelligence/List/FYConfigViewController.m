@@ -68,9 +68,21 @@
     self.rightView.hidden = NO;
 }
 
-- (IBAction)nextClick:(id)sender
+- (IBAction)leftNextClick:(id)sender
 {
+    NSString *string = [NSString stringWithFormat:kConfigDeviceCmd,self.leftSSidField.text, self.leftWifField.text];
+    NSString *requset = [NSString stringWithFormat:kNeedPINString,self.deviceID,self.leftPwdField.text,kAppDelegate.userName,@(kAppDelegate.globleNumber),string];
+    [[FYUDPNetWork shareNetEngine] sendRequest:requset complete:^(BOOL finish, NSString *responseString) {
 
+    }];
+}
+
+- (IBAction)rightNextClick:(id)sender
+{
+    NSString *request = [NSString stringWithFormat:kDeleteDeviceCmd,self.deviceID, self.rightPwdField.text, kAppDelegate.userName];
+    [[FYTCPNetWork shareNetEngine] sendRequest:request complete:^(NSDictionary *dic) {
+
+    }];
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

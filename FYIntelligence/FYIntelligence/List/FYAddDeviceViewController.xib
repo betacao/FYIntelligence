@@ -68,6 +68,9 @@
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="确认" backgroundImage="btn_login_normal"/>
+                    <connections>
+                        <action selector="nextClick:" destination="-1" eventType="touchUpInside" id="wLQ-FN-OXm"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bk7-v6-xNb">
                     <rect key="frame" x="13" y="200" width="17" height="17"/>

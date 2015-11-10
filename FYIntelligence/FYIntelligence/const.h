@@ -72,4 +72,9 @@
 //首页指令
 #define kMainViewCmd @"read_dev_info"
 
+#define kAddedDeviceCmd @"fyzn2015#1#12#%@#%@#%@#%@#0#"
+
+#define kDeleteDeviceCmd @"fyzn2015#1#13#%@#%@#%@#"
+
+#define kConfigDeviceCmd @"change_wifi$%@$%@"
 #endif /* const_h */

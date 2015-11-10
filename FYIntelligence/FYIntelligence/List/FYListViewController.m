@@ -127,6 +127,7 @@
 - (void)clickCongfigButton:(FYDevice *)device
 {
     FYConfigViewController *controller = [[FYConfigViewController alloc] initWithNibName:@"FYConfigViewController" bundle:nil];
+    controller.deviceID = device.deviceID;
     [self addChildViewController:controller];
     controller.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
     [self.view addSubview:controller.view];

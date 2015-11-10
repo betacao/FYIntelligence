@@ -46,7 +46,9 @@
     UIImage *pressImage = [UIImage imageNamed:@"btn_login_press"];
     [self.loginButton setBackgroundImage:[normalImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
     [self.loginButton setBackgroundImage:[pressImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateHighlighted];
-    
+    self.userField.text = kAppDelegate.ESPDescription;
+
+    [[FYTCPSpecialNetWork shareNetEngine] createClientTcpSocket];
 }
 
 - (IBAction)clickRememberButton:(UIButton *)sender {
@@ -56,10 +58,32 @@
         [self.rememberPwdButton setImage:[UIImage imageNamed:@"selectButton"] forState:UIControlStateNormal];
     }
     self.isRemember = !self.isRemember;
+    __weak typeof(self) weakSelf = self;
     NSString *request = [NSString stringWithFormat:@"%@",kAddDeviceCmd];
     [[FYTCPSpecialNetWork shareNetEngine] sendRequest:request complete:^(NSDictionary *dic) {
         NSString *string = [dic objectForKey:kResponseString];
         NSLog(@"%@",string);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *str = string;
+            if (str.length >= 7) {
+                str = [string substringToIndex:7];
+            }
+            weakSelf.userField.text = str;
+        });
+    }];
+}
+
+- (IBAction)nextClick:(id)sender
+{
+    if (self.userField.text.length == 0) {
+        return;
+    }
+    if (self.pwdField.text.length == 0) {
+        return;
+    }
+    NSString *request = [NSString stringWithFormat:kAddedDeviceCmd,self.userField.text, self.pwdField.text, kAppDelegate.userName, kAppDelegate.userPWD];
+    [[FYTCPNetWork shareNetEngine] sendRequest:request complete:^(NSDictionary *dic) {
+
     }];
 }
 
