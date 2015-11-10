@@ -38,7 +38,7 @@
  * @param nbytes
  *            the number of bytes to read from {@code buf}.
  */
-- (void)updateWithBuf:(Byte[])buf Off:(int)off Nbytes:(int)nbytes;
+- (void)updateWithBuf:(Byte[])buf Off:(int)off Nbytes:(NSInteger)nbytes;
 
 /**
  * Updates the checksum with the given bytes.
@@ -48,7 +48,7 @@
  * @param nbytes
  *            the number of bytes to read from {@code buf}.
  */
-- (void)updateWithBuf:(Byte [])buf Nbytes:(int)nbytes;
+- (void)updateWithBuf:(Byte [])buf Nbytes:(NSInteger)nbytes;
 
 /**
  * Updates the checksum value with the given byte.

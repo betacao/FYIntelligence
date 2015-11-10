@@ -55,7 +55,7 @@ NSNumber *_value;
     _value = _init;
 }
 
-- (void)updateWithBuf:(Byte[])buf Off:(int)off Nbytes:(int)nbytes
+- (void)updateWithBuf:(Byte[])buf Off:(int)off Nbytes:(NSInteger)nbytes
 {
     for (int i = 0; i < nbytes; i++)
     {
@@ -65,7 +65,7 @@ NSNumber *_value;
     }
 }
 
-- (void)updateWithBuf:(Byte [])buf Nbytes:(int)nbytes
+- (void)updateWithBuf:(Byte [])buf Nbytes:(NSInteger)nbytes
 {
     [self updateWithBuf:buf Off:0 Nbytes:nbytes];
 }
