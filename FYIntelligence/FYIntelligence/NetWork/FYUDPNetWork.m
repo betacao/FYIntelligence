@@ -100,9 +100,9 @@
 
     if (MResult.count > 1) {
         result = [MResult objectAtIndex:1];
-        NSString *type = [string substringWithRange:result.range];
+        NSInteger type = [[string substringWithRange:result.range] integerValue];
 
-        if (![type isEqualToString:@"0"]) {
+        if (!type == 0) {
             [self.timer setFireDate:[NSDate distantFuture]];
             self.sendTimes = 0;
             self.sendMessage = nil;
