@@ -78,15 +78,20 @@
     self.waterCircleButton.layer.cornerRadius = 2.0f;
     [self.waterCircleButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"8FBC8F"]]forState:UIControlStateNormal];
     [self.waterCircleButton setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]forState:UIControlStateHighlighted];
-    [self getInfo];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self getInfo];
+}
 
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    self.mainImageView.image = [UIImage imageNamed:@"mainShow"];
+    self.mainImageView.image = self.image0;
+    [[FYUDPNetWork shareNetEngine] stopMainData];
 }
 
 - (void)backButtonClick:(UIButton *)button
@@ -218,9 +223,11 @@
                 return (NSComparisonResult)NSOrderedSame;
             };
             NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
-            NSString *value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range] stringByAppendingString:@"°C"];
+            NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+            [self changeImage:[value integerValue]];
+            value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range] stringByAppendingString:@"°C"];
             [self.firstButton setTitle:value forState:UIControlStateNormal];
-            value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+            value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range] stringByAppendingString:@"°C"];
             [self.secondButton setTitle:value forState:UIControlStateNormal];
             value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range] stringByAppendingString:@"°C"];
             [self.thirdButton setTitle:value forState:UIControlStateNormal];
@@ -229,6 +236,83 @@
 
         }
     }];
+}
+
+- (void)changeImage:(NSInteger)number
+{
+    switch (number) {
+        case 0:
+        {
+            self.mainImageView.image = self.image0;
+        }
+            break;
+        case 1:
+        {
+            self.mainImageView.image = self.image1;
+        }
+            break;
+        case 2:
+        {
+            self.mainImageView.image = self.image2;
+        }
+            break;
+        case 3:
+        {
+            self.mainImageView.image = self.image3;
+        }
+            break;
+        case 4:
+        {
+            self.mainImageView.image = self.image4;
+        }
+            break;
+        case 5:
+        {
+            self.mainImageView.image = self.image5;
+        }
+            break;
+        case 6:
+        {
+            self.mainImageView.image = self.image6;
+        }
+            break;
+        case 7:
+        {
+            self.mainImageView.image = self.image7;
+        }
+            break;
+        case 8:
+        {
+            self.mainImageView.image = self.image8;
+        }
+            break;
+        case 9:
+        {
+            self.mainImageView.image = self.image9;
+        }
+            break;
+        case 10:
+        {
+            self.mainImageView.image = self.image10;
+        }
+            break;
+        case 11:
+        {
+            self.mainImageView.image = self.image11;
+        }
+            break;
+        case 12:
+        {
+            self.mainImageView.image = self.image12;
+        }
+            break;
+
+        default:
+        {
+            self.mainImageView.image = self.image13;
+        }
+            break;
+    }
 }
 
 - (IBAction)clickParamButton:(UIButton *)button
@@ -241,15 +325,6 @@
 - (IBAction)clickAddWater:(UIButton *)sender
 {
     //手动上水
-    UIImage *image0 = [UIImage imageNamed:@"aaction_ss_hx0"];
-    UIImage *image1 = [UIImage imageNamed:@"aaction_ss_hx1"];
-    UIImage *image2 = [UIImage imageNamed:@"aaction_ss_hx2"];
-    UIImage *image3 = [UIImage imageNamed:@"aaction_ss_hx3"];
-    UIImage *image4 = [UIImage imageNamed:@"aaction_ss_hx4"];
-    UIImage *image5 = [UIImage imageNamed:@"aaction_ss_hx5"];
-    UIImage *image6 = [UIImage imageNamed:@"aaction_ss_hx6"];
-    UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4, image5, image6] duration:6.0f];
-    self.mainImageView.image = image;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
     NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_sdss"];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
@@ -269,14 +344,6 @@
 - (IBAction)clickUserWarm:(UIButton *)sender
 {
     //手动加热
-    UIImage *image0 = [UIImage imageNamed:@"aaction_jiare_hx0"];
-    UIImage *image1 = [UIImage imageNamed:@"aaction_jiare_hx1"];
-    UIImage *image2 = [UIImage imageNamed:@"aaction_jiare_hx2"];
-    UIImage *image3 = [UIImage imageNamed:@"aaction_jiare_hx3"];
-    UIImage *image4 = [UIImage imageNamed:@"aaction_jiare_hx4"];
-    UIImage *image5 = [UIImage imageNamed:@"aaction_jiare_hx5"];
-    UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4, image5] duration:6.0f];
-    self.mainImageView.image = image;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
     NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_sdjr"];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
@@ -294,14 +361,6 @@
 - (IBAction)clickTemCircle:(UIButton *)sender
 {
     //温差循环
-    UIImage *image0 = [UIImage imageNamed:@"aaction_wcxh_hx0"];
-    UIImage *image1 = [UIImage imageNamed:@"aaction_wcxh_hx5"];
-    UIImage *image2 = [UIImage imageNamed:@"aaction_wcxh_hx10"];
-    UIImage *image3 = [UIImage imageNamed:@"aaction_wcxh_hx15"];
-    UIImage *image4 = [UIImage imageNamed:@"aaction_wcxh_hx20"];
-    UIImage *image5 = [UIImage imageNamed:@"aaction_wcxh_hx25"];
-    UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4, image5] duration:6.0f];
-    self.mainImageView.image = image;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
     NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_wcxh"];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
@@ -319,13 +378,6 @@
 - (IBAction)clickWaterCircle:(UIButton *)sender
 {
     //管道回水
-    UIImage *image0 = [UIImage imageNamed:@"aaction_gdhs_hx0"];
-    UIImage *image1 = [UIImage imageNamed:@"aaction_gdhs_hx1"];
-    UIImage *image2 = [UIImage imageNamed:@"aaction_gdhs_hx4"];
-    UIImage *image3 = [UIImage imageNamed:@"aaction_gdhs_hx8"];
-    UIImage *image4 = [UIImage imageNamed:@"aaction_gdhs_hx12"];
-    UIImage *image = [UIImage animatedImageWithImages:@[image0, image1, image2, image3, image4] duration:6.0f];
-    self.mainImageView.image = image;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
     NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_gdhs"];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {

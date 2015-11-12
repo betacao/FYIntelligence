@@ -133,7 +133,7 @@
     for (NSInteger i = 0;i < indexs.count; i++){
         NSInteger row = [[indexs objectAtIndex:i] integerValue];
         NSInteger component = [[components objectAtIndex:i] integerValue];
-        [self.pickerView selectRow:row inComponent:component animated:NO];
+        [self.pickerView selectRow:row != NSNotFound ? row : 0 inComponent:component animated:NO];
     }
 }
 @end

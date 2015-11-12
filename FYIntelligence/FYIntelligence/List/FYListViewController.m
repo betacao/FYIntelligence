@@ -12,8 +12,9 @@
 #import "FYDeviceManagerViewController.h"
 #import "FYConfigViewController.h"
 #import "FYDevice.h"
+#import "FYConfigViewController.h"
 
-@interface FYListViewController ()<UITableViewDataSource,UITableViewDelegate, FYListDelegate>
+@interface FYListViewController ()<UITableViewDataSource,UITableViewDelegate, FYListDelegate, FYConfigDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) NSInteger deviceCount;
 @property (strong, nonatomic) NSMutableArray *deviceArray;
@@ -95,7 +96,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.deviceCount;
+    return self.deviceArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -128,6 +129,7 @@
 {
     FYConfigViewController *controller = [[FYConfigViewController alloc] initWithNibName:@"FYConfigViewController" bundle:nil];
     controller.deviceID = device.deviceID;
+    controller.delegate = self;
     [self addChildViewController:controller];
     controller.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
     [self.view addSubview:controller.view];
@@ -142,6 +144,17 @@
     [self presentViewController:nav animated:YES completion:nil];
 }
 
+
+- (void)didDeleteDevice:(NSString *)deviceID
+{
+    for (FYDevice *device in self.deviceArray){
+        if ([device.deviceID isEqualToString:deviceID]) {
+            [self.deviceArray removeObject:device];
+            break;
+        }
+    }
+    [self.tableView reloadData];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

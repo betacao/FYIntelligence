@@ -47,8 +47,9 @@
     [self.loginButton setBackgroundImage:[normalImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
     [self.loginButton setBackgroundImage:[pressImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateHighlighted];
     self.userField.text = kAppDelegate.ESPDescription;
-
-    [[FYTCPSpecialNetWork shareNetEngine] createClientTcpSocket];
+    if (self.userField.text) {
+        [[FYTCPSpecialNetWork shareNetEngine] createClientTcpSocket];
+    }
 }
 
 - (IBAction)clickRememberButton:(UIButton *)sender {

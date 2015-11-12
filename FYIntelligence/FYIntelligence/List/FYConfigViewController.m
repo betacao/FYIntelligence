@@ -45,11 +45,31 @@
     [self.leftWifField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [self.rightPwdField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)keyboardDidShow:(NSNotification *)notif
+{
+    [UIView animateWithDuration:0.25f animations:^{
+        CGRect frame = self.bgView.frame;
+        frame.origin.y = 50.0f;
+        self.bgView.frame = frame;
+    }];
+}
+
+- (void)keyboardDidHide:(NSNotification *)notif
+{
+    CGRect frame = self.bgView.frame;
+    frame.origin.y = 100.0f;
+    self.bgView.frame = frame;
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (IBAction)leftClick:(id)sender
@@ -73,6 +93,7 @@
     NSString *string = [NSString stringWithFormat:kConfigDeviceCmd,self.leftSSidField.text, self.leftWifField.text];
     NSString *requset = [NSString stringWithFormat:kNeedPINString,self.deviceID,self.leftPwdField.text,kAppDelegate.userName,@(kAppDelegate.globleNumber),string];
     [[FYUDPNetWork shareNetEngine] sendRequest:requset complete:^(BOOL finish, NSString *responseString) {
+        [FYProgressHUD hideHud];
         if (finish) {
             [FYProgressHUD showMessageWithText:@"设置成功"];
         } else{
@@ -86,6 +107,9 @@
     NSString *request = [NSString stringWithFormat:kDeleteDeviceCmd,self.deviceID, self.rightPwdField.text, kAppDelegate.userName];
     [[FYTCPNetWork shareNetEngine] sendRequest:request complete:^(NSDictionary *dic) {
         [FYProgressHUD showMessageWithText:@"设置成功"];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(didDeleteDevice:)]) {
+            [self.delegate didDeleteDevice:self.deviceID];
+        }
     }];
 }
 
@@ -94,4 +118,11 @@
     [self removeFromParentViewController];
     [self.view removeFromSuperview];
 }
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+
+
 @end

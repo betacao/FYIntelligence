@@ -8,12 +8,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYDeviceManagerViewController">
             <connections>
                 <outlet property="firstButton" destination="VJ3-vi-5SB" id="Xou-cF-ury"/>
-                <outlet property="fourthButton" destination="VQc-Dw-bU6" id="AlE-8g-1zO"/>
+                <outlet property="fourthButton" destination="ips-uW-Y64" id="RwJ-d6-kYM"/>
                 <outlet property="mainImageView" destination="qWg-aE-sE0" id="Q1o-re-i3W"/>
                 <outlet property="paramButton" destination="SB6-1y-gf3" id="6sc-F1-huY"/>
                 <outlet property="secondButton" destination="f94-ie-jdF" id="srN-1k-ge9"/>
                 <outlet property="temCircleButton" destination="N5y-7B-uRx" id="lkr-s7-FfW"/>
-                <outlet property="thirdButton" destination="ips-uW-Y64" id="kmS-fW-yFE"/>
+                <outlet property="thirdButton" destination="VQc-Dw-bU6" id="WjB-rN-e53"/>
                 <outlet property="userAddButton" destination="n92-Bj-w9g" id="wDN-Jg-wcg"/>
                 <outlet property="userWarmButton" destination="RuF-y0-glz" id="Ske-OC-pbT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

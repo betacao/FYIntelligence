@@ -14,9 +14,10 @@
 @property (strong, nonatomic) GCDAsyncUdpSocket *sendUdpSocket;
 @property (copy, nonatomic) FYUDPNetWorkFinishBlock finishBlock;
 @property (copy, nonatomic) FYUDPNetWorkFinishBlock mainBlock;
-@property (strong, nonatomic) NSTimer *mainTimer;
 @property (assign, nonatomic) NSInteger mainNumber;
-@property (assign, nonatomic) BOOL needSend;
+@property (assign, nonatomic) BOOL normalNeedSend;
+@property (assign, nonatomic) BOOL mainNeedSend;
+@property (assign, nonatomic) BOOL requestMainData;
 
 @end
 
@@ -35,6 +36,7 @@
 
 - (void)createClientUdpSocket
 {
+//    dispatch_queue_t dQueue = dispatch_queue_create("client udp socket", NULL);
     self.sendUdpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     uint16_t port = kUDPHostPort;
     NSError *error = nil;
@@ -47,19 +49,26 @@
         NSLog(@"Error starting server (recv): %@", error);
         return;
     }
+    self.mainNumber = -1;
+    NSLog(@"Ready");
 }
 
 - (void)refreshUdpSocket
 {
-    self.sendUdpSocket = nil;
+    [self.sendUdpSocket close];
     [self createClientUdpSocket];
 }
 
 - (void)requestMainData:(void (^)(BOOL, NSString *))block
 {
-    self.mainTimer = [NSTimer scheduledTimerWithTimeInterval:10.0f target:self selector:@selector(mainSendMessage) userInfo:nil repeats:YES];
-    [self.mainTimer fire];
+    self.requestMainData = YES;
+    [self mainSendMessage];
     self.mainBlock = block;
+}
+
+- (void)stopMainData
+{
+    self.requestMainData = NO;
 }
 
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext
@@ -92,15 +101,15 @@
         result = [MResult objectAtIndex:index];
         responeString = [responeString stringByAppendingFormat:@"%@&",[string substringWithRange:result.range]];
     }
-    NSLog(@"success = %@",responeString);
     if ([responeString rangeOfString:@"ERROR"].location == NSNotFound && responeString.length > 0) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (weakSelf.mainNumber == globleNumber) {
+                weakSelf.mainNeedSend = NO;
                 if (weakSelf.mainBlock) {
                     weakSelf.mainBlock(YES, responeString);
                 }
             } else{
-                weakSelf.needSend = NO;
+                weakSelf.normalNeedSend = NO;
                 if (weakSelf.finishBlock) {
                     weakSelf.finishBlock(YES, responeString);
                 }
@@ -109,12 +118,13 @@
     } else{
         dispatch_async(dispatch_get_main_queue(), ^{
             if (weakSelf.mainNumber == globleNumber) {
+                weakSelf.mainNeedSend = NO;
                 if (weakSelf.mainBlock) {
                     weakSelf.mainBlock(NO, @"");
                 }
             } else{
                 if (weakSelf.finishBlock) {
-                    weakSelf.needSend = NO;
+                    weakSelf.normalNeedSend = NO;
                     weakSelf.finishBlock(NO, @"");
                 }
             }
@@ -124,7 +134,6 @@
 
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didSendDataWithTag:(long)tag
 {
-
 }
 
 - (void)sendRequest:(NSString *)request complete:(void (^)(BOOL, NSString *))block
@@ -133,8 +142,8 @@
     NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
     self.finishBlock = block;
     [FYProgressHUD showLoadingWithMessage:@"请稍等..."];
-    self.needSend = YES;
-    [self performSelector:@selector(fireSendMessage:) withObject:data];
+    self.normalNeedSend = YES;
+    [self fireSendMessage:data];
 
 }
 
@@ -146,27 +155,62 @@
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSInteger i = 0;
-        while (i <= 20 && weakSelf.needSend) {
+        while (i < 20) {
+            if (!weakSelf.normalNeedSend) {
+                break;
+            }
             i++;
-            [weakSelf.sendUdpSocket sendData:sendMessage toHost:host port:port withTimeout:-1 tag:0];
+            [weakSelf.sendUdpSocket sendData:sendMessage toHost:host port:port withTimeout:-1 tag:kAppDelegate.globleNumber];
             kAppDelegate.globleNumber++;
             NSLog(@"执行次数%ld",(long)i);
             sleep(1);
+        }
+        if (i >= 20 && self.finishBlock) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                weakSelf.finishBlock(NO, @"");
+            });
         }
     });
 }
 
 - (void)mainSendMessage
 {
-    NSLog(@"send main data");
-    NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,@(kAppDelegate.globleNumber),kMainViewCmd];
-    NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *host = kHostAddress;
-    uint16_t port = kUDPHostPort;
-    [self.sendUdpSocket sendData:data toHost:host port:port withTimeout:-1 tag:0];
-    self.mainNumber = kAppDelegate.globleNumber;
-    kAppDelegate.globleNumber++;
+
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSInteger i = 0;
+        while (i < NSNotFound) {
+            i++;
+            if (!self.requestMainData) {
+                break;
+            }
+            NSLog(@"send main data %ld",(long)i);
+            [weakSelf sendMessage];
+            kAppDelegate.globleNumber++;
+            sleep(15);
+        }
+    });
     
+}
+
+- (void)sendMessage
+{
+    self.mainNumber = kAppDelegate.globleNumber;
+    self.mainNeedSend = YES;
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSInteger time = 0;
+        while (weakSelf.mainNeedSend == YES && time < 20) {
+            time++;
+            NSLog(@"detail %ld",weakSelf.mainNumber);
+            NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,@(weakSelf.mainNumber),kMainViewCmd];
+            NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
+            NSString *host = kHostAddress;
+            uint16_t port = kUDPHostPort;
+            [weakSelf.sendUdpSocket sendData:data toHost:host port:port withTimeout:-1 tag:weakSelf.mainNumber];
+            sleep(1);
+        }
+    });
 }
 
 
