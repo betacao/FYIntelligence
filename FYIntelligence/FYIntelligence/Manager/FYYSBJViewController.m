@@ -82,7 +82,7 @@
 {
     NSString *request = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),kGETYSBJCmd];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        if(responseString.length > 0){
+        if(finish){
             NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
             NSMutableArray *results = [NSMutableArray array];
             [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
@@ -99,8 +99,9 @@
             NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
 
             NSString *value1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
-            [self.postionPickView selectRow:[self.positionArray indexOfObject:value1] inComponent:0 animated:NO];
-
+            if ([self.positionArray indexOfObject:value1] != NSNotFound) {
+                [self.postionPickView selectRow:[self.positionArray indexOfObject:value1] inComponent:0 animated:NO];
+            }
             NSString *isOn1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
             [self.switch1 setOn: [isOn1 isEqualToString:@"1"] ? YES : NO];
 

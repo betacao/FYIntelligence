@@ -24,46 +24,17 @@
 
     if (!hasShow) {
         if ([NSThread currentThread].isMainThread) {
-            UIViewController *controller = [self getCurrentVC];
-            MBProgressHUD  *HUD = [[MBProgressHUD alloc] initWithView:controller.view];
-            HUD.yOffset = -50;
-            [controller.view addSubview:HUD];
-            HUD.mode = MBProgressHUDModeIndeterminate;
-            HUD.labelText = message;
-            [HUD show:YES];
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:superView animated:YES];
+            hud.yOffset = -50;
+            [superView bringSubviewToFront:hud];
+            hud.mode = MBProgressHUDModeIndeterminate;
+            hud.labelText = message;
+            [hud adjustFontToWidth];
+            hud.removeFromSuperViewOnHide = YES;
         } else{
             [self performSelectorOnMainThread:@selector(showHudWithMessage:) withObject:message waitUntilDone:YES];
         }
     }
-}
-
-+ (UIViewController *)getCurrentVC
-{
-    UIViewController *result = nil;
-
-    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
-    if (window.windowLevel != UIWindowLevelNormal)
-    {
-        NSArray *windows = [[UIApplication sharedApplication] windows];
-        for(UIWindow * tmpWin in windows)
-        {
-            if (tmpWin.windowLevel == UIWindowLevelNormal)
-            {
-                window = tmpWin;
-                break;
-            }
-        }
-    }
-
-    UIView *frontView = [[window subviews] objectAtIndex:0];
-    id nextResponder = [frontView nextResponder];
-
-    if ([nextResponder isKindOfClass:[UIViewController class]])
-        result = nextResponder;
-    else
-        result = window.rootViewController;
-
-    return result;
 }
 
 
@@ -116,8 +87,8 @@
 
 + (void)hidesHud
 {
-    UIViewController *controller = [self getCurrentVC];
-    for (UIView *subView in controller.view.subviews) {
+    UIView *superView = [AppDelegate currentAppdelegate].window;
+    for (UIView *subView in superView.subviews) {
         if ([subView isKindOfClass:[MBProgressHUD class]]){
             [subView removeFromSuperview];
         }

@@ -71,7 +71,7 @@
 {
     NSString *request = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),kGETSDSSCmd];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        if(responseString.length > 0){
+        if(finish){
             NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
             NSMutableArray *results = [NSMutableArray array];
             [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
@@ -88,7 +88,9 @@
             NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
 
             NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
-            [self.pickerView selectRow:[self.dataArray indexOfObject:value] inComponent:0 animated:NO];
+            if ([self.dataArray indexOfObject:value] != NSNotFound) {
+                [self.pickerView selectRow:[self.dataArray indexOfObject:value] inComponent:0 animated:NO];
+            }
         } else{
             [FYProgressHUD showMessageWithText:@"获取初始值失败"];
         }

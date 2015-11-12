@@ -9,7 +9,7 @@
 #import "FYForgrtPWDViewController.h"
 
 @interface FYForgrtPWDViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextField *userField;
 @end
 
 @implementation FYForgrtPWDViewController
@@ -24,14 +24,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)buttonClick:(id)sender
+{
+    if (self.userField.text.length == 0) {
+        return;
+    }
+    __weak typeof(self) weakSelf = self;
+    NSString *request = [NSString stringWithFormat:kResetPwdCmd,self.userField.text];
+    [[FYTCPNetWork shareNetEngine] sendRequest:request complete:^(NSDictionary *dic) {
+        if ([[dic objectForKey:kResponseString] rangeOfString:@"SUCCESS"].location != NSNotFound) {
+            [FYProgressHUD showMessageWithText:@"短信发送成功"];
+            [weakSelf.navigationController performSelector:@selector(popViewControllerAnimated:) withObject:@(YES) afterDelay:1.2f];
+        } else{
+            [FYProgressHUD showMessageWithText:@"短信发送失败"];
+        }
+    }];
 }
-*/
-
 @end

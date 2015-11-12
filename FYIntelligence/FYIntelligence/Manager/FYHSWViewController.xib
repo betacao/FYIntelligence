@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYHSWViewController">
             <connections>
                 <outlet property="pickerView" destination="fhT-Bd-s3E" id="V7l-uZ-UU0"/>
+                <outlet property="switchControl" destination="uu8-nj-Ilt" id="93r-xq-QoI"/>
                 <outlet property="view" destination="Zng-Ew-ACR" id="gDV-3x-hWy"/>
             </connections>
         </placeholder>

@@ -126,7 +126,7 @@
                                     <animations/>
                                     <state key="normal" title="确定"/>
                                     <connections>
-                                        <action selector="nextClick:" destination="-1" eventType="touchUpInside" id="Kc2-Xa-Zg8"/>
+                                        <action selector="leftNextClick:" destination="-1" eventType="touchUpInside" id="TZ8-EW-CmU"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -173,7 +173,7 @@
                                     <animations/>
                                     <state key="normal" title="确定"/>
                                     <connections>
-                                        <action selector="nextClick:" destination="-1" eventType="touchUpInside" id="eFt-92-6SZ"/>
+                                        <action selector="rightNextClick:" destination="-1" eventType="touchUpInside" id="iMv-uV-Ohu"/>
                                     </connections>
                                 </button>
                             </subviews>

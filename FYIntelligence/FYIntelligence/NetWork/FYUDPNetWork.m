@@ -14,11 +14,9 @@
 @property (strong, nonatomic) GCDAsyncUdpSocket *sendUdpSocket;
 @property (copy, nonatomic) FYUDPNetWorkFinishBlock finishBlock;
 @property (copy, nonatomic) FYUDPNetWorkFinishBlock mainBlock;
-@property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic) NSTimer *mainTimer;
-@property (strong, nonatomic) NSData *sendMessage;
-@property (assign, nonatomic) NSInteger sendTimes;
-@property (assign, nonatomic) BOOL isSending;
+@property (assign, nonatomic) NSInteger mainNumber;
+@property (assign, nonatomic) BOOL needSend;
 
 @end
 
@@ -37,7 +35,6 @@
 
 - (void)createClientUdpSocket
 {
-//    dispatch_queue_t dQueue = dispatch_queue_create("client udp socket", NULL);
     self.sendUdpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     uint16_t port = kUDPHostPort;
     NSError *error = nil;
@@ -65,16 +62,9 @@
     self.mainBlock = block;
 }
 
-- (NSTimer *)timer
-{
-    if(!_timer){
-        _timer = [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(fireSendMessage) userInfo:nil repeats:YES];
-    }
-    return _timer;
-}
-
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext
 {
+    [FYProgressHUD hideHud];
     NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"udp string:%@",string);
 
@@ -97,94 +87,85 @@
     NSInteger globleNumber = [[globleString substringFromIndex:6] integerValue];
     NSLog(@"globleNumber = %ld",(long)globleNumber);
     __weak typeof(self) weakSelf = self;
-
-    if (MResult.count > 1) {
-        result = [MResult objectAtIndex:1];
-        NSInteger type = [[string substringWithRange:result.range] integerValue];
-
-        if (!type == 0) {
-            [self.timer setFireDate:[NSDate distantFuture]];
-            self.sendTimes = 0;
-            self.sendMessage = nil;
-            self.isSending = NO;
-            NSString *responeString = @"";
-            for (NSInteger index = 2; index <= MResult.count - 2; index++) {
-                result = [MResult objectAtIndex:index];
-                responeString = [responeString stringByAppendingFormat:@"%@&",[string substringWithRange:result.range]];
-            }
-            NSLog(@"success = %@",responeString);
-            kAppDelegate.globleNumber++;
-            dispatch_async(dispatch_get_main_queue(), ^{
+    NSString *responeString = @"";
+    for (NSInteger index = 1; index <= MResult.count - 1; index++) {
+        result = [MResult objectAtIndex:index];
+        responeString = [responeString stringByAppendingFormat:@"%@&",[string substringWithRange:result.range]];
+    }
+    NSLog(@"success = %@",responeString);
+    if ([responeString rangeOfString:@"ERROR"].location == NSNotFound && responeString.length > 0) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (weakSelf.mainNumber == globleNumber) {
+                if (weakSelf.mainBlock) {
+                    weakSelf.mainBlock(YES, responeString);
+                }
+            } else{
+                weakSelf.needSend = NO;
                 if (weakSelf.finishBlock) {
                     weakSelf.finishBlock(YES, responeString);
                 }
-            });
-        } else{
-            NSString *responeString = @"";
-            for (NSInteger index = 2; index <= MResult.count - 2; index++) {
-                result = [MResult objectAtIndex:index];
-                responeString = [responeString stringByAppendingFormat:@"%@&",[string substringWithRange:result.range]];
             }
-            NSLog(@"success = %@",responeString);
-            __weak typeof(self) weakSelf = self;
-            kAppDelegate.globleNumber++;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                weakSelf.mainBlock(YES, responeString);
-            });
-        }
+        });
     } else{
-        [self.timer setFireDate:[NSDate distantFuture]];
-        self.sendTimes = 0;
-        self.sendMessage = nil;
-        self.isSending = NO;
-        kAppDelegate.globleNumber++;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [FYProgressHUD showMessageWithText:globleString];
+            if (weakSelf.mainNumber == globleNumber) {
+                if (weakSelf.mainBlock) {
+                    weakSelf.mainBlock(NO, @"");
+                }
+            } else{
+                if (weakSelf.finishBlock) {
+                    weakSelf.needSend = NO;
+                    weakSelf.finishBlock(NO, @"");
+                }
+            }
         });
     }
 }
 
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didSendDataWithTag:(long)tag
 {
-    
+
 }
 
 - (void)sendRequest:(NSString *)request complete:(void (^)(BOOL, NSString *))block
 {
-    if(self.isSending){
-        return;
-    }
-    self.isSending = YES;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
     NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
-    [self.timer setFireDate:[NSDate date]];
-    self.sendMessage = data;
     self.finishBlock = block;
+    [FYProgressHUD showLoadingWithMessage:@"请稍等..."];
+    self.needSend = YES;
+    [self performSelector:@selector(fireSendMessage:) withObject:data];
+
 }
 
-- (void)fireSendMessage
+- (void)fireSendMessage:(NSData *)sendMessage
 {
-    if(!self.sendMessage || self.sendTimes >= 20){
-        [self.timer setFireDate:[NSDate distantFuture]];
-        self.sendTimes = 0;
-        self.isSending = NO;
-        self.finishBlock(NO,@"");
-        return;
-    }
-    self.sendTimes++;
-    NSLog(@"send times %ld",(long)self.sendTimes);
     // 发送消息 这里不需要知道对象的ip地址和端口
     NSString *host = kHostAddress;
     uint16_t port = kUDPHostPort;
-    [self.sendUdpSocket sendData:self.sendMessage toHost:host port:port withTimeout:-1 tag:0];
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSInteger i = 0;
+        while (i <= 20 && weakSelf.needSend) {
+            i++;
+            [weakSelf.sendUdpSocket sendData:sendMessage toHost:host port:port withTimeout:-1 tag:0];
+            kAppDelegate.globleNumber++;
+            NSLog(@"执行次数%ld",(long)i);
+            sleep(1);
+        }
+    });
 }
 
 - (void)mainSendMessage
 {
+    NSLog(@"send main data");
     NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,@(kAppDelegate.globleNumber),kMainViewCmd];
     NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
     NSString *host = kHostAddress;
     uint16_t port = kUDPHostPort;
     [self.sendUdpSocket sendData:data toHost:host port:port withTimeout:-1 tag:0];
+    self.mainNumber = kAppDelegate.globleNumber;
+    kAppDelegate.globleNumber++;
     
 }
 

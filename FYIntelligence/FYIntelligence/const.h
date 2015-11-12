@@ -77,4 +77,6 @@
 #define kDeleteDeviceCmd @"fyzn2015#1#13#%@#%@#%@#"
 
 #define kConfigDeviceCmd @"change_wifi$%@$%@"
+
+#define kResetPwdCmd @"fyzn2015#1#15#%@#"
 #endif /* const_h */

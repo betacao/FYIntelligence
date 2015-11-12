@@ -22,8 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.positionArray = @[@"1", @"2", @"3", @"4", @"5"];
-    self.temArray = @[@"6", @"7", @"8", @"9", @"10"];
+    self.positionArray = @[@"01", @"02", @"03", @"04", @"05"];
+    self.temArray = @[@"06", @"07", @"08", @"09", @"10"];
     self.startValue = [self.positionArray firstObject];
     self.endValue = [self.temArray firstObject];
     self.title = @"防冻保护";
@@ -76,7 +76,7 @@
 {
     NSString *request = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),kGETFDBHCmd];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        if(responseString.length > 0){
+        if(finish){
             NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
             NSMutableArray *results = [NSMutableArray array];
             [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
@@ -93,9 +93,13 @@
             NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
 
             NSString *value1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
-            [self.postionPickView selectRow:[self.positionArray indexOfObject:value1] inComponent:0 animated:NO];
+            if ([self.positionArray indexOfObject:value1] != NSNotFound) {
+                [self.postionPickView selectRow:[self.positionArray indexOfObject:value1] inComponent:0 animated:NO];
+            }
             NSString *value2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
-            [self.temPickView selectRow:[self.temArray indexOfObject:value2] inComponent:0 animated:NO];
+            if ([self.temArray indexOfObject:value2] != NSNotFound) {
+                [self.temPickView selectRow:[self.temArray indexOfObject:value2] inComponent:0 animated:NO];
+            }
         }else{
             [FYProgressHUD showMessageWithText:@"获取初始值失败"];
         }

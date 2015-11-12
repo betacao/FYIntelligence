@@ -203,7 +203,7 @@
 - (void)getInfo
 {
     [[FYUDPNetWork shareNetEngine] requestMainData:^(BOOL finish, NSString *responseString) {
-        if(responseString.length > 0){
+        if(finish){
             NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
             NSMutableArray *results = [NSMutableArray array];
             [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
