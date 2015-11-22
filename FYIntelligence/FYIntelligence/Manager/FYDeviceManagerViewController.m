@@ -12,8 +12,9 @@
 
 @interface FYDeviceManagerViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
-
+@property (weak, nonatomic) IBOutlet UIImageView *leftView;
+@property (weak, nonatomic) IBOutlet UIImageView *middleView;
+@property (weak, nonatomic) IBOutlet UIImageView *rightView;
 @property (weak, nonatomic) IBOutlet UIButton *paramButton;
 @property (weak, nonatomic) IBOutlet UIButton *userAddButton;
 @property (weak, nonatomic) IBOutlet UIButton *userWarmButton;
@@ -23,20 +24,20 @@
 @property (weak, nonatomic) IBOutlet UIButton *secondButton;
 @property (weak, nonatomic) IBOutlet UIButton *thirdButton;
 @property (weak, nonatomic) IBOutlet UIButton *fourthButton;
-@property (strong, nonatomic) UIImage *image0;
-@property (strong, nonatomic) UIImage *image1;
-@property (strong, nonatomic) UIImage *image2;
-@property (strong, nonatomic) UIImage *image3;
-@property (strong, nonatomic) UIImage *image4;
-@property (strong, nonatomic) UIImage *image5;
-@property (strong, nonatomic) UIImage *image6;
-@property (strong, nonatomic) UIImage *image7;
-@property (strong, nonatomic) UIImage *image8;
-@property (strong, nonatomic) UIImage *image9;
-@property (strong, nonatomic) UIImage *image10;
-@property (strong, nonatomic) UIImage *image11;
-@property (strong, nonatomic) UIImage *image12;
-@property (strong, nonatomic) UIImage *image13;
+@property (strong, nonatomic) NSArray *array0;
+@property (strong, nonatomic) NSArray *array1;
+@property (strong, nonatomic) NSArray *array2;
+@property (strong, nonatomic) NSArray *array3;
+@property (strong, nonatomic) NSArray *array4;
+@property (strong, nonatomic) NSArray *array5;
+@property (strong, nonatomic) NSArray *array6;
+@property (strong, nonatomic) NSArray *array7;
+@property (strong, nonatomic) NSArray *array8;
+@property (strong, nonatomic) NSArray *array9;
+@property (strong, nonatomic) NSArray *array10;
+@property (strong, nonatomic) NSArray *array11;
+@property (strong, nonatomic) NSArray *array12;
+@property (strong, nonatomic) NSArray *array13;
 
 
 
@@ -90,7 +91,9 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    self.mainImageView.image = self.image0;
+    self.leftView.image = [UIImage imageNamed:@"left"];
+    self.middleView.image = [UIImage imageNamed:@"middle_100"];
+    self.rightView.image = [UIImage imageNamed:@"right"];
     [[FYUDPNetWork shareNetEngine] stopMainData];
 }
 
@@ -106,103 +109,121 @@
     [self presentViewController:nav animated:YES completion:nil];
 }
 
-- (UIImage *)image0
+- (NSArray *)array0
 {
-    if (!_image0) {
-        _image0 = [UIImage imageNamed:@"aaction_gdhs_hx0"];
+    if (!_array0) {
+        _array0 = @[[UIImage imageNamed:@"left"],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"middle_100"], [UIImage imageNamed:@"middle_80"], [UIImage imageNamed:@"middle_50"], [UIImage imageNamed:@"middle_20"], [UIImage imageNamed:@"middle_00"]] duration:4.0f],
+                    [UIImage imageNamed:@"right"]];
     }
-    return _image0;
+    return _array0;
 }
-- (UIImage *)image1
+- (NSArray *)array1
 {
-    if (!_image1) {
-        _image1 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_gdhs_hx0"], [UIImage imageNamed:@"aaction_gdhs_hx1"], [UIImage imageNamed:@"aaction_gdhs_hx4"], [UIImage imageNamed:@"aaction_gdhs_hx8"], [UIImage imageNamed:@"aaction_gdhs_hx12"]] duration:4.0f];
+    if (!_array1) {
+        _array1 = @[[UIImage imageNamed:@"left"],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"middle_100"], [UIImage imageNamed:@"middle_80"], [UIImage imageNamed:@"middle_50"], [UIImage imageNamed:@"middle_20"], [UIImage imageNamed:@"middle_00"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx4"], [UIImage imageNamed:@"gdhs_hx8"], [UIImage imageNamed:@"gdhs_hx12"]] duration:4.0f]];
     }
-    return _image1;
+    return _array1;
 }
-- (UIImage *)image2
+- (NSArray *)array2
 {
-    if (!_image2) {
-        _image2 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_wcxh_hx0"], [UIImage imageNamed:@"aaction_wcxh_hx5"], [UIImage imageNamed:@"aaction_wcxh_hx10"], [UIImage imageNamed:@"aaction_wcxh_hx15"], [UIImage imageNamed:@"aaction_wcxh_hx20"], [UIImage imageNamed:@"aaction_wcxh_hx25"]] duration:4.0f];
+    if (!_array2) {
+        _array2 = @[[UIImage
+                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx5"], [UIImage imageNamed:@"wcxh_hx10"], [UIImage imageNamed:@"wcxh_hx15"], [UIImage imageNamed:@"wcxh_hx20"], [UIImage imageNamed:@"wcxh_hx25"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"middle_100"], [UIImage imageNamed:@"middle_80"], [UIImage imageNamed:@"middle_50"], [UIImage imageNamed:@"middle_20"], [UIImage imageNamed:@"middle_00"]] duration:4.0f],
+                    [UIImage imageNamed:@"right"]];
     }
-    return _image2;
+    return _array2;
 }
-- (UIImage *)image3
+- (NSArray *)array4
 {
-    if (!_image3) {
-        _image3 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_wcxh_hs0"], [UIImage imageNamed:@"aaction_wcxh_hs1"], [UIImage imageNamed:@"aaction_wcxh_hs2"], [UIImage imageNamed:@"aaction_wcxh_hs3"]] duration:4.0f];
+    if (!_array4) {
+        _array4 = @[[UIImage imageNamed:@"left"],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_middle_100"], [UIImage imageNamed:@"jiare_middle_80"], [UIImage imageNamed:@"jiare_middle_50"], [UIImage imageNamed:@"jiare_middle_20"], [UIImage imageNamed:@"jiare_middle_00"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"], [UIImage imageNamed:@"jiare_hx4"], [UIImage imageNamed:@"jiare_hx5"]] duration:4.0f]];
     }
-    return _image3;
+    return _array4;
 }
-- (UIImage *)image4
+- (NSArray *)array8
 {
-    if (!_image4) {
-        _image4 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_jiare_hx0"], [UIImage imageNamed:@"aaction_jiare_hx1"], [UIImage imageNamed:@"aaction_jiare_hx2"], [UIImage imageNamed:@"aaction_jiare_hx3"], [UIImage imageNamed:@"aaction_jiare_hx4"], [UIImage imageNamed:@"aaction_jiare_hx5"]] duration:4.0f];
+    if (!_array8) {
+        _array8 = @[[UIImage
+                     animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"], [UIImage imageNamed:@"ss_hx4"], [UIImage imageNamed:@"ss_hx5"], [UIImage imageNamed:@"ss_hx6"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"middle_100"], [UIImage imageNamed:@"middle_80"], [UIImage imageNamed:@"middle_50"], [UIImage imageNamed:@"middle_20"], [UIImage imageNamed:@"middle_00"]] duration:4.0f],
+                    [UIImage imageNamed:@"right"]];
     }
-    return _image4;
+    return _array8;
 }
-- (UIImage *)image5
+- (NSArray *)array5
 {
-    if (!_image5) {
-        _image5 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_jiare_hs0"], [UIImage imageNamed:@"aaction_jiare_hs1"], [UIImage imageNamed:@"aaction_jiare_hs2"], [UIImage imageNamed:@"aaction_jiare_hs3"]] duration:4.0f];
+    if (!_array5) {
+        _array5 = @[[UIImage imageNamed:@"left"],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_middle_100"], [UIImage imageNamed:@"jiare_middle_80"], [UIImage imageNamed:@"jiare_middle_50"], [UIImage imageNamed:@"jiare_middle_20"], [UIImage imageNamed:@"jiare_middle_00"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hs0"], [UIImage imageNamed:@"jiare_hs1"], [UIImage imageNamed:@"jiare_hs2"], [UIImage imageNamed:@"jiare_hs3"]] duration:4.0f]];
     }
-    return _image5;
+    return _array5;
 }
-- (UIImage *)image6
+- (NSArray *)array9
 {
-    if (!_image6) {
-
+    if (!_array9) {
+        _array9 = @[[UIImage
+                     animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"], [UIImage imageNamed:@"ss_hx4"], [UIImage imageNamed:@"ss_hx5"], [UIImage imageNamed:@"ss_hx6"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"middle_100"], [UIImage imageNamed:@"middle_80"], [UIImage imageNamed:@"middle_50"], [UIImage imageNamed:@"middle_20"], [UIImage imageNamed:@"middle_00"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx4"], [UIImage imageNamed:@"gdhs_hx8"], [UIImage imageNamed:@"gdhs_hx12"]] duration:4.0f]];
     }
-    return _image6;
+    return _array9;
 }
-- (UIImage *)image7
+- (NSArray *)array3
 {
-    if (!_image7) {
-        _image7 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_jiare_hs_wcxh0"], [UIImage imageNamed:@"aaction_jiare_hs_wcxh1"], [UIImage imageNamed:@"aaction_jiare_hs_wcxh2"], [UIImage imageNamed:@"aaction_jiare_hs_wcxh3"]] duration:4.0f];
+    if (!_array3) {
+        _array3 = @[[UIImage
+                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx5"], [UIImage imageNamed:@"wcxh_hx10"], [UIImage imageNamed:@"wcxh_hx15"], [UIImage imageNamed:@"wcxh_hx20"], [UIImage imageNamed:@"wcxh_hx25"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"middle_100"], [UIImage imageNamed:@"middle_80"], [UIImage imageNamed:@"middle_50"], [UIImage imageNamed:@"middle_20"], [UIImage imageNamed:@"middle_00"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx4"], [UIImage imageNamed:@"gdhs_hx8"], [UIImage imageNamed:@"gdhs_hx12"]] duration:4.0f]];
     }
-    return _image7;
+    return _array3;
 }
-- (UIImage *)image8
+- (NSArray *)array6
 {
-    if (!_image8) {
-        _image8 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_ss_hx0"], [UIImage imageNamed:@"aaction_ss_hx1"], [UIImage imageNamed:@"aaction_ss_hx2"], [UIImage imageNamed:@"aaction_ss_hx3"], [UIImage imageNamed:@"aaction_ss_hx4"], [UIImage imageNamed:@"aaction_ss_hx5"], [UIImage imageNamed:@"aaction_ss_hx6"]] duration:4.0f];
+    if (!_array6) {
+        _array6 = @[[UIImage
+                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx5"], [UIImage imageNamed:@"wcxh_hx10"], [UIImage imageNamed:@"wcxh_hx15"], [UIImage imageNamed:@"wcxh_hx20"], [UIImage imageNamed:@"wcxh_hx25"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_middle_100"], [UIImage imageNamed:@"jiare_middle_80"], [UIImage imageNamed:@"jiare_middle_50"], [UIImage imageNamed:@"jiare_middle_20"], [UIImage imageNamed:@"jiare_middle_00"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"], [UIImage imageNamed:@"jiare_hx4"], [UIImage imageNamed:@"jiare_hx5"]] duration:4.0f]];
     }
-    return _image8;
+    return _array6;
 }
-- (UIImage *)image9
+- (NSArray *)array12
 {
-    if (!_image9) {
-        _image9 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_ss_hs0"], [UIImage imageNamed:@"aaction_ss_hs1"], [UIImage imageNamed:@"aaction_ss_hs2"], [UIImage imageNamed:@"aaction_ss_hs3"]] duration:4.0f];
+    if (!_array12) {
+        _array12 = @[[UIImage
+                      animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"], [UIImage imageNamed:@"ss_hx4"], [UIImage imageNamed:@"ss_hx5"], [UIImage imageNamed:@"ss_hx6"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_middle_100"], [UIImage imageNamed:@"jiare_middle_80"], [UIImage imageNamed:@"jiare_middle_50"], [UIImage imageNamed:@"jiare_middle_20"], [UIImage imageNamed:@"jiare_middle_00"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"], [UIImage imageNamed:@"jiare_hx4"], [UIImage imageNamed:@"jiare_hx5"]] duration:4.0f]];
     }
-    return _image9;
+    return _array12;
 }
-- (UIImage *)image10
+- (NSArray *)array13
 {
-    if (!_image10) {
-
+    if (!_array13) {
+        _array13 = @[[UIImage
+                      animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"], [UIImage imageNamed:@"ss_hx4"], [UIImage imageNamed:@"ss_hx5"], [UIImage imageNamed:@"ss_hx6"]] duration:4.0f],
+                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_middle_100"], [UIImage imageNamed:@"jiare_middle_80"], [UIImage imageNamed:@"jiare_middle_50"], [UIImage imageNamed:@"jiare_middle_20"], [UIImage imageNamed:@"jiare_middle_00"]] duration:4.0f],
+                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hs0"], [UIImage imageNamed:@"jiare_hs1"], [UIImage imageNamed:@"jiare_hs2"], [UIImage imageNamed:@"jiare_hs3"]] duration:4.0f]];
     }
-    return _image10;
+    return _array13;
 }
-- (UIImage *)image11
+- (NSArray *)array7
 {
-    if (!_image11) {
-
+    if (!_array7) {
+        _array7 = @[[UIImage
+                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx5"], [UIImage imageNamed:@"wcxh_hx10"], [UIImage imageNamed:@"wcxh_hx15"], [UIImage imageNamed:@"wcxh_hx20"], [UIImage imageNamed:@"wcxh_hx25"]] duration:4.0f],
+                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_middle_100"], [UIImage imageNamed:@"jiare_middle_80"], [UIImage imageNamed:@"jiare_middle_50"], [UIImage imageNamed:@"jiare_middle_20"], [UIImage imageNamed:@"jiare_middle_00"]] duration:4.0f],
+                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hs0"], [UIImage imageNamed:@"jiare_hs1"], [UIImage imageNamed:@"jiare_hs2"], [UIImage imageNamed:@"jiare_hs3"]] duration:4.0f]];
     }
-    return _image11;
-}
-- (UIImage *)image12
-{
-    if (!_image12) {
-        _image12 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_jiare_ss0"], [UIImage imageNamed:@"aaction_jiare_ss1"], [UIImage imageNamed:@"aaction_jiare_ss2"], [UIImage imageNamed:@"aaction_jiare_ss3"]] duration:4.0f];
-    }
-    return _image12;
-}
-- (UIImage *)image13
-{
-    if (!_image13) {
-        _image13 = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"aaction_jiare_hs_ss0"], [UIImage imageNamed:@"aaction_jiare_hs_ss1"], [UIImage imageNamed:@"aaction_jiare_hs_ss2"], [UIImage imageNamed:@"aaction_jiare_hs_ss3"]] duration:4.0f];
-    }
-    return _image13;
+    return _array7;
 }
 
 - (void)getInfo
@@ -225,7 +246,14 @@
             NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
             NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
             [self changeImage:[value integerValue]];
-            value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range] stringByAppendingString:@"°C"];
+            value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
+            if ([value isEqualToString:@"111"]) {
+                value = @"未连接";
+            } else if ([value isEqualToString:@"112"]){
+                value = @"短路";
+            } else{
+                value = [value stringByAppendingString:@"°C"];
+            }
             [self.firstButton setTitle:value forState:UIControlStateNormal];
             value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range] stringByAppendingString:@"°C"];
             [self.secondButton setTitle:value forState:UIControlStateNormal];
@@ -243,73 +271,101 @@
     switch (number) {
         case 0:
         {
-            self.mainImageView.image = self.image0;
+            self.leftView.image = [self.array0 objectAtIndex:0];
+            self.middleView.image = [self.array0 objectAtIndex:1];
+            self.rightView.image = [self.array0 objectAtIndex:2];
         }
             break;
         case 1:
         {
-            self.mainImageView.image = self.image1;
+            self.leftView.image = [self.array1 objectAtIndex:0];
+            self.middleView.image = [self.array1 objectAtIndex:1];
+            self.rightView.image = [self.array1 objectAtIndex:2];
         }
             break;
         case 2:
         {
-            self.mainImageView.image = self.image2;
+            self.leftView.image = [self.array2 objectAtIndex:0];
+            self.middleView.image = [self.array2 objectAtIndex:1];
+            self.rightView.image = [self.array2 objectAtIndex:2];
         }
             break;
         case 3:
         {
-            self.mainImageView.image = self.image3;
+            self.leftView.image = [self.array3 objectAtIndex:0];
+            self.middleView.image = [self.array3 objectAtIndex:1];
+            self.rightView.image = [self.array3 objectAtIndex:2];
         }
             break;
         case 4:
         {
-            self.mainImageView.image = self.image4;
+            self.leftView.image = [self.array4 objectAtIndex:0];
+            self.middleView.image = [self.array4 objectAtIndex:1];
+            self.rightView.image = [self.array4 objectAtIndex:2];
         }
             break;
         case 5:
         {
-            self.mainImageView.image = self.image5;
+            self.leftView.image = [self.array5 objectAtIndex:0];
+            self.middleView.image = [self.array5 objectAtIndex:1];
+            self.rightView.image = [self.array5 objectAtIndex:2];
         }
             break;
         case 6:
         {
-            self.mainImageView.image = self.image6;
+            self.leftView.image = [self.array6 objectAtIndex:0];
+            self.middleView.image = [self.array6 objectAtIndex:1];
+            self.rightView.image = [self.array6 objectAtIndex:2];
         }
             break;
         case 7:
         {
-            self.mainImageView.image = self.image7;
+            self.leftView.image = [self.array7 objectAtIndex:0];
+            self.middleView.image = [self.array7 objectAtIndex:1];
+            self.rightView.image = [self.array7 objectAtIndex:2];
         }
             break;
         case 8:
         {
-            self.mainImageView.image = self.image8;
+            self.leftView.image = [self.array8 objectAtIndex:0];
+            self.middleView.image = [self.array8 objectAtIndex:1];
+            self.rightView.image = [self.array8 objectAtIndex:2];
         }
             break;
         case 9:
         {
-            self.mainImageView.image = self.image9;
+            self.leftView.image = [self.array9 objectAtIndex:0];
+            self.middleView.image = [self.array9 objectAtIndex:1];
+            self.rightView.image = [self.array9 objectAtIndex:2];
         }
             break;
         case 10:
         {
-            self.mainImageView.image = self.image10;
+            self.leftView.image = [self.array10 objectAtIndex:0];
+            self.middleView.image = [self.array10 objectAtIndex:1];
+            self.rightView.image = [self.array10 objectAtIndex:2];
         }
             break;
         case 11:
         {
-            self.mainImageView.image = self.image11;
+            self.leftView.image = [self.array11 objectAtIndex:0];
+            self.middleView.image = [self.array11 objectAtIndex:1];
+            self.rightView.image = [self.array11 objectAtIndex:2];
         }
             break;
         case 12:
         {
-            self.mainImageView.image = self.image12;
+            self.leftView.image = [self.array12 objectAtIndex:0];
+            self.middleView.image = [self.array12 objectAtIndex:1];
+            self.rightView.image = [self.array12 objectAtIndex:2];
         }
             break;
 
         default:
         {
-            self.mainImageView.image = self.image13;
+            self.leftView.image = [self.array13 objectAtIndex:0];
+            self.middleView.image = [self.array13 objectAtIndex:1];
+            self.rightView.image = [self.array13 objectAtIndex:2];
         }
             break;
     }

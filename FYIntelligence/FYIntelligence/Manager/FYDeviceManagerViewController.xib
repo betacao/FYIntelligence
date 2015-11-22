@@ -8,10 +8,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYDeviceManagerViewController">
             <connections>
                 <outlet property="firstButton" destination="VJ3-vi-5SB" id="Xou-cF-ury"/>
-                <outlet property="fourthButton" destination="ips-uW-Y64" id="RwJ-d6-kYM"/>
-                <outlet property="mainImageView" destination="qWg-aE-sE0" id="Q1o-re-i3W"/>
+                <outlet property="fourthButton" destination="f94-ie-jdF" id="36N-zt-atS"/>
+                <outlet property="leftView" destination="47w-Fc-uI0" id="5fk-cX-pQe"/>
+                <outlet property="middleView" destination="aSh-L8-duf" id="qEO-lC-BLx"/>
                 <outlet property="paramButton" destination="SB6-1y-gf3" id="6sc-F1-huY"/>
-                <outlet property="secondButton" destination="f94-ie-jdF" id="srN-1k-ge9"/>
+                <outlet property="rightView" destination="R07-4v-SWT" id="KeF-X9-xCq"/>
+                <outlet property="secondButton" destination="ips-uW-Y64" id="dUW-pp-7dd"/>
                 <outlet property="temCircleButton" destination="N5y-7B-uRx" id="lkr-s7-FfW"/>
                 <outlet property="thirdButton" destination="VQc-Dw-bU6" id="WjB-rN-e53"/>
                 <outlet property="userAddButton" destination="n92-Bj-w9g" id="wDN-Jg-wcg"/>
@@ -25,9 +27,19 @@
             <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aaction_gdhs_hx0" id="qWg-aE-sE0">
-                    <rect key="frame" x="0.0" y="30" width="568" height="242"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left" id="47w-Fc-uI0">
+                    <rect key="frame" x="0.0" y="0.0" width="227" height="320"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES"/>
+                    <animations/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right" id="R07-4v-SWT">
+                    <rect key="frame" x="324" y="0.0" width="244" height="320"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES"/>
+                    <animations/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="middle_100" id="aSh-L8-duf">
+                    <rect key="frame" x="227" y="0.5" width="97" height="320"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
                     <animations/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SB6-1y-gf3">
@@ -124,11 +136,13 @@
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-            <point key="canvasLocation" x="-9" y="163"/>
+            <point key="canvasLocation" x="-81" y="101"/>
         </view>
     </objects>
     <resources>
-        <image name="aaction_gdhs_hx0" width="780" height="320"/>
+        <image name="left" width="560" height="574"/>
+        <image name="middle_100" width="240" height="574"/>
+        <image name="right" width="600" height="574"/>
         <image name="sw_bj" width="40" height="25"/>
     </resources>
 </document>
