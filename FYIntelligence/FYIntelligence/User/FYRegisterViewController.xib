@@ -7,12 +7,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYRegisterViewController">
             <connections>
+                <outlet property="codeField" destination="LpN-7K-pKm" id="6Ir-gs-Nd1"/>
                 <outlet property="comfirmPwdField" destination="noj-0C-XQz" id="6ZD-Vl-ogd"/>
                 <outlet property="inputBgView" destination="Hz8-61-UI8" id="4oF-Th-iJm"/>
                 <outlet property="lineView" destination="FLy-dk-y45" id="BRg-Ur-CiI"/>
                 <outlet property="lineView1" destination="pH4-zJ-ax5" id="TO2-ex-Ioy"/>
+                <outlet property="lineView2" destination="YB3-ZA-wdR" id="ktS-rp-zXk"/>
                 <outlet property="pwdField" destination="ni6-RX-d6g" id="jXs-cQ-QKJ"/>
                 <outlet property="registerButton" destination="m4d-42-IeG" id="AGQ-7k-X44"/>
+                <outlet property="sendButton" destination="7BU-xz-4AG" id="NGR-TX-VQE"/>
                 <outlet property="userField" destination="kCL-xd-fmw" id="3qj-EA-F04"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" id="Hz8-61-UI8">
-                    <rect key="frame" x="13" y="110" width="294" height="120"/>
+                    <rect key="frame" x="13" y="110" width="294" height="160"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" id="FLy-dk-y45">
@@ -38,18 +41,24 @@
                             <animations/>
                             <color key="backgroundColor" red="0.25882352939999997" green="0.63529411759999999" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
+                        <view contentMode="scaleToFill" id="YB3-ZA-wdR">
+                            <rect key="frame" x="0.0" y="120" width="294" height="1"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <color key="backgroundColor" red="0.25882352939999997" green="0.63529411759999999" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="input_user" id="AAu-Ky-iCl">
                             <rect key="frame" x="8" y="12" width="17" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="input_pwd" id="wzk-wj-KJ7">
-                            <rect key="frame" x="8" y="52" width="17" height="17"/>
+                            <rect key="frame" x="8" y="92" width="17" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="input_pwd" id="BBd-ip-Rjt">
-                            <rect key="frame" x="8" y="92" width="17" height="17"/>
+                            <rect key="frame" x="8" y="132" width="17" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                         </imageView>
@@ -62,21 +71,39 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入6位密码" minimumFontSize="17" id="ni6-RX-d6g">
-                            <rect key="frame" x="33" y="45" width="253" height="30"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <animations/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请重复密码" minimumFontSize="17" id="noj-0C-XQz">
                             <rect key="frame" x="33" y="85" width="253" height="30"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请重复密码" minimumFontSize="17" id="noj-0C-XQz">
+                            <rect key="frame" x="33" y="125" width="253" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="LpN-7K-pKm">
+                            <rect key="frame" x="8" y="45" width="200" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7BU-xz-4AG">
+                            <rect key="frame" x="220" y="44" width="70" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="获取验证码"/>
+                            <connections>
+                                <action selector="sendMessage:" destination="-1" eventType="touchUpInside" id="5cq-Rl-pvT"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" red="0.2156862745" green="0.62352941179999999" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>

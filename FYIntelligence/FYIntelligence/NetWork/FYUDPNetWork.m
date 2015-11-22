@@ -202,7 +202,7 @@
         NSInteger time = 0;
         while (weakSelf.mainNeedSend == YES && time < 20) {
             time++;
-            NSLog(@"detail %ld",weakSelf.mainNumber);
+            NSLog(@"detail %ld",(long)weakSelf.mainNumber);
             NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,@(weakSelf.mainNumber),kMainViewCmd];
             NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
             NSString *host = kHostAddress;

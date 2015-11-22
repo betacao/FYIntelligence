@@ -66,7 +66,7 @@
 #define kGETYSBJCmd @"read_ysbj_config"
 
 //注册指令
-#define kRegisterCmd @"fyzn2015#1#7#%@#%@#0#1#0#"
+#define kRegisterCmd @"fyzn2015#1#7#%@#%@#0#0#0#%@#"
 //添加设备
 #define kAddDeviceCmd @"LOCAL_GET_ID"
 //首页指令
@@ -79,4 +79,6 @@
 #define kConfigDeviceCmd @"change_wifi$%@$%@"
 
 #define kResetPwdCmd @"fyzn2015#1#15#%@#"
+
+#define kGetCodeCmd @"fyzn2015#1#9#%@#"
 #endif /* const_h */
