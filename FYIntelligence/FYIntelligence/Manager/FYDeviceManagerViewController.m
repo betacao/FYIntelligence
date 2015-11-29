@@ -177,7 +177,7 @@
 {
     if (!_array1) {
         _array1 = @[[UIImage imageNamed:@"left"],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx4"], [UIImage imageNamed:@"gdhs_hx8"], [UIImage imageNamed:@"gdhs_hx12"]] duration:4.0f]];
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx2"], [UIImage imageNamed:@"gdhs_hx3"], [UIImage imageNamed:@"gdhs_hx4"]] duration:4.0f]];
     }
     return _array1;
 }
@@ -185,7 +185,7 @@
 {
     if (!_array2) {
         _array2 = @[[UIImage
-                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx5"], [UIImage imageNamed:@"wcxh_hx10"], [UIImage imageNamed:@"wcxh_hx15"], [UIImage imageNamed:@"wcxh_hx20"], [UIImage imageNamed:@"wcxh_hx25"]] duration:4.0f],
+                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx1"], [UIImage imageNamed:@"wcxh_hx2"], [UIImage imageNamed:@"wcxh_hx3"]] duration:4.0f],
                     [UIImage imageNamed:@"right"]];
     }
     return _array2;
@@ -194,7 +194,7 @@
 {
     if (!_array4) {
         _array4 = @[[UIImage imageNamed:@"left"],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"], [UIImage imageNamed:@"jiare_hx4"], [UIImage imageNamed:@"jiare_hx5"]] duration:4.0f]];
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"]] duration:4.0f]];
     }
     return _array4;
 }
@@ -202,7 +202,7 @@
 {
     if (!_array8) {
         _array8 = @[[UIImage
-                     animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"], [UIImage imageNamed:@"ss_hx4"], [UIImage imageNamed:@"ss_hx5"], [UIImage imageNamed:@"ss_hx6"]] duration:4.0f],
+                     animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"]] duration:4.0f],
                     [UIImage imageNamed:@"right"]];
     }
     return _array8;
@@ -219,8 +219,8 @@
 {
     if (!_array9) {
         _array9 = @[[UIImage
-                     animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"], [UIImage imageNamed:@"ss_hx4"], [UIImage imageNamed:@"ss_hx5"], [UIImage imageNamed:@"ss_hx6"]] duration:4.0f],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx4"], [UIImage imageNamed:@"gdhs_hx8"], [UIImage imageNamed:@"gdhs_hx12"]] duration:4.0f]];
+                     animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx2"], [UIImage imageNamed:@"gdhs_hx3"], [UIImage imageNamed:@"gdhs_hx4"]] duration:4.0f]];
     }
     return _array9;
 }
@@ -228,8 +228,8 @@
 {
     if (!_array3) {
         _array3 = @[[UIImage
-                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx5"], [UIImage imageNamed:@"wcxh_hx10"], [UIImage imageNamed:@"wcxh_hx15"], [UIImage imageNamed:@"wcxh_hx20"], [UIImage imageNamed:@"wcxh_hx25"]] duration:4.0f],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx4"], [UIImage imageNamed:@"gdhs_hx8"], [UIImage imageNamed:@"gdhs_hx12"]] duration:4.0f]];
+                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx1"], [UIImage imageNamed:@"wcxh_hx2"], [UIImage imageNamed:@"wcxh_hx3"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx2"], [UIImage imageNamed:@"gdhs_hx3"], [UIImage imageNamed:@"gdhs_hx4"]] duration:4.0f]];
     }
     return _array3;
 }
@@ -237,8 +237,8 @@
 {
     if (!_array6) {
         _array6 = @[[UIImage
-                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx5"], [UIImage imageNamed:@"wcxh_hx10"], [UIImage imageNamed:@"wcxh_hx15"], [UIImage imageNamed:@"wcxh_hx20"], [UIImage imageNamed:@"wcxh_hx25"]] duration:4.0f],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"], [UIImage imageNamed:@"jiare_hx4"], [UIImage imageNamed:@"jiare_hx5"]] duration:4.0f]];
+                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx1"], [UIImage imageNamed:@"wcxh_hx2"], [UIImage imageNamed:@"wcxh_hx3"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"]] duration:4.0f]];
     }
     return _array6;
 }
@@ -246,8 +246,8 @@
 {
     if (!_array12) {
         _array12 = @[[UIImage
-                      animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"], [UIImage imageNamed:@"ss_hx4"], [UIImage imageNamed:@"ss_hx5"], [UIImage imageNamed:@"ss_hx6"]] duration:4.0f],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"], [UIImage imageNamed:@"jiare_hx4"], [UIImage imageNamed:@"jiare_hx5"]] duration:4.0f]];
+                      animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"]] duration:4.0f]];
     }
     return _array12;
 }
@@ -255,7 +255,7 @@
 {
     if (!_array13) {
         _array13 = @[[UIImage
-                      animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"], [UIImage imageNamed:@"ss_hx4"], [UIImage imageNamed:@"ss_hx5"], [UIImage imageNamed:@"ss_hx6"]] duration:4.0f],
+                      animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"]] duration:4.0f],
                      [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hs0"], [UIImage imageNamed:@"jiare_hs1"], [UIImage imageNamed:@"jiare_hs2"], [UIImage imageNamed:@"jiare_hs3"]] duration:4.0f]];
     }
     return _array13;
@@ -264,7 +264,7 @@
 {
     if (!_array7) {
         _array7 = @[[UIImage
-                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx5"], [UIImage imageNamed:@"wcxh_hx10"], [UIImage imageNamed:@"wcxh_hx15"], [UIImage imageNamed:@"wcxh_hx20"], [UIImage imageNamed:@"wcxh_hx25"]] duration:4.0f],
+                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx1"], [UIImage imageNamed:@"wcxh_hx2"], [UIImage imageNamed:@"wcxh_hx3"]] duration:4.0f],
                      [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hs0"], [UIImage imageNamed:@"jiare_hs1"], [UIImage imageNamed:@"jiare_hs2"], [UIImage imageNamed:@"jiare_hs3"]] duration:4.0f]];
     }
     return _array7;
