@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYHSWViewController">
@@ -17,15 +18,16 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sxshow" id="oNa-2t-xjQ">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sxshow" translatesAutoresizingMaskIntoConstraints="NO" id="oNa-2t-xjQ">
                     <rect key="frame" x="0.0" y="80" width="320" height="180"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <animations/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vpf-yJ-hCa">
-                    <rect key="frame" x="13" y="391" width="294" height="40"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpf-yJ-hCa">
+                    <rect key="frame" x="13" y="450" width="294" height="40"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="rkD-Sg-YYc"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="确定" backgroundImage="btn_login_normal"/>
                     <state key="highlighted" backgroundImage="btn_login_press"/>
@@ -33,26 +35,31 @@
                         <action selector="sendMessage:" destination="-1" eventType="touchUpInside" id="m45-Tp-IRA"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" id="B0Y-Jm-Q8I">
-                    <rect key="frame" x="0.0" y="275" width="320" height="80"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0Y-Jm-Q8I">
+                    <rect key="frame" x="0.0" y="300" width="320" height="80"/>
                     <subviews>
-                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="uu8-nj-Ilt">
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uu8-nj-Ilt">
                             <rect key="frame" x="51" y="24" width="51" height="31"/>
                             <animations/>
                         </switch>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MsR-cE-0Mu">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsR-cE-0Mu">
                             <rect key="frame" x="208" y="30" width="42" height="21"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="m1v-ac-ckD"/>
+                                <constraint firstAttribute="width" constant="42" id="zyH-P3-YFR"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <pickerView contentMode="scaleToFill" id="fhT-Bd-s3E">
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhT-Bd-s3E">
                             <rect key="frame" x="120" y="0.0" width="80" height="80"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="tQP-VX-97L"/>
+                                <constraint firstAttribute="width" constant="80" id="xx5-6G-qFE"/>
+                            </constraints>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="4C5-3E-MQb"/>
                                 <outlet property="delegate" destination="-1" id="Z9C-aU-qL3"/>
@@ -61,10 +68,31 @@
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="uu8-nj-Ilt" firstAttribute="centerY" secondItem="B0Y-Jm-Q8I" secondAttribute="centerY" id="5Fh-a3-JN1"/>
+                        <constraint firstItem="fhT-Bd-s3E" firstAttribute="centerX" secondItem="B0Y-Jm-Q8I" secondAttribute="centerX" id="Bg4-Jb-glC"/>
+                        <constraint firstItem="MsR-cE-0Mu" firstAttribute="leading" secondItem="fhT-Bd-s3E" secondAttribute="trailing" constant="8" id="FGF-1x-UQ5"/>
+                        <constraint firstAttribute="height" constant="80" id="R48-44-dq4"/>
+                        <constraint firstItem="MsR-cE-0Mu" firstAttribute="centerY" secondItem="B0Y-Jm-Q8I" secondAttribute="centerY" id="Y0T-vr-Feo"/>
+                        <constraint firstItem="fhT-Bd-s3E" firstAttribute="centerY" secondItem="B0Y-Jm-Q8I" secondAttribute="centerY" id="ow7-br-fZN"/>
+                        <constraint firstItem="fhT-Bd-s3E" firstAttribute="leading" secondItem="uu8-nj-Ilt" secondAttribute="trailing" constant="20" id="wKG-2k-zpv"/>
+                    </constraints>
                 </view>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Vpf-yJ-hCa" secondAttribute="bottom" constant="78" id="GoA-ra-fLC"/>
+                <constraint firstItem="B0Y-Jm-Q8I" firstAttribute="leading" secondItem="Zng-Ew-ACR" secondAttribute="leading" id="LTk-ae-ixo"/>
+                <constraint firstAttribute="trailing" secondItem="B0Y-Jm-Q8I" secondAttribute="trailing" id="LWt-eg-1TE"/>
+                <constraint firstAttribute="trailing" secondItem="oNa-2t-xjQ" secondAttribute="trailing" id="RLH-vW-uT7"/>
+                <constraint firstItem="Vpf-yJ-hCa" firstAttribute="leading" secondItem="Zng-Ew-ACR" secondAttribute="leading" constant="13" id="SvI-Xd-hB5"/>
+                <constraint firstAttribute="trailing" secondItem="Vpf-yJ-hCa" secondAttribute="trailing" constant="13" id="eWi-YO-uOd"/>
+                <constraint firstItem="B0Y-Jm-Q8I" firstAttribute="top" secondItem="oNa-2t-xjQ" secondAttribute="bottom" constant="40" id="eiB-F8-86f"/>
+                <constraint firstItem="oNa-2t-xjQ" firstAttribute="top" secondItem="Zng-Ew-ACR" secondAttribute="top" constant="80" id="g2X-9z-HXT"/>
+                <constraint firstItem="oNa-2t-xjQ" firstAttribute="height" secondItem="Zng-Ew-ACR" secondAttribute="height" multiplier="180:568" id="jMn-DT-VTL"/>
+                <constraint firstItem="oNa-2t-xjQ" firstAttribute="leading" secondItem="Zng-Ew-ACR" secondAttribute="leading" id="oML-T0-hwL"/>
+            </constraints>
             <point key="canvasLocation" x="243" y="239"/>
         </view>
     </objects>

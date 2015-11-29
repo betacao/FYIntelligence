@@ -32,6 +32,8 @@
     self.firstValue = [self.positionArray firstObject];
     self.secondValue = [self.temArray firstObject];
     [self getInfo];
+    self.postionPickView.clipsToBounds = YES;
+    self.temPickView.clipsToBounds = YES;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
@@ -65,6 +67,11 @@
         [label sizeToFit];
         return label;
     }
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
+{
+    return 40.0f * XFACTOR;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component

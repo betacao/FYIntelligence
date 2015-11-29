@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYSDJRViewController">
@@ -16,24 +18,28 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jiareshow" id="DMS-aO-HLN">
-                    <rect key="frame" x="0.0" y="133" width="320" height="180"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jiareshow" translatesAutoresizingMaskIntoConstraints="NO" id="DMS-aO-HLN">
+                    <rect key="frame" x="0.0" y="80" width="320" height="180"/>
                     <animations/>
                 </imageView>
-                <pickerView contentMode="scaleToFill" id="Lvl-xM-jTg">
-                    <rect key="frame" x="118" y="320" width="80" height="80"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lvl-xM-jTg">
+                    <rect key="frame" x="135" y="288" width="50" height="100"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Lvl-xM-jTg" secondAttribute="height" multiplier="1:2" id="EdK-PG-GWz"/>
+                        <constraint firstAttribute="width" constant="50" id="ggG-66-FRK"/>
+                    </constraints>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="2uD-J1-UKu"/>
                         <outlet property="delegate" destination="-1" id="vkF-Fm-K57"/>
                     </connections>
                 </pickerView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oTQ-mY-sFR">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTQ-mY-sFR">
                     <rect key="frame" x="11" y="424" width="294" height="40"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="tHz-mp-ROG"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="确定" backgroundImage="btn_login_normal"/>
                     <state key="highlighted" backgroundImage="btn_login_press"/>
@@ -41,10 +47,13 @@
                         <action selector="sendMessage:" destination="-1" eventType="touchUpInside" id="eun-nY-dwJ"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x51-Yr-giT">
-                    <rect key="frame" x="206" y="349" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x51-Yr-giT">
+                    <rect key="frame" x="206" y="327" width="42" height="21"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="NMs-mI-YEl"/>
+                        <constraint firstAttribute="height" constant="21" id="dmq-vl-3du"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -52,6 +61,19 @@
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="DMS-aO-HLN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="0AB-vm-MOP"/>
+                <constraint firstItem="Lvl-xM-jTg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="69x-3U-V4G"/>
+                <constraint firstItem="oTQ-mY-sFR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="11" id="7uN-Bs-GmZ"/>
+                <constraint firstAttribute="trailing" secondItem="oTQ-mY-sFR" secondAttribute="trailing" constant="15" id="EgE-wC-jqM"/>
+                <constraint firstItem="DMS-aO-HLN" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="180:568" id="P4x-Wd-Bre"/>
+                <constraint firstAttribute="trailing" secondItem="DMS-aO-HLN" secondAttribute="trailing" id="fQK-oy-TMD"/>
+                <constraint firstItem="x51-Yr-giT" firstAttribute="leading" secondItem="Lvl-xM-jTg" secondAttribute="trailing" constant="21" id="gF4-SZ-UdE"/>
+                <constraint firstItem="Lvl-xM-jTg" firstAttribute="top" secondItem="DMS-aO-HLN" secondAttribute="bottom" constant="28" id="hjp-FW-rI6"/>
+                <constraint firstItem="x51-Yr-giT" firstAttribute="centerY" secondItem="Lvl-xM-jTg" secondAttribute="centerY" id="kqP-z2-bw7"/>
+                <constraint firstItem="DMS-aO-HLN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="x0S-NL-LIE"/>
+                <constraint firstAttribute="bottom" secondItem="oTQ-mY-sFR" secondAttribute="bottom" constant="104" id="yWO-Tq-9ch"/>
+            </constraints>
             <point key="canvasLocation" x="373" y="239"/>
         </view>
     </objects>

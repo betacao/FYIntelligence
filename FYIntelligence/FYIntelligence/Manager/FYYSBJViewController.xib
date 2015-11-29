@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYYSBJViewController">
@@ -20,10 +21,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DZq-xm-wt7">
-                    <rect key="frame" x="13" y="510" width="294" height="40"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZq-xm-wt7">
+                    <rect key="frame" x="13" y="513" width="294" height="40"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ZZf-dc-F0n"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="确定" backgroundImage="btn_login_normal"/>
                     <state key="highlighted" backgroundImage="btn_login_press"/>
@@ -31,88 +34,134 @@
                         <action selector="sendMessage:" destination="-1" eventType="touchUpInside" id="Qb3-J7-6UH"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ysbjshow" id="olF-dF-FQF">
-                    <rect key="frame" x="0.0" y="80" width="320" height="180"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <animations/>
-                </imageView>
-                <view contentMode="scaleToFill" id="jEh-8P-ObT">
-                    <rect key="frame" x="0.0" y="276" width="320" height="226"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jEh-8P-ObT">
+                    <rect key="frame" x="0.0" y="230" width="320" height="275"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水位报警" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FvI-Oz-aD5">
-                            <rect key="frame" x="8" y="21" width="64" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水位报警" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvI-Oz-aD5">
+                            <rect key="frame" x="8" y="25" width="64" height="21"/>
                             <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="N5Y-RF-hb4"/>
+                                <constraint firstAttribute="width" constant="64" id="rPa-jg-Vk3"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <pickerView contentMode="scaleToFill" id="POC-Ro-HKX">
-                            <rect key="frame" x="121" y="-8" width="64" height="80"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POC-Ro-HKX">
+                            <rect key="frame" x="120" y="-4" width="80" height="80"/>
                             <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="L0D-qk-eRe"/>
+                                <constraint firstAttribute="height" constant="80" id="m21-kL-mzB"/>
+                            </constraints>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="vGv-5V-WLv"/>
                                 <outlet property="delegate" destination="-1" id="XsM-Sm-5yH"/>
                             </connections>
                         </pickerView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="启动温差" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EvB-7T-pha">
-                            <rect key="frame" x="8" y="200" width="64" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="传感器报警" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Db-dy-U3v">
+                            <rect key="frame" x="116" y="249" width="89" height="21"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="传感器报警" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Db-dy-U3v">
-                            <rect key="frame" x="116" y="200" width="89" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="89" id="d7C-lw-OK9"/>
+                                <constraint firstAttribute="height" constant="21" id="hdk-eW-rnL"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="kfe-Tu-zgP">
-                            <rect key="frame" x="251" y="195" width="51" height="31"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfe-Tu-zgP">
+                            <rect key="frame" x="251" y="244" width="51" height="31"/>
                             <animations/>
                         </switch>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="温度报警" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4ED-Ma-69n">
-                            <rect key="frame" x="8" y="116" width="64" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="启动温差" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvB-7T-pha">
+                            <rect key="frame" x="8" y="249" width="64" height="21"/>
                             <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="c12-kK-ZJv"/>
+                                <constraint firstAttribute="width" constant="64" id="rFF-oz-rx1"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <pickerView contentMode="scaleToFill" id="U7z-YE-qqt">
-                            <rect key="frame" x="121" y="87" width="64" height="80"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7z-YE-qqt">
+                            <rect key="frame" x="120" y="138" width="80" height="80"/>
                             <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="6LZ-iN-XEO"/>
+                                <constraint firstAttribute="width" constant="80" id="Jm5-cd-LDI"/>
+                            </constraints>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="MUq-BN-jS1"/>
                                 <outlet property="delegate" destination="-1" id="lcc-jR-xed"/>
                             </connections>
                         </pickerView>
-                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="NUJ-hp-xBj">
-                            <rect key="frame" x="251" y="111" width="51" height="31"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NUJ-hp-xBj">
+                            <rect key="frame" x="251" y="162" width="51" height="31"/>
                             <animations/>
                         </switch>
-                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="3dK-8h-NGB">
-                            <rect key="frame" x="251" y="16" width="51" height="31"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3dK-8h-NGB">
+                            <rect key="frame" x="251" y="20" width="51" height="31"/>
                             <animations/>
                         </switch>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="温度报警" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ED-Ma-69n">
+                            <rect key="frame" x="8" y="171" width="64" height="21"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="GSU-nC-ZkI"/>
+                                <constraint firstAttribute="width" constant="64" id="esI-ar-M8V"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="275" id="22d-39-4Ya"/>
+                        <constraint firstItem="EvB-7T-pha" firstAttribute="leading" secondItem="jEh-8P-ObT" secondAttribute="leading" constant="8" id="41l-y6-7I9"/>
+                        <constraint firstItem="POC-Ro-HKX" firstAttribute="centerY" secondItem="FvI-Oz-aD5" secondAttribute="centerY" id="71o-n7-E14"/>
+                        <constraint firstItem="POC-Ro-HKX" firstAttribute="centerX" secondItem="jEh-8P-ObT" secondAttribute="centerX" id="EOY-0K-mfB"/>
+                        <constraint firstItem="FvI-Oz-aD5" firstAttribute="leading" secondItem="jEh-8P-ObT" secondAttribute="leading" constant="8" id="J39-qq-2t2"/>
+                        <constraint firstItem="U7z-YE-qqt" firstAttribute="centerX" secondItem="jEh-8P-ObT" secondAttribute="centerX" id="JH0-d8-Qej"/>
+                        <constraint firstAttribute="trailing" secondItem="NUJ-hp-xBj" secondAttribute="trailing" constant="20" id="Jd2-2d-2Pm"/>
+                        <constraint firstItem="8Db-dy-U3v" firstAttribute="centerY" secondItem="EvB-7T-pha" secondAttribute="centerY" id="K4p-kF-Mh2"/>
+                        <constraint firstItem="kfe-Tu-zgP" firstAttribute="centerY" secondItem="EvB-7T-pha" secondAttribute="centerY" id="Miy-UX-5Vq"/>
+                        <constraint firstAttribute="trailing" secondItem="3dK-8h-NGB" secondAttribute="trailing" constant="20" id="P76-82-BId"/>
+                        <constraint firstItem="FvI-Oz-aD5" firstAttribute="top" secondItem="jEh-8P-ObT" secondAttribute="top" constant="25" id="X8O-TJ-bLl"/>
+                        <constraint firstItem="4ED-Ma-69n" firstAttribute="top" secondItem="FvI-Oz-aD5" secondAttribute="bottom" constant="125" id="gaa-Uh-tgB"/>
+                        <constraint firstAttribute="trailing" secondItem="kfe-Tu-zgP" secondAttribute="trailing" constant="20" id="iCS-I4-gIS"/>
+                        <constraint firstItem="U7z-YE-qqt" firstAttribute="centerY" secondItem="4ED-Ma-69n" secondAttribute="centerY" constant="-3.5" id="kYX-kL-hRz"/>
+                        <constraint firstItem="EvB-7T-pha" firstAttribute="top" secondItem="4ED-Ma-69n" secondAttribute="bottom" constant="57" id="kqw-8m-JU6"/>
+                        <constraint firstItem="8Db-dy-U3v" firstAttribute="centerX" secondItem="jEh-8P-ObT" secondAttribute="centerX" id="n19-AY-oiM"/>
+                        <constraint firstItem="3dK-8h-NGB" firstAttribute="centerY" secondItem="FvI-Oz-aD5" secondAttribute="centerY" id="s8D-mJ-Y8a"/>
+                        <constraint firstItem="4ED-Ma-69n" firstAttribute="leading" secondItem="jEh-8P-ObT" secondAttribute="leading" constant="8" id="xHr-T6-kIE"/>
+                        <constraint firstItem="NUJ-hp-xBj" firstAttribute="centerY" secondItem="4ED-Ma-69n" secondAttribute="centerY" constant="-4" id="xbd-ok-nt7"/>
+                    </constraints>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ysbjshow" translatesAutoresizingMaskIntoConstraints="NO" id="olF-dF-FQF">
+                    <rect key="frame" x="0.0" y="44" width="320" height="180"/>
+                    <animations/>
+                </imageView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="243" y="239"/>
+            <constraints>
+                <constraint firstItem="olF-dF-FQF" firstAttribute="height" secondItem="kn6-rA-Q2U" secondAttribute="height" multiplier="180:568" id="0t0-bM-mWs"/>
+                <constraint firstItem="DZq-xm-wt7" firstAttribute="leading" secondItem="kn6-rA-Q2U" secondAttribute="leading" constant="13" id="4cE-ED-UYT"/>
+                <constraint firstItem="olF-dF-FQF" firstAttribute="top" secondItem="kn6-rA-Q2U" secondAttribute="top" constant="44" id="F8D-nu-cgX"/>
+                <constraint firstAttribute="trailing" secondItem="jEh-8P-ObT" secondAttribute="trailing" id="Giv-DR-U51"/>
+                <constraint firstAttribute="trailing" secondItem="olF-dF-FQF" secondAttribute="trailing" id="QaW-dF-by6"/>
+                <constraint firstItem="jEh-8P-ObT" firstAttribute="top" secondItem="olF-dF-FQF" secondAttribute="bottom" constant="6" id="QtY-dy-hUt"/>
+                <constraint firstItem="jEh-8P-ObT" firstAttribute="leading" secondItem="kn6-rA-Q2U" secondAttribute="leading" id="UM6-9u-1YZ"/>
+                <constraint firstAttribute="trailing" secondItem="DZq-xm-wt7" secondAttribute="trailing" constant="13" id="ZKT-DS-Pv8"/>
+                <constraint firstAttribute="bottom" secondItem="DZq-xm-wt7" secondAttribute="bottom" constant="15" id="jyZ-oQ-Bx9"/>
+                <constraint firstItem="olF-dF-FQF" firstAttribute="leading" secondItem="kn6-rA-Q2U" secondAttribute="leading" id="yKi-ld-IMo"/>
+            </constraints>
+            <point key="canvasLocation" x="276" y="215"/>
         </view>
     </objects>
     <resources>

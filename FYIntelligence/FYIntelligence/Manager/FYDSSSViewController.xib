@@ -84,30 +84,30 @@
                             <animations/>
                         </switch>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1tl-BJ-8N9">
-                            <rect key="frame" x="142" y="31" width="46" height="30"/>
+                            <rect key="frame" x="135" y="31" width="60" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="03:00"/>
                             <connections>
                                 <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="P8b-5H-e4T"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7jE-7m-c55">
-                            <rect key="frame" x="142" y="76" width="46" height="30"/>
+                            <rect key="frame" x="135" y="76" width="60" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="09:00"/>
                             <connections>
                                 <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="bZW-MZ-4qg"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j9l-VK-UmE">
-                            <rect key="frame" x="142" y="121" width="46" height="30"/>
+                            <rect key="frame" x="135" y="121" width="60" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="15:30"/>
                             <connections>
                                 <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="mM0-Da-WtU"/>
@@ -117,7 +117,7 @@
                             <rect key="frame" x="242" y="31" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="50"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="lEC-Dk-MVb"/>
@@ -127,7 +127,7 @@
                             <rect key="frame" x="242" y="76" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="100"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="1PS-IH-XcP"/>
@@ -137,7 +137,7 @@
                             <rect key="frame" x="242" y="121" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="100"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="v5y-cX-SR5"/>

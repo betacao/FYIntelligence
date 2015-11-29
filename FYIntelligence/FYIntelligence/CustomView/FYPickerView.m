@@ -89,6 +89,11 @@
     return label;
 }
 
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
+{
+    return 40.0f * XFACTOR;
+}
+
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     self.selectString = [self.dataArray objectAtIndex:row]; 

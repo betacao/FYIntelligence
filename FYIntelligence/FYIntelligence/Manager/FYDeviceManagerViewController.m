@@ -81,10 +81,66 @@
     [self.waterCircleButton setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]forState:UIControlStateHighlighted];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.leftView.hidden = YES;
+    self.middleView.hidden = YES;
+    self.rightView.hidden = YES;
+    self.paramButton.hidden = YES;
+    self.userAddButton.hidden = YES;
+    self.userWarmButton.hidden = YES;
+    self.temCircleButton.hidden = YES;
+    self.waterCircleButton.hidden = YES;
+    self.firstButton.hidden = YES;
+    self.secondButton.hidden = YES;
+    self.thirdButton.hidden = YES;
+    self.fourthButton.hidden = YES;
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self initUI];
     [self getInfo];
+}
+
+- (void)initUI
+{
+    self.leftView.hidden = NO;
+    self.middleView.hidden = NO;
+    self.rightView.hidden = NO;
+    self.paramButton.hidden = NO;
+    self.userAddButton.hidden = NO;
+    self.userWarmButton.hidden = NO;
+    self.temCircleButton.hidden = NO;
+    self.waterCircleButton.hidden = NO;
+    self.firstButton.hidden = NO;
+    self.secondButton.hidden = NO;
+    self.thirdButton.hidden = NO;
+    self.fourthButton.hidden = NO;
+
+
+    CGRect frame = self.leftView.frame;
+    frame.origin.x = 0.0f;
+    frame.origin.y = 0.0f;
+    frame.size.height = kScreenHeight;
+    frame.size.width = kScreenWidth / 35.0f * 14.0f;
+    self.leftView.frame = frame;
+
+    frame = self.middleView.frame;
+    frame.origin.x = CGRectGetMaxX(self.leftView.frame);
+    frame.origin.y = 0.0f;
+    frame.size.height = kScreenHeight;
+    frame.size.width = kScreenWidth / 35.0f * 6.0f;
+    self.middleView.frame = frame;
+
+    frame = self.rightView.frame;
+    frame.origin.x = CGRectGetMaxX(self.middleView.frame);
+    frame.origin.y = 0.0f;
+    frame.size.height = kScreenHeight;
+    frame.size.width = kScreenWidth / 35.0f * 15.0f;
+    self.rightView.frame = frame;
+
 }
 
 
@@ -113,7 +169,6 @@
 {
     if (!_array0) {
         _array0 = @[[UIImage imageNamed:@"left"],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"middle_100"], [UIImage imageNamed:@"middle_80"], [UIImage imageNamed:@"middle_50"], [UIImage imageNamed:@"middle_20"], [UIImage imageNamed:@"middle_00"]] duration:4.0f],
                     [UIImage imageNamed:@"right"]];
     }
     return _array0;
@@ -122,7 +177,6 @@
 {
     if (!_array1) {
         _array1 = @[[UIImage imageNamed:@"left"],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"middle_100"], [UIImage imageNamed:@"middle_80"], [UIImage imageNamed:@"middle_50"], [UIImage imageNamed:@"middle_20"], [UIImage imageNamed:@"middle_00"]] duration:4.0f],
                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx4"], [UIImage imageNamed:@"gdhs_hx8"], [UIImage imageNamed:@"gdhs_hx12"]] duration:4.0f]];
     }
     return _array1;
@@ -132,7 +186,6 @@
     if (!_array2) {
         _array2 = @[[UIImage
                      animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx5"], [UIImage imageNamed:@"wcxh_hx10"], [UIImage imageNamed:@"wcxh_hx15"], [UIImage imageNamed:@"wcxh_hx20"], [UIImage imageNamed:@"wcxh_hx25"]] duration:4.0f],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"middle_100"], [UIImage imageNamed:@"middle_80"], [UIImage imageNamed:@"middle_50"], [UIImage imageNamed:@"middle_20"], [UIImage imageNamed:@"middle_00"]] duration:4.0f],
                     [UIImage imageNamed:@"right"]];
     }
     return _array2;
@@ -141,7 +194,6 @@
 {
     if (!_array4) {
         _array4 = @[[UIImage imageNamed:@"left"],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_middle_100"], [UIImage imageNamed:@"jiare_middle_80"], [UIImage imageNamed:@"jiare_middle_50"], [UIImage imageNamed:@"jiare_middle_20"], [UIImage imageNamed:@"jiare_middle_00"]] duration:4.0f],
                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"], [UIImage imageNamed:@"jiare_hx4"], [UIImage imageNamed:@"jiare_hx5"]] duration:4.0f]];
     }
     return _array4;
@@ -151,7 +203,6 @@
     if (!_array8) {
         _array8 = @[[UIImage
                      animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"], [UIImage imageNamed:@"ss_hx4"], [UIImage imageNamed:@"ss_hx5"], [UIImage imageNamed:@"ss_hx6"]] duration:4.0f],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"middle_100"], [UIImage imageNamed:@"middle_80"], [UIImage imageNamed:@"middle_50"], [UIImage imageNamed:@"middle_20"], [UIImage imageNamed:@"middle_00"]] duration:4.0f],
                     [UIImage imageNamed:@"right"]];
     }
     return _array8;
@@ -160,7 +211,6 @@
 {
     if (!_array5) {
         _array5 = @[[UIImage imageNamed:@"left"],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_middle_100"], [UIImage imageNamed:@"jiare_middle_80"], [UIImage imageNamed:@"jiare_middle_50"], [UIImage imageNamed:@"jiare_middle_20"], [UIImage imageNamed:@"jiare_middle_00"]] duration:4.0f],
                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hs0"], [UIImage imageNamed:@"jiare_hs1"], [UIImage imageNamed:@"jiare_hs2"], [UIImage imageNamed:@"jiare_hs3"]] duration:4.0f]];
     }
     return _array5;
@@ -170,7 +220,6 @@
     if (!_array9) {
         _array9 = @[[UIImage
                      animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"], [UIImage imageNamed:@"ss_hx4"], [UIImage imageNamed:@"ss_hx5"], [UIImage imageNamed:@"ss_hx6"]] duration:4.0f],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"middle_100"], [UIImage imageNamed:@"middle_80"], [UIImage imageNamed:@"middle_50"], [UIImage imageNamed:@"middle_20"], [UIImage imageNamed:@"middle_00"]] duration:4.0f],
                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx4"], [UIImage imageNamed:@"gdhs_hx8"], [UIImage imageNamed:@"gdhs_hx12"]] duration:4.0f]];
     }
     return _array9;
@@ -180,7 +229,6 @@
     if (!_array3) {
         _array3 = @[[UIImage
                      animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx5"], [UIImage imageNamed:@"wcxh_hx10"], [UIImage imageNamed:@"wcxh_hx15"], [UIImage imageNamed:@"wcxh_hx20"], [UIImage imageNamed:@"wcxh_hx25"]] duration:4.0f],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"middle_100"], [UIImage imageNamed:@"middle_80"], [UIImage imageNamed:@"middle_50"], [UIImage imageNamed:@"middle_20"], [UIImage imageNamed:@"middle_00"]] duration:4.0f],
                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx4"], [UIImage imageNamed:@"gdhs_hx8"], [UIImage imageNamed:@"gdhs_hx12"]] duration:4.0f]];
     }
     return _array3;
@@ -190,7 +238,6 @@
     if (!_array6) {
         _array6 = @[[UIImage
                      animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx5"], [UIImage imageNamed:@"wcxh_hx10"], [UIImage imageNamed:@"wcxh_hx15"], [UIImage imageNamed:@"wcxh_hx20"], [UIImage imageNamed:@"wcxh_hx25"]] duration:4.0f],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_middle_100"], [UIImage imageNamed:@"jiare_middle_80"], [UIImage imageNamed:@"jiare_middle_50"], [UIImage imageNamed:@"jiare_middle_20"], [UIImage imageNamed:@"jiare_middle_00"]] duration:4.0f],
                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"], [UIImage imageNamed:@"jiare_hx4"], [UIImage imageNamed:@"jiare_hx5"]] duration:4.0f]];
     }
     return _array6;
@@ -200,7 +247,6 @@
     if (!_array12) {
         _array12 = @[[UIImage
                       animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"], [UIImage imageNamed:@"ss_hx4"], [UIImage imageNamed:@"ss_hx5"], [UIImage imageNamed:@"ss_hx6"]] duration:4.0f],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_middle_100"], [UIImage imageNamed:@"jiare_middle_80"], [UIImage imageNamed:@"jiare_middle_50"], [UIImage imageNamed:@"jiare_middle_20"], [UIImage imageNamed:@"jiare_middle_00"]] duration:4.0f],
                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"], [UIImage imageNamed:@"jiare_hx4"], [UIImage imageNamed:@"jiare_hx5"]] duration:4.0f]];
     }
     return _array12;
@@ -210,7 +256,6 @@
     if (!_array13) {
         _array13 = @[[UIImage
                       animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"], [UIImage imageNamed:@"ss_hx4"], [UIImage imageNamed:@"ss_hx5"], [UIImage imageNamed:@"ss_hx6"]] duration:4.0f],
-                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_middle_100"], [UIImage imageNamed:@"jiare_middle_80"], [UIImage imageNamed:@"jiare_middle_50"], [UIImage imageNamed:@"jiare_middle_20"], [UIImage imageNamed:@"jiare_middle_00"]] duration:4.0f],
                      [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hs0"], [UIImage imageNamed:@"jiare_hs1"], [UIImage imageNamed:@"jiare_hs2"], [UIImage imageNamed:@"jiare_hs3"]] duration:4.0f]];
     }
     return _array13;
@@ -220,7 +265,6 @@
     if (!_array7) {
         _array7 = @[[UIImage
                      animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx5"], [UIImage imageNamed:@"wcxh_hx10"], [UIImage imageNamed:@"wcxh_hx15"], [UIImage imageNamed:@"wcxh_hx20"], [UIImage imageNamed:@"wcxh_hx25"]] duration:4.0f],
-                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_middle_100"], [UIImage imageNamed:@"jiare_middle_80"], [UIImage imageNamed:@"jiare_middle_50"], [UIImage imageNamed:@"jiare_middle_20"], [UIImage imageNamed:@"jiare_middle_00"]] duration:4.0f],
                      [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hs0"], [UIImage imageNamed:@"jiare_hs1"], [UIImage imageNamed:@"jiare_hs2"], [UIImage imageNamed:@"jiare_hs3"]] duration:4.0f]];
     }
     return _array7;
@@ -244,9 +288,7 @@
                 return (NSComparisonResult)NSOrderedSame;
             };
             NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
-            NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
-            [self changeImage:[value integerValue]];
-            value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
+            NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
             if ([value isEqualToString:@"111"]) {
                 value = @"未连接";
             } else if ([value isEqualToString:@"112"]){
@@ -262,110 +304,147 @@
             value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range] stringByAppendingString:@"°C"];;
             [self.fourthButton setTitle:value forState:UIControlStateNormal];
 
+            NSString *type = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+            NSString *level = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range];
+            [self changeImage:type level:level];
         }
     }];
 }
 
-- (void)changeImage:(NSInteger)number
+- (UIImage *)normalChangeMiddleAnimation:(NSString *)level
 {
-    switch (number) {
+    UIImage *image = nil;
+    if ([level isEqualToString:@"00"]){
+        image = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"middle_00_0"], [UIImage imageNamed:@"middle_00_1"]] duration:1.0f];
+    } else if ([level isEqualToString:@"20"]){
+        image = [UIImage imageNamed:@"middle_20"];
+    } else if ([level isEqualToString:@"50"]){
+        image = [UIImage imageNamed:@"middle_50"];
+    } else if ([level isEqualToString:@"80"]){
+        image = [UIImage imageNamed:@"middle_80"];
+    } else if ([level isEqualToString:@"100"]){
+        image = [UIImage imageNamed:@"middle_100"];
+    }
+    return image;
+}
+
+- (UIImage *)warmChangeMiddleAnimation:(NSString *)level
+{
+    UIImage *image = nil;
+    if ([level isEqualToString:@"00"]){
+        image = [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_middle_00_0"], [UIImage imageNamed:@"jiare_middle_00_1"]] duration:1.0f];
+    } else if ([level isEqualToString:@"20"]){
+        image = [UIImage imageNamed:@"jiare_middle_20"];
+    } else if ([level isEqualToString:@"50"]){
+        image = [UIImage imageNamed:@"jiare_middle_50"];
+    } else if ([level isEqualToString:@"80"]){
+        image = [UIImage imageNamed:@"jiare_middle_80"];
+    } else if ([level isEqualToString:@"100"]){
+        image = [UIImage imageNamed:@"jiare_middle_100"];
+    }
+    return image;
+}
+
+- (void)changeImage:(NSString *)type level:(NSString *)level
+{
+    switch ([type integerValue]) {
         case 0:
         {
             self.leftView.image = [self.array0 objectAtIndex:0];
-            self.middleView.image = [self.array0 objectAtIndex:1];
-            self.rightView.image = [self.array0 objectAtIndex:2];
+            self.middleView.image = [self normalChangeMiddleAnimation:level];
+            self.rightView.image = [self.array0 objectAtIndex:1];
         }
             break;
         case 1:
         {
             self.leftView.image = [self.array1 objectAtIndex:0];
-            self.middleView.image = [self.array1 objectAtIndex:1];
-            self.rightView.image = [self.array1 objectAtIndex:2];
+            self.middleView.image = [self normalChangeMiddleAnimation:level];
+            self.rightView.image = [self.array1 objectAtIndex:1];
         }
             break;
         case 2:
         {
             self.leftView.image = [self.array2 objectAtIndex:0];
-            self.middleView.image = [self.array2 objectAtIndex:1];
-            self.rightView.image = [self.array2 objectAtIndex:2];
+            self.middleView.image = [self normalChangeMiddleAnimation:level];
+            self.rightView.image = [self.array2 objectAtIndex:1];
         }
             break;
         case 3:
         {
             self.leftView.image = [self.array3 objectAtIndex:0];
-            self.middleView.image = [self.array3 objectAtIndex:1];
-            self.rightView.image = [self.array3 objectAtIndex:2];
+            self.middleView.image = [self normalChangeMiddleAnimation:level];
+            self.rightView.image = [self.array3 objectAtIndex:1];
         }
             break;
         case 4:
         {
             self.leftView.image = [self.array4 objectAtIndex:0];
-            self.middleView.image = [self.array4 objectAtIndex:1];
-            self.rightView.image = [self.array4 objectAtIndex:2];
+            self.middleView.image = [self warmChangeMiddleAnimation:level];
+            self.rightView.image = [self.array4 objectAtIndex:1];
         }
             break;
         case 5:
         {
             self.leftView.image = [self.array5 objectAtIndex:0];
-            self.middleView.image = [self.array5 objectAtIndex:1];
-            self.rightView.image = [self.array5 objectAtIndex:2];
+            self.middleView.image = [self warmChangeMiddleAnimation:level];
+            self.rightView.image = [self.array5 objectAtIndex:1];
         }
             break;
         case 6:
         {
             self.leftView.image = [self.array6 objectAtIndex:0];
-            self.middleView.image = [self.array6 objectAtIndex:1];
-            self.rightView.image = [self.array6 objectAtIndex:2];
+            self.middleView.image = [self warmChangeMiddleAnimation:level];
+            self.rightView.image = [self.array6 objectAtIndex:1];
         }
             break;
         case 7:
         {
             self.leftView.image = [self.array7 objectAtIndex:0];
-            self.middleView.image = [self.array7 objectAtIndex:1];
-            self.rightView.image = [self.array7 objectAtIndex:2];
+            self.middleView.image = [self warmChangeMiddleAnimation:level];
+            self.rightView.image = [self.array7 objectAtIndex:1];
         }
             break;
         case 8:
         {
             self.leftView.image = [self.array8 objectAtIndex:0];
-            self.middleView.image = [self.array8 objectAtIndex:1];
-            self.rightView.image = [self.array8 objectAtIndex:2];
+            self.middleView.image = [self normalChangeMiddleAnimation:level];
+            self.rightView.image = [self.array8 objectAtIndex:1];
         }
             break;
         case 9:
         {
             self.leftView.image = [self.array9 objectAtIndex:0];
-            self.middleView.image = [self.array9 objectAtIndex:1];
-            self.rightView.image = [self.array9 objectAtIndex:2];
+            self.middleView.image = [self normalChangeMiddleAnimation:level];
+            self.rightView.image = [self.array9 objectAtIndex:1];
         }
             break;
         case 10:
         {
             self.leftView.image = [self.array10 objectAtIndex:0];
             self.middleView.image = [self.array10 objectAtIndex:1];
-            self.rightView.image = [self.array10 objectAtIndex:2];
+            self.rightView.image = [self.array10 objectAtIndex:1];
         }
             break;
         case 11:
         {
             self.leftView.image = [self.array11 objectAtIndex:0];
             self.middleView.image = [self.array11 objectAtIndex:1];
-            self.rightView.image = [self.array11 objectAtIndex:2];
+            self.rightView.image = [self.array11 objectAtIndex:1];
         }
             break;
         case 12:
         {
             self.leftView.image = [self.array12 objectAtIndex:0];
-            self.middleView.image = [self.array12 objectAtIndex:1];
-            self.rightView.image = [self.array12 objectAtIndex:2];
+            self.middleView.image = [self warmChangeMiddleAnimation:level];
+            self.rightView.image = [self.array12 objectAtIndex:1];
         }
             break;
 
         default:
         {
             self.leftView.image = [self.array13 objectAtIndex:0];
-            self.middleView.image = [self.array13 objectAtIndex:1];
-            self.rightView.image = [self.array13 objectAtIndex:2];
+            self.middleView.image = [self warmChangeMiddleAnimation:level];
+            self.rightView.image = [self.array13 objectAtIndex:1];
         }
             break;
     }
@@ -381,9 +460,12 @@
 - (IBAction)clickAddWater:(UIButton *)sender
 {
     //手动上水
+    [[FYUDPNetWork shareNetEngine] stopMainData];
+    __weak typeof(self)weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
     NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_sdss"];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
+        [weakSelf getInfo];
         if(finish){
 
         } else{
@@ -400,9 +482,12 @@
 - (IBAction)clickUserWarm:(UIButton *)sender
 {
     //手动加热
+    [[FYUDPNetWork shareNetEngine] stopMainData];
+    __weak typeof(self)weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
     NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_sdjr"];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
+        [weakSelf getInfo];
         if(finish){
 
         } else{
@@ -417,9 +502,12 @@
 - (IBAction)clickTemCircle:(UIButton *)sender
 {
     //温差循环
+    [[FYUDPNetWork shareNetEngine] stopMainData];
+    __weak typeof(self)weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
     NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_wcxh"];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
+        [weakSelf getInfo];
         if(finish){
 
         } else{
@@ -434,9 +522,12 @@
 - (IBAction)clickWaterCircle:(UIButton *)sender
 {
     //管道回水
+    [[FYUDPNetWork shareNetEngine] stopMainData];
+    __weak typeof(self)weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
     NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_gdhs"];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
+        [weakSelf getInfo];
         if(finish){
 
         } else{

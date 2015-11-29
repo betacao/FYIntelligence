@@ -79,50 +79,50 @@
                             <animations/>
                         </switch>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Sax-tT-bcE">
-                            <rect key="frame" x="97" y="31" width="46" height="30"/>
+                            <rect key="frame" x="90" y="31" width="60" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="06:00"/>
                             <connections>
                                 <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="O5u-uX-Eap"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QPr-c6-ANM">
-                            <rect key="frame" x="97" y="76" width="46" height="30"/>
+                            <rect key="frame" x="90" y="76" width="60" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="12:00"/>
                             <connections>
                                 <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="ROl-Ci-sZ5"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HM2-Ek-RNc">
-                            <rect key="frame" x="97" y="120" width="46" height="30"/>
+                            <rect key="frame" x="90" y="120" width="60" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="16:00"/>
                             <connections>
                                 <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="0av-BV-8yI"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iez-4w-xSo">
-                            <rect key="frame" x="177" y="76" width="46" height="30"/>
+                            <rect key="frame" x="170" y="76" width="60" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="14:00"/>
                             <connections>
                                 <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="l6J-MX-CoG"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0Kr-mv-JIn">
-                            <rect key="frame" x="177" y="121" width="46" height="30"/>
+                            <rect key="frame" x="170" y="121" width="60" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="13:00"/>
                             <connections>
                                 <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="feq-0L-q44"/>
@@ -132,7 +132,7 @@
                             <rect key="frame" x="257" y="31" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="55°C"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="T55-vi-0Yv"/>
@@ -142,7 +142,7 @@
                             <rect key="frame" x="257" y="76" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="55°C"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="E7e-2i-IbJ"/>
@@ -152,17 +152,17 @@
                             <rect key="frame" x="257" y="121" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="55°C"/>
                             <connections>
                                 <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="5Ql-kK-FyD"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Pur-U6-1BS">
-                            <rect key="frame" x="177" y="31" width="46" height="30"/>
+                            <rect key="frame" x="170" y="31" width="60" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="09:30"/>
                             <connections>
                                 <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="zxP-AZ-CPP"/>

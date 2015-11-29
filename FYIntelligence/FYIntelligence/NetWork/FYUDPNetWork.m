@@ -167,6 +167,7 @@
         }
         if (i >= 20 && self.finishBlock) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                [FYProgressHUD hideHud];
                 weakSelf.finishBlock(NO, @"");
             });
         }
@@ -187,7 +188,7 @@
             NSLog(@"send main data %ld",(long)i);
             [weakSelf sendMessage];
             kAppDelegate.globleNumber++;
-            sleep(15);
+            sleep(25);
         }
     });
     
@@ -200,7 +201,7 @@
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         NSInteger time = 0;
-        while (weakSelf.mainNeedSend == YES && time < 20) {
+        while (weakSelf.mainNeedSend == YES && time < 20 && weakSelf.requestMainData) {
             time++;
             NSLog(@"detail %ld",(long)weakSelf.mainNumber);
             NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,@(weakSelf.mainNumber),kMainViewCmd];

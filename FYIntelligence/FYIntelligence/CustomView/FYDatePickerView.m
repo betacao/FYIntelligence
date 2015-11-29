@@ -120,6 +120,12 @@
         self.selectString = [NSString stringWithFormat:@"%@:%@",hour, minute];
     }
 }
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
+{
+    return 40.0f * XFACTOR;
+}
+
 - (void)didSelectDate:(UIButton *)button
 {
     if(self.delegate && [self.delegate respondsToSelector:@selector(object:didSelectDate:)]){

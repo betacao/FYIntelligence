@@ -53,6 +53,11 @@
     self.selectedValue = [self.dataArray objectAtIndex:row];
 }
 
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
+{
+    return 40.0f * XFACTOR;
+}
+
 - (void)getInfo
 {
     NSString *request = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),kGETHSWCmd];

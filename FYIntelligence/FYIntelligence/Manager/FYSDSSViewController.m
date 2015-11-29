@@ -48,9 +48,19 @@
     return label;
 }
 
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
+{
+    return 40.0f * XFACTOR;
+}
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    switch (row) {
+    [self changeImage:row];
+    self.selectedValue = [self.dataArray objectAtIndex:row];
+}
+
+- (void)changeImage:(NSInteger)index
+{
+    switch (index) {
         case 0:{
             self.imageView.image = [UIImage imageNamed:@"shuiwei_50"];
         }
@@ -64,7 +74,6 @@
         }
             break;
     }
-    self.selectedValue = [self.dataArray objectAtIndex:row];
 }
 
 - (void)getInfo
@@ -89,7 +98,9 @@
 
             NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
             if ([self.dataArray indexOfObject:value] != NSNotFound) {
-                [self.pickerView selectRow:[self.dataArray indexOfObject:value] inComponent:0 animated:NO];
+                NSInteger index = [self.dataArray indexOfObject:value];
+                [self.pickerView selectRow:index inComponent:0 animated:NO];
+                [self changeImage:index];
             }
         } else{
             [FYProgressHUD showMessageWithText:@"获取初始值失败"];

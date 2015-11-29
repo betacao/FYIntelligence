@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYSDSSViewController">
@@ -17,15 +19,16 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shuiwei_80" id="zbr-aM-PVU">
-                    <rect key="frame" x="0.0" y="80" width="320" height="180"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shuiwei_80" translatesAutoresizingMaskIntoConstraints="NO" id="zbr-aM-PVU">
+                    <rect key="frame" x="0.0" y="60" width="320" height="220"/>
                     <animations/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aun-lr-O7z">
-                    <rect key="frame" x="13" y="404" width="294" height="40"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aun-lr-O7z">
+                    <rect key="frame" x="13" y="443" width="294" height="40"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Rxu-Cc-g7Z"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="确定" backgroundImage="btn_login_normal"/>
                     <state key="highlighted" backgroundImage="btn_login_press"/>
@@ -33,19 +36,24 @@
                         <action selector="sendMessage:" destination="-1" eventType="touchUpInside" id="09b-Kf-rne"/>
                     </connections>
                 </button>
-                <pickerView contentMode="scaleToFill" id="6w9-1M-fbW">
-                    <rect key="frame" x="120" y="286" width="80" height="80"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6w9-1M-fbW">
+                    <rect key="frame" x="135" y="286" width="50" height="100"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="6w9-1M-fbW" secondAttribute="height" multiplier="1:2" id="HVv-0h-U60"/>
+                    </constraints>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="PZF-8O-dPY"/>
                         <outlet property="delegate" destination="-1" id="y6R-8S-AHD"/>
                     </connections>
                 </pickerView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G7B-kd-6yw">
-                    <rect key="frame" x="208" y="315" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7B-kd-6yw">
+                    <rect key="frame" x="193" y="325" width="42" height="21"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="IbG-ez-e58"/>
+                        <constraint firstAttribute="width" constant="42" id="P6Z-dv-SCc"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -53,6 +61,20 @@
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="zbr-aM-PVU" secondAttribute="trailing" id="6p9-tz-0yu"/>
+                <constraint firstItem="G7B-kd-6yw" firstAttribute="centerY" secondItem="6w9-1M-fbW" secondAttribute="centerY" constant="-0.5" id="C1T-12-aqU"/>
+                <constraint firstItem="zbr-aM-PVU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="UFp-VY-Sdr"/>
+                <constraint firstAttribute="trailing" secondItem="aun-lr-O7z" secondAttribute="trailing" constant="13" id="Whi-Jr-Gdc"/>
+                <constraint firstItem="G7B-kd-6yw" firstAttribute="leading" secondItem="6w9-1M-fbW" secondAttribute="trailing" constant="8" id="Zh8-vx-Rfc"/>
+                <constraint firstItem="6w9-1M-fbW" firstAttribute="top" secondItem="zbr-aM-PVU" secondAttribute="bottom" constant="6" id="ZwJ-2f-ECR"/>
+                <constraint firstItem="aun-lr-O7z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="13" id="a54-yY-KZg"/>
+                <constraint firstItem="zbr-aM-PVU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aDX-zw-TJT"/>
+                <constraint firstItem="6w9-1M-fbW" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="100:320" constant="-50" id="kQ4-NG-pFh"/>
+                <constraint firstItem="zbr-aM-PVU" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="220:568" id="oFE-l5-mFF"/>
+                <constraint firstItem="6w9-1M-fbW" firstAttribute="centerX" secondItem="zbr-aM-PVU" secondAttribute="centerX" id="pPp-S3-zwX"/>
+                <constraint firstAttribute="bottom" secondItem="aun-lr-O7z" secondAttribute="bottom" constant="85" id="uYX-IY-802"/>
+            </constraints>
             <point key="canvasLocation" x="243" y="239"/>
         </view>
     </objects>
