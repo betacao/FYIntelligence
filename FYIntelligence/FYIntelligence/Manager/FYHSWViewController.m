@@ -79,7 +79,7 @@
             NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
 
             NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
-            [self.switchControl setOn:[value isEqualToString:@"1"] ? YES : NO];
+            [self.switchControl setOn:[value isEqualToString:@"01"] ? YES : NO];
             value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
             if ([self.dataArray indexOfObject:value] != NSNotFound) {
                 [self.pickerView selectRow:[self.dataArray indexOfObject:value] inComponent:0 animated:NO];
@@ -92,7 +92,7 @@
 
 - (IBAction)sendMessage:(id)sender
 {
-    NSString *string = [NSString stringWithFormat:kHSWCmd,self.switchControl.isOn ? @"1" : @"0", self.selectedValue];
+    NSString *string = [NSString stringWithFormat:kHSWCmd,self.switchControl.isOn ? @"01" : @"00", self.selectedValue];
     NSString *UDPRequest = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),string];
     [[FYUDPNetWork shareNetEngine] sendRequest:UDPRequest complete:^(BOOL finish, NSString *responseString) {
         if(finish){

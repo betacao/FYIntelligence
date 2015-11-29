@@ -81,7 +81,7 @@
             NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
 
             NSString *isOn1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
-            [self.switch1 setOn: [isOn1 isEqualToString:@"1"] ? YES : NO];
+            [self.switch1 setOn: [isOn1 isEqualToString:@"01"] ? YES : NO];
             NSString *hour1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
             NSString *minute1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
             [self.timeButton1 setTitle:[NSString stringWithFormat:@"%@:%@",hour1, minute1] forState:UIControlStateNormal];
@@ -89,7 +89,7 @@
             [self.positionButton1 setTitle:tem1 forState:UIControlStateNormal];
 
             NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
-            [self.switch2 setOn: [isOn2 isEqualToString:@"1"] ? YES : NO];
+            [self.switch2 setOn: [isOn2 isEqualToString:@"01"] ? YES : NO];
             NSString *hour2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range];
             NSString *minute2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:6]).range];
             [self.timeButton2 setTitle:[NSString stringWithFormat:@"%@:%@",hour2, minute2] forState:UIControlStateNormal];
@@ -97,7 +97,7 @@
             [self.positionButton2 setTitle:tem2 forState:UIControlStateNormal];
 
             NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:8]).range];
-            [self.switch3 setOn: [isOn3 isEqualToString:@"1"] ? YES : NO];
+            [self.switch3 setOn: [isOn3 isEqualToString:@"01"] ? YES : NO];
             NSString *hour3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:9]).range];
             NSString *minute3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:10]).range];
             [self.timeButton3 setTitle:[NSString stringWithFormat:@"%@:%@",hour3, minute3] forState:UIControlStateNormal];
@@ -121,17 +121,17 @@
 
 - (IBAction)sendMessage:(id)sender
 {
-    NSString *isOn1 = self.switch1.isOn ? @"1" : @"0";
+    NSString *isOn1 = self.switch1.isOn ? @"01" : @"00";
     NSString *hour1 = [self.timeButton1.titleLabel.text substringToIndex:[self.timeButton1.titleLabel.text rangeOfString:@":"].location];
     NSString *minute1 = [self.timeButton1.titleLabel.text substringFromIndex:[self.timeButton1.titleLabel.text rangeOfString:@":"].location + 1];
     NSString *tem1 = self.positionButton1.titleLabel.text;
 
-    NSString *isOn2 = self.switch2.isOn ? @"1" : @"0";
+    NSString *isOn2 = self.switch2.isOn ? @"01" : @"00";
     NSString *hour2 = [self.timeButton2.titleLabel.text substringToIndex:[self.timeButton2.titleLabel.text rangeOfString:@":"].location];
     NSString *minute2 = [self.timeButton2.titleLabel.text substringFromIndex:[self.timeButton2.titleLabel.text rangeOfString:@":"].location + 1];
     NSString *tem2 = self.positionButton2.titleLabel.text;
 
-    NSString *isOn3 = self.switch3.isOn ? @"1" : @"0";
+    NSString *isOn3 = self.switch3.isOn ? @"01" : @"00";
     NSString *hour3 = [self.timeButton3.titleLabel.text substringToIndex:[self.timeButton3.titleLabel.text rangeOfString:@":"].location];
     NSString *minute3 = [self.timeButton3.titleLabel.text substringFromIndex:[self.timeButton3.titleLabel.text rangeOfString:@":"].location + 1];
     NSString *tem3 = self.positionButton3.titleLabel.text;

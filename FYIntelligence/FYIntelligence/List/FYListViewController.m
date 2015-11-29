@@ -36,7 +36,10 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
 
     [self.tableView setTableFooterView:[[UIView alloc] init]];
-
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     [self loadData];
 }
 
@@ -62,6 +65,7 @@
         NSTextCheckingResult *result = [MResult firstObject];
         NSString *resultString = [string substringWithRange:result.range];
         weakSelf.deviceCount = [resultString integerValue];
+        [weakSelf.deviceArray removeAllObjects];
         for (NSInteger i = 1; i <= (MResult.count - 1) / 3; i++) {
             FYDevice *device = [[FYDevice alloc] init];
 
@@ -74,7 +78,7 @@
             result = [MResult objectAtIndex:(i * 3)];
             device.deviceCondition = (FYDeviceCondition)[[string substringWithRange:result.range] integerValue];
 
-            [self.deviceArray addObject:device];
+            [weakSelf.deviceArray addObject:device];
         }
         [weakSelf.tableView reloadData];
         NSLog(@"%@",weakSelf.deviceArray);

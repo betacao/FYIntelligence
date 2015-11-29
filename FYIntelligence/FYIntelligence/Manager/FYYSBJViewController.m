@@ -110,17 +110,17 @@
                 [self.postionPickView selectRow:[self.positionArray indexOfObject:value1] inComponent:0 animated:NO];
             }
             NSString *isOn1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
-            [self.switch1 setOn: [isOn1 isEqualToString:@"1"] ? YES : NO];
+            [self.switch1 setOn: [isOn1 isEqualToString:@"01"] ? YES : NO];
 
             NSString *value2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
             NSInteger index = [self.temArray indexOfObject:value2] != NSNotFound ? [self.temArray indexOfObject:value2] : 0;
             [self.temPickView selectRow:index inComponent:0 animated:NO];
 
             NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
-            [self.switch2 setOn: [isOn2 isEqualToString:@"1"] ? YES : NO];
+            [self.switch2 setOn: [isOn2 isEqualToString:@"01"] ? YES : NO];
 
             NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
-            [self.switch3 setOn: [isOn3 isEqualToString:@"1"] ? YES : NO];
+            [self.switch3 setOn: [isOn3 isEqualToString:@"01"] ? YES : NO];
         }else{
             [FYProgressHUD showMessageWithText:@"获取初始值失败"];
         }
@@ -129,9 +129,9 @@
 
 - (IBAction)sendMessage:(id)sender
 {
-    NSString *isOn1 = self.switch1.isOn ? @"1": @"0";
-    NSString *isOn2 = self.switch2.isOn ? @"1": @"0";
-    NSString *isOn3 = self.switch3.isOn ? @"1": @"0";
+    NSString *isOn1 = self.switch1.isOn ? @"01": @"00";
+    NSString *isOn2 = self.switch2.isOn ? @"01": @"00";
+    NSString *isOn3 = self.switch3.isOn ? @"01": @"00";
     NSString *string = [NSString stringWithFormat:kYSBJCmd, isOn1,self.firstValue,isOn2,self.secondValue,isOn3];
     NSString *UDPRequest = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),string];
     [[FYUDPNetWork shareNetEngine] sendRequest:UDPRequest complete:^(BOOL finish, NSString *responseString) {

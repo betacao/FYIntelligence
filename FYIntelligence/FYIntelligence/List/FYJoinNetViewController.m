@@ -12,6 +12,7 @@
 #import "ESPTouchResult.h"
 #import "ESP_NetUtil.h"
 #import "ESPTouchDelegate.h"
+#import "FYAddDeviceViewController.h"
 
 #define HEIGHT_KEYBOARD 216
 #define HEIGHT_TEXT_FIELD 30
@@ -19,7 +20,6 @@
 
 
 @interface EspTouchDelegateImpl : NSObject<ESPTouchDelegate>
-
 @end
 
 @implementation EspTouchDelegateImpl
@@ -51,7 +51,9 @@
 
 
 
-@interface FYJoinNetViewController ()<UITextFieldDelegate>
+@interface FYJoinNetViewController ()<UITextFieldDelegate, UIAlertViewDelegate>
+@property (strong, nonatomic) UIAlertView *successAlert;
+@property (strong, nonatomic) UIAlertView *failAlert;
 
 @property (weak, nonatomic) IBOutlet UIView *inputBgView;
 @property (weak, nonatomic) IBOutlet UIView *lineView;
@@ -120,12 +122,16 @@
                         {
                             [mutableStr appendString:[NSString stringWithFormat:@"\nthere's %lu more result(s) without showing\n",(unsigned long)([esptouchResultArray count] - count)]];
                         }
-                        [[[UIAlertView alloc]initWithTitle:@"Execute Result" message:mutableStr delegate:nil cancelButtonTitle:@"I know" otherButtonTitles:nil]show];
+                        self.successAlert = [[UIAlertView alloc]initWithTitle:@"配置成功" message:mutableStr delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                        self.successAlert.delegate = self;
+                        [self.successAlert show];
                     }
 
                     else
                     {
-                        [[[UIAlertView alloc]initWithTitle:@"Execute Result" message:@"Esptouch fail" delegate:nil cancelButtonTitle:@"I know" otherButtonTitles:nil]show];
+                        self.failAlert = [[UIAlertView alloc]initWithTitle:@"配置失败" message:@"Esptouch fail" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                        self.failAlert.delegate = self;
+                        [self.failAlert show];
                     }
                 }
 
@@ -195,14 +201,14 @@
 - (void)enableConfirmBtn
 {
     self.isConfirmState = YES;
-    [self.loginButton setTitle:@"Confirm" forState:UIControlStateNormal];
+    [self.loginButton setTitle:@"确定" forState:UIControlStateNormal];
 }
 
 // enable cancel button
 - (void)enableCancelBtn
 {
     self.isConfirmState = NO;
-    [self.loginButton setTitle:@"Cancel" forState:UIControlStateNormal];
+    [self.loginButton setTitle:@"取消" forState:UIControlStateNormal];
 }
 
 
@@ -350,6 +356,19 @@
     //Removing keyboard or something else
 }
 
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ([alertView isEqual:self.successAlert]) {
+        [FYProgressHUD showLoadingWithMessage:@"设备已入网，请等待8秒钟，设备重启"];
+        __weak typeof(self) weakSelf = self;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(8.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [FYProgressHUD hideHud];
+            FYAddDeviceViewController *controller = [[FYAddDeviceViewController alloc] init];
+            [weakSelf.navigationController pushViewController:controller animated:YES];
+        });
+    }
+}
 
 
 - (void)didReceiveMemoryWarning {

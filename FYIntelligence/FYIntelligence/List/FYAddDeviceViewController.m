@@ -46,8 +46,7 @@
     UIImage *pressImage = [UIImage imageNamed:@"btn_login_press"];
     [self.loginButton setBackgroundImage:[normalImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
     [self.loginButton setBackgroundImage:[pressImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateHighlighted];
-    self.userField.text = kAppDelegate.ESPDescription;
-    if (self.userField.text) {
+    if (kAppDelegate.ESPDescription && kAppDelegate.ESPDescription.length > 0) {
         [[FYTCPSpecialNetWork shareNetEngine] createClientTcpSocket];
     }
 }
@@ -83,8 +82,13 @@
         return;
     }
     NSString *request = [NSString stringWithFormat:kAddedDeviceCmd,self.userField.text, self.pwdField.text, kAppDelegate.userName, kAppDelegate.userPWD];
+    __weak typeof(self) weakSelf = self;
     [[FYTCPNetWork shareNetEngine] sendRequest:request complete:^(NSDictionary *dic) {
-
+        if ([[dic objectForKey:kResponseString] rangeOfString:@"SUC"].location != NSNotFound) {
+            [FYProgressHUD showMessageWithText:@"添加设备成功"];
+            UIViewController *controller = [weakSelf.navigationController.viewControllers objectAtIndex:1];
+            [weakSelf.navigationController popToViewController:controller animated:YES];
+        }
     }];
 }
 
