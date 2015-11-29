@@ -48,8 +48,6 @@
     [FYProgressHUD showLoadingWithMessage:@"请稍等..."];
 }
 
-
-
 #pragma mark - 代理方法表示连接成功/失败 回调函数
 - (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port
 {

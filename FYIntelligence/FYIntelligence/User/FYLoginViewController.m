@@ -10,6 +10,7 @@
 #import "FYRegisterViewController.h"
 #import "FYListViewController.h"
 #import "FYForgrtPWDViewController.h"
+#import "APService.h"
 
 @interface FYLoginViewController ()
 @property (weak, nonatomic) IBOutlet UIView *inputBgView;
@@ -102,6 +103,7 @@
             if(controller){
                 [weakSelf.navigationController pushViewController:controller animated:YES];
             }
+            [APService setAlias:userName callbackSelector:@selector(tagsAliasCallback:tags:alias:) object:self];
         } else{
             [FYProgressHUD showMessageWithText:@"登录失败"];
         }
@@ -122,7 +124,34 @@
     }
 }
 
+- (void)tagsAliasCallback:(int)iResCode
+                     tags:(NSSet *)tags
+                    alias:(NSString *)alias {
+    NSString *callbackString =
+    [NSString stringWithFormat:@"%d, \ntags: %@, \nalias: %@\n", iResCode,
+     [self logSet:tags], alias];
+    NSLog(@"TagsAlias回调:%@", callbackString);
+}
 
+- (NSString *)logSet:(NSSet *)dic {
+    if (![dic count]) {
+        return nil;
+    }
+    NSString *tempStr1 =
+    [[dic description] stringByReplacingOccurrencesOfString:@"\\u"
+                                                 withString:@"\\U"];
+    NSString *tempStr2 =
+    [tempStr1 stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+    NSString *tempStr3 =
+    [[@"\"" stringByAppendingString:tempStr2] stringByAppendingString:@"\""];
+    NSData *tempData = [tempStr3 dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *str =
+    [NSPropertyListSerialization propertyListFromData:tempData
+                                     mutabilityOption:NSPropertyListImmutable
+                                               format:NULL
+                                     errorDescription:NULL];
+    return str;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

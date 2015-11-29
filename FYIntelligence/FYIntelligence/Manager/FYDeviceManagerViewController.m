@@ -38,7 +38,7 @@
 @property (strong, nonatomic) NSArray *array11;
 @property (strong, nonatomic) NSArray *array12;
 @property (strong, nonatomic) NSArray *array13;
-
+@property (assign, nonatomic) NSInteger controlId;
 
 
 @end
@@ -177,7 +177,7 @@
 {
     if (!_array1) {
         _array1 = @[[UIImage imageNamed:@"left"],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx2"], [UIImage imageNamed:@"gdhs_hx3"], [UIImage imageNamed:@"gdhs_hx4"]] duration:4.0f]];
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx0"], [UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx2"], [UIImage imageNamed:@"gdhs_hx3"]] duration:4.0f]];
     }
     return _array1;
 }
@@ -220,7 +220,7 @@
     if (!_array9) {
         _array9 = @[[UIImage
                      animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"]] duration:4.0f],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx2"], [UIImage imageNamed:@"gdhs_hx3"], [UIImage imageNamed:@"gdhs_hx4"]] duration:4.0f]];
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx0"], [UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx2"], [UIImage imageNamed:@"gdhs_hx3"]] duration:4.0f]];
     }
     return _array9;
 }
@@ -229,7 +229,7 @@
     if (!_array3) {
         _array3 = @[[UIImage
                      animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx1"], [UIImage imageNamed:@"wcxh_hx2"], [UIImage imageNamed:@"wcxh_hx3"]] duration:4.0f],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx2"], [UIImage imageNamed:@"gdhs_hx3"], [UIImage imageNamed:@"gdhs_hx4"]] duration:4.0f]];
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx0"], [UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx2"], [UIImage imageNamed:@"gdhs_hx3"]] duration:4.0f]];
     }
     return _array3;
 }
@@ -306,6 +306,7 @@
 
             NSString *type = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
             NSString *level = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range];
+            self.controlId = [type integerValue];
             [self changeImage:type level:level];
         }
     }];
@@ -463,7 +464,8 @@
     [[FYUDPNetWork shareNetEngine] stopMainData];
     __weak typeof(self)weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-    NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_sdss"];
+    NSString *state = (self.controlId&0x08) == 0 ? @"1" :@"0";
+    NSString *request = [NSString stringWithFormat:kMainNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_sdss",state];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         [weakSelf getInfo];
         if(finish){
@@ -485,7 +487,8 @@
     [[FYUDPNetWork shareNetEngine] stopMainData];
     __weak typeof(self)weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-    NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_sdjr"];
+    NSString *state = (self.controlId&0x04) == 0 ? @"1" :@"0";
+    NSString *request = [NSString stringWithFormat:kMainNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_sdjr",state];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         [weakSelf getInfo];
         if(finish){
@@ -505,7 +508,10 @@
     [[FYUDPNetWork shareNetEngine] stopMainData];
     __weak typeof(self)weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-    NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_wcxh"];
+
+    NSString *state = (self.controlId&0x02) == 0 ? @"1" :@"0";
+    NSString *request = [NSString stringWithFormat:kMainNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_wcxh",state];
+
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         [weakSelf getInfo];
         if(finish){
@@ -525,7 +531,9 @@
     [[FYUDPNetWork shareNetEngine] stopMainData];
     __weak typeof(self)weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-    NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_gdhs"];
+
+    NSString *state = (self.controlId&0x01) == 0 ? @"1" :@"0";
+    NSString *request = [NSString stringWithFormat:kMainNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_gdhs",state];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         [weakSelf getInfo];
         if(finish){

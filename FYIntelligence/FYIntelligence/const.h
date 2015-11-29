@@ -27,6 +27,7 @@
 #define kListAddress @"fyzn2015#1#8#"
 
 #define kNoPINString @"ICP2P0259#%@#U#G7S3#%@#%@#%@$#"
+#define kMainNoPINString @"ICP2P0259#%@#U#G7S3#%@#%@#%@$%@$#"
 #define kNoPINClearCmd @"fyzn2015#1#11#%@#G7S3#%@#"
 
 #define kNeedPINString @"ICP2P0259#%@#U#%@#%@#%@#%@$#"

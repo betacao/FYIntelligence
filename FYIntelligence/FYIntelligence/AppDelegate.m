@@ -102,6 +102,9 @@ forRemoteNotification:(NSDictionary *)userInfo
 didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [APService handleRemoteNotification:userInfo];
     NSLog(@"收到通知:%@", [self logDic:userInfo]);
+    NSString *string = [self logDic:userInfo];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:string delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show ];
 }
 
 - (void)application:(UIApplication *)application
@@ -111,6 +114,10 @@ fetchCompletionHandler:
     [APService handleRemoteNotification:userInfo];
     NSLog(@"收到通知:%@", [self logDic:userInfo]);
 
+    NSString *string = [self logDic:userInfo];
+    string = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:string delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
     completionHandler(UIBackgroundFetchResultNewData);
 }
 
@@ -138,6 +145,8 @@ didReceiveLocalNotification:(UILocalNotification *)notification {
                                      mutabilityOption:NSPropertyListImmutable
                                                format:NULL
                                      errorDescription:NULL];
+
+
     return str;
 }
 
