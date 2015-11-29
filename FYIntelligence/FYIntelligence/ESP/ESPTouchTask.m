@@ -49,11 +49,6 @@
 @property (atomic,strong) NSMutableDictionary *_bssidTaskSucCountDict;
 
 @property (atomic,strong) NSCondition *_esptouchResultArrayCondition;
-
-@property (nonatomic,assign) __block UIBackgroundTaskIdentifier _backgroundTask;
-
-@property (nonatomic,strong) id<ESPTouchDelegate> _esptouchDelegate;
-
 @end
 
 @implementation ESPTouchTask
@@ -156,10 +151,6 @@
         }
         ESPTouchResult *esptouchResult = [[ESPTouchResult alloc]initWithIsSuc:isSuc andBssid:bssid andInetAddrData:inetAddr];
         [self._esptouchResultArray addObject:esptouchResult];
-        if (self._esptouchDelegate != nil)
-        {
-            [self._esptouchDelegate onEsptouchResultAddedWithResult:esptouchResult];
-        }
     }
     [self._esptouchResultArrayCondition unlock];
 }
@@ -177,37 +168,10 @@
     return self._esptouchResultArray;
 }
 
-
-- (void) beginBackgroundTask
-{
-    if (DEBUG_ON)
-    {
-        NSLog(@"ESPTouchTask beginBackgroundTask() entrance");
-    }
-    self._backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
-        if (DEBUG_ON)
-        {
-            NSLog(@"ESPTouchTask beginBackgroundTask() endBackgroundTask");
-        }
-        [self endBackgroundTask];
-    }];
-}
-
-- (void) endBackgroundTask
-{
-    if (DEBUG_ON)
-    {
-        NSLog(@"ESPTouchTask endBackgroundTask() entrance");
-    }
-    [[UIApplication sharedApplication] endBackgroundTask: self._backgroundTask];
-    self._backgroundTask = UIBackgroundTaskInvalid;
-}
-
 - (void) __listenAsyn: (const int) expectDataLen
 {
     dispatch_queue_t  queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
-        [self beginBackgroundTask];
         if (DEBUG_ON)
         {
             NSLog(@"ESPTouchTask __listenAsyn() start an asyn listen task, current thread is: %@", [NSThread currentThread]);
@@ -288,7 +252,6 @@
         {
             NSLog(@"ESPTouchTask __listenAsyn() finish");
         }
-        [self endBackgroundTask];
     });
 }
 
@@ -413,12 +376,8 @@
         }
     }
     
-    if (!self._isInterrupt)
-    {
-        [self __sleep: [self._parameter getWaitUdpReceivingMillisecond]];
-        [self __interrupt];
-    }
-    
+    [self __sleep: [self._parameter getWaitUdpReceivingMillisecond]];
+    [self __interrupt];
     return [self __getEsptouchResultList];
 }
 
@@ -454,11 +413,6 @@
     self._isWakeUp = YES;
     [self._condition signal];
     [self._condition unlock];
-}
-
-- (void) setEsptouchDelegate: (NSObject<ESPTouchDelegate> *) esptouchDelegate
-{
-    self._esptouchDelegate = esptouchDelegate;
 }
 
 @end

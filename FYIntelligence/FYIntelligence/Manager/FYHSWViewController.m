@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (weak, nonatomic) IBOutlet UISwitch *switchControl;
 @property (strong, nonatomic) NSString *selectedValue;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -51,6 +52,7 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     self.selectedValue = [self.dataArray objectAtIndex:row];
+    [self changeImage:row];
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
@@ -82,7 +84,9 @@
             [self.switchControl setOn:[value isEqualToString:@"01"] ? YES : NO];
             value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
             if ([self.dataArray indexOfObject:value] != NSNotFound) {
-                [self.pickerView selectRow:[self.dataArray indexOfObject:value] inComponent:0 animated:NO];
+                NSInteger index = [self.dataArray indexOfObject:value];
+                [self.pickerView selectRow:index inComponent:0 animated:NO];
+                [self changeImage:index];
             }
         }else{
             [FYProgressHUD showMessageWithText:@"获取初始值失败"];
@@ -104,6 +108,24 @@
             }];
         }
     }];
+}
+
+- (void)changeImage:(NSInteger)index
+{
+    switch (index) {
+        case 0:{
+            self.imageView.image = [UIImage imageNamed:@"shuiwei_50"];
+        }
+            break;
+        case 1:{
+            self.imageView.image = [UIImage imageNamed:@"shuiwei_80"];
+        }
+            break;
+        default:{
+            self.imageView.image = [UIImage imageNamed:@"sxshow"];
+        }
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

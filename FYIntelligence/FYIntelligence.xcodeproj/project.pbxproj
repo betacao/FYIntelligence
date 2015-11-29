@@ -207,7 +207,6 @@
 		F9859D911BF211AC0049B5CA /* ESPDatumCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPDatumCode.m; sourceTree = "<group>"; };
 		F9859D921BF211AC0049B5CA /* ESPGuideCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPGuideCode.h; sourceTree = "<group>"; };
 		F9859D931BF211AC0049B5CA /* ESPGuideCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPGuideCode.m; sourceTree = "<group>"; };
-		F9859D941BF211AC0049B5CA /* ESPTouchDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPTouchDelegate.h; sourceTree = "<group>"; };
 		F9859D951BF211AC0049B5CA /* ESPTouchGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPTouchGenerator.h; sourceTree = "<group>"; };
 		F9859D961BF211AC0049B5CA /* ESPTouchGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPTouchGenerator.m; sourceTree = "<group>"; };
 		F9859D971BF211AC0049B5CA /* ESPTouchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPTouchResult.h; sourceTree = "<group>"; };
@@ -540,7 +539,6 @@
 				F9859D911BF211AC0049B5CA /* ESPDatumCode.m */,
 				F9859D921BF211AC0049B5CA /* ESPGuideCode.h */,
 				F9859D931BF211AC0049B5CA /* ESPGuideCode.m */,
-				F9859D941BF211AC0049B5CA /* ESPTouchDelegate.h */,
 				F9859D951BF211AC0049B5CA /* ESPTouchGenerator.h */,
 				F9859D961BF211AC0049B5CA /* ESPTouchGenerator.m */,
 				F9859D971BF211AC0049B5CA /* ESPTouchResult.h */,
