@@ -116,7 +116,7 @@
             NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
             [self.switch2 setOn: [isOn2 isEqualToString:@"01"] ? YES : NO];
 
-            NSString *value2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
+            NSString *value2 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range] stringByAppendingString:@"°C"];
             NSInteger index = [self.temArray indexOfObject:value2] != NSNotFound ? [self.temArray indexOfObject:value2] : 0;
             [self.temPickView selectRow:index inComponent:0 animated:NO];
 
