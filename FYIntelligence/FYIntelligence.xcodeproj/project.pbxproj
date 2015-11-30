@@ -938,7 +938,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FYIntelligence.FYIntelligence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "26dc2ac3-18f1-4ed9-9b6c-a701678957fc";
+				PROVISIONING_PROFILE = "690ae0fe-3269-4801-97b3-b26b209573f0";
 			};
 			name = Debug;
 		};
@@ -961,7 +961,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FYIntelligence.FYIntelligence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "26dc2ac3-18f1-4ed9-9b6c-a701678957fc";
+				PROVISIONING_PROFILE = "690ae0fe-3269-4801-97b3-b26b209573f0";
 			};
 			name = Release;
 		};
