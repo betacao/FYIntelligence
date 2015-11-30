@@ -79,6 +79,7 @@
     self.waterCircleButton.layer.cornerRadius = 2.0f;
     [self.waterCircleButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"8FBC8F"]]forState:UIControlStateNormal];
     [self.waterCircleButton setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]forState:UIControlStateHighlighted];
+    [self getInfo];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -101,7 +102,7 @@
 {
     [super viewDidAppear:animated];
     [self initUI];
-    [self getInfo];
+    [[FYUDPNetWork shareNetEngine] resumeMainData];
 }
 
 - (void)initUI
@@ -147,9 +148,9 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    self.leftView.image = [UIImage imageNamed:@"left"];
-    self.middleView.image = [UIImage imageNamed:@"middle_100"];
-    self.rightView.image = [UIImage imageNamed:@"right"];
+//    self.leftView.image = [UIImage imageNamed:@"left"];
+//    self.middleView.image = [UIImage imageNamed:@"middle_100"];
+//    self.rightView.image = [UIImage imageNamed:@"right"];
     [[FYUDPNetWork shareNetEngine] stopMainData];
 }
 
@@ -185,7 +186,7 @@
 {
     if (!_array2) {
         _array2 = @[[UIImage
-                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx1"], [UIImage imageNamed:@"wcxh_hx2"], [UIImage imageNamed:@"wcxh_hx3"]] duration:4.0f],
+                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx1"], [UIImage imageNamed:@"wcxh_hx2"], [UIImage imageNamed:@"wcxh_hx3"], [UIImage imageNamed:@"wcxh_hx4"], [UIImage imageNamed:@"wcxh_hx5"]] duration:4.0f],
                     [UIImage imageNamed:@"right"]];
     }
     return _array2;
@@ -194,7 +195,7 @@
 {
     if (!_array4) {
         _array4 = @[[UIImage imageNamed:@"left"],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"]] duration:4.0f]];
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"], [UIImage imageNamed:@"jiare_hx4"], [UIImage imageNamed:@"jiare_hx5"]] duration:4.0f]];
     }
     return _array4;
 }
@@ -202,7 +203,7 @@
 {
     if (!_array8) {
         _array8 = @[[UIImage
-                     animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"]] duration:4.0f],
+                     animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"], [UIImage imageNamed:@"ss_hx4"], [UIImage imageNamed:@"ss_hx5"], [UIImage imageNamed:@"ss_hx6"]] duration:4.0f],
                     [UIImage imageNamed:@"right"]];
     }
     return _array8;
@@ -211,7 +212,7 @@
 {
     if (!_array5) {
         _array5 = @[[UIImage imageNamed:@"left"],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hs0"], [UIImage imageNamed:@"jiare_hs1"], [UIImage imageNamed:@"jiare_hs2"], [UIImage imageNamed:@"jiare_hs3"]] duration:4.0f]];
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hs0"], [UIImage imageNamed:@"jiare_hs1"], [UIImage imageNamed:@"jiare_hs2"], [UIImage imageNamed:@"jiare_hs3"], [UIImage imageNamed:@"jiare_hs4"]] duration:4.0f]];
     }
     return _array5;
 }
@@ -219,7 +220,7 @@
 {
     if (!_array9) {
         _array9 = @[[UIImage
-                     animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"]] duration:4.0f],
+                     animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"], [UIImage imageNamed:@"ss_hx4"], [UIImage imageNamed:@"ss_hx5"], [UIImage imageNamed:@"ss_hx6"]] duration:4.0f],
                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx0"], [UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx2"], [UIImage imageNamed:@"gdhs_hx3"]] duration:4.0f]];
     }
     return _array9;
@@ -228,7 +229,7 @@
 {
     if (!_array3) {
         _array3 = @[[UIImage
-                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx1"], [UIImage imageNamed:@"wcxh_hx2"], [UIImage imageNamed:@"wcxh_hx3"]] duration:4.0f],
+                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx1"], [UIImage imageNamed:@"wcxh_hx2"], [UIImage imageNamed:@"wcxh_hx3"], [UIImage imageNamed:@"wcxh_hx4"], [UIImage imageNamed:@"wcxh_hx5"]] duration:4.0f],
                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"gdhs_hx0"], [UIImage imageNamed:@"gdhs_hx1"], [UIImage imageNamed:@"gdhs_hx2"], [UIImage imageNamed:@"gdhs_hx3"]] duration:4.0f]];
     }
     return _array3;
@@ -237,8 +238,8 @@
 {
     if (!_array6) {
         _array6 = @[[UIImage
-                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx1"], [UIImage imageNamed:@"wcxh_hx2"], [UIImage imageNamed:@"wcxh_hx3"]] duration:4.0f],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"]] duration:4.0f]];
+                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx1"], [UIImage imageNamed:@"wcxh_hx2"], [UIImage imageNamed:@"wcxh_hx3"], [UIImage imageNamed:@"wcxh_hx4"], [UIImage imageNamed:@"wcxh_hx5"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"], [UIImage imageNamed:@"jiare_hx4"], [UIImage imageNamed:@"jiare_hx5"]] duration:4.0f]];
     }
     return _array6;
 }
@@ -246,8 +247,8 @@
 {
     if (!_array12) {
         _array12 = @[[UIImage
-                      animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"]] duration:4.0f],
-                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"]] duration:4.0f]];
+                      animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"], [UIImage imageNamed:@"ss_hx4"], [UIImage imageNamed:@"ss_hx5"], [UIImage imageNamed:@"ss_hx6"]] duration:4.0f],
+                    [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hx0"], [UIImage imageNamed:@"jiare_hx1"], [UIImage imageNamed:@"jiare_hx2"], [UIImage imageNamed:@"jiare_hx3"], [UIImage imageNamed:@"jiare_hx4"], [UIImage imageNamed:@"jiare_hx5"]] duration:4.0f]];
     }
     return _array12;
 }
@@ -255,8 +256,8 @@
 {
     if (!_array13) {
         _array13 = @[[UIImage
-                      animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"]] duration:4.0f],
-                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hs0"], [UIImage imageNamed:@"jiare_hs1"], [UIImage imageNamed:@"jiare_hs2"], [UIImage imageNamed:@"jiare_hs3"]] duration:4.0f]];
+                      animatedImageWithImages:@[[UIImage imageNamed:@"ss_hx0"], [UIImage imageNamed:@"ss_hx1"], [UIImage imageNamed:@"ss_hx2"], [UIImage imageNamed:@"ss_hx3"], [UIImage imageNamed:@"ss_hx4"], [UIImage imageNamed:@"ss_hx5"], [UIImage imageNamed:@"ss_hx6"]] duration:4.0f],
+                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hs0"], [UIImage imageNamed:@"jiare_hs1"], [UIImage imageNamed:@"jiare_hs2"], [UIImage imageNamed:@"jiare_hs3"], [UIImage imageNamed:@"jiare_hs4"]] duration:4.0f]];
     }
     return _array13;
 }
@@ -264,15 +265,15 @@
 {
     if (!_array7) {
         _array7 = @[[UIImage
-                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx1"], [UIImage imageNamed:@"wcxh_hx2"], [UIImage imageNamed:@"wcxh_hx3"]] duration:4.0f],
-                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hs0"], [UIImage imageNamed:@"jiare_hs1"], [UIImage imageNamed:@"jiare_hs2"], [UIImage imageNamed:@"jiare_hs3"]] duration:4.0f]];
+                     animatedImageWithImages:@[[UIImage imageNamed:@"wcxh_hx0"], [UIImage imageNamed:@"wcxh_hx1"], [UIImage imageNamed:@"wcxh_hx2"], [UIImage imageNamed:@"wcxh_hx3"], [UIImage imageNamed:@"wcxh_hx4"], [UIImage imageNamed:@"wcxh_hx5"]] duration:4.0f],
+                     [UIImage animatedImageWithImages:@[[UIImage imageNamed:@"jiare_hs0"], [UIImage imageNamed:@"jiare_hs1"], [UIImage imageNamed:@"jiare_hs2"], [UIImage imageNamed:@"jiare_hs3"], [UIImage imageNamed:@"jiare_hs4"]] duration:4.0f]];
     }
     return _array7;
 }
 
 - (void)getInfo
 {
-    [[FYUDPNetWork shareNetEngine] requestMainData:^(BOOL finish, NSString *responseString) {
+    [[FYUDPNetWork shareNetEngine] startRequestMainData:^(BOOL finish, NSString *responseString) {
         if(finish){
             NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
             NSMutableArray *results = [NSMutableArray array];
@@ -462,12 +463,11 @@
 {
     //手动上水
     [[FYUDPNetWork shareNetEngine] stopMainData];
-    __weak typeof(self)weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
     NSString *state = (self.controlId&0x08) == 0 ? @"1" :@"0";
     NSString *request = [NSString stringWithFormat:kMainNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_sdss",state];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        [weakSelf getInfo];
+        [[FYUDPNetWork shareNetEngine] resumeMainData];
         if(finish){
 
         } else{
@@ -485,12 +485,11 @@
 {
     //手动加热
     [[FYUDPNetWork shareNetEngine] stopMainData];
-    __weak typeof(self)weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
     NSString *state = (self.controlId&0x04) == 0 ? @"1" :@"0";
     NSString *request = [NSString stringWithFormat:kMainNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_sdjr",state];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        [weakSelf getInfo];
+        [[FYUDPNetWork shareNetEngine] resumeMainData];
         if(finish){
 
         } else{
@@ -506,14 +505,13 @@
 {
     //温差循环
     [[FYUDPNetWork shareNetEngine] stopMainData];
-    __weak typeof(self)weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
 
     NSString *state = (self.controlId&0x02) == 0 ? @"1" :@"0";
     NSString *request = [NSString stringWithFormat:kMainNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_wcxh",state];
 
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        [weakSelf getInfo];
+        [[FYUDPNetWork shareNetEngine] resumeMainData];
         if(finish){
 
         } else{
@@ -529,13 +527,12 @@
 {
     //管道回水
     [[FYUDPNetWork shareNetEngine] stopMainData];
-    __weak typeof(self)weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
 
     NSString *state = (self.controlId&0x01) == 0 ? @"1" :@"0";
     NSString *request = [NSString stringWithFormat:kMainNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_gdhs",state];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        [weakSelf getInfo];
+        [[FYUDPNetWork shareNetEngine] resumeMainData];
         if(finish){
 
         } else{

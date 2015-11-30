@@ -14,10 +14,10 @@
 @property (strong, nonatomic) GCDAsyncUdpSocket *sendUdpSocket;
 @property (copy, nonatomic) FYUDPNetWorkFinishBlock finishBlock;
 @property (copy, nonatomic) FYUDPNetWorkFinishBlock mainBlock;
-@property (assign, nonatomic) NSInteger mainNumber;
-@property (assign, nonatomic) BOOL normalNeedSend;
-@property (assign, nonatomic) BOOL mainNeedSend;
-@property (assign, nonatomic) BOOL requestMainData;
+@property (copy, nonatomic) FYUDPNetWorkFinishBlock tempBlock;
+@property (assign, nonatomic) BOOL mainSwitch;
+@property (assign, nonatomic) BOOL mainState;
+@property (assign, nonatomic) BOOL normalState;
 
 @end
 
@@ -49,7 +49,6 @@
         NSLog(@"Error starting server (recv): %@", error);
         return;
     }
-    self.mainNumber = -1;
     NSLog(@"Ready");
 }
 
@@ -59,16 +58,27 @@
     [self createClientUdpSocket];
 }
 
-- (void)requestMainData:(void (^)(BOOL, NSString *))block
+- (void)startRequestMainData:(void (^)(BOOL, NSString *))block
 {
-    self.requestMainData = YES;
+    self.mainSwitch = YES;
     [self mainSendMessage];
     self.mainBlock = block;
 }
 
+- (void)resumeMainData
+{
+    if (!self.mainSwitch) {
+        self.mainSwitch = YES;
+        self.mainBlock = self.tempBlock;
+        self.tempBlock = nil;
+    }
+}
+
 - (void)stopMainData
 {
-    self.requestMainData = NO;
+    self.mainSwitch = NO;
+    self.tempBlock = self.mainBlock;
+    self.mainBlock = nil;
 }
 
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext
@@ -103,28 +113,25 @@
     }
     if ([responeString rangeOfString:@"ERROR"].location == NSNotFound && responeString.length > 0) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (weakSelf.mainNumber == globleNumber) {
-                weakSelf.mainNeedSend = NO;
-                if (weakSelf.mainBlock) {
-                    weakSelf.mainBlock(YES, responeString);
-                }
+            if (weakSelf.mainBlock) {
+                weakSelf.mainState = NO;
+                weakSelf.mainBlock(YES, responeString);
             } else{
-                weakSelf.normalNeedSend = NO;
                 if (weakSelf.finishBlock) {
+                    weakSelf.normalState = NO;
                     weakSelf.finishBlock(YES, responeString);
                 }
             }
         });
     } else{
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (weakSelf.mainNumber == globleNumber) {
-                weakSelf.mainNeedSend = NO;
-                if (weakSelf.mainBlock) {
-                    weakSelf.mainBlock(NO, @"");
-                }
+
+            if (weakSelf.mainBlock) {
+                weakSelf.mainState = NO;
+                weakSelf.mainBlock(NO, @"");
             } else{
                 if (weakSelf.finishBlock) {
-                    weakSelf.normalNeedSend = NO;
+                    weakSelf.normalState = NO;
                     weakSelf.finishBlock(NO, @"");
                 }
             }
@@ -143,7 +150,6 @@
     NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
     self.finishBlock = block;
     [FYProgressHUD showLoadingWithMessage:@"请稍等..."];
-    self.normalNeedSend = YES;
     [self fireSendMessage:data];
 
 }
@@ -153,11 +159,12 @@
     // 发送消息 这里不需要知道对象的ip地址和端口
     NSString *host = kHostAddress;
     uint16_t port = kUDPHostPort;
+    self.normalState = YES;
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSInteger i = 0;
         while (i < 20) {
-            if (!weakSelf.normalNeedSend) {
+            if (!weakSelf.normalState) {
                 break;
             }
             i++;
@@ -180,36 +187,33 @@
 
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSInteger i = 0;
-        while (i < NSNotFound) {
-            i++;
-            if (!self.requestMainData) {
-                break;
+        while (1) {
+            if (weakSelf.mainSwitch) {
+                [weakSelf sendMessage:kAppDelegate.globleNumber];
+                kAppDelegate.globleNumber++;
+                sleep(25);
+            } else{
+                sleep(3);
             }
-            NSLog(@"send main data %ld",(long)i);
-            [weakSelf sendMessage];
-            kAppDelegate.globleNumber++;
-            sleep(25);
         }
     });
     
 }
 
-- (void)sendMessage
+- (void)sendMessage:(NSInteger)number
 {
-    self.mainNumber = kAppDelegate.globleNumber;
-    self.mainNeedSend = YES;
+    self.mainState = YES;
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         NSInteger time = 0;
-        while (weakSelf.mainNeedSend == YES && time < 20 && weakSelf.requestMainData) {
+        while (time < 20 && weakSelf.mainSwitch && weakSelf.mainState) {
             time++;
-            NSLog(@"detail %ld",(long)weakSelf.mainNumber);
-            NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,@(weakSelf.mainNumber),kMainViewCmd];
+            NSLog(@"detail %ld",(long)number);
+            NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,@(number),kMainViewCmd];
             NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
             NSString *host = kHostAddress;
             uint16_t port = kUDPHostPort;
-            [weakSelf.sendUdpSocket sendData:data toHost:host port:port withTimeout:-1 tag:weakSelf.mainNumber];
+            [weakSelf.sendUdpSocket sendData:data toHost:host port:port withTimeout:-1 tag:number];
             sleep(1);
         }
     });
