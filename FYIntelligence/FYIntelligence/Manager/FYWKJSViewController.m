@@ -22,10 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.positionArray = @[@"50", @"55", @"60", @"65", @"70", @"75", @"80"];
-    self.temArray = @[@"06", @"07", @"08", @"09", @"10", @"11", @"12", @"13", @"14", @"15"];
     self.title = @"温控进水";
+    self.positionArray = @[@"50", @"55", @"60", @"65", @"70", @"75", @"80"];
+    self.temArray = @[@"00", @"06", @"07", @"08", @"09", @"10", @"11", @"12", @"13", @"14", @"15"];
     self.firstValue = [self.positionArray firstObject];
     self.secondValue = [self.temArray firstObject];
     [self getInfo];
