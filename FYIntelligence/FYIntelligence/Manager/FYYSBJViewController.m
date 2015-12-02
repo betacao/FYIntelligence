@@ -124,8 +124,6 @@
 
             NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
             [self.switch3 setOn: [isOn3 isEqualToString:@"01"] ? YES : NO];
-        }else{
-            [FYProgressHUD showMessageWithText:@"获取初始值失败"];
         }
     }];
 }

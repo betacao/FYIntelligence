@@ -96,8 +96,6 @@
         [FYProgressHUD hideHud];
         if (finish) {
             [FYProgressHUD showMessageWithText:@"设置成功"];
-        } else{
-            [FYProgressHUD showMessageWithText:@"设置失败"];
         }
     }];
 }

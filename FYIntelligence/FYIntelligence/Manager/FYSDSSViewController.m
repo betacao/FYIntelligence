@@ -103,8 +103,6 @@
                 [self changeImage:index];
                 self.selectedValue = value;
             }
-        } else{
-            [FYProgressHUD showMessageWithText:@"获取初始值失败"];
         }
     }];
 }

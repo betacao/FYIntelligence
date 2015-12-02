@@ -130,8 +130,6 @@
 
             NSString *tem3 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:17]).range] stringByAppendingString:@"°C"];
             [self.positionButton3 setTitle:tem3 forState:UIControlStateNormal];
-        } else{
-            [FYProgressHUD showMessageWithText:@"获取初始值失败"];
         }
     }];
 }

@@ -132,8 +132,6 @@
             if ([self.protectArray indexOfObject:[value3 stringByAppendingString:@"°C"]] != NSNotFound) {
                 [self.protectPickView selectRow:[self.protectArray indexOfObject:[value3 stringByAppendingString:@"°C"]] inComponent:0 animated:NO];
             }
-        }else{
-            [FYProgressHUD showMessageWithText:@"获取初始值失败"];
         }
     }];
 }

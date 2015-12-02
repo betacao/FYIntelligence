@@ -89,8 +89,6 @@
                 [self.pickerView selectRow:index inComponent:0 animated:NO];
                 [self changeImage:index];
             }
-        }else{
-            [FYProgressHUD showMessageWithText:@"获取初始值失败"];
         }
     }];
 }

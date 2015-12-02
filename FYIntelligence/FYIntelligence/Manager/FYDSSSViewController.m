@@ -113,8 +113,6 @@
             [self.timeButton3 setTitle:[NSString stringWithFormat:@"%@:%@",hour3, minute3] forState:UIControlStateNormal];
             NSString *tem3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:11]).range];
             [self.positionButton3 setTitle:tem3 forState:UIControlStateNormal];
-        }else{
-            [FYProgressHUD showMessageWithText:@"获取初始值失败"];
         }
     }];
 }

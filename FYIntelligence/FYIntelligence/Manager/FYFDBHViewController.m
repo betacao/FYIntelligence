@@ -107,8 +107,6 @@
                 [self.temPickView selectRow:[self.temArray indexOfObject:value2] inComponent:0 animated:NO];
                 self.endValue = value2;
             }
-        }else{
-            [FYProgressHUD showMessageWithText:@"获取初始值失败"];
         }
     }];
 }

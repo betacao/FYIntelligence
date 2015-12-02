@@ -132,6 +132,7 @@
             } else{
                 if (weakSelf.finishBlock) {
                     weakSelf.normalState = NO;
+                    [FYProgressHUD showMessageWithText:@"请求出错，请重试"];
                     weakSelf.finishBlock(NO, @"");
                 }
             }
@@ -176,6 +177,7 @@
         if (i >= 20 && self.finishBlock) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [FYProgressHUD hideHud];
+                [FYProgressHUD showMessageWithText:@"请求超时，请重试"];
                 weakSelf.finishBlock(NO, @"");
             });
         }

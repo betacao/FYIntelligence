@@ -108,8 +108,6 @@
                 self.secondValue = value2;
             }
 
-        }else{
-            [FYProgressHUD showMessageWithText:@"获取初始值失败"];
         }
     }];
 }
