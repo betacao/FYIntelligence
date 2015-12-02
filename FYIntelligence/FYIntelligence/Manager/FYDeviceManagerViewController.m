@@ -148,10 +148,8 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-//    self.leftView.image = [UIImage imageNamed:@"left"];
-//    self.middleView.image = [UIImage imageNamed:@"middle_100"];
-//    self.rightView.image = [UIImage imageNamed:@"right"];
     [[FYUDPNetWork shareNetEngine] stopMainData];
+    [FYProgressHUD hideHud];
 }
 
 - (void)backButtonClick:(UIButton *)button
@@ -273,44 +271,49 @@
 
 - (void)getInfo
 {
+    __weak typeof(self) weakSelf = self;
     [[FYUDPNetWork shareNetEngine] startRequestMainData:^(BOOL finish, NSString *responseString) {
         if(finish){
-            NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
-            NSMutableArray *results = [NSMutableArray array];
-            [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
-                [results addObject:result];
-            }];
-            NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
-                if (obj1.range.location > obj2.range.location) {
-                    return (NSComparisonResult)NSOrderedDescending;
-                } else if (obj1.range.location < obj2.range.location) {
-                    return (NSComparisonResult)NSOrderedAscending;
-                }
-                return (NSComparisonResult)NSOrderedSame;
-            };
-            NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
-            NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
-            if ([value isEqualToString:@"111"]) {
-                value = @"未连接";
-            } else if ([value isEqualToString:@"112"]){
-                value = @"短路";
-            } else{
-                value = [value stringByAppendingString:@"°C"];
-            }
-            [self.firstButton setTitle:value forState:UIControlStateNormal];
-            value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range] stringByAppendingString:@"°C"];
-            [self.secondButton setTitle:value forState:UIControlStateNormal];
-            value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range] stringByAppendingString:@"°C"];
-            [self.thirdButton setTitle:value forState:UIControlStateNormal];
-            value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range] stringByAppendingString:@"°C"];;
-            [self.fourthButton setTitle:value forState:UIControlStateNormal];
-
-            NSString *type = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
-            NSString *level = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range];
-            self.controlId = [type integerValue];
-            [self changeImage:type level:level];
+            [weakSelf AnalyticalData:responseString];
         }
     }];
+}
+- (void)AnalyticalData:(NSString *)responseString
+{
+    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
+    NSMutableArray *results = [NSMutableArray array];
+    [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+        [results addObject:result];
+    }];
+    NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
+        if (obj1.range.location > obj2.range.location) {
+            return (NSComparisonResult)NSOrderedDescending;
+        } else if (obj1.range.location < obj2.range.location) {
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    };
+    NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+    NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
+    if ([value isEqualToString:@"111"]) {
+        value = @"未连接";
+    } else if ([value isEqualToString:@"112"]){
+        value = @"短路";
+    } else{
+        value = [value stringByAppendingString:@"°C"];
+    }
+    [self.firstButton setTitle:value forState:UIControlStateNormal];
+    value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range] stringByAppendingString:@"°C"];
+    [self.secondButton setTitle:value forState:UIControlStateNormal];
+    value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range] stringByAppendingString:@"°C"];
+    [self.thirdButton setTitle:value forState:UIControlStateNormal];
+    value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range] stringByAppendingString:@"°C"];;
+    [self.fourthButton setTitle:value forState:UIControlStateNormal];
+
+    NSString *type = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+    NSString *level = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range];
+    self.controlId = [type integerValue];
+    [self changeImage:type level:level];
 }
 
 - (UIImage *)normalChangeMiddleAnimation:(NSString *)level
@@ -463,13 +466,14 @@
 {
     //手动上水
     [[FYUDPNetWork shareNetEngine] stopMainData];
+    __weak typeof(self) weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
     NSString *state = (self.controlId&0x08) == 0 ? @"1" :@"0";
     NSString *request = [NSString stringWithFormat:kMainNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_sdss",state];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         [[FYUDPNetWork shareNetEngine] resumeMainData];
         if(finish){
-
+            [weakSelf AnalyticalData:responseString];
         } else{
             NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,kAppDelegate.deviceID,kAppDelegate.userName];
             [[FYTCPNetWork shareNetEngine] sendRequest:requset complete:^(NSDictionary *dic) {
@@ -485,13 +489,14 @@
 {
     //手动加热
     [[FYUDPNetWork shareNetEngine] stopMainData];
+    __weak typeof(self) weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
     NSString *state = (self.controlId&0x04) == 0 ? @"1" :@"0";
     NSString *request = [NSString stringWithFormat:kMainNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_sdjr",state];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         [[FYUDPNetWork shareNetEngine] resumeMainData];
         if(finish){
-
+            [weakSelf AnalyticalData:responseString];
         } else{
             NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,kAppDelegate.deviceID,kAppDelegate.userName];
             [[FYTCPNetWork shareNetEngine] sendRequest:requset complete:^(NSDictionary *dic) {
@@ -505,6 +510,7 @@
 {
     //温差循环
     [[FYUDPNetWork shareNetEngine] stopMainData];
+    __weak typeof(self) weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
 
     NSString *state = (self.controlId&0x02) == 0 ? @"1" :@"0";
@@ -513,6 +519,7 @@
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         [[FYUDPNetWork shareNetEngine] resumeMainData];
         if(finish){
+            [weakSelf AnalyticalData:responseString];
 
         } else{
             NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,kAppDelegate.deviceID,kAppDelegate.userName];
@@ -527,6 +534,7 @@
 {
     //管道回水
     [[FYUDPNetWork shareNetEngine] stopMainData];
+    __weak typeof(self) weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
 
     NSString *state = (self.controlId&0x01) == 0 ? @"1" :@"0";
@@ -534,7 +542,7 @@
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         [[FYUDPNetWork shareNetEngine] resumeMainData];
         if(finish){
-
+            [weakSelf AnalyticalData:responseString];
         } else{
             NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,kAppDelegate.deviceID,kAppDelegate.userName];
             [[FYTCPNetWork shareNetEngine] sendRequest:requset complete:^(NSDictionary *dic) {

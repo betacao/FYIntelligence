@@ -36,8 +36,8 @@
 
 - (void)createClientUdpSocket
 {
-//    dispatch_queue_t dQueue = dispatch_queue_create("client udp socket", NULL);
-    self.sendUdpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+    dispatch_queue_t dQueue = dispatch_queue_create("client udp socket", NULL);
+    self.sendUdpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dQueue];
     uint16_t port = kUDPHostPort;
     NSError *error = nil;
     if (![self.sendUdpSocket bindToPort:port error:&error]){
