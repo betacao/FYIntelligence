@@ -101,9 +101,11 @@
             NSString *value2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
             if ([self.positionArray indexOfObject:value1] != NSNotFound) {
                 [self.postionPickView selectRow:[self.positionArray indexOfObject:value1] inComponent:0 animated:NO];
+                self.firstValue = value1;
             }
             if ([self.temArray indexOfObject:value2] != NSNotFound) {
                 [self.temPickView selectRow:[self.temArray indexOfObject:value2] inComponent:0 animated:NO];
+                self.secondValue = value2;
             }
 
         }else{

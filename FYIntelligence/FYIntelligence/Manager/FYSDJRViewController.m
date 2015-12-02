@@ -80,6 +80,7 @@
             NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
             if ([self.dataArray indexOfObject:value] != NSNotFound) {
                 [self.pickerView selectRow:[self.dataArray indexOfObject:value] inComponent:0 animated:NO];
+                self.selectedValue = value;
             }
         }else{
             [FYProgressHUD showMessageWithText:@"获取初始值失败"];

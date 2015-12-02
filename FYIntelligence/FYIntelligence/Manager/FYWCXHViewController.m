@@ -30,9 +30,9 @@
     self.endArray = @[@"02°C", @"03°C", @"04°C", @"05°C"];
     self.protectArray = @[@"50°C", @"55°C", @"60°C", @"65°C", @"70°C", @"75°C", @"80°C", @"85°C", @"90°C"];
     self.title = @"集热器温差循环";
-    self.firstValue = [self.startArray firstObject];
-    self.secondValue = [self.endArray firstObject];
-    self.thirdValue = [self.protectArray firstObject];
+    self.firstValue = [[self.startArray firstObject] substringToIndex:2];
+    self.secondValue = [[self.endArray firstObject] substringToIndex:2];
+    self.thirdValue = [[self.protectArray firstObject] substringToIndex:2];
     [self getInfo];
 }
 
@@ -117,17 +117,20 @@
             };
             NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
 
-            NSString *value1 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range] stringByAppendingString:@"°C"];
-            NSString *value2 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range] stringByAppendingString:@"°C"];
-            NSString *value3 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range] stringByAppendingString:@"°C"];
-            if ([self.startArray indexOfObject:value1] != NSNotFound) {
-                [self.startPickView selectRow:[self.startArray indexOfObject:value1] inComponent:0 animated:NO];
+            NSString *value1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+            self.firstValue = value1;
+            NSString *value2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
+            self.secondValue = value2;
+            NSString *value3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+            self.thirdValue = value3;
+            if ([self.startArray indexOfObject:[value1 stringByAppendingString:@"°C"]] != NSNotFound) {
+                [self.startPickView selectRow:[self.startArray indexOfObject:[value1 stringByAppendingString:@"°C"]] inComponent:0 animated:NO];
             }
-            if ([self.endArray indexOfObject:value2] != NSNotFound) {
-                [self.endPickView selectRow:[self.endArray indexOfObject:value2] inComponent:0 animated:NO];
+            if ([self.endArray indexOfObject:[value2 stringByAppendingString:@"°C"]] != NSNotFound) {
+                [self.endPickView selectRow:[self.endArray indexOfObject:[value2 stringByAppendingString:@"°C"]] inComponent:0 animated:NO];
             }
-            if ([self.protectArray indexOfObject:value3] != NSNotFound) {
-                [self.protectPickView selectRow:[self.protectArray indexOfObject:value3] inComponent:0 animated:NO];
+            if ([self.protectArray indexOfObject:[value3 stringByAppendingString:@"°C"]] != NSNotFound) {
+                [self.protectPickView selectRow:[self.protectArray indexOfObject:[value3 stringByAppendingString:@"°C"]] inComponent:0 animated:NO];
             }
         }else{
             [FYProgressHUD showMessageWithText:@"获取初始值失败"];

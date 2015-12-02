@@ -111,6 +111,7 @@
             NSString *value1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
             if ([self.positionArray indexOfObject:value1] != NSNotFound) {
                 [self.postionPickView selectRow:[self.positionArray indexOfObject:value1] inComponent:0 animated:NO];
+                self.firstValue = value1;
             }
 
             NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
@@ -119,6 +120,7 @@
             NSString *value2 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range] stringByAppendingString:@"°C"];
             NSInteger index = [self.temArray indexOfObject:value2] != NSNotFound ? [self.temArray indexOfObject:value2] : 0;
             [self.temPickView selectRow:index inComponent:0 animated:NO];
+            self.secondValue = [value2 substringToIndex:2];
 
             NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
             [self.switch3 setOn: [isOn3 isEqualToString:@"01"] ? YES : NO];

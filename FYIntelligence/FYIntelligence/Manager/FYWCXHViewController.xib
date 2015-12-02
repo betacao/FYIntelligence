@@ -86,11 +86,11 @@
                             </connections>
                         </pickerView>
                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cb8-5b-FQa">
-                            <rect key="frame" x="130" y="45" width="60" height="100"/>
+                            <rect key="frame" x="127.5" y="45" width="65" height="100"/>
                             <animations/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="cb8-5b-FQa" secondAttribute="height" multiplier="3:5" id="IJ8-12-u50"/>
-                                <constraint firstAttribute="width" constant="60" id="ce8-uV-Stn"/>
+                                <constraint firstAttribute="width" secondItem="cb8-5b-FQa" secondAttribute="height" multiplier="13:20" id="S2Y-PL-VlH"/>
+                                <constraint firstAttribute="width" constant="65" id="ce8-uV-Stn"/>
                             </constraints>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="58r-1T-wix"/>

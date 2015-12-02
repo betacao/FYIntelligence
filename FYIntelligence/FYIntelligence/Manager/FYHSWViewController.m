@@ -85,6 +85,7 @@
             value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
             if ([self.dataArray indexOfObject:value] != NSNotFound) {
                 NSInteger index = [self.dataArray indexOfObject:value];
+                self.selectedValue = value;
                 [self.pickerView selectRow:index inComponent:0 animated:NO];
                 [self changeImage:index];
             }
