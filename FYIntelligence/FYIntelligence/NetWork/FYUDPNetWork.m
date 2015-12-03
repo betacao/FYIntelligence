@@ -151,7 +151,7 @@
     NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
     self.finishBlock = block;
     [FYProgressHUD showLoadingWithMessage:@"请稍等..."];
-    [self fireSendMessage:data];
+    [self performSelector:@selector(fireSendMessage:) withObject:data afterDelay:0.6f];
 
 }
 
@@ -172,7 +172,7 @@
             [weakSelf.sendUdpSocket sendData:sendMessage toHost:host port:port withTimeout:-1 tag:kAppDelegate.globleNumber];
             kAppDelegate.globleNumber++;
             NSLog(@"执行次数%ld",(long)i);
-            sleep(1);
+            [NSThread sleepForTimeInterval:0.5f];
         }
         if (i >= 20 && self.finishBlock) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -193,9 +193,9 @@
             if (weakSelf.mainSwitch) {
                 [weakSelf sendMessage:kAppDelegate.globleNumber];
                 kAppDelegate.globleNumber++;
-                sleep(25);
+                [NSThread sleepForTimeInterval:25.0f];
             } else{
-                sleep(3);
+                [NSThread sleepForTimeInterval:3.0f];
             }
         }
     });
@@ -216,7 +216,7 @@
             NSString *host = kHostAddress;
             uint16_t port = kUDPHostPort;
             [weakSelf.sendUdpSocket sendData:data toHost:host port:port withTimeout:-1 tag:number];
-            sleep(1);
+            [NSThread sleepForTimeInterval:0.5f];
         }
     });
 }

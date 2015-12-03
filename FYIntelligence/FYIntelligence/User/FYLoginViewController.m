@@ -69,6 +69,13 @@
     [super viewDidAppear:animated];
 }
 
+- (void)backButtonClick:(UIButton *)button
+{
+    [self dismissViewControllerAnimated:NO completion:^{
+        exit(0);
+    }];
+}
+
 - (IBAction)clickRememberButton:(UIButton *)sender {
     kAppDelegate.isRemember = !kAppDelegate.isRemember;
     if(kAppDelegate.isRemember){
