@@ -101,7 +101,6 @@
 		F9DEF7BF1BC7F5CC00520CAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9DEF7BE1BC7F5CC00520CAA /* Images.xcassets */; };
 		F9DEF7C21BC7F5CC00520CAA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DEF7C01BC7F5CC00520CAA /* LaunchScreen.xib */; };
 		F9DEF7CE1BC7F5CC00520CAA /* FYIntelligenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7CD1BC7F5CC00520CAA /* FYIntelligenceTests.m */; };
-		F9F299271C11279000FF4D14 /* FYUDPNetWorks.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F299261C11279000FF4D14 /* FYUDPNetWorks.m */; };
 		F9F90D061BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F90D041BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m */; };
 		F9F90D071BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F90D051BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib */; };
 /* End PBXBuildFile section */
@@ -274,8 +273,6 @@
 		F9DEF7C71BC7F5CC00520CAA /* FYIntelligenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FYIntelligenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DEF7CC1BC7F5CC00520CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9DEF7CD1BC7F5CC00520CAA /* FYIntelligenceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYIntelligenceTests.m; sourceTree = "<group>"; };
-		F9F299251C11279000FF4D14 /* FYUDPNetWorks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYUDPNetWorks.h; sourceTree = "<group>"; };
-		F9F299261C11279000FF4D14 /* FYUDPNetWorks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYUDPNetWorks.m; sourceTree = "<group>"; };
 		F9F90D031BCBA5DC0036F9B7 /* FYDeviceManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDeviceManagerViewController.h; sourceTree = "<group>"; };
 		F9F90D041BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYDeviceManagerViewController.m; sourceTree = "<group>"; };
 		F9F90D051BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYDeviceManagerViewController.xib; sourceTree = "<group>"; };
@@ -435,8 +432,6 @@
 				F9B0636D1BD7A41A00471DF4 /* FYUDPNetWork.m */,
 				F9CEB4871BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.h */,
 				F9CEB4881BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.m */,
-				F9F299251C11279000FF4D14 /* FYUDPNetWorks.h */,
-				F9F299261C11279000FF4D14 /* FYUDPNetWorks.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -797,7 +792,6 @@
 				F9DE29101BD5E2BF0009F667 /* FYProgressHUD.m in Sources */,
 				F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */,
 				F93F98301BCE7C2800FD46A8 /* FYDatePickerView.m in Sources */,
-				F9F299271C11279000FF4D14 /* FYUDPNetWorks.m in Sources */,
 				F96E2F941BCE284600B6AF4B /* UIImage+FYImage.m in Sources */,
 				F98351731BCA333000809E14 /* FYAddDeviceViewController.m in Sources */,
 				F973409D1BCFE8B2006D1740 /* FYHWJRViewController.m in Sources */,

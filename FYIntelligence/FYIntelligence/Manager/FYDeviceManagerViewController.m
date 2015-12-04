@@ -303,11 +303,32 @@
         value = [value stringByAppendingString:@"°C"];
     }
     [self.firstButton setTitle:value forState:UIControlStateNormal];
-    value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range] stringByAppendingString:@"°C"];
+    value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+    if ([value isEqualToString:@"111"]) {
+        value = @"未连接";
+    } else if ([value isEqualToString:@"112"]){
+        value = @"短路";
+    } else{
+        value = [value stringByAppendingString:@"°C"];
+    }
     [self.secondButton setTitle:value forState:UIControlStateNormal];
-    value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range] stringByAppendingString:@"°C"];
+    value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
+    if ([value isEqualToString:@"111"]) {
+        value = @"未连接";
+    } else if ([value isEqualToString:@"112"]){
+        value = @"短路";
+    } else{
+        value = [value stringByAppendingString:@"°C"];
+    }
     [self.thirdButton setTitle:value forState:UIControlStateNormal];
-    value = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range] stringByAppendingString:@"°C"];;
+    value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
+    if ([value isEqualToString:@"111"]) {
+        value = @"未连接";
+    } else if ([value isEqualToString:@"112"]){
+        value = @"短路";
+    } else{
+        value = [value stringByAppendingString:@"°C"];
+    }
     [self.fourthButton setTitle:value forState:UIControlStateNormal];
 
     NSString *type = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
@@ -328,6 +349,8 @@
     } else if ([level isEqualToString:@"80"]){
         image = [UIImage imageNamed:@"middle_80"];
     } else if ([level isEqualToString:@"100"]){
+        image = [UIImage imageNamed:@"middle_100"];
+    } else{
         image = [UIImage imageNamed:@"middle_100"];
     }
     return image;
