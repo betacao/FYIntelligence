@@ -81,6 +81,26 @@
     self.mainBlock = nil;
 }
 
+static dispatch_queue_t udp_send_queue() {
+    static dispatch_queue_t af_udp_send_queue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        af_udp_send_queue = dispatch_queue_create("af_udp_send_queue", DISPATCH_QUEUE_SERIAL);
+    });
+
+    return af_udp_send_queue;
+}
+
+static dispatch_queue_t udp_main_send_queue() {
+    static dispatch_queue_t af_main_udp_send_queue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        af_main_udp_send_queue = dispatch_queue_create("af_main_udp_send_queue", DISPATCH_QUEUE_CONCURRENT);
+    });
+
+    return af_main_udp_send_queue;
+}
+
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext
 {
     [FYProgressHUD hideHud];
@@ -151,7 +171,7 @@
     NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
     self.finishBlock = block;
     [FYProgressHUD showLoadingWithMessage:@"请稍等..."];
-    [self performSelector:@selector(fireSendMessage:) withObject:data afterDelay:0.6f];
+    [self performSelector:@selector(fireSendMessage:) withObject:data afterDelay:0.8f];
 
 }
 
@@ -162,7 +182,7 @@
     uint16_t port = kUDPHostPort;
     self.normalState = YES;
     __weak typeof(self) weakSelf = self;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(udp_send_queue(), ^{
         NSInteger i = 0;
         while (i < 20) {
             if (!weakSelf.normalState) {
@@ -186,16 +206,15 @@
 
 - (void)mainSendMessage
 {
-
     __weak typeof(self) weakSelf = self;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(udp_main_send_queue(), ^{
         while (1) {
             if (weakSelf.mainSwitch) {
                 [weakSelf sendMessage:kAppDelegate.globleNumber];
                 kAppDelegate.globleNumber++;
                 [NSThread sleepForTimeInterval:25.0f];
             } else{
-                [NSThread sleepForTimeInterval:3.0f];
+                [NSThread sleepForTimeInterval:0.5f];
             }
         }
     });
@@ -206,7 +225,7 @@
 {
     self.mainState = YES;
     __weak typeof(self) weakSelf = self;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+    dispatch_async(udp_main_send_queue(), ^{
         NSInteger time = 0;
         while (time < 20 && weakSelf.mainSwitch && weakSelf.mainState) {
             time++;

@@ -26,10 +26,10 @@
     [leftButton sizeToFit];
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
-    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight)];
-    bgImageView.image = [UIImage imageNamed:@"fyzn_bj"];
-    [self.view addSubview:bgImageView];
-    [self.view sendSubviewToBack:bgImageView];
+    self.bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight)];
+    self.bgImageView.image = [UIImage imageNamed:@"fyzn_bj"];
+    [self.view addSubview:self.bgImageView];
+    [self.view sendSubviewToBack:self.bgImageView];
 }
 
 - (void)backButtonClick:(UIButton *)button

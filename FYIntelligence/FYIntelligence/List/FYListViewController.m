@@ -13,6 +13,7 @@
 #import "FYConfigViewController.h"
 #import "FYDevice.h"
 #import "FYConfigViewController.h"
+#import "FYHeatCycleViewController.h"
 
 @interface FYListViewController ()<UITableViewDataSource,UITableViewDelegate, FYListDelegate, FYConfigDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -28,12 +29,22 @@
     self.deviceArray = [NSMutableArray array];
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *normalImage = [UIImage imageNamed:@"right_add"];
-    [rightButton setImage:normalImage forState:UIControlStateNormal];
+    UIImage *rightImage = [UIImage imageNamed:@"right_add"];
+    [rightButton setImage:rightImage forState:UIControlStateNormal];
     [rightButton addTarget:self action:@selector(gotoDeviceInitViewController) forControlEvents:UIControlEventTouchUpInside];
     [rightButton sizeToFit];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+
+
+    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *leftImage = [UIImage imageNamed:@"reload"];
+    [leftButton setImage:leftImage forState:UIControlStateNormal];
+    [leftButton addTarget:self action:@selector(leftButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [leftButton sizeToFit];
+
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
+
 
     [self.tableView setTableFooterView:[[UIView alloc] init]];
 }
@@ -73,7 +84,7 @@
             device.deviceID = [string substringWithRange:result.range];
 
             result = [MResult objectAtIndex:(i * 3 - 1)];
-            device.deviceTD = (FYDeviceType)[[string substringWithRange:result.range] integerValue];
+            device.deviceName = (FYDeviceType)[[string substringWithRange:result.range] integerValue];
 
             result = [MResult objectAtIndex:(i * 3)];
             device.deviceCondition = (FYDeviceCondition)[[string substringWithRange:result.range] integerValue];
@@ -89,6 +100,11 @@
 {
     FYDeviceInitViewController *controller = [[FYDeviceInitViewController alloc] initWithNibName:@"FYDeviceInitViewController" bundle:nil];
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)leftButtonClick:(UIButton *)button
+{
+    [self loadData];
 }
 
 #pragma mark tableViewDelegate
@@ -122,11 +138,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FYDeviceManagerViewController *controller = [[FYDeviceManagerViewController alloc] initWithNibName:@"FYDeviceManagerViewController" bundle:nil];
-    FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
     FYDevice *device = [self.deviceArray objectAtIndex:indexPath.row];
-    kAppDelegate.deviceID = device.deviceID;
-    [self presentViewController:nav animated:YES completion:nil];
+    if (device.deviceName == DeviceTypeSun) {
+        FYDeviceManagerViewController *controller = [[FYDeviceManagerViewController alloc] initWithNibName:@"FYDeviceManagerViewController" bundle:nil];
+        FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
+        kAppDelegate.deviceID = device.deviceID;
+        [self presentViewController:nav animated:YES completion:nil];
+    } else{
+        FYHeatCycleViewController *controller = [[FYHeatCycleViewController alloc] init];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
 }
 
 - (void)clickCongfigButton:(FYDevice *)device
@@ -165,7 +186,8 @@
     return UIInterfaceOrientationPortrait;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
 @end

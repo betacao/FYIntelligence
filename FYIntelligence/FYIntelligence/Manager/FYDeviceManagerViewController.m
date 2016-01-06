@@ -351,7 +351,7 @@
     } else if ([level isEqualToString:@"100"]){
         image = [UIImage imageNamed:@"middle_100"];
     } else{
-        image = [UIImage imageNamed:@"middle_100"];
+        image = [UIImage imageNamed:@"middle_err"];
     }
     return image;
 }
@@ -369,6 +369,8 @@
         image = [UIImage imageNamed:@"jiare_middle_80"];
     } else if ([level isEqualToString:@"100"]){
         image = [UIImage imageNamed:@"jiare_middle_100"];
+    } else{
+        image = [UIImage imageNamed:@"jiare_middle_err"];
     }
     return image;
 }

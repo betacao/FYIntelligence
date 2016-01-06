@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FYBaseViewController : UIViewController
+@property (strong, nonatomic) UIImageView *bgImageView;
 - (void)backButtonClick:(UIButton *)button;
 @end

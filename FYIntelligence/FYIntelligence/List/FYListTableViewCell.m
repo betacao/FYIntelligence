@@ -12,7 +12,7 @@
 @interface FYListTableViewCell()
 @property (strong, nonatomic) FYDevice *currentDevice;
 @property (weak, nonatomic) IBOutlet UILabel *deviceID;
-@property (weak, nonatomic) IBOutlet UILabel *deviceTD;
+@property (weak, nonatomic) IBOutlet UILabel *deviceName;
 @property (weak, nonatomic) IBOutlet UILabel *deviceState;
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet UIButton *controlButton;
@@ -39,12 +39,14 @@
 {
     self.currentDevice = device;
     self.deviceID.text = device.deviceID;
-    NSString *deviceTD = @"";
-    switch (device.deviceTD) {
+    NSString *deviceName = @"";
+    switch (device.deviceName) {
         case DeviceTypeSun:
-            deviceTD = @"太阳能";
+            deviceName = @"工程样机";
             break;
-
+        case DeviceTypeHot:
+            deviceName = @"热水循环系统";
+            break;
         default:
             break;
     }
@@ -58,7 +60,7 @@
             deviceCondition = @"在线";
             break;
     }
-    self.deviceTD.text = deviceTD;
+    self.deviceName.text = deviceName;
     self.deviceState.text = deviceCondition;
 }
 

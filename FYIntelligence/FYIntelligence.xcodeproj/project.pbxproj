@@ -103,6 +103,8 @@
 		F9DEF7CE1BC7F5CC00520CAA /* FYIntelligenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7CD1BC7F5CC00520CAA /* FYIntelligenceTests.m */; };
 		F9F90D061BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F90D041BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m */; };
 		F9F90D071BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F90D051BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib */; };
+		F9FFE01C1C3CF41000EB8779 /* FYHeatCycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FFE01A1C3CF41000EB8779 /* FYHeatCycleViewController.m */; };
+		F9FFE01D1C3CF41000EB8779 /* FYHeatCycleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9FFE01B1C3CF41000EB8779 /* FYHeatCycleViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -276,6 +278,9 @@
 		F9F90D031BCBA5DC0036F9B7 /* FYDeviceManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDeviceManagerViewController.h; sourceTree = "<group>"; };
 		F9F90D041BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYDeviceManagerViewController.m; sourceTree = "<group>"; };
 		F9F90D051BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYDeviceManagerViewController.xib; sourceTree = "<group>"; };
+		F9FFE0191C3CF41000EB8779 /* FYHeatCycleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHeatCycleViewController.h; sourceTree = "<group>"; };
+		F9FFE01A1C3CF41000EB8779 /* FYHeatCycleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHeatCycleViewController.m; sourceTree = "<group>"; };
+		F9FFE01B1C3CF41000EB8779 /* FYHeatCycleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYHeatCycleViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -473,6 +478,7 @@
 		F9DEF7B01BC7F5CC00520CAA /* FYIntelligence */ = {
 			isa = PBXGroup;
 			children = (
+				F9FFE0181C3CF3E900EB8779 /* HeatCycle */,
 				F9F0606B1BF1EE240006F266 /* ESP */,
 				F9B441C91BD4F323005148D1 /* NetWork */,
 				F9B441B71BD4F2DA005148D1 /* SocketKit */,
@@ -606,6 +612,16 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		F9FFE0181C3CF3E900EB8779 /* HeatCycle */ = {
+			isa = PBXGroup;
+			children = (
+				F9FFE0191C3CF41000EB8779 /* FYHeatCycleViewController.h */,
+				F9FFE01A1C3CF41000EB8779 /* FYHeatCycleViewController.m */,
+				F9FFE01B1C3CF41000EB8779 /* FYHeatCycleViewController.xib */,
+			);
+			path = HeatCycle;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -708,6 +724,7 @@
 				F99463AE1BD6822E008B9F54 /* FYAboutViewController.xib in Resources */,
 				F95113C01BCD45D60058C7B2 /* FYParamSettingViewController.xib in Resources */,
 				F98351741BCA333000809E14 /* FYAddDeviceViewController.xib in Resources */,
+				F9FFE01D1C3CF41000EB8779 /* FYHeatCycleViewController.xib in Resources */,
 				F98351651BCA26E400809E14 /* FYListViewController.xib in Resources */,
 				F983516A1BCA270A00809E14 /* FYListTableViewCell.xib in Resources */,
 				F97340AD1BCFED60006D1740 /* FYYSBJViewController.xib in Resources */,
@@ -765,6 +782,7 @@
 				F98351591BCA0B0B00809E14 /* FYLoginViewController.m in Sources */,
 				F981582C1BEDC78C0038F18A /* FYConfigViewController.m in Sources */,
 				F9859DAE1BF211AC0049B5CA /* ESPUDPSocketServer.m in Sources */,
+				F9FFE01C1C3CF41000EB8779 /* FYHeatCycleViewController.m in Sources */,
 				F9859DAD1BF211AC0049B5CA /* ESPUDPSocketClient.m in Sources */,
 				F98351641BCA26E400809E14 /* FYListViewController.m in Sources */,
 				F9859DA31BF211AC0049B5CA /* ESP_ByteUtil.m in Sources */,

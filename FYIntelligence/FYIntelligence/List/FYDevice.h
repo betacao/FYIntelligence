@@ -10,7 +10,8 @@
 
 typedef NS_ENUM(NSInteger, FYDeviceType)
 {
-    DeviceTypeSun = 0
+    DeviceTypeSun = 0,
+    DeviceTypeHot = 1
 };
 
 typedef NS_ENUM(NSInteger, FYDeviceCondition)
@@ -23,7 +24,7 @@ typedef NS_ENUM(NSInteger, FYDeviceCondition)
 @interface FYDevice : NSObject
 
 @property (strong, nonatomic) NSString *deviceID;
-@property (assign, nonatomic) FYDeviceType deviceTD;
+@property (assign, nonatomic) FYDeviceType deviceName;
 @property (assign, nonatomic) FYDeviceCondition deviceCondition;
 
 @end
