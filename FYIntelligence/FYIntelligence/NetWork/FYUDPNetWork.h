@@ -13,9 +13,17 @@ typedef NS_ENUM(NSInteger, FYUDPSendType)
     FYUDPSendTypePIN
 };
 
+typedef NS_ENUM(NSInteger, FYMainType)
+{
+    FYMainTypeSun = 0,
+    FYMainTypeHot
+};
+
 typedef void (^FYUDPNetWorkFinishBlock) (BOOL finish, NSString *reponseString);
 
 @interface FYUDPNetWork : NSObject
+
+@property (assign, nonatomic) FYMainType mainType;
 
 + (instancetype) shareNetEngine;
 

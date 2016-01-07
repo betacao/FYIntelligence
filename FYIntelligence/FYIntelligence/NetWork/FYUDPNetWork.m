@@ -230,9 +230,20 @@ static dispatch_queue_t udp_main_send_queue() {
         while (time < 20 && weakSelf.mainSwitch && weakSelf.mainState) {
             time++;
             NSLog(@"detail %ld",(long)number);
-            NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,@(number),kMainViewCmd];
+            NSString *request = @"";
+            NSString *host = @"";
+            switch (self.mainType) {
+                case FYMainTypeSun:
+                    request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,@(number),kMainViewCmd];
+                    host = kHostAddress;
+                    break;
+                    
+                default:
+                    request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,@(number),kHotMainViewCmd];
+                    host = kHotAddress;
+                    break;
+            }
             NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
-            NSString *host = kHostAddress;
             uint16_t port = kUDPHostPort;
             [weakSelf.sendUdpSocket sendData:data toHost:host port:port withTimeout:-1 tag:number];
             [NSThread sleepForTimeInterval:0.5f];

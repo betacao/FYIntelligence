@@ -82,4 +82,12 @@
 #define kResetPwdCmd @"fyzn2015#1#15#%@#"
 
 #define kGetCodeCmd @"fyzn2015#1#9#%@#"
+
+//热循环系统
+#define kHotAddress @"120.27.151.216"
+//热循环首页指令
+#define kHotMainViewCmd @"read_rsxh_info"
+//热循环手动循环
+#define kHotSDXHCmd @"sdxh_start$1"
+
 #endif /* const_h */

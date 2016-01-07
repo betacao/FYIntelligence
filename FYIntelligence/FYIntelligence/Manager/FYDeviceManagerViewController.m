@@ -9,8 +9,9 @@
 #import "FYDeviceManagerViewController.h"
 #import "FYParamSettingViewController.h"
 #import "FYAboutViewController.h"
+#import "FYEnterPINViewController.h"
 
-@interface FYDeviceManagerViewController ()
+@interface FYDeviceManagerViewController ()<FYEnterPINDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *leftView;
 @property (weak, nonatomic) IBOutlet UIImageView *middleView;
@@ -272,6 +273,7 @@
 - (void)getInfo
 {
     __weak typeof(self) weakSelf = self;
+    [FYUDPNetWork shareNetEngine].mainType = FYMainTypeSun;
     [[FYUDPNetWork shareNetEngine] startRequestMainData:^(BOOL finish, NSString *responseString) {
         if(finish){
             [weakSelf AnalyticalData:responseString];
@@ -482,6 +484,15 @@
 
 - (IBAction)clickParamButton:(UIButton *)button
 {
+    if(kAppDelegate.pinNumber.length == 0){
+        FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
+        controller.delegate = self;
+//        controller.index = indexPath.row;
+        [self addChildViewController:controller];
+        [self.view addSubview:controller.view];
+        return;
+    }
+
     FYParamSettingViewController *controller = [[FYParamSettingViewController alloc] initWithNibName:@"FYParamSettingViewController" bundle:nil];
     FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
     [self presentViewController:nav animated:YES completion:nil];
@@ -578,6 +589,13 @@
     }];
 }
 
+- (void)didEnterAllPIN:(NSString *)pinNumber index:(NSInteger)index
+{
+    kAppDelegate.pinNumber = pinNumber;
+    FYParamSettingViewController *controller = [[FYParamSettingViewController alloc] initWithNibName:@"FYParamSettingViewController" bundle:nil];
+    FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
+    [self presentViewController:nav animated:YES completion:nil];
+}
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {

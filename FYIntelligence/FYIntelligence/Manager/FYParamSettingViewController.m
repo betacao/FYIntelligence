@@ -19,9 +19,8 @@
 #import "FYYSBJViewController.h"
 #import "FYHSWViewController.h"
 #import "FYWCXHViewController.h"
-#import "FYEnterPINViewController.h"
 
-@interface FYParamSettingViewController ()<UITableViewDataSource, UITableViewDelegate, FYEnterPINDelegate>
+@interface FYParamSettingViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *titleArray;
@@ -70,15 +69,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    if(kAppDelegate.pinNumber.length == 0){
-        FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
-        controller.delegate = self;
-        controller.index = indexPath.row;
-        [self addChildViewController:controller];
-        [self.view addSubview:controller.view];
-        return;
-    }
     [self didSelectViewController:indexPath.row];
 
 }
@@ -144,12 +134,6 @@
         default:
             break;
     }
-}
-
-- (void)didEnterAllPIN:(NSString *)pinNumber index:(NSInteger)index
-{
-    kAppDelegate.pinNumber = pinNumber;
-    [self didSelectViewController:index];
 }
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
