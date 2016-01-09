@@ -8,6 +8,7 @@
 
 #import "FYHeatCycleViewController.h"
 #import "FYEnterPINViewController.h"
+#import "FYHeatCycleSettingViewController.h"
 
 @interface FYHeatCycleViewController ()<FYEnterPINDelegate>
 
@@ -231,18 +232,17 @@
 
 - (IBAction)paramClick:(id)sender
 {
-    if(kAppDelegate.pinNumber.length == 0){
-        FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
-        controller.delegate = self;
-        //        controller.index = indexPath.row;
-        [self addChildViewController:controller];
-        [self.view addSubview:controller.view];
-        return;
-    }
+//    if(kAppDelegate.pinNumber.length == 0){
+//        FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
+//        controller.delegate = self;
+//        //        controller.index = indexPath.row;
+//        [self addChildViewController:controller];
+//        [self.view addSubview:controller.view];
+//        return;
+//    }
 
-//    FYParamSettingViewController *controller = [[FYParamSettingViewController alloc] initWithNibName:@"FYParamSettingViewController" bundle:nil];
-//    FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
-//    [self presentViewController:nav animated:YES completion:nil];
+    FYHeatCycleSettingViewController *controller = [[FYHeatCycleSettingViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (IBAction)aboutClick:(id)sender
@@ -253,9 +253,8 @@
 - (void)didEnterAllPIN:(NSString *)pinNumber index:(NSInteger)index
 {
     kAppDelegate.pinNumber = pinNumber;
-//    FYParamSettingViewController *controller = [[FYParamSettingViewController alloc] initWithNibName:@"FYParamSettingViewController" bundle:nil];
-//    FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
-//    [self presentViewController:nav animated:YES completion:nil];
+    FYHeatCycleSettingViewController *controller = [[FYHeatCycleSettingViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

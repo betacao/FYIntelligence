@@ -28,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"参数设置";
+    self.bgImageView.image = [UIImage imageNamed:@"rsxh_bj"];
     self.titleArray = @[@"回水温度",@"回水时间",@"间隙时间",@"水流检测",@"时间段",@"运行模式"];
     self.imageArray = @[@"sdss",@"dsss",@"wkjs",@"sdjr",@"dsjr",@"hwjr"];
     [self.tableView setTableFooterView:[[UIView alloc] init]];
