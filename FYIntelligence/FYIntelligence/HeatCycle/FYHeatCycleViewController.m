@@ -27,9 +27,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *secondLabel;
 @property (weak, nonatomic) IBOutlet UILabel *thirdLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fourthLabel;
+@property (weak, nonatomic) IBOutlet UIButton *powerButton;
 @property (strong, nonatomic) NSString *runState;
 @property (strong, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) NSInteger currentTime;
+@property (strong, nonatomic) NSString *responseString;
 
 @end
 
@@ -91,7 +93,7 @@
 {
     __weak typeof(self) weakSelf = self;
     [[FYUDPNetWork shareNetEngine] udpMainType:FYMainTypeHot startRequestMainData:^(BOOL success, NSString *responseString) {
-        [weakSelf AnalyticalData:responseString];
+        weakSelf.responseString = responseString;
     }];
 }
 
@@ -108,7 +110,10 @@
 
 - (void)countDown
 {
-    if (self.currentTime == 0) {
+    if (self.currentTime < 0) {
+        if (self.responseString.length > 0) {
+            [self AnalyticalData:self.responseString];
+        }
         return;
     }
     self.bgzLabel.text = [NSString stringWithFormat:@"%ld秒",(long)self.currentTime];
@@ -137,9 +142,11 @@
     NSString *state = value;
     self.runState = state;
     self.bgzImageView.image = [UIImage imageNamed:@"bgz"];
+    [self.powerButton setImage:[UIImage imageNamed:@"rsxhpower"] forState:UIControlStateNormal];
     [self stopAnimation];
     if ([state isEqualToString:@"00"]) {
         self.stateImageView.image = [UIImage imageNamed:@"rsxhshutdown"];
+        [self.powerButton setImage:[UIImage imageNamed:@"rsxhpoweroff"] forState:UIControlStateNormal];
         self.bgzImageView.hidden = YES;
         self.hswdImageView.hidden = YES;
     } else if ([state isEqualToString:@"01"]){

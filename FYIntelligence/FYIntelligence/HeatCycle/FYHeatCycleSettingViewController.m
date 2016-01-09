@@ -36,7 +36,7 @@
 
 - (void)backButtonClick:(UIButton *)button
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

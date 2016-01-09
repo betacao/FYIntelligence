@@ -17,6 +17,7 @@
                 <outlet property="hswdImageView" destination="ti5-Hq-678" id="hQb-7k-ZNw"/>
                 <outlet property="hswdLabel" destination="SPD-DA-6i8" id="rh6-7P-dR9"/>
                 <outlet property="middleView" destination="4Xt-hW-egb" id="93p-de-pdM"/>
+                <outlet property="powerButton" destination="Xa0-bR-yla" id="FAO-KG-HtP"/>
                 <outlet property="secondLabel" destination="92g-4b-TTM" id="nM7-tX-e7u"/>
                 <outlet property="stateImageView" destination="bxz-Vt-GZX" id="XGb-1m-YJs"/>
                 <outlet property="thirdLabel" destination="24l-YF-4sd" id="v3q-4Y-i7C"/>
