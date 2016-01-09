@@ -19,6 +19,20 @@
 		F9579BC21BD5162300EA071C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F9579BC11BD5162300EA071C /* MBProgressHUD.m */; };
 		F95A636B1BC7F7BB002B949A /* FYBaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95A636A1BC7F7BB002B949A /* FYBaseNavigationViewController.m */; };
 		F95A636E1BC7F894002B949A /* FYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95A636D1BC7F894002B949A /* FYBaseViewController.m */; };
+		F95E365E1C40F31700E34689 /* FYHeatCycleSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95E365C1C40F31700E34689 /* FYHeatCycleSettingViewController.m */; };
+		F95E365F1C40F31700E34689 /* FYHeatCycleSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95E365D1C40F31700E34689 /* FYHeatCycleSettingViewController.xib */; };
+		F95E36631C40F67100E34689 /* FYHeatCycleHSWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95E36611C40F67100E34689 /* FYHeatCycleHSWDViewController.m */; };
+		F95E36641C40F67100E34689 /* FYHeatCycleHSWDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95E36621C40F67100E34689 /* FYHeatCycleHSWDViewController.xib */; };
+		F95E36681C40F69300E34689 /* FYHeatCycleHSSJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95E36661C40F69300E34689 /* FYHeatCycleHSSJViewController.m */; };
+		F95E36691C40F69300E34689 /* FYHeatCycleHSSJViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95E36671C40F69300E34689 /* FYHeatCycleHSSJViewController.xib */; };
+		F95E366D1C40F6A200E34689 /* FYHeatCycleJXSJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95E366B1C40F6A200E34689 /* FYHeatCycleJXSJViewController.m */; };
+		F95E366E1C40F6A200E34689 /* FYHeatCycleJXSJViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95E366C1C40F6A200E34689 /* FYHeatCycleJXSJViewController.xib */; };
+		F95E36721C40F6B000E34689 /* FYHeatCycleSLJCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95E36701C40F6B000E34689 /* FYHeatCycleSLJCViewController.m */; };
+		F95E36731C40F6B000E34689 /* FYHeatCycleSLJCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95E36711C40F6B000E34689 /* FYHeatCycleSLJCViewController.xib */; };
+		F95E36771C40F6C000E34689 /* FYHeatCycleSJDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95E36751C40F6C000E34689 /* FYHeatCycleSJDViewController.m */; };
+		F95E36781C40F6C000E34689 /* FYHeatCycleSJDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95E36761C40F6C000E34689 /* FYHeatCycleSJDViewController.xib */; };
+		F95E367C1C40F6CC00E34689 /* FYHeatCycleYXMSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95E367A1C40F6CC00E34689 /* FYHeatCycleYXMSViewController.m */; };
+		F95E367D1C40F6CC00E34689 /* FYHeatCycleYXMSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95E367B1C40F6CC00E34689 /* FYHeatCycleYXMSViewController.xib */; };
 		F96E2F911BCE27BA00B6AF4B /* UIColor+FYColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F96E2F901BCE27BA00B6AF4B /* UIColor+FYColor.m */; };
 		F96E2F941BCE284600B6AF4B /* UIImage+FYImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F96E2F931BCE284600B6AF4B /* UIImage+FYImage.m */; };
 		F96E2F981BCE385500B6AF4B /* FYSDSSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96E2F961BCE385500B6AF4B /* FYSDSSViewController.m */; };
@@ -142,6 +156,27 @@
 		F95A636D1BC7F894002B949A /* FYBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYBaseViewController.m; sourceTree = "<group>"; };
 		F95A63741BC7F918002B949A /* FYPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYPrefixHeader.pch; sourceTree = "<group>"; };
 		F95A63761BC7FF5B002B949A /* const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = const.h; sourceTree = "<group>"; };
+		F95E365B1C40F31700E34689 /* FYHeatCycleSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHeatCycleSettingViewController.h; sourceTree = "<group>"; };
+		F95E365C1C40F31700E34689 /* FYHeatCycleSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHeatCycleSettingViewController.m; sourceTree = "<group>"; };
+		F95E365D1C40F31700E34689 /* FYHeatCycleSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYHeatCycleSettingViewController.xib; sourceTree = "<group>"; };
+		F95E36601C40F67100E34689 /* FYHeatCycleHSWDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHeatCycleHSWDViewController.h; sourceTree = "<group>"; };
+		F95E36611C40F67100E34689 /* FYHeatCycleHSWDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHeatCycleHSWDViewController.m; sourceTree = "<group>"; };
+		F95E36621C40F67100E34689 /* FYHeatCycleHSWDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYHeatCycleHSWDViewController.xib; sourceTree = "<group>"; };
+		F95E36651C40F69300E34689 /* FYHeatCycleHSSJViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHeatCycleHSSJViewController.h; sourceTree = "<group>"; };
+		F95E36661C40F69300E34689 /* FYHeatCycleHSSJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHeatCycleHSSJViewController.m; sourceTree = "<group>"; };
+		F95E36671C40F69300E34689 /* FYHeatCycleHSSJViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYHeatCycleHSSJViewController.xib; sourceTree = "<group>"; };
+		F95E366A1C40F6A200E34689 /* FYHeatCycleJXSJViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHeatCycleJXSJViewController.h; sourceTree = "<group>"; };
+		F95E366B1C40F6A200E34689 /* FYHeatCycleJXSJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHeatCycleJXSJViewController.m; sourceTree = "<group>"; };
+		F95E366C1C40F6A200E34689 /* FYHeatCycleJXSJViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYHeatCycleJXSJViewController.xib; sourceTree = "<group>"; };
+		F95E366F1C40F6B000E34689 /* FYHeatCycleSLJCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHeatCycleSLJCViewController.h; sourceTree = "<group>"; };
+		F95E36701C40F6B000E34689 /* FYHeatCycleSLJCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHeatCycleSLJCViewController.m; sourceTree = "<group>"; };
+		F95E36711C40F6B000E34689 /* FYHeatCycleSLJCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYHeatCycleSLJCViewController.xib; sourceTree = "<group>"; };
+		F95E36741C40F6C000E34689 /* FYHeatCycleSJDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHeatCycleSJDViewController.h; sourceTree = "<group>"; };
+		F95E36751C40F6C000E34689 /* FYHeatCycleSJDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHeatCycleSJDViewController.m; sourceTree = "<group>"; };
+		F95E36761C40F6C000E34689 /* FYHeatCycleSJDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYHeatCycleSJDViewController.xib; sourceTree = "<group>"; };
+		F95E36791C40F6CC00E34689 /* FYHeatCycleYXMSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYHeatCycleYXMSViewController.h; sourceTree = "<group>"; };
+		F95E367A1C40F6CC00E34689 /* FYHeatCycleYXMSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYHeatCycleYXMSViewController.m; sourceTree = "<group>"; };
+		F95E367B1C40F6CC00E34689 /* FYHeatCycleYXMSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYHeatCycleYXMSViewController.xib; sourceTree = "<group>"; };
 		F96E2F8F1BCE27BA00B6AF4B /* UIColor+FYColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FYColor.h"; sourceTree = "<group>"; };
 		F96E2F901BCE27BA00B6AF4B /* UIColor+FYColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FYColor.m"; sourceTree = "<group>"; };
 		F96E2F921BCE284600B6AF4B /* UIImage+FYImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FYImage.h"; sourceTree = "<group>"; };
@@ -623,6 +658,27 @@
 				F9FFE0191C3CF41000EB8779 /* FYHeatCycleViewController.h */,
 				F9FFE01A1C3CF41000EB8779 /* FYHeatCycleViewController.m */,
 				F9FFE01B1C3CF41000EB8779 /* FYHeatCycleViewController.xib */,
+				F95E365B1C40F31700E34689 /* FYHeatCycleSettingViewController.h */,
+				F95E365C1C40F31700E34689 /* FYHeatCycleSettingViewController.m */,
+				F95E365D1C40F31700E34689 /* FYHeatCycleSettingViewController.xib */,
+				F95E36601C40F67100E34689 /* FYHeatCycleHSWDViewController.h */,
+				F95E36611C40F67100E34689 /* FYHeatCycleHSWDViewController.m */,
+				F95E36621C40F67100E34689 /* FYHeatCycleHSWDViewController.xib */,
+				F95E36651C40F69300E34689 /* FYHeatCycleHSSJViewController.h */,
+				F95E36661C40F69300E34689 /* FYHeatCycleHSSJViewController.m */,
+				F95E36671C40F69300E34689 /* FYHeatCycleHSSJViewController.xib */,
+				F95E366A1C40F6A200E34689 /* FYHeatCycleJXSJViewController.h */,
+				F95E366B1C40F6A200E34689 /* FYHeatCycleJXSJViewController.m */,
+				F95E366C1C40F6A200E34689 /* FYHeatCycleJXSJViewController.xib */,
+				F95E366F1C40F6B000E34689 /* FYHeatCycleSLJCViewController.h */,
+				F95E36701C40F6B000E34689 /* FYHeatCycleSLJCViewController.m */,
+				F95E36711C40F6B000E34689 /* FYHeatCycleSLJCViewController.xib */,
+				F95E36741C40F6C000E34689 /* FYHeatCycleSJDViewController.h */,
+				F95E36751C40F6C000E34689 /* FYHeatCycleSJDViewController.m */,
+				F95E36761C40F6C000E34689 /* FYHeatCycleSJDViewController.xib */,
+				F95E36791C40F6CC00E34689 /* FYHeatCycleYXMSViewController.h */,
+				F95E367A1C40F6CC00E34689 /* FYHeatCycleYXMSViewController.m */,
+				F95E367B1C40F6CC00E34689 /* FYHeatCycleYXMSViewController.xib */,
 			);
 			path = HeatCycle;
 			sourceTree = "<group>";
@@ -719,7 +775,9 @@
 				F981582D1BEDC78C0038F18A /* FYConfigViewController.xib in Resources */,
 				F9C3231E1C0AD2D7004D45E7 /* PushConfig.plist in Resources */,
 				F91C1BEE1BD23767002FC017 /* FYForgrtPWDViewController.xib in Resources */,
+				F95E36731C40F6B000E34689 /* FYHeatCycleSLJCViewController.xib in Resources */,
 				F9B441C81BD4F2DA005148D1 /* Documentation.html in Resources */,
+				F95E36641C40F67100E34689 /* FYHeatCycleHSWDViewController.xib in Resources */,
 				F97340A31BCFECEF006D1740 /* FYGDXHViewController.xib in Resources */,
 				F983515A1BCA0B0B00809E14 /* FYLoginViewController.xib in Resources */,
 				F9DEF7C21BC7F5CC00520CAA /* LaunchScreen.xib in Resources */,
@@ -732,6 +790,7 @@
 				F9FFE01D1C3CF41000EB8779 /* FYHeatCycleViewController.xib in Resources */,
 				F98351651BCA26E400809E14 /* FYListViewController.xib in Resources */,
 				F983516A1BCA270A00809E14 /* FYListTableViewCell.xib in Resources */,
+				F95E365F1C40F31700E34689 /* FYHeatCycleSettingViewController.xib in Resources */,
 				F97340AD1BCFED60006D1740 /* FYYSBJViewController.xib in Resources */,
 				F97340BC1BCFEE65006D1740 /* FYWKJSViewController.xib in Resources */,
 				F973409E1BCFE8B2006D1740 /* FYHWJRViewController.xib in Resources */,
@@ -741,6 +800,10 @@
 				F983517F1BCA3FAE00809E14 /* FYEnterPINViewController.xib in Resources */,
 				F9F90D071BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib in Resources */,
 				F98B9FFA1BCF9D0300B5FEAF /* FYDSJRViewController.xib in Resources */,
+				F95E367D1C40F6CC00E34689 /* FYHeatCycleYXMSViewController.xib in Resources */,
+				F95E36781C40F6C000E34689 /* FYHeatCycleSJDViewController.xib in Resources */,
+				F95E36691C40F69300E34689 /* FYHeatCycleHSSJViewController.xib in Resources */,
+				F95E366E1C40F6A200E34689 /* FYHeatCycleJXSJViewController.xib in Resources */,
 				F9DEF7BF1BC7F5CC00520CAA /* Images.xcassets in Resources */,
 				F98351791BCA370400809E14 /* FYJoinNetViewController.xib in Resources */,
 				F95113C51BCD464A0058C7B2 /* FYParamSettingTableViewCell.xib in Resources */,
@@ -770,17 +833,21 @@
 				F9859DAC1BF211AC0049B5CA /* ESPTouchTaskParameter.m in Sources */,
 				F9B441C71BD4F2DA005148D1 /* AsyncUdpSocket.m in Sources */,
 				F97340AC1BCFED60006D1740 /* FYYSBJViewController.m in Sources */,
+				F95E366D1C40F6A200E34689 /* FYHeatCycleJXSJViewController.m in Sources */,
 				F98351781BCA370400809E14 /* FYJoinNetViewController.m in Sources */,
 				F9859DA41BF211AC0049B5CA /* ESP_CRC8.m in Sources */,
 				F983516E1BCA307100809E14 /* FYDeviceInitViewController.m in Sources */,
 				F9579BC21BD5162300EA071C /* MBProgressHUD.m in Sources */,
 				F9B441C61BD4F2DA005148D1 /* AsyncSocket.m in Sources */,
+				F95E36681C40F69300E34689 /* FYHeatCycleHSSJViewController.m in Sources */,
 				F983515E1BCA0B5C00809E14 /* FYRegisterViewController.m in Sources */,
+				F95E365E1C40F31700E34689 /* FYHeatCycleSettingViewController.m in Sources */,
 				F98B9FF41BCF928200B5FEAF /* FYSDJRViewController.m in Sources */,
 				F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */,
 				F9B441C41BD4F2DA005148D1 /* GCDAsyncSocket.m in Sources */,
 				F9859DA71BF211AC0049B5CA /* ESPDatumCode.m in Sources */,
 				F9859DAA1BF211AC0049B5CA /* ESPTouchResult.m in Sources */,
+				F95E367C1C40F6CC00E34689 /* FYHeatCycleYXMSViewController.m in Sources */,
 				F97340B11BCFED73006D1740 /* FYHSWViewController.m in Sources */,
 				F97340A71BCFED4E006D1740 /* FYFDBHViewController.m in Sources */,
 				F95113BF1BCD45D60058C7B2 /* FYParamSettingViewController.m in Sources */,
@@ -810,9 +877,12 @@
 				F9859DA61BF211AC0049B5CA /* ESPDataCode.m in Sources */,
 				F91FF3E41C40DDD1005EC47C /* ESPThread.m in Sources */,
 				F9859DAB1BF211AC0049B5CA /* ESPTouchTask.m in Sources */,
+				F95E36631C40F67100E34689 /* FYHeatCycleHSWDViewController.m in Sources */,
 				F96E2F981BCE385500B6AF4B /* FYSDSSViewController.m in Sources */,
+				F95E36721C40F6B000E34689 /* FYHeatCycleSLJCViewController.m in Sources */,
 				F97340B61BCFED8F006D1740 /* FYWCXHViewController.m in Sources */,
 				F9F90D061BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m in Sources */,
+				F95E36771C40F6C000E34689 /* FYHeatCycleSJDViewController.m in Sources */,
 				F9DE29101BD5E2BF0009F667 /* FYProgressHUD.m in Sources */,
 				F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */,
 				F93F98301BCE7C2800FD46A8 /* FYDatePickerView.m in Sources */,
