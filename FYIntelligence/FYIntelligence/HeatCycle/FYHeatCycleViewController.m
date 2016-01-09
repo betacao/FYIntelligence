@@ -239,14 +239,13 @@
 
 - (IBAction)paramClick:(id)sender
 {
-//    if(kAppDelegate.pinNumber.length == 0){
-//        FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
-//        controller.delegate = self;
-//        //        controller.index = indexPath.row;
-//        [self addChildViewController:controller];
-//        [self.view addSubview:controller.view];
-//        return;
-//    }
+    if(kAppDelegate.pinNumber.length == 0){
+        FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
+        controller.delegate = self;
+        [self addChildViewController:controller];
+        [self.view addSubview:controller.view];
+        return;
+    }
 
     FYHeatCycleSettingViewController *controller = [[FYHeatCycleSettingViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];

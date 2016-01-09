@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYHeatCycleJXSJViewController">
             <connections>
+                <outlet property="pickerView" destination="nLo-fU-Be4" id="HPM-uz-1rp"/>
                 <outlet property="view" destination="6eS-j5-mOc" id="wQk-X7-7hY"/>
             </connections>
         </placeholder>
@@ -28,12 +29,19 @@
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="确定" backgroundImage="btn_login_normal"/>
                     <state key="highlighted" backgroundImage="btn_login_press"/>
+                    <connections>
+                        <action selector="sendMessage:" destination="-1" eventType="touchUpInside" id="CU2-KR-aLF"/>
+                    </connections>
                 </button>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLo-fU-Be4">
                     <rect key="frame" x="110" y="130" width="100" height="200"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="nLo-fU-Be4" secondAttribute="height" multiplier="1:2" id="RnS-Bz-azr"/>
                     </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Egw-je-0aC"/>
+                        <outlet property="delegate" destination="-1" id="U8h-zh-jpY"/>
+                    </connections>
                 </pickerView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分钟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bL-gy-cSG">
                     <rect key="frame" x="218" y="219" width="42" height="21"/>
