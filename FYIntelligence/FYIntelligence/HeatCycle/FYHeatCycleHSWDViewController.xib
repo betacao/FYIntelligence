@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYHeatCycleHSWDViewController">
             <connections>
+                <outlet property="postionPickView" destination="ynu-3E-pPB" id="bHm-eQ-vCE"/>
+                <outlet property="temPickView" destination="xVh-E8-TFl" id="Mzx-Pd-jCK"/>
                 <outlet property="view" destination="wpf-J4-Lwd" id="V79-tD-L8L"/>
             </connections>
         </placeholder>
@@ -25,6 +27,9 @@
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="确定" backgroundImage="btn_login_normal"/>
                     <state key="highlighted" backgroundImage="btn_login_press"/>
+                    <connections>
+                        <action selector="sendMessage:" destination="-1" eventType="touchUpInside" id="wcR-LQ-Rbz"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6Z-O5-7Wu">
                     <rect key="frame" x="0.0" y="208" width="320" height="160"/>
@@ -45,6 +50,10 @@
                                 <constraint firstAttribute="width" secondItem="ynu-3E-pPB" secondAttribute="height" multiplier="1:2" id="PaS-Xg-lrC"/>
                                 <constraint firstAttribute="width" constant="50" id="ve2-JP-15W"/>
                             </constraints>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="QsU-Qa-i2e"/>
+                                <outlet property="delegate" destination="-1" id="A3Q-bx-Gph"/>
+                            </connections>
                         </pickerView>
                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVh-E8-TFl">
                             <rect key="frame" x="217" y="45" width="50" height="100"/>
@@ -52,6 +61,10 @@
                                 <constraint firstAttribute="width" constant="50" id="iDf-PN-615"/>
                                 <constraint firstAttribute="width" secondItem="xVh-E8-TFl" secondAttribute="height" multiplier="1:2" id="nBh-QQ-r4I"/>
                             </constraints>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="T16-NQ-g6i"/>
+                                <outlet property="delegate" destination="-1" id="Rcg-Py-qg5"/>
+                            </connections>
                         </pickerView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="停止温度" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKH-cR-iDg">
                             <rect key="frame" x="50" y="0.0" width="64" height="21"/>
