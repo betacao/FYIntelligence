@@ -23,7 +23,7 @@
     [super viewDidLoad];
     self.title = @"间隙时间";
     self.bgImageView.image = [UIImage imageNamed:@"rsxh_bj"];
-    self.dataArray = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12"];
+    self.dataArray = @[@"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12"];
     [self.pickerView selectRow:self.dataArray.count / 2 inComponent:0 animated:NO];
     self.selectedValue = [self.dataArray objectAtIndex:self.dataArray.count / 2];
     [self getInfo];
@@ -61,7 +61,7 @@
 
 - (void)getInfo
 {
-    NSString *request = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),@"read_rhssj_config"];
+    NSString *request = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),@"read_rjxsj_config"];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         if(finish){
             NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
@@ -91,7 +91,7 @@
 
 - (IBAction)sendMessage:(id)sender
 {
-    NSString *string = [NSString stringWithFormat:@"rconfig_hssj$%@", self.selectedValue];
+    NSString *string = [NSString stringWithFormat:@"read_rjxsj_config$%@", self.selectedValue];
     NSString *UDPRequest = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),string];
     [[FYUDPNetWork shareNetEngine] sendRequest:UDPRequest complete:^(BOOL finish, NSString *responseString) {
         if(finish){

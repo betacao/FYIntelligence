@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSArray *dataArray;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (strong, nonatomic) NSString *selectedValue;
+@property (weak, nonatomic) IBOutlet UILabel *unitLabel;
 
 @end
 
@@ -23,7 +24,7 @@
     [super viewDidLoad];
     self.title = @"回水时间";
     self.bgImageView.image = [UIImage imageNamed:@"rsxh_bj"];
-    self.dataArray = @[@"50", @"80", @"100"];
+    self.dataArray = @[@"30",@"40",@"50",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18",@"19",@"20"];
     [self.pickerView selectRow:self.dataArray.count / 2 inComponent:0 animated:NO];
     self.selectedValue = [self.dataArray objectAtIndex:self.dataArray.count / 2];
     [self getInfo];
@@ -55,7 +56,13 @@
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    self.selectedValue = [self.dataArray objectAtIndex:row];
+    if (row  > 2) {
+        self.unitLabel.text = @"秒";
+        self.selectedValue = [self.dataArray objectAtIndex:row];
+    } else{
+        self.unitLabel.text = @"分钟";
+        self.selectedValue = [NSString stringWithFormat:@"%ld", (long)[[self.dataArray objectAtIndex:row] integerValue] * 60];
+    }
 }
 
 

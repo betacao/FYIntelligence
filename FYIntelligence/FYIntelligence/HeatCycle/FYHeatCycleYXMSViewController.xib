@@ -33,8 +33,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dYF-8B-2ZZ">
                     <rect key="frame" x="0.0" y="128" width="320" height="275"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水位报警" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bE-6E-xb4">
-                            <rect key="frame" x="8" y="25" width="64" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="温控延时" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bE-6E-xb4">
+                            <rect key="frame" x="20" y="25" width="64" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="qbF-PM-Rf4"/>
                                 <constraint firstAttribute="width" constant="64" id="qtc-Sd-B8C"/>
@@ -49,8 +49,8 @@
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9WN-jc-Ryh">
                             <rect key="frame" x="251" y="179" width="51" height="31"/>
                         </switch>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="启动温差" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcf-Pc-1Gd">
-                            <rect key="frame" x="8" y="184" width="64" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间段" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcf-Pc-1Gd">
+                            <rect key="frame" x="20" y="184" width="64" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="64" id="0Uv-9b-xhG"/>
                                 <constraint firstAttribute="height" constant="21" id="tcL-Xh-DBT"/>
@@ -59,8 +59,8 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="温度报警" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myd-t2-RbJ">
-                            <rect key="frame" x="8" y="106" width="64" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水流" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myd-t2-RbJ">
+                            <rect key="frame" x="20" y="106" width="64" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="9sz-ON-cNL"/>
                                 <constraint firstAttribute="width" constant="64" id="FsT-tT-g1F"/>
@@ -72,14 +72,14 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="9bE-6E-xb4" firstAttribute="leading" secondItem="dYF-8B-2ZZ" secondAttribute="leading" constant="8" id="GUG-FO-jei"/>
-                        <constraint firstItem="myd-t2-RbJ" firstAttribute="leading" secondItem="dYF-8B-2ZZ" secondAttribute="leading" constant="8" id="Jte-1M-Z8z"/>
+                        <constraint firstItem="9bE-6E-xb4" firstAttribute="leading" secondItem="dYF-8B-2ZZ" secondAttribute="leading" constant="20" id="GUG-FO-jei"/>
+                        <constraint firstItem="myd-t2-RbJ" firstAttribute="leading" secondItem="dYF-8B-2ZZ" secondAttribute="leading" constant="20" id="Jte-1M-Z8z"/>
                         <constraint firstItem="myd-t2-RbJ" firstAttribute="top" secondItem="9bE-6E-xb4" secondAttribute="bottom" constant="60" id="QC3-ef-WbB"/>
                         <constraint firstAttribute="trailing" secondItem="9WN-jc-Ryh" secondAttribute="trailing" constant="20" id="SM1-vp-fZm"/>
                         <constraint firstItem="Jcf-Pc-1Gd" firstAttribute="top" secondItem="myd-t2-RbJ" secondAttribute="bottom" constant="57" id="dt2-NN-YgG"/>
                         <constraint firstAttribute="trailing" secondItem="KUG-8H-CDL" secondAttribute="trailing" constant="20" id="iNw-IJ-Ths"/>
                         <constraint firstItem="KUG-8H-CDL" firstAttribute="centerY" secondItem="myd-t2-RbJ" secondAttribute="centerY" constant="-4" id="lgg-iW-wcZ"/>
-                        <constraint firstItem="Jcf-Pc-1Gd" firstAttribute="leading" secondItem="dYF-8B-2ZZ" secondAttribute="leading" constant="8" id="nOs-6C-x94"/>
+                        <constraint firstItem="Jcf-Pc-1Gd" firstAttribute="leading" secondItem="dYF-8B-2ZZ" secondAttribute="leading" constant="20" id="nOs-6C-x94"/>
                         <constraint firstItem="9bE-6E-xb4" firstAttribute="top" secondItem="dYF-8B-2ZZ" secondAttribute="top" constant="25" id="pTo-oG-nBc"/>
                         <constraint firstItem="9WN-jc-Ryh" firstAttribute="centerY" secondItem="Jcf-Pc-1Gd" secondAttribute="centerY" id="pTp-CQ-YOc"/>
                         <constraint firstAttribute="height" constant="275" id="zYU-ZJ-CtD"/>

@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYHeatCycleHSSJViewController">
             <connections>
                 <outlet property="pickerView" destination="mUC-Us-Tv6" id="Alo-3N-c0X"/>
+                <outlet property="unitLabel" destination="XLd-Ub-EgT" id="Ryo-9d-Dcc"/>
                 <outlet property="view" destination="9Q0-fs-RsV" id="ao6-0d-DJN"/>
             </connections>
         </placeholder>
@@ -43,7 +44,7 @@
                         <outlet property="delegate" destination="-1" id="v8A-YT-Ebc"/>
                     </connections>
                 </pickerView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分钟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLd-Ub-EgT">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="秒" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLd-Ub-EgT">
                     <rect key="frame" x="218" y="219" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="42" id="a9m-S9-rPc"/>
@@ -69,7 +70,7 @@
                 <constraint firstAttribute="trailing" secondItem="1d4-TZ-d4k" secondAttribute="trailing" id="pEL-2z-olT"/>
                 <constraint firstItem="1d4-TZ-d4k" firstAttribute="height" secondItem="9Q0-fs-RsV" secondAttribute="height" multiplier="64:568" id="soK-qY-Djl"/>
             </constraints>
-            <point key="canvasLocation" x="243" y="239"/>
+            <point key="canvasLocation" x="145" y="116"/>
         </view>
     </objects>
     <resources>
