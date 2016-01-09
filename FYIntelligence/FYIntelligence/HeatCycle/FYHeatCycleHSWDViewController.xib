@@ -27,7 +27,7 @@
                     <state key="highlighted" backgroundImage="btn_login_press"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6Z-O5-7Wu">
-                    <rect key="frame" x="0.0" y="280" width="320" height="160"/>
+                    <rect key="frame" x="0.0" y="208" width="320" height="160"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="温差" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgX-Vy-oBR">
                             <rect key="frame" x="210" y="0.0" width="64" height="21"/>
@@ -77,14 +77,14 @@
                         <constraint firstItem="ynu-3E-pPB" firstAttribute="centerX" secondItem="bKH-cR-iDg" secondAttribute="centerX" id="rk5-Jz-ldB"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wcxhshow" translatesAutoresizingMaskIntoConstraints="NO" id="Dr7-2Y-3tf">
-                    <rect key="frame" x="0.0" y="80" width="320" height="180"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rsxhlogo" translatesAutoresizingMaskIntoConstraints="NO" id="Dr7-2Y-3tf">
+                    <rect key="frame" x="0.0" y="80" width="320" height="64"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="77D-se-GjN" firstAttribute="leading" secondItem="wpf-J4-Lwd" secondAttribute="leading" constant="13" id="4AS-GP-ixc"/>
-                <constraint firstItem="n6Z-O5-7Wu" firstAttribute="top" secondItem="Dr7-2Y-3tf" secondAttribute="bottom" constant="20" id="8yS-pW-OWG"/>
+                <constraint firstItem="n6Z-O5-7Wu" firstAttribute="top" secondItem="Dr7-2Y-3tf" secondAttribute="bottom" constant="64" id="8yS-pW-OWG"/>
                 <constraint firstAttribute="trailing" secondItem="n6Z-O5-7Wu" secondAttribute="trailing" id="DHN-ap-ga8"/>
                 <constraint firstItem="Dr7-2Y-3tf" firstAttribute="leading" secondItem="wpf-J4-Lwd" secondAttribute="leading" id="M4Y-35-1mq"/>
                 <constraint firstAttribute="trailing" secondItem="Dr7-2Y-3tf" secondAttribute="trailing" id="ODj-Z6-ICK"/>
@@ -92,7 +92,7 @@
                 <constraint firstAttribute="bottom" secondItem="77D-se-GjN" secondAttribute="bottom" constant="78" id="eWl-SH-w3w"/>
                 <constraint firstAttribute="trailing" secondItem="77D-se-GjN" secondAttribute="trailing" constant="13" id="gJK-3Z-mvh"/>
                 <constraint firstItem="n6Z-O5-7Wu" firstAttribute="leading" secondItem="wpf-J4-Lwd" secondAttribute="leading" id="j6k-ke-Btr"/>
-                <constraint firstItem="Dr7-2Y-3tf" firstAttribute="height" secondItem="wpf-J4-Lwd" secondAttribute="height" multiplier="180:568" id="lVD-ZX-wZ7"/>
+                <constraint firstItem="Dr7-2Y-3tf" firstAttribute="height" secondItem="wpf-J4-Lwd" secondAttribute="height" multiplier="64:568" id="lVD-ZX-wZ7"/>
             </constraints>
             <point key="canvasLocation" x="243" y="239"/>
         </view>
@@ -100,6 +100,6 @@
     <resources>
         <image name="btn_login_normal" width="400" height="200"/>
         <image name="btn_login_press" width="400" height="200"/>
-        <image name="wcxhshow" width="512" height="384"/>
+        <image name="rsxhlogo" width="600" height="202"/>
     </resources>
 </document>

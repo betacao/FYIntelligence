@@ -17,8 +17,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shuiwei_80" translatesAutoresizingMaskIntoConstraints="NO" id="t0A-6D-cC4">
-                    <rect key="frame" x="0.0" y="60" width="320" height="220"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rsxhlogo" translatesAutoresizingMaskIntoConstraints="NO" id="t0A-6D-cC4">
+                    <rect key="frame" x="0.0" y="60" width="320" height="64"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umx-Ez-vtp">
                     <rect key="frame" x="13" y="443" width="294" height="40"/>
@@ -30,13 +30,13 @@
                     <state key="highlighted" backgroundImage="btn_login_press"/>
                 </button>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLo-fU-Be4">
-                    <rect key="frame" x="135" y="286" width="50" height="100"/>
+                    <rect key="frame" x="110" y="130" width="100" height="200"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="nLo-fU-Be4" secondAttribute="height" multiplier="1:2" id="RnS-Bz-azr"/>
                     </constraints>
                 </pickerView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分钟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bL-gy-cSG">
-                    <rect key="frame" x="193" y="325" width="42" height="21"/>
+                    <rect key="frame" x="218" y="219" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="B2M-aW-VKq"/>
                         <constraint firstAttribute="width" constant="42" id="Nj1-EY-MPc"/>
@@ -51,13 +51,13 @@
                 <constraint firstAttribute="bottom" secondItem="Umx-Ez-vtp" secondAttribute="bottom" constant="85" id="8H5-Fh-la4"/>
                 <constraint firstItem="2bL-gy-cSG" firstAttribute="centerY" secondItem="nLo-fU-Be4" secondAttribute="centerY" constant="-0.5" id="Beo-By-sMh"/>
                 <constraint firstItem="t0A-6D-cC4" firstAttribute="leading" secondItem="6eS-j5-mOc" secondAttribute="leading" id="UIa-fB-acN"/>
-                <constraint firstItem="t0A-6D-cC4" firstAttribute="height" secondItem="6eS-j5-mOc" secondAttribute="height" multiplier="220:568" id="XTT-bd-JLg"/>
+                <constraint firstItem="t0A-6D-cC4" firstAttribute="height" secondItem="6eS-j5-mOc" secondAttribute="height" multiplier="64:568" id="XTT-bd-JLg"/>
                 <constraint firstItem="nLo-fU-Be4" firstAttribute="top" secondItem="t0A-6D-cC4" secondAttribute="bottom" constant="6" id="hUH-GI-5hB"/>
                 <constraint firstAttribute="trailing" secondItem="Umx-Ez-vtp" secondAttribute="trailing" constant="13" id="kzk-Zt-t9G"/>
                 <constraint firstItem="t0A-6D-cC4" firstAttribute="top" secondItem="6eS-j5-mOc" secondAttribute="top" constant="60" id="mET-uc-AOb"/>
                 <constraint firstAttribute="trailing" secondItem="t0A-6D-cC4" secondAttribute="trailing" id="qvl-7C-WfO"/>
                 <constraint firstItem="Umx-Ez-vtp" firstAttribute="leading" secondItem="6eS-j5-mOc" secondAttribute="leading" constant="13" id="u6w-ST-hU1"/>
-                <constraint firstItem="nLo-fU-Be4" firstAttribute="width" secondItem="6eS-j5-mOc" secondAttribute="width" multiplier="100:320" constant="-50" id="yH3-N0-98D"/>
+                <constraint firstItem="nLo-fU-Be4" firstAttribute="width" secondItem="6eS-j5-mOc" secondAttribute="width" multiplier="100:320" id="yH3-N0-98D"/>
                 <constraint firstItem="nLo-fU-Be4" firstAttribute="centerX" secondItem="t0A-6D-cC4" secondAttribute="centerX" id="zl1-Zl-kg5"/>
                 <constraint firstItem="2bL-gy-cSG" firstAttribute="leading" secondItem="nLo-fU-Be4" secondAttribute="trailing" constant="8" id="zyv-mS-Aff"/>
             </constraints>
@@ -67,6 +67,6 @@
     <resources>
         <image name="btn_login_normal" width="400" height="200"/>
         <image name="btn_login_press" width="400" height="200"/>
-        <image name="shuiwei_80" width="244" height="442"/>
+        <image name="rsxhlogo" width="600" height="202"/>
     </resources>
 </document>
