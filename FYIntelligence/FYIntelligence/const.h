@@ -20,7 +20,7 @@
 #define kUserName @"userName"
 #define kPassWord @"passWord"
 #define kResponseString @"responseString"
-#define kHostAddress @"112.124.35.155"
+#define kHostAddress @"120.27.151.216"
 #define kTCPHostPort 11104
 #define kUDPHostPort 11102
 #define kLoginAddress @"fyzn2015#1#6#"
@@ -83,8 +83,6 @@
 
 #define kGetCodeCmd @"fyzn2015#1#9#%@#"
 
-//热循环系统
-#define kHotAddress @"120.27.151.216"
 //热循环首页指令
 #define kHotMainViewCmd @"read_rsxh_info"
 //热循环手动循环

@@ -8,6 +8,7 @@
 
 #import "FYUDPNetWork.h"
 #import "GCDAsyncUdpSocket.h"
+#import "ESPThread.h"
 
 @interface FYUDPNetWork ()<GCDAsyncUdpSocketDelegate>
 
@@ -49,6 +50,8 @@
         NSLog(@"Error starting server (recv): %@", error);
         return;
     }
+    //启动之后就去循环请求
+    [self mainSendMessage];
     NSLog(@"Ready");
 }
 
@@ -58,11 +61,16 @@
     [self createClientUdpSocket];
 }
 
-- (void)startRequestMainData:(void (^)(BOOL, NSString *))block
+- (void)udpMainType:(FYMainType)type startRequestMainData:(void (^)(BOOL, NSString *))block
 {
+    self.mainType = type;
     self.mainSwitch = YES;
-    [self mainSendMessage];
     self.mainBlock = block;
+    __block ESPThread *thread = [ESPThread currentThread];
+    dispatch_async(udp_main_send_queue(), ^{
+        [thread interrupt];
+    });
+
 }
 
 - (void)resumeMainData
@@ -95,7 +103,7 @@ static dispatch_queue_t udp_main_send_queue() {
     static dispatch_queue_t af_main_udp_send_queue;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        af_main_udp_send_queue = dispatch_queue_create("af_main_udp_send_queue", DISPATCH_QUEUE_CONCURRENT);
+        af_main_udp_send_queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     });
 
     return af_main_udp_send_queue;
@@ -192,7 +200,7 @@ static dispatch_queue_t udp_main_send_queue() {
             [weakSelf.sendUdpSocket sendData:sendMessage toHost:host port:port withTimeout:-1 tag:kAppDelegate.globleNumber];
             kAppDelegate.globleNumber++;
             NSLog(@"执行次数%ld",(long)i);
-            [NSThread sleepForTimeInterval:0.5f];
+            [[ESPThread currentThread] sleep:500];
         }
         if (i >= 20 && self.finishBlock) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -212,9 +220,9 @@ static dispatch_queue_t udp_main_send_queue() {
             if (weakSelf.mainSwitch) {
                 [weakSelf sendMessage:kAppDelegate.globleNumber];
                 kAppDelegate.globleNumber++;
-                [NSThread sleepForTimeInterval:25.0f];
+                [[ESPThread currentThread] sleep:25000];
             } else{
-                [NSThread sleepForTimeInterval:0.5f];
+                [[ESPThread currentThread] sleep:500];
             }
         }
     });
@@ -231,22 +239,20 @@ static dispatch_queue_t udp_main_send_queue() {
             time++;
             NSLog(@"detail %ld",(long)number);
             NSString *request = @"";
-            NSString *host = @"";
-            switch (self.mainType) {
+            NSString *host = kHostAddress;
+            switch (weakSelf.mainType) {
                 case FYMainTypeSun:
                     request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,@(number),kMainViewCmd];
-                    host = kHostAddress;
                     break;
-                    
+
                 default:
                     request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,@(number),kHotMainViewCmd];
-                    host = kHotAddress;
                     break;
             }
             NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
             uint16_t port = kUDPHostPort;
             [weakSelf.sendUdpSocket sendData:data toHost:host port:port withTimeout:-1 tag:number];
-            [NSThread sleepForTimeInterval:0.5f];
+            [[ESPThread currentThread] sleep:500];
         }
     });
 }

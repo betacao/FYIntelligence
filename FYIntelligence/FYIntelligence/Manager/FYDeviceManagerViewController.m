@@ -273,8 +273,7 @@
 - (void)getInfo
 {
     __weak typeof(self) weakSelf = self;
-    [FYUDPNetWork shareNetEngine].mainType = FYMainTypeSun;
-    [[FYUDPNetWork shareNetEngine] startRequestMainData:^(BOOL finish, NSString *responseString) {
+    [[FYUDPNetWork shareNetEngine] udpMainType:FYMainTypeSun startRequestMainData:^(BOOL finish, NSString *responseString) {
         if(finish){
             [weakSelf AnalyticalData:responseString];
         }

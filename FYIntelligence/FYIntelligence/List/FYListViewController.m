@@ -146,6 +146,7 @@
         [self presentViewController:nav animated:YES completion:nil];
     } else{
         FYHeatCycleViewController *controller = [[FYHeatCycleViewController alloc] init];
+        kAppDelegate.deviceID = device.deviceID;
         [self.navigationController pushViewController:controller animated:YES];
     }
 }

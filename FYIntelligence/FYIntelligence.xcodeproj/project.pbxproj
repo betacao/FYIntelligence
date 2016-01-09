@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F91C1BED1BD23767002FC017 /* FYForgrtPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F91C1BEB1BD23767002FC017 /* FYForgrtPWDViewController.m */; };
 		F91C1BEE1BD23767002FC017 /* FYForgrtPWDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91C1BEC1BD23767002FC017 /* FYForgrtPWDViewController.xib */; };
+		F91FF3E41C40DDD1005EC47C /* ESPThread.m in Sources */ = {isa = PBXBuildFile; fileRef = F91FF3E31C40DDD1005EC47C /* ESPThread.m */; };
 		F93F982D1BCE6E3300FD46A8 /* FYPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F93F982C1BCE6E3300FD46A8 /* FYPickerView.m */; };
 		F93F98301BCE7C2800FD46A8 /* FYDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F93F982F1BCE7C2800FD46A8 /* FYDatePickerView.m */; };
 		F95113BF1BCD45D60058C7B2 /* FYParamSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95113BD1BCD45D60058C7B2 /* FYParamSettingViewController.m */; };
@@ -121,6 +122,8 @@
 		F91C1BEA1BD23767002FC017 /* FYForgrtPWDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYForgrtPWDViewController.h; sourceTree = "<group>"; };
 		F91C1BEB1BD23767002FC017 /* FYForgrtPWDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYForgrtPWDViewController.m; sourceTree = "<group>"; };
 		F91C1BEC1BD23767002FC017 /* FYForgrtPWDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYForgrtPWDViewController.xib; sourceTree = "<group>"; };
+		F91FF3E21C40DDD1005EC47C /* ESPThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPThread.h; sourceTree = "<group>"; };
+		F91FF3E31C40DDD1005EC47C /* ESPThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPThread.m; sourceTree = "<group>"; };
 		F93F982B1BCE6E3300FD46A8 /* FYPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYPickerView.h; sourceTree = "<group>"; };
 		F93F982C1BCE6E3300FD46A8 /* FYPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYPickerView.m; sourceTree = "<group>"; };
 		F93F982E1BCE7C2800FD46A8 /* FYDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDatePickerView.h; sourceTree = "<group>"; };
@@ -431,6 +434,8 @@
 		F9B441C91BD4F323005148D1 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				F91FF3E21C40DDD1005EC47C /* ESPThread.h */,
+				F91FF3E31C40DDD1005EC47C /* ESPThread.m */,
 				F9B441CA1BD4F339005148D1 /* FYTCPNetWork.h */,
 				F9B441CB1BD4F339005148D1 /* FYTCPNetWork.m */,
 				F9B0636C1BD7A41A00471DF4 /* FYUDPNetWork.h */,
@@ -803,6 +808,7 @@
 				F95A636B1BC7F7BB002B949A /* FYBaseNavigationViewController.m in Sources */,
 				F97340A21BCFECEF006D1740 /* FYGDXHViewController.m in Sources */,
 				F9859DA61BF211AC0049B5CA /* ESPDataCode.m in Sources */,
+				F91FF3E41C40DDD1005EC47C /* ESPThread.m in Sources */,
 				F9859DAB1BF211AC0049B5CA /* ESPTouchTask.m in Sources */,
 				F96E2F981BCE385500B6AF4B /* FYSDSSViewController.m in Sources */,
 				F97340B61BCFED8F006D1740 /* FYWCXHViewController.m in Sources */,

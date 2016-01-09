@@ -33,7 +33,7 @@ typedef void (^FYUDPNetWorkFinishBlock) (BOOL finish, NSString *reponseString);
 
 - (void)sendRequest:(NSString *)request complete:(void(^)(BOOL finish, NSString *responseString))block;
 
-- (void)startRequestMainData:(void (^)(BOOL, NSString *))block;
+- (void)udpMainType:(FYMainType)type startRequestMainData:(void (^)(BOOL, NSString *))block;
 
 - (void)resumeMainData;
 

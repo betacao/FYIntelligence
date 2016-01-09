@@ -11,7 +11,6 @@
 
 @interface FYHeatCycleViewController ()<FYEnterPINDelegate>
 
-@property (strong, nonatomic) IBOutlet UIView *titleView;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIImageView *stateImageView;
 
@@ -28,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *thirdLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fourthLabel;
 @property (strong, nonatomic) NSString *runState;
+@property (strong, nonatomic) NSTimer *timer;
+@property (assign, nonatomic) NSInteger currentTime;
 
 @end
 
@@ -36,7 +37,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.bgImageView.image = [UIImage imageNamed:@"rsxh_bj"];
-    self.navigationItem.titleView = self.titleView;
     CGRect frame = self.topView.frame;
     frame.origin.y *= YFACTOR;
     frame.size.height *= YFACTOR;
@@ -81,74 +81,23 @@
     frame.origin.y = CGRectGetMaxY(self.middleView.frame) * (YFACTOR > 1.0f ? 1.0f : YFACTOR);
     self.bottomView.frame = frame;
 
+    self.currentTime = 0;
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(countDown) userInfo:nil repeats:YES];
     [self getInfo];
 }
 
 - (void)getInfo
 {
     __weak typeof(self) weakSelf = self;
-    [FYUDPNetWork shareNetEngine].mainType = FYMainTypeHot;
-    [[FYUDPNetWork shareNetEngine] startRequestMainData:^(BOOL success, NSString *responseString) {
-        //状态
-        NSString *state = @"";
-        weakSelf.runState = state;
-        //分
-        NSString *minute = @"";
-        //秒
-        NSString *second = @"";
-        //显示时间
-        NSString *time = @"";
-        self.bgzImageView.image = [UIImage imageNamed:@"bgz"];
-        [self stopAnimation];
-        if ([state isEqualToString:@"0"]) {
-            weakSelf.stateImageView.image = [UIImage imageNamed:@"rsxhshutdown"];
-            self.bgzImageView.hidden = YES;
-            self.hswdImageView.hidden = YES;
-        } else if ([state isEqualToString:@"1"]){
-            weakSelf.stateImageView.image = [UIImage imageNamed:@"djz"];
-            self.bgzImageView.hidden = YES;
-            self.hswdImageView.hidden = YES;
-        } else if ([state isEqualToString:@"2"]){
-            weakSelf.stateImageView.image = [UIImage imageNamed:@"bgz"];
-            self.bgzImageView.hidden = NO;
-            self.hswdImageView.hidden = NO;
-            [self startAnimation];
-        } else if ([state isEqualToString:@"3"]){
-            weakSelf.stateImageView.image = [UIImage imageNamed:@"jx"];
-            self.bgzImageView.image = [UIImage imageNamed:@"jx"];
-            self.bgzImageView.hidden = NO;
-            self.hswdImageView.hidden = NO;
-        }
-
-        //温度
-        NSString *temp = [@"" stringByAppendingString:@"°C"];
-        self.hswdLabel.text = temp;
-
-        //运行模式
-        NSInteger mode = [@"" integerValue];
-
-        self.firstLabel.textColor = [UIColor colorWithHexString:@"bebebe"];
-        self.secondLabel.textColor = [UIColor colorWithHexString:@"bebebe"];
-        self.thirdLabel.textColor = [UIColor colorWithHexString:@"bebebe"];
-        self.fourthLabel.textColor = [UIColor colorWithHexString:@"bebebe"];
-
-        if ((mode & 0x01) != 0){
-            self.firstLabel.textColor = [UIColor whiteColor];
-        } else if ((mode & 0x02) != 0){
-            self.secondLabel.textColor = [UIColor whiteColor];
-        } else if ((mode & 0x04) != 0){
-            self.thirdLabel.textColor = [UIColor whiteColor];
-        } else if ((mode & 0x05) != 0){
-            self.fourthLabel.textColor = [UIColor whiteColor];
-        }
-        
+    [[FYUDPNetWork shareNetEngine] udpMainType:FYMainTypeHot startRequestMainData:^(BOOL success, NSString *responseString) {
+        [weakSelf AnalyticalData:responseString];
     }];
 }
 
 - (void)startAnimation
 {
     self.fanImageView.image = [UIImage animatedImageWithImages:
-  @[[UIImage imageNamed:@"yelun_1"], [UIImage imageNamed:@"yelun_2"], [UIImage imageNamed:@"yelun_3"], [UIImage imageNamed:@"yelun_4"], [UIImage imageNamed:@"yelun_5"], [UIImage imageNamed:@"yelun_6"], ] duration:0.3f];
+  @[[UIImage imageNamed:@"yelun_1"], [UIImage imageNamed:@"yelun_2"], [UIImage imageNamed:@"yelun_3"], [UIImage imageNamed:@"yelun_4"], [UIImage imageNamed:@"yelun_5"], [UIImage imageNamed:@"yelun_6"], ] duration:1.0f];
 }
 
 - (void)stopAnimation
@@ -156,16 +105,103 @@
     self.fanImageView.image = [UIImage imageNamed:@"yelun"];
 }
 
+- (void)countDown
+{
+    if (self.currentTime == 0) {
+        return;
+    }
+    self.bgzLabel.text = [NSString stringWithFormat:@"%ld秒",(long)self.currentTime];
+    self.currentTime--;
+}
+
+- (void)AnalyticalData:(NSString *)responseString
+{
+    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
+    NSMutableArray *results = [NSMutableArray array];
+    [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+        [results addObject:result];
+    }];
+    NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
+        if (obj1.range.location > obj2.range.location) {
+            return (NSComparisonResult)NSOrderedDescending;
+        } else if (obj1.range.location < obj2.range.location) {
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    };
+    NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+    NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+
+    //状态
+    NSString *state = value;
+    self.runState = state;
+    self.bgzImageView.image = [UIImage imageNamed:@"bgz"];
+    [self stopAnimation];
+    if ([state isEqualToString:@"00"]) {
+        self.stateImageView.image = [UIImage imageNamed:@"rsxhshutdown"];
+        self.bgzImageView.hidden = YES;
+        self.hswdImageView.hidden = YES;
+    } else if ([state isEqualToString:@"01"]){
+        self.stateImageView.image = [UIImage imageNamed:@"djz"];
+        self.bgzImageView.hidden = YES;
+        self.hswdImageView.hidden = YES;
+    } else if ([state isEqualToString:@"02"]){
+        self.stateImageView.image = [UIImage imageNamed:@"bgz"];
+        self.bgzImageView.hidden = NO;
+        self.hswdImageView.hidden = NO;
+        [self startAnimation];
+    } else if ([state isEqualToString:@"03"]){
+        self.stateImageView.image = [UIImage imageNamed:@"jx"];
+        self.bgzImageView.image = [UIImage imageNamed:@"jx"];
+        self.bgzImageView.hidden = NO;
+        self.hswdImageView.hidden = NO;
+    }
+    //分
+    value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
+    NSString *minute = value;
+    //秒
+    value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+    NSString *second = value;
+    //显示时间
+    NSInteger time = [minute integerValue] * 60.0f + [second integerValue];
+    NSLog(@"time == %ld", time);
+    self.currentTime = time;
+
+    //温度
+    value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
+    NSString *temp = [value stringByAppendingString:@"°C"];
+    self.hswdLabel.text = temp;
+
+    //运行模式
+    value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
+    NSInteger mode = [value integerValue];
+
+    self.firstLabel.textColor = [UIColor colorWithHexString:@"bebebe"];
+    self.secondLabel.textColor = [UIColor colorWithHexString:@"bebebe"];
+    self.thirdLabel.textColor = [UIColor colorWithHexString:@"bebebe"];
+    self.fourthLabel.textColor = [UIColor colorWithHexString:@"bebebe"];
+
+    if ((mode & 0x01) != 0){
+        self.firstLabel.textColor = [UIColor whiteColor];
+    } else if ((mode & 0x02) != 0){
+        self.secondLabel.textColor = [UIColor whiteColor];
+    } else if ((mode & 0x04) != 0){
+        self.thirdLabel.textColor = [UIColor whiteColor];
+    } else if ((mode & 0x05) != 0){
+        self.fourthLabel.textColor = [UIColor whiteColor];
+    }
+}
+
 - (IBAction)userClick:(UIButton *)sender
 {
     [[FYUDPNetWork shareNetEngine] stopMainData];
-//    __weak typeof(self) weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
     NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,kHotSDXHCmd];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         [[FYUDPNetWork shareNetEngine] resumeMainData];
         if(finish){
-
+            [weakSelf AnalyticalData:responseString];
         } else{
             
         }
@@ -174,9 +210,11 @@
 
 - (IBAction)powerClick:(id)sender
 {
+    [[FYUDPNetWork shareNetEngine] stopMainData];
+    __weak typeof(self) weakSelf = self;
     NSString *request = @"";
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-    if ([self.runState isEqualToString:@"0"]) {
+    if ([self.runState isEqualToString:@"00"]) {
         request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"power$1"];
     } else{
         request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"power$0"];
@@ -184,7 +222,7 @@
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
         [[FYUDPNetWork shareNetEngine] resumeMainData];
         if(finish){
-
+            [weakSelf AnalyticalData:responseString];
         } else{
 
         }
@@ -218,6 +256,13 @@
 //    FYParamSettingViewController *controller = [[FYParamSettingViewController alloc] initWithNibName:@"FYParamSettingViewController" bundle:nil];
 //    FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
 //    [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[FYUDPNetWork shareNetEngine] stopMainData];
+    [FYProgressHUD hideHud];
 }
 
 - (void)didReceiveMemoryWarning
