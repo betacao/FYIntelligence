@@ -33,6 +33,7 @@
 
     [self.userField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [self.pwdField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [self.codeField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [self.comfirmPwdField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
 
     CGRect frame = self.lineView.frame;

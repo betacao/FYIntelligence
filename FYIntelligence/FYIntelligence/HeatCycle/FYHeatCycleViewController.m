@@ -195,13 +195,16 @@
     self.fourthLabel.textColor = [UIColor colorWithHexString:@"bebebe"];
 
     if ((mode & 0x01) != 0){
-        self.firstLabel.textColor = [UIColor whiteColor];
-    } else if ((mode & 0x02) != 0){
-        self.secondLabel.textColor = [UIColor whiteColor];
-    } else if ((mode & 0x04) != 0){
-        self.thirdLabel.textColor = [UIColor whiteColor];
-    } else if ((mode & 0x05) != 0){
         self.fourthLabel.textColor = [UIColor whiteColor];
+    }
+    if ((mode & 0x02) != 0){
+        self.thirdLabel.textColor = [UIColor whiteColor];
+    }
+    if ((mode & 0x04) != 0){
+        self.secondLabel.textColor = [UIColor whiteColor];
+    }
+    if ((mode & 0x08) != 0){
+        self.firstLabel.textColor = [UIColor whiteColor];
     }
 }
 
