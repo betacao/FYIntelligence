@@ -89,7 +89,7 @@
             NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
 
             NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
-            if ([value isEqualToString:@"0"]) {
+            if ([value isEqualToString:@"00"]) {
                 self.dataArray = self.dataArray1;
                 [self.leftButton setSelected:YES];
                 [self.rightButton setSelected:NO];
@@ -98,7 +98,7 @@
                 [self.leftButton setSelected:NO];
                 [self.rightButton setSelected:YES];
             }
-            value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+            value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
             if ([self.dataArray indexOfObject:value] != NSNotFound) {
                 NSInteger index = [self.dataArray indexOfObject:value];
                 [self.pickerView selectRow:index inComponent:0 animated:NO];

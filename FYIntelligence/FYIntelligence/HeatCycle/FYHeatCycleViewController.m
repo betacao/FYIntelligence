@@ -148,21 +148,21 @@
         self.stateImageView.image = [UIImage imageNamed:@"rsxhshutdown"];
         [self.powerButton setImage:[UIImage imageNamed:@"rsxhpoweroff"] forState:UIControlStateNormal];
         self.bgzImageView.hidden = YES;
-        self.hswdImageView.hidden = YES;
+        self.bgzLabel.hidden = YES;
     } else if ([state isEqualToString:@"01"]){
         self.stateImageView.image = [UIImage imageNamed:@"djz"];
         self.bgzImageView.hidden = YES;
-        self.hswdImageView.hidden = YES;
+        self.bgzLabel.hidden = YES;
     } else if ([state isEqualToString:@"02"]){
         self.stateImageView.image = [UIImage imageNamed:@"bgz"];
         self.bgzImageView.hidden = NO;
-        self.hswdImageView.hidden = NO;
+        self.bgzLabel.hidden = NO;
         [self startAnimation];
     } else if ([state isEqualToString:@"03"]){
         self.stateImageView.image = [UIImage imageNamed:@"jx"];
         self.bgzImageView.image = [UIImage imageNamed:@"jx"];
         self.bgzImageView.hidden = NO;
-        self.hswdImageView.hidden = NO;
+        self.bgzLabel.hidden = NO;
     }
     //分
     value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];

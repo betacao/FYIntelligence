@@ -92,27 +92,27 @@
                             <rect key="frame" x="235" y="31" width="60" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <state key="normal" title="55°C"/>
+                            <state key="normal" title="04:00"/>
                             <connections>
-                                <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="NeL-Mw-tJ4"/>
+                                <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="jWE-1q-6ll"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eO5-W8-Mrs">
                             <rect key="frame" x="235" y="76" width="60" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <state key="normal" title="55°C"/>
+                            <state key="normal" title="15:00"/>
                             <connections>
-                                <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="vsj-Kp-uFK"/>
+                                <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="h4R-ps-DOa"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uFX-Qd-l9s">
                             <rect key="frame" x="235" y="121" width="60" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <state key="normal" title="55°C"/>
+                            <state key="normal" title="11:00"/>
                             <connections>
-                                <action selector="positionButtonClick:" destination="-1" eventType="touchUpInside" id="YbO-ih-EBf"/>
+                                <action selector="timeButtonClick:" destination="-1" eventType="touchUpInside" id="k4C-mt-fkG"/>
                             </connections>
                         </button>
                     </subviews>

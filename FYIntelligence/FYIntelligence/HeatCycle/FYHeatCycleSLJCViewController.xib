@@ -45,7 +45,7 @@
                         <outlet property="delegate" destination="-1" id="BGK-6W-JZ8"/>
                     </connections>
                 </pickerView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分钟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzK-8R-kzM">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="秒" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzK-8R-kzM">
                     <rect key="frame" x="218" y="273" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="42" id="4lj-vO-GXC"/>

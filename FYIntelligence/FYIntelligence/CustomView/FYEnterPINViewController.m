@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView *lineView2;
 @property (weak, nonatomic) IBOutlet UIView *lineView3;
 @property (strong, nonatomic) UITextField *nextField;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (assign, nonatomic) BOOL hasAll;
 
 @end
@@ -30,6 +31,10 @@
     self.view.frame = CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight);
     self.view.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.3f];
     self.bgView.backgroundColor = [UIColor colorWithHexString:@"345654" alpha:0.9];
+    self.nextButton.layer.masksToBounds = YES;
+    self.nextButton.layer.cornerRadius = 3.0f;
+    self.nextButton.layer.borderWidth = 0.5f;
+    self.nextButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -97,7 +102,7 @@
         [self.textField2 resignFirstResponder];
         [self.textField3 resignFirstResponder];
         [self.textField4 resignFirstResponder];
-        [self performSelector:@selector(enterAllPIN) withObject:nil afterDelay:0.5f];
+//        [self performSelector:@selector(enterAllPIN) withObject:nil afterDelay:0.5f];
     }
 }
 
@@ -115,6 +120,11 @@
         return NO;
     }
     return YES;
+}
+
+- (IBAction)clickNextButton:(id)sender
+{
+    [self enterAllPIN];
 }
 
 - (void)enterAllPIN
