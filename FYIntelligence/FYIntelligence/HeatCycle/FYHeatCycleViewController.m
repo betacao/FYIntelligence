@@ -89,6 +89,12 @@
     [self getInfo];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[FYUDPNetWork shareNetEngine] resumeMainData];
+}
+
 - (void)getInfo
 {
     __weak typeof(self) weakSelf = self;
