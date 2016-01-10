@@ -91,7 +91,7 @@
 
 - (IBAction)sendMessage:(id)sender
 {
-    NSString *string = [NSString stringWithFormat:@"read_rjxsj_config$%@", self.selectedValue];
+    NSString *string = [NSString stringWithFormat:@"rconfig_jxsj$%@", self.selectedValue];
     NSString *UDPRequest = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),string];
     [[FYUDPNetWork shareNetEngine] sendRequest:UDPRequest complete:^(BOOL finish, NSString *responseString) {
         if(finish){

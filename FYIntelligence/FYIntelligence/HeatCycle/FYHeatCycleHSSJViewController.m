@@ -25,8 +25,7 @@
     self.title = @"回水时间";
     self.bgImageView.image = [UIImage imageNamed:@"rsxh_bj"];
     self.dataArray = @[@"30",@"40",@"50",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18",@"19",@"20"];
-    [self.pickerView selectRow:self.dataArray.count / 2 inComponent:0 animated:NO];
-    self.selectedValue = [self.dataArray objectAtIndex:self.dataArray.count / 2];
+    [self selectRow:self.dataArray.count / 2 value:[self.dataArray objectAtIndex:self.dataArray.count / 2]];
     [self getInfo];
 }
 
@@ -56,13 +55,7 @@
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    if (row  > 2) {
-        self.unitLabel.text = @"秒";
-        self.selectedValue = [self.dataArray objectAtIndex:row];
-    } else{
-        self.unitLabel.text = @"分钟";
-        self.selectedValue = [NSString stringWithFormat:@"%ld", (long)[[self.dataArray objectAtIndex:row] integerValue] * 60];
-    }
+    [self selectRow:row value:[self.dataArray objectAtIndex:row]];
 }
 
 
@@ -87,13 +80,30 @@
             NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
 
             NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+            NSString *mintue = [NSString stringWithFormat:@"%ld", (long)([value floatValue] / 60.0f)];
             if ([self.dataArray indexOfObject:value] != NSNotFound) {
                 NSInteger index = [self.dataArray indexOfObject:value];
-                [self.pickerView selectRow:index inComponent:0 animated:NO];
-                self.selectedValue = value;
+                [self selectRow:index value:value];
+            } else if ([self.dataArray indexOfObject:mintue] != NSNotFound){
+                NSInteger index = [self.dataArray indexOfObject:mintue];
+                [self selectRow:index value:mintue];
             }
         }
     }];
+}
+
+- (void)selectRow:(NSInteger)index value:(NSString *)value
+{
+    [self.pickerView selectRow:index inComponent:0 animated:NO];
+    if (index <= 2) {
+        self.unitLabel.text = @"秒";
+        self.selectedValue = value;
+    } else{
+        self.unitLabel.text = @"分钟";
+        self.selectedValue = [NSString stringWithFormat:@"%ld", (long)[value integerValue] * 60];
+    }
+
+    self.selectedValue = value;
 }
 
 - (IBAction)sendMessage:(id)sender

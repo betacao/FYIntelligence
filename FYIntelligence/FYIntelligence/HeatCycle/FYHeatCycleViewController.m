@@ -172,7 +172,6 @@
     NSString *second = value;
     //显示时间
     NSInteger time = [minute integerValue] * 60.0f + [second integerValue];
-    NSLog(@"time == %ld", time);
     self.currentTime = time;
 
     //温度
