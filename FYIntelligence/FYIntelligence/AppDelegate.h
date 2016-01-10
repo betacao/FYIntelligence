@@ -13,6 +13,7 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (assign, nonatomic) NSInteger globleNumber;
 @property (strong, nonatomic) NSString *pinNumber;
+@property (strong, nonatomic) NSMutableDictionary *pinDictionary;
 @property (assign, nonatomic) BOOL isRemember;
 @property (strong, nonatomic) NSString *deviceID;
 @property (strong, nonatomic) NSString *userName;

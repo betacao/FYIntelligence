@@ -247,14 +247,15 @@
 
 - (IBAction)paramClick:(id)sender
 {
-    if(kAppDelegate.pinNumber.length == 0){
+    NSString *number = [kAppDelegate.pinDictionary objectForKey:kAppDelegate.deviceID];
+    if(!number || number.length == 0){
         FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
         controller.delegate = self;
         [self addChildViewController:controller];
         [self.view addSubview:controller.view];
         return;
     }
-
+    kAppDelegate.pinNumber = number;
     FYHeatCycleSettingViewController *controller = [[FYHeatCycleSettingViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -267,6 +268,7 @@
 - (void)didEnterAllPIN:(NSString *)pinNumber index:(NSInteger)index
 {
     kAppDelegate.pinNumber = pinNumber;
+    [kAppDelegate.pinDictionary setObject:pinNumber forKey:kAppDelegate.deviceID];
     FYHeatCycleSettingViewController *controller = [[FYHeatCycleSettingViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }

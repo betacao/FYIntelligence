@@ -483,15 +483,15 @@
 
 - (IBAction)clickParamButton:(UIButton *)button
 {
-    if(kAppDelegate.pinNumber.length == 0){
+    NSString *number = [kAppDelegate.pinDictionary objectForKey:kAppDelegate.deviceID];
+    if(!number || number.length == 0){
         FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
         controller.delegate = self;
-//        controller.index = indexPath.row;
         [self addChildViewController:controller];
         [self.view addSubview:controller.view];
         return;
     }
-
+    kAppDelegate.pinNumber = number;
     FYParamSettingViewController *controller = [[FYParamSettingViewController alloc] initWithNibName:@"FYParamSettingViewController" bundle:nil];
     FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
     [self presentViewController:nav animated:YES completion:nil];
@@ -591,6 +591,7 @@
 - (void)didEnterAllPIN:(NSString *)pinNumber index:(NSInteger)index
 {
     kAppDelegate.pinNumber = pinNumber;
+    [kAppDelegate.pinDictionary setObject:pinNumber forKey:kAppDelegate.deviceID];
     FYParamSettingViewController *controller = [[FYParamSettingViewController alloc] initWithNibName:@"FYParamSettingViewController" bundle:nil];
     FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
     [self presentViewController:nav animated:YES completion:nil];

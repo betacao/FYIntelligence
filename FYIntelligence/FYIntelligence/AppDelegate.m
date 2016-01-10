@@ -23,13 +23,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.globleNumber = 1;
     self.pinNumber = @"";
+    self.pinDictionary = [NSMutableDictionary dictionary];
     self.isRemember = NO;
     [[FYTCPNetWork shareNetEngine] createClientTcpSocket];
     [[FYUDPNetWork shareNetEngine] createClientUdpSocket];
-    [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
-                                                   UIRemoteNotificationTypeSound |
-                                                   UIRemoteNotificationTypeAlert)
-                                       categories:nil];
+    [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert) categories:nil];
     [APService setupWithOption:launchOptions];
 
     return YES;
