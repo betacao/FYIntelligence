@@ -26,8 +26,8 @@
     [super viewDidLoad];
     self.title = @"水流检测";
     self.bgImageView.image = [UIImage imageNamed:@"rsxh_bj"];
-    self.dataArray1 = @[@"1", @"2", @"3"];
-    self.dataArray2 = @[@"1", @"2", @"3", @"4", @"5"];
+    self.dataArray1 = @[@"01", @"02", @"03"];
+    self.dataArray2 = @[@"01", @"02", @"03", @"04", @"05"];
     self.dataArray = self.dataArray1;
     [self.pickerView selectRow:self.dataArray.count / 2 inComponent:0 animated:NO];
     self.selectedValue = [self.dataArray objectAtIndex:self.dataArray.count / 2];
@@ -98,13 +98,15 @@
                 [self.leftButton setSelected:NO];
                 [self.rightButton setSelected:YES];
             }
+            [self.pickerView reloadAllComponents];
             value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
             if ([self.dataArray indexOfObject:value] != NSNotFound) {
                 NSInteger index = [self.dataArray indexOfObject:value];
-                [self.pickerView selectRow:index inComponent:0 animated:NO];
                 self.selectedValue = value;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.pickerView selectRow:index inComponent:0 animated:NO];
+                });
             }
-            [self.pickerView reloadAllComponents];
         }
     }];
 }
