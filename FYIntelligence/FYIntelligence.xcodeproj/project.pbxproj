@@ -1017,7 +1017,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu SHGOO Technology Co., Ltd";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = automatic;
@@ -1032,7 +1032,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FYIntelligence.FYIntelligence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "690ae0fe-3269-4801-97b3-b26b209573f0";
+				PROVISIONING_PROFILE = "26dc2ac3-18f1-4ed9-9b6c-a701678957fc";
 			};
 			name = Debug;
 		};
@@ -1041,7 +1041,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu SHGOO Technology Co., Ltd";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -1055,7 +1055,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FYIntelligence.FYIntelligence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "690ae0fe-3269-4801-97b3-b26b209573f0";
+				PROVISIONING_PROFILE = "26dc2ac3-18f1-4ed9-9b6c-a701678957fc";
 			};
 			name = Release;
 		};

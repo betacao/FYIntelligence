@@ -20,8 +20,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *fanImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *bgzImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *hswdImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *jxImageView;
 @property (weak, nonatomic) IBOutlet UILabel *bgzLabel;
 @property (weak, nonatomic) IBOutlet UILabel *hswdLabel;
+@property (weak, nonatomic) IBOutlet UILabel *jxLabel;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UILabel *firstLabel;
 @property (weak, nonatomic) IBOutlet UILabel *secondLabel;
@@ -46,33 +48,38 @@
     self.topView.frame = frame;
 
     frame = self.fanBgImageView.frame;
+    frame.origin.x *= XFACTOR;
     frame.size.width *= YFACTOR;
     frame.size.height *= YFACTOR;
     self.fanBgImageView.frame = frame;
 
     frame = self.fanImageView.frame;
+    frame.origin.x *= XFACTOR;
     frame.size.width *= YFACTOR;
     frame.size.height *= YFACTOR;
     self.fanImageView.frame = frame;
 
-
     frame = self.bgzImageView.frame;
-    frame.origin.x = CGRectGetMaxX(self.fanBgImageView.frame) + 5.0f;
     frame.origin.y *= YFACTOR;
     self.bgzImageView.frame = frame;
 
     frame = self.hswdImageView.frame;
-    frame.origin.x = CGRectGetMaxX(self.fanBgImageView.frame) + 5.0f;
     frame.origin.y *= YFACTOR;
     self.hswdImageView.frame = frame;
 
+    frame = self.jxImageView.frame;
+    frame.origin.y *= YFACTOR;
+    self.jxImageView.frame = frame;
+
     frame = self.bgzLabel.frame;
-    frame.origin.x = CGRectGetMaxX(self.bgzImageView.frame) + 5.0f;
     frame.origin.y *= YFACTOR;
     self.bgzLabel.frame = frame;
 
+    frame = self.jxLabel.frame;
+    frame.origin.y *= YFACTOR;
+    self.jxLabel.frame = frame;
+
     frame = self.hswdLabel.frame;
-    frame.origin.x = CGRectGetMaxX(self.hswdImageView.frame) + 5.0f;
     frame.origin.y *= YFACTOR;
     self.hswdLabel.frame = frame;
 
@@ -122,8 +129,16 @@
         }
         return;
     }
-    self.bgzLabel.text = [NSString stringWithFormat:@"%ld秒",(long)self.currentTime];
+    self.bgzLabel.text = [self secondsToMinutes:self.currentTime];
+    self.jxLabel.text = [self secondsToMinutes:self.currentTime];
     self.currentTime--;
+}
+
+- (NSString *)secondsToMinutes:(NSInteger)seconds
+{
+    NSString *minute = [NSString stringWithFormat:@"%ld分",seconds / 60];
+    NSString *second = [NSString stringWithFormat:@"%ld秒",seconds % 60];
+    return [minute stringByAppendingString:second];
 }
 
 - (void)AnalyticalData:(NSString *)responseString
@@ -155,20 +170,32 @@
         [self.powerButton setImage:[UIImage imageNamed:@"rsxhpoweroff"] forState:UIControlStateNormal];
         self.bgzImageView.hidden = YES;
         self.bgzLabel.hidden = YES;
+
+        self.jxImageView.hidden = YES;
+        self.jxLabel.hidden = YES;
     } else if ([state isEqualToString:@"01"]){
         self.stateImageView.image = [UIImage imageNamed:@"djz"];
         self.bgzImageView.hidden = YES;
         self.bgzLabel.hidden = YES;
+
+        self.jxImageView.hidden = YES;
+        self.jxLabel.hidden = YES;
     } else if ([state isEqualToString:@"02"]){
         self.stateImageView.image = [UIImage imageNamed:@"bgz"];
         self.bgzImageView.hidden = NO;
         self.bgzLabel.hidden = NO;
+
+        self.jxImageView.hidden = YES;
+        self.jxLabel.hidden = YES;
         [self startAnimation];
     } else if ([state isEqualToString:@"03"]){
         self.stateImageView.image = [UIImage imageNamed:@"jx"];
         self.bgzImageView.image = [UIImage imageNamed:@"jx"];
-        self.bgzImageView.hidden = NO;
-        self.bgzLabel.hidden = NO;
+        self.bgzImageView.hidden = YES;
+        self.bgzLabel.hidden = YES;
+
+        self.jxImageView.hidden = NO;
+        self.jxLabel.hidden = NO;
     }
     //分
     value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
@@ -182,8 +209,14 @@
 
     //温度
     value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
-    NSString *temp = [value stringByAppendingString:@"°C"];
-    self.hswdLabel.text = temp;
+    if ([value isEqualToString:@"111"]) {
+        value = @"未连接";
+    } else if ([value isEqualToString:@"112"]){
+        value = @"短路";
+    } else{
+        value = [value stringByAppendingString:@"°C"];
+    }
+    self.hswdLabel.text = value;
 
     //运行模式
     value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
@@ -208,13 +241,15 @@
     }
 }
 
-- (IBAction)userClick:(UIButton *)sender
+- (IBAction)userClick:(UIButton *)button
 {
     [[FYUDPNetWork shareNetEngine] stopMainData];
+    [button setImage:[UIImage imageNamed:@"rsxhsdxhp"] forState:UIControlStateNormal];
     __weak typeof(self) weakSelf = self;
     NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
     NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,kHotSDXHCmd];
     [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
+        [button setImage:[UIImage imageNamed:@"rsxhsdxh"] forState:UIControlStateNormal];
         [[FYUDPNetWork shareNetEngine] resumeMainData];
         if(finish){
             [weakSelf AnalyticalData:responseString];
@@ -283,6 +318,11 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc
+{
+    [self.timer invalidate];
 }
 
 

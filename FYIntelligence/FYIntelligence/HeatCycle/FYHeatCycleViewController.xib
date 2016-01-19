@@ -16,6 +16,8 @@
                 <outlet property="fourthLabel" destination="TBD-5M-aww" id="XhH-Od-ihw"/>
                 <outlet property="hswdImageView" destination="ti5-Hq-678" id="hQb-7k-ZNw"/>
                 <outlet property="hswdLabel" destination="SPD-DA-6i8" id="rh6-7P-dR9"/>
+                <outlet property="jxImageView" destination="Qh8-ZI-bA3" id="AyI-Sq-iGt"/>
+                <outlet property="jxLabel" destination="tuL-Vy-LNd" id="U0R-Lg-IWc"/>
                 <outlet property="middleView" destination="4Xt-hW-egb" id="93p-de-pdM"/>
                 <outlet property="powerButton" destination="Xa0-bR-yla" id="FAO-KG-HtP"/>
                 <outlet property="secondLabel" destination="92g-4b-TTM" id="nM7-tX-e7u"/>
@@ -31,7 +33,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" id="PCy-UR-fWs">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                    <rect key="frame" x="0.0" y="20" width="320" height="64"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rsxhlogo" id="l1s-sv-ymh">
@@ -50,40 +52,51 @@
                             <rect key="frame" x="0.0" y="30" width="320" height="200"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rsxhstate" id="99t-Vv-EpS">
-                                    <rect key="frame" x="115" y="0.0" width="90" height="20"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rsxhstate" id="99t-Vv-EpS">
+                                    <rect key="frame" x="155" y="30" width="90" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rsxhshutdown" id="bxz-Vt-GZX">
-                                    <rect key="frame" x="213" y="0.0" width="60" height="20"/>
+                                    <rect key="frame" x="250" y="30" width="60" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yelunshow" id="jDP-6J-Jdl">
-                                    <rect key="frame" x="0.0" y="30" width="150" height="150"/>
+                                    <rect key="frame" x="15" y="30" width="120" height="120"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yelun" id="d7c-N6-Y8A">
-                                    <rect key="frame" x="0.0" y="35" width="150" height="110"/>
+                                    <rect key="frame" x="15" y="40" width="120" height="80"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgz" id="3wG-pm-vLI">
-                                    <rect key="frame" x="155" y="55" width="90" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hswd" id="ti5-Hq-678">
-                                    <rect key="frame" x="155" y="136" width="90" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgz" id="3wG-pm-vLI">
+                                    <rect key="frame" x="155" y="63" width="60" height="19"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EqO-7V-OUH">
-                                    <rect key="frame" x="250" y="55" width="70" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <rect key="frame" x="240" y="62" width="70" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hswd" id="ti5-Hq-678">
+                                    <rect key="frame" x="155" y="130" width="70" height="19"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jx" id="Qh8-ZI-bA3">
+                                    <rect key="frame" x="155" y="96" width="60" height="19"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tuL-Vy-LNd">
+                                    <rect key="frame" x="240" y="95" width="70" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SPD-DA-6i8">
-                                    <rect key="frame" x="250" y="136" width="70" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <rect key="frame" x="242" y="130" width="70" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -95,10 +108,6 @@
                             <rect key="frame" x="0.0" y="230" width="320" height="20"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yunxingmode" id="5R3-hn-fnX">
-                                    <rect key="frame" x="0.0" y="0.0" width="90" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
                                 <view contentMode="scaleToFill" id="ZTm-NI-AgS">
                                     <rect key="frame" x="90" y="0.0" width="230" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -134,6 +143,10 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yunxingmode" id="5R3-hn-fnX">
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
@@ -187,6 +200,7 @@
     <resources>
         <image name="bgz" width="600" height="190"/>
         <image name="hswd" width="701" height="190"/>
+        <image name="jx" width="600" height="190"/>
         <image name="rsxhabout" width="300" height="105"/>
         <image name="rsxhlogo" width="600" height="202"/>
         <image name="rsxhpower" width="300" height="105"/>
