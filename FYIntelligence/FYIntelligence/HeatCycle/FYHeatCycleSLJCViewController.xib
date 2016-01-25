@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYHeatCycleSLJCViewController">
             <connections>
+                <outlet property="bottomMargin" destination="lMu-SM-mKb" id="pIQ-TI-LLZ"/>
                 <outlet property="leftButton" destination="8cY-DV-XCc" id="rR4-Ql-4Z4"/>
                 <outlet property="pickerView" destination="NhJ-cU-p3y" id="mxx-Zm-FaM"/>
                 <outlet property="rightButton" destination="f1d-fb-VrG" id="N7f-Ua-Ubt"/>
@@ -21,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rsxhlogo" translatesAutoresizingMaskIntoConstraints="NO" id="tK0-Df-4kK">
-                    <rect key="frame" x="0.0" y="60" width="320" height="64"/>
+                    <rect key="frame" x="0.0" y="90" width="320" height="64"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptX-xc-C1M">
                     <rect key="frame" x="13" y="468" width="294" height="40"/>
@@ -36,7 +37,7 @@
                     </connections>
                 </button>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NhJ-cU-p3y">
-                    <rect key="frame" x="110" y="184" width="100" height="200"/>
+                    <rect key="frame" x="110" y="214" width="100" height="200"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="NhJ-cU-p3y" secondAttribute="height" multiplier="1:2" id="DGp-FN-kSd"/>
                     </constraints>
@@ -46,7 +47,7 @@
                     </connections>
                 </pickerView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="秒" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzK-8R-kzM">
-                    <rect key="frame" x="218" y="273" width="42" height="21"/>
+                    <rect key="frame" x="218" y="303" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="42" id="4lj-vO-GXC"/>
                         <constraint firstAttribute="height" constant="21" id="tei-9n-Dr1"/>
@@ -56,7 +57,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cY-DV-XCc">
-                    <rect key="frame" x="0.0" y="132" width="160" height="30"/>
+                    <rect key="frame" x="0.0" y="162" width="160" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="HhN-ul-HJr"/>
                     </constraints>
@@ -66,7 +67,7 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1d-fb-VrG">
-                    <rect key="frame" x="160" y="132" width="160" height="30"/>
+                    <rect key="frame" x="160" y="162" width="160" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="3YY-kx-fAO"/>
                     </constraints>
@@ -91,7 +92,7 @@
                 <constraint firstAttribute="trailing" secondItem="tK0-Df-4kK" secondAttribute="trailing" id="bU8-0K-FAG"/>
                 <constraint firstItem="NhJ-cU-p3y" firstAttribute="width" secondItem="0DS-Am-Zrp" secondAttribute="width" multiplier="100:320" id="dz1-pj-sVs"/>
                 <constraint firstAttribute="trailing" secondItem="f1d-fb-VrG" secondAttribute="trailing" id="kTv-Uh-a68"/>
-                <constraint firstItem="tK0-Df-4kK" firstAttribute="top" secondItem="0DS-Am-Zrp" secondAttribute="top" constant="60" id="lMu-SM-mKb"/>
+                <constraint firstItem="tK0-Df-4kK" firstAttribute="top" secondItem="0DS-Am-Zrp" secondAttribute="top" constant="90" id="lMu-SM-mKb"/>
                 <constraint firstAttribute="trailing" secondItem="ptX-xc-C1M" secondAttribute="trailing" constant="13" id="q59-sW-yVw"/>
                 <constraint firstItem="tK0-Df-4kK" firstAttribute="leading" secondItem="0DS-Am-Zrp" secondAttribute="leading" id="wNI-Nd-bDc"/>
                 <constraint firstItem="RzK-8R-kzM" firstAttribute="leading" secondItem="NhJ-cU-p3y" secondAttribute="trailing" constant="8" id="ynp-js-SmR"/>

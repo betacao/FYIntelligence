@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYHeatCycleJXSJViewController">
             <connections>
+                <outlet property="bottomMargin" destination="mET-uc-AOb" id="ygX-DE-tWu"/>
                 <outlet property="pickerView" destination="nLo-fU-Be4" id="HPM-uz-1rp"/>
                 <outlet property="view" destination="6eS-j5-mOc" id="wQk-X7-7hY"/>
             </connections>
@@ -19,10 +20,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rsxhlogo" translatesAutoresizingMaskIntoConstraints="NO" id="t0A-6D-cC4">
-                    <rect key="frame" x="0.0" y="60" width="320" height="64"/>
+                    <rect key="frame" x="0.0" y="90" width="320" height="64"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umx-Ez-vtp">
-                    <rect key="frame" x="13" y="443" width="294" height="40"/>
+                    <rect key="frame" x="13" y="453" width="294" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Q9q-Ik-dLf"/>
                     </constraints>
@@ -34,7 +35,7 @@
                     </connections>
                 </button>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLo-fU-Be4">
-                    <rect key="frame" x="110" y="130" width="100" height="200"/>
+                    <rect key="frame" x="110" y="204" width="100" height="200"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="nLo-fU-Be4" secondAttribute="height" multiplier="1:2" id="RnS-Bz-azr"/>
                     </constraints>
@@ -44,7 +45,7 @@
                     </connections>
                 </pickerView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分钟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bL-gy-cSG">
-                    <rect key="frame" x="218" y="219" width="42" height="21"/>
+                    <rect key="frame" x="218" y="293" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="B2M-aW-VKq"/>
                         <constraint firstAttribute="width" constant="42" id="Nj1-EY-MPc"/>
@@ -56,13 +57,13 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Umx-Ez-vtp" secondAttribute="bottom" constant="85" id="8H5-Fh-la4"/>
+                <constraint firstAttribute="bottom" secondItem="Umx-Ez-vtp" secondAttribute="bottom" constant="75" id="8H5-Fh-la4"/>
                 <constraint firstItem="2bL-gy-cSG" firstAttribute="centerY" secondItem="nLo-fU-Be4" secondAttribute="centerY" constant="-0.5" id="Beo-By-sMh"/>
                 <constraint firstItem="t0A-6D-cC4" firstAttribute="leading" secondItem="6eS-j5-mOc" secondAttribute="leading" id="UIa-fB-acN"/>
                 <constraint firstItem="t0A-6D-cC4" firstAttribute="height" secondItem="6eS-j5-mOc" secondAttribute="height" multiplier="64:568" id="XTT-bd-JLg"/>
-                <constraint firstItem="nLo-fU-Be4" firstAttribute="top" secondItem="t0A-6D-cC4" secondAttribute="bottom" constant="6" id="hUH-GI-5hB"/>
+                <constraint firstItem="nLo-fU-Be4" firstAttribute="top" secondItem="t0A-6D-cC4" secondAttribute="bottom" constant="50" id="hUH-GI-5hB"/>
                 <constraint firstAttribute="trailing" secondItem="Umx-Ez-vtp" secondAttribute="trailing" constant="13" id="kzk-Zt-t9G"/>
-                <constraint firstItem="t0A-6D-cC4" firstAttribute="top" secondItem="6eS-j5-mOc" secondAttribute="top" constant="60" id="mET-uc-AOb"/>
+                <constraint firstItem="t0A-6D-cC4" firstAttribute="top" secondItem="6eS-j5-mOc" secondAttribute="top" constant="90" id="mET-uc-AOb"/>
                 <constraint firstAttribute="trailing" secondItem="t0A-6D-cC4" secondAttribute="trailing" id="qvl-7C-WfO"/>
                 <constraint firstItem="Umx-Ez-vtp" firstAttribute="leading" secondItem="6eS-j5-mOc" secondAttribute="leading" constant="13" id="u6w-ST-hU1"/>
                 <constraint firstItem="nLo-fU-Be4" firstAttribute="width" secondItem="6eS-j5-mOc" secondAttribute="width" multiplier="100:320" id="yH3-N0-98D"/>

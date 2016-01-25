@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSArray *dataArray;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (strong, nonatomic) NSString *selectedValue;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomMargin;
 
 @end
 
@@ -26,6 +27,7 @@
     self.dataArray = @[@"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12"];
     [self.pickerView selectRow:self.dataArray.count / 2 inComponent:0 animated:NO];
     self.selectedValue = [self.dataArray objectAtIndex:self.dataArray.count / 2];
+    self.bottomMargin.constant = 100.0f * YFACTOR;
     [self getInfo];
 }
 

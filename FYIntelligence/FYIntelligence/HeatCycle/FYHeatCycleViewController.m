@@ -43,58 +43,57 @@
     [super viewDidLoad];
     self.bgImageView.image = [UIImage imageNamed:@"rsxh_bj"];
     CGRect frame = self.topView.frame;
-    frame.origin.y *= YFACTOR;
-    frame.size.height *= YFACTOR;
+    frame.origin.y *= XFACTOR;
+    frame.size.height *= XFACTOR;
     self.topView.frame = frame;
 
     frame = self.fanBgImageView.frame;
     frame.origin.x *= XFACTOR;
-    frame.size.width *= YFACTOR;
-    frame.size.height *= YFACTOR;
+    frame.size.width *= XFACTOR;
+    frame.size.height *= XFACTOR;
     self.fanBgImageView.frame = frame;
 
     frame = self.fanImageView.frame;
     frame.origin.x *= XFACTOR;
-    frame.size.width *= YFACTOR;
-    frame.size.height *= YFACTOR;
+    frame.size.width *= XFACTOR;
+    frame.size.height *= XFACTOR;
     self.fanImageView.frame = frame;
 
     frame = self.bgzImageView.frame;
-    frame.origin.y *= YFACTOR;
+    frame.origin.y *= XFACTOR;
     self.bgzImageView.frame = frame;
 
     frame = self.hswdImageView.frame;
-    frame.origin.y *= YFACTOR;
+    frame.origin.y *= XFACTOR;
     self.hswdImageView.frame = frame;
 
     frame = self.jxImageView.frame;
-    frame.origin.y *= YFACTOR;
+    frame.origin.y *= XFACTOR;
     self.jxImageView.frame = frame;
 
     frame = self.bgzLabel.frame;
-    frame.origin.y *= YFACTOR;
+    frame.origin.y *= XFACTOR;
     self.bgzLabel.frame = frame;
 
     frame = self.jxLabel.frame;
-    frame.origin.y *= YFACTOR;
+    frame.origin.y *= XFACTOR;
     self.jxLabel.frame = frame;
 
     frame = self.hswdLabel.frame;
-    frame.origin.y *= YFACTOR;
+    frame.origin.y *= XFACTOR;
     self.hswdLabel.frame = frame;
 
     frame = self.middleView.frame;
-    frame.origin.y = CGRectGetMaxY(self.topView.frame);
+    frame.origin.y *= YFACTOR;
     self.middleView.frame = frame;
 
     frame = self.bottomView.frame;
-    frame.origin.y = CGRectGetMaxY(self.middleView.frame) * (YFACTOR > 1.0f ? 1.0f : YFACTOR);
+    frame.origin.y = CGRectGetMaxY(self.middleView.frame) * YFACTOR;
     self.bottomView.frame = frame;
 
     self.currentTime = 0;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(countDown) userInfo:nil repeats:YES];
     [self getInfo];
-    [self startAnimation];
 }
 
 - (void)viewDidAppear:(BOOL)animated

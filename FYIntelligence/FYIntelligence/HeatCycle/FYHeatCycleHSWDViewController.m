@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *postionPickView;
 @property (strong, nonatomic) NSArray *positionArray;
 @property (strong, nonatomic) NSString *startValue;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomMargin;
 
 @end
 
@@ -23,6 +24,7 @@
     self.startValue = [self.positionArray firstObject];
     self.title = @"设定温度";
     self.bgImageView.image = [UIImage imageNamed:@"rsxh_bj"];
+    self.bottomMargin.constant = 100.0f * YFACTOR;
     [self getInfo];
 }
 

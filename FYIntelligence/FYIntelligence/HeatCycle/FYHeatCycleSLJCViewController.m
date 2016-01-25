@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSString *selectedValue;
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
 @property (weak, nonatomic) IBOutlet UIButton *rightButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomMargin;
 
 @end
 
@@ -31,6 +32,8 @@
     self.dataArray = self.dataArray1;
     [self.pickerView selectRow:self.dataArray.count / 2 inComponent:0 animated:NO];
     self.selectedValue = [self.dataArray objectAtIndex:self.dataArray.count / 2];
+
+    self.bottomMargin.constant = 100.0f * YFACTOR;
     [self getInfo];
     [self.leftButton setBackgroundImage:[UIImage imageWithColor:[UIColor lightGrayColor] andSize:self.leftButton.frame.size] forState:UIControlStateSelected];
 

@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (strong, nonatomic) NSString *selectedValue;
 @property (weak, nonatomic) IBOutlet UILabel *unitLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomMargin;
 
 @end
 
@@ -26,6 +27,7 @@
     self.bgImageView.image = [UIImage imageNamed:@"rsxh_bj"];
     self.dataArray = @[@"30",@"40",@"50",@"01",@"02",@"03",@"04",@"05",@"06",@"07",@"08",@"09",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18",@"19",@"20"];
     [self selectRow:self.dataArray.count / 2 value:[self.dataArray objectAtIndex:self.dataArray.count / 2]];
+    self.bottomMargin.constant = 100.0f * YFACTOR;
     [self getInfo];
 }
 
