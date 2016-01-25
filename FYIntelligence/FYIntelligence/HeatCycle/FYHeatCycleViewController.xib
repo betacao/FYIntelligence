@@ -65,7 +65,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yelun" id="d7c-N6-Y8A">
-                                    <rect key="frame" x="15" y="40" width="120" height="80"/>
+                                    <rect key="frame" x="15" y="45" width="120" height="70"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgz" id="3wG-pm-vLI">
@@ -194,7 +194,7 @@
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="222" y="239"/>
+            <point key="canvasLocation" x="-183" y="155"/>
         </view>
     </objects>
     <resources>

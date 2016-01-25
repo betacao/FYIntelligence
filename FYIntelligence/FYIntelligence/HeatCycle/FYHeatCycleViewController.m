@@ -94,6 +94,7 @@
     self.currentTime = 0;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(countDown) userInfo:nil repeats:YES];
     [self getInfo];
+    [self startAnimation];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -113,7 +114,7 @@
 - (void)startAnimation
 {
     self.fanImageView.image = [UIImage animatedImageWithImages:
-  @[[UIImage imageNamed:@"yelun_1"], [UIImage imageNamed:@"yelun_2"], [UIImage imageNamed:@"yelun_3"], [UIImage imageNamed:@"yelun_4"], [UIImage imageNamed:@"yelun_5"], [UIImage imageNamed:@"yelun_6"], ] duration:1.0f];
+  @[[UIImage imageNamed:@"yelun"], [UIImage imageNamed:@"yelun_1"], [UIImage imageNamed:@"yelun_2"], [UIImage imageNamed:@"yelun_3"], [UIImage imageNamed:@"yelun_4"], [UIImage imageNamed:@"yelun_5"], [UIImage imageNamed:@"yelun_6"], ] duration:0.7f];
 }
 
 - (void)stopAnimation
@@ -167,6 +168,7 @@
     [self stopAnimation];
     if ([state isEqualToString:@"00"]) {
         self.stateImageView.image = [UIImage imageNamed:@"rsxhshutdown"];
+        self.stateImageView.hidden = NO;
         [self.powerButton setImage:[UIImage imageNamed:@"rsxhpoweroff"] forState:UIControlStateNormal];
         self.bgzImageView.hidden = YES;
         self.bgzLabel.hidden = YES;
@@ -175,6 +177,7 @@
         self.jxLabel.hidden = YES;
     } else if ([state isEqualToString:@"01"]){
         self.stateImageView.image = [UIImage imageNamed:@"djz"];
+        self.stateImageView.hidden = NO;
         self.bgzImageView.hidden = YES;
         self.bgzLabel.hidden = YES;
 
@@ -182,6 +185,7 @@
         self.jxLabel.hidden = YES;
     } else if ([state isEqualToString:@"02"]){
         self.stateImageView.image = [UIImage imageNamed:@"bgz"];
+        self.stateImageView.hidden = YES;
         self.bgzImageView.hidden = NO;
         self.bgzLabel.hidden = NO;
 
@@ -190,6 +194,7 @@
         [self startAnimation];
     } else if ([state isEqualToString:@"03"]){
         self.stateImageView.image = [UIImage imageNamed:@"jx"];
+        self.stateImageView.hidden = YES;
         self.bgzImageView.image = [UIImage imageNamed:@"jx"];
         self.bgzImageView.hidden = YES;
         self.bgzLabel.hidden = YES;
