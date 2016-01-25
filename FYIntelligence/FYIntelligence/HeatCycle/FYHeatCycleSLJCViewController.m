@@ -26,7 +26,7 @@
     [super viewDidLoad];
     self.title = @"水流检测";
     self.bgImageView.image = [UIImage imageNamed:@"rsxh_bj"];
-    self.dataArray1 = @[@"01", @"02", @"03"];
+    self.dataArray1 = @[@"01", @"02", @"03", @"04", @"05"];
     self.dataArray2 = @[@"01", @"02", @"03", @"04", @"05"];
     self.dataArray = self.dataArray1;
     [self.pickerView selectRow:self.dataArray.count / 2 inComponent:0 animated:NO];

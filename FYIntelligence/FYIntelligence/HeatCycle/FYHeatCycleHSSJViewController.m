@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"回水时间";
+    self.title = @"循环时间";
     self.bgImageView.image = [UIImage imageNamed:@"rsxh_bj"];
     self.dataArray = @[@"30",@"40",@"50",@"01",@"02",@"03",@"04",@"05",@"06",@"07",@"08",@"09",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18",@"19",@"20"];
     [self selectRow:self.dataArray.count / 2 value:[self.dataArray objectAtIndex:self.dataArray.count / 2]];

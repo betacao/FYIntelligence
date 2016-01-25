@@ -136,8 +136,8 @@
 
 - (NSString *)secondsToMinutes:(NSInteger)seconds
 {
-    NSString *minute = [NSString stringWithFormat:@"%ld分",seconds / 60];
-    NSString *second = [NSString stringWithFormat:@"%ld秒",seconds % 60];
+    NSString *minute = [NSString stringWithFormat:@"%ld分",(long)(seconds / 60)];
+    NSString *second = [NSString stringWithFormat:@"%ld秒",(long)(seconds % 60)];
     return [minute stringByAppendingString:second];
 }
 

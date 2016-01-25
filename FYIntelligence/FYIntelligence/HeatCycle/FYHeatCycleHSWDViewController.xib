@@ -10,7 +10,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYHeatCycleHSWDViewController">
             <connections>
                 <outlet property="postionPickView" destination="ynu-3E-pPB" id="bHm-eQ-vCE"/>
-                <outlet property="temPickView" destination="xVh-E8-TFl" id="Mzx-Pd-jCK"/>
                 <outlet property="view" destination="wpf-J4-Lwd" id="V79-tD-L8L"/>
             </connections>
         </placeholder>
@@ -55,17 +54,6 @@
                                 <outlet property="delegate" destination="-1" id="A3Q-bx-Gph"/>
                             </connections>
                         </pickerView>
-                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVh-E8-TFl">
-                            <rect key="frame" x="217" y="45" width="50" height="100"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="50" id="iDf-PN-615"/>
-                                <constraint firstAttribute="width" secondItem="xVh-E8-TFl" secondAttribute="height" multiplier="1:2" id="nBh-QQ-r4I"/>
-                            </constraints>
-                            <connections>
-                                <outlet property="dataSource" destination="-1" id="T16-NQ-g6i"/>
-                                <outlet property="delegate" destination="-1" id="Rcg-Py-qg5"/>
-                            </connections>
-                        </pickerView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="停止温度" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKH-cR-iDg">
                             <rect key="frame" x="50" y="0.0" width="64" height="21"/>
                             <constraints>
@@ -76,17 +64,27 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2R-Ce-Qe9">
+                            <rect key="frame" x="221" y="84.5" width="42" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="QjI-fq-w4J"/>
+                                <constraint firstAttribute="width" constant="42" id="UnX-n6-s7k"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="a2R-Ce-Qe9" firstAttribute="centerX" secondItem="UgX-Vy-oBR" secondAttribute="centerX" id="0d2-mG-5YB"/>
                         <constraint firstItem="ynu-3E-pPB" firstAttribute="top" secondItem="bKH-cR-iDg" secondAttribute="bottom" constant="24" id="DEI-ef-ykU"/>
                         <constraint firstItem="bKH-cR-iDg" firstAttribute="top" secondItem="n6Z-O5-7Wu" secondAttribute="top" id="Gc7-bZ-lMx"/>
                         <constraint firstItem="bKH-cR-iDg" firstAttribute="leading" secondItem="n6Z-O5-7Wu" secondAttribute="leading" constant="50" id="Jpp-2t-Hf2"/>
                         <constraint firstAttribute="trailing" secondItem="UgX-Vy-oBR" secondAttribute="trailing" constant="46" id="LeL-QP-cVh"/>
-                        <constraint firstItem="xVh-E8-TFl" firstAttribute="centerX" secondItem="UgX-Vy-oBR" secondAttribute="centerX" id="N7q-Ik-f0f"/>
                         <constraint firstAttribute="height" constant="160" id="USm-KJ-gg9"/>
                         <constraint firstItem="UgX-Vy-oBR" firstAttribute="top" secondItem="n6Z-O5-7Wu" secondAttribute="top" id="c3S-XU-N4o"/>
-                        <constraint firstItem="xVh-E8-TFl" firstAttribute="top" secondItem="UgX-Vy-oBR" secondAttribute="bottom" constant="24" id="n8A-m7-zv3"/>
+                        <constraint firstItem="a2R-Ce-Qe9" firstAttribute="centerY" secondItem="ynu-3E-pPB" secondAttribute="centerY" id="hyC-A6-b5f"/>
                         <constraint firstItem="ynu-3E-pPB" firstAttribute="centerX" secondItem="bKH-cR-iDg" secondAttribute="centerX" id="rk5-Jz-ldB"/>
                     </constraints>
                 </view>

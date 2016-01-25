@@ -69,7 +69,7 @@
 //注册指令
 #define kRegisterCmd @"fyzn2015#1#7#%@#%@#0#0#0#%@#"
 //添加设备
-#define kAddDeviceCmd @"LOCAL_GET_ID"
+#define kAddDeviceCmd @"LOCAL_GET_ID#120.27.151.216#"
 //首页指令
 #define kMainViewCmd @"read_dev_info"
 

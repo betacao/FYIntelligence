@@ -10,11 +10,8 @@
 
 @interface FYHeatCycleHSWDViewController ()<UIPickerViewDataSource, UIPickerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIPickerView *postionPickView;
-@property (weak, nonatomic) IBOutlet UIPickerView *temPickView;
 @property (strong, nonatomic) NSArray *positionArray;
-@property (strong, nonatomic) NSArray *temArray;
 @property (strong, nonatomic) NSString *startValue;
-@property (strong, nonatomic) NSString *endValue;
 
 @end
 
@@ -22,22 +19,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.positionArray = @[@"37", @"38", @"39", @"40", @"41", @"42", @"43", @"44", @"45", @"46", @"47", @"48", @"49", @"50"];
-    self.temArray = @[@"02", @"03", @"04", @"05"];
+    self.positionArray = @[@"37", @"38", @"39", @"40", @"41", @"42", @"43", @"44", @"45", @"46", @"47", @"48", @"49", @"50", @"51", @"52", @"53", @"54", @"55"];
     self.startValue = [self.positionArray firstObject];
-    self.endValue = [self.temArray firstObject];
-    self.title = @"回水温度";
+    self.title = @"设定温度";
     self.bgImageView.image = [UIImage imageNamed:@"rsxh_bj"];
     [self getInfo];
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    if([pickerView isEqual:self.temPickView]){
-        return self.temArray.count;
-    } else{
-        return self.positionArray.count;
-    }
+    return self.positionArray.count;
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -52,30 +43,18 @@
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
 {
-    if([pickerView isEqual:self.temPickView]){
-        UILabel *label = [[UILabel alloc] init];
-        label.font = [UIFont systemFontOfSize:28.0f];
-        label.textColor = [UIColor whiteColor];
-        label.text = [self.temArray objectAtIndex:row];
-        [label sizeToFit];
-        return label;
-    } else{
-        UILabel *label = [[UILabel alloc] init];
-        label.font = [UIFont systemFontOfSize:28.0f];
-        label.textColor = [UIColor whiteColor];
-        label.text = [self.positionArray objectAtIndex:row];
-        [label sizeToFit];
-        return label;
-    }
+
+    UILabel *label = [[UILabel alloc] init];
+    label.font = [UIFont systemFontOfSize:28.0f];
+    label.textColor = [UIColor whiteColor];
+    label.text = [self.positionArray objectAtIndex:row];
+    [label sizeToFit];
+    return label;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    if([pickerView isEqual:self.temPickView]){
-        self.endValue = [self.temArray objectAtIndex:row];
-    } else{
-        self.startValue = [self.positionArray objectAtIndex:row];
-    }
+    self.startValue = [self.positionArray objectAtIndex:row];
 }
 
 - (void)getInfo
@@ -103,18 +82,13 @@
                 [self.postionPickView selectRow:[self.positionArray indexOfObject:value1] inComponent:0 animated:NO];
                 self.startValue = value1;
             }
-            NSString *value2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
-            if ([self.temArray indexOfObject:value2] != NSNotFound) {
-                [self.temPickView selectRow:[self.temArray indexOfObject:value2] inComponent:0 animated:NO];
-                self.endValue = value2;
-            }
         }
     }];
 }
 
 - (IBAction)sendMessage:(id)sender
 {
-    NSString *string = [NSString stringWithFormat:@"config_rhswd$%@$%@", self.startValue, self.endValue];
+    NSString *string = [NSString stringWithFormat:@"config_rhswd$%@$%@", self.startValue, @"03"];
     NSString *UDPRequest = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),string];
     [[FYUDPNetWork shareNetEngine] sendRequest:UDPRequest complete:^(BOOL finish, NSString *responseString) {
         if(finish){
