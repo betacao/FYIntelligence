@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>8868F7FD-3814-43F3-A2E5-075D2B6270FD</string>
 	<key>IDESourceControlProjectName</key>
-	<string>FYIntelligence</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>EBDD1EC97A67B26D90EB6E8033A9245E7F9030A5</key>
 		<string>https://github.com/caochangxi/FYIntelligence.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>FYIntelligence/FYIntelligence.xcodeproj</string>
+	<string>FYIntelligence/FYIntelligence.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>EBDD1EC97A67B26D90EB6E8033A9245E7F9030A5</key>
