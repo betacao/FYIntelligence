@@ -136,9 +136,10 @@
 
 - (NSString *)secondsToMinutes:(NSInteger)seconds
 {
-    NSString *minute = [NSString stringWithFormat:@"%ld分",(long)(seconds / 60)];
-    NSString *second = [NSString stringWithFormat:@"%ld秒",(long)(seconds % 60)];
-    return [minute stringByAppendingString:second];
+//    NSString *minute = [NSString stringWithFormat:@"%ld分",(long)(seconds / 60)];
+//    NSString *second = [NSString stringWithFormat:@"%ld秒",(long)(seconds % 60)];
+//    return [minute stringByAppendingString:second];
+    return [NSString stringWithFormat:@"%ld秒",(long)seconds];
 }
 
 - (void)AnalyticalData:(NSString *)responseString
