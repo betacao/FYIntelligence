@@ -43,7 +43,11 @@
 {
     [self.condition lock];
     NSDate *date = [NSDate dateWithTimeIntervalSinceNow: milliseconds/1000.0];
-    [self.condition waitUntilDate:date];
+    if (milliseconds == NSIntegerMax) {
+        [self.condition waitUntilDate:[NSDate distantFuture]];
+    } else{
+        [self.condition waitUntilDate:date];
+    }
     [self.condition unlock];
     return self.isInterrupt;
 }

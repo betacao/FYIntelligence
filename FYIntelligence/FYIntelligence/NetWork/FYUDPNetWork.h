@@ -38,4 +38,7 @@ typedef void (^FYUDPNetWorkFinishBlock) (BOOL finish, NSString *reponseString);
 - (void)resumeMainData;
 
 - (void)stopMainData;
+
+- (void)fastResumeMainData;
+
 @end

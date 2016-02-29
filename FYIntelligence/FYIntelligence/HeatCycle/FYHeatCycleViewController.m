@@ -34,13 +34,13 @@
 @property (strong, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) NSInteger currentTime;
 @property (strong, nonatomic) NSString *responseString;
-
 @end
 
 @implementation FYHeatCycleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.bgImageView.image = [UIImage imageNamed:@"rsxh_bj"];
     CGRect frame = self.topView.frame;
     frame.origin.y *= XFACTOR;
@@ -92,6 +92,8 @@
     self.bottomView.frame = frame;
 
     self.currentTime = 0;
+
+    [self addObserver:self forKeyPath:@"currentTime" options:NSKeyValueObservingOptionNew context:nil];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(countDown) userInfo:nil repeats:YES];
     [self getInfo];
 }
@@ -100,6 +102,12 @@
 {
     [super viewDidAppear:animated];
     [[FYUDPNetWork shareNetEngine] resumeMainData];
+}
+
+- (void)backButtonClick:(UIButton *)button
+{
+    [self.timer invalidate];
+    [super backButtonClick:button];
 }
 
 - (void)getInfo
@@ -123,10 +131,8 @@
 
 - (void)countDown
 {
-    if (self.currentTime < 0) {
-        if (self.responseString.length > 0) {
-            [self AnalyticalData:self.responseString];
-        }
+    if (self.currentTime <= 0) {
+        [self AnalyticalData:self.responseString];
         return;
     }
     self.bgzLabel.text = [self secondsToMinutes:self.currentTime];
@@ -136,14 +142,17 @@
 
 - (NSString *)secondsToMinutes:(NSInteger)seconds
 {
-//    NSString *minute = [NSString stringWithFormat:@"%ld分",(long)(seconds / 60)];
-//    NSString *second = [NSString stringWithFormat:@"%ld秒",(long)(seconds % 60)];
-//    return [minute stringByAppendingString:second];
+    if (seconds <= 0) {
+        return @"";
+    }
     return [NSString stringWithFormat:@"%ld秒",(long)seconds];
 }
 
 - (void)AnalyticalData:(NSString *)responseString
 {
+    if (responseString.length == 0) {
+        return;
+    }
     NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
     NSMutableArray *results = [NSMutableArray array];
     [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
@@ -211,7 +220,6 @@
     //显示时间
     NSInteger time = [minute integerValue] * 60.0f + [second integerValue];
     self.currentTime = time;
-
     //温度
     value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
     if ([value isEqualToString:@"111"]) {
@@ -243,6 +251,17 @@
     }
     if ((mode & 0x08) != 0){
         self.firstLabel.textColor = [UIColor whiteColor];
+    }
+    self.responseString = @"";
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"currentTime"]) {
+        NSInteger time = [[change objectForKey:@"new"] integerValue];
+        if (time <= 0 && ([self.runState isEqualToString:@"02"] || [self.runState isEqualToString:@"03"])) {
+            [[FYUDPNetWork shareNetEngine] fastResumeMainData];
+        }
     }
 }
 
@@ -327,7 +346,8 @@
 
 - (void)dealloc
 {
-    [self.timer invalidate];
+    self.timer = nil;
+    [self removeObserver:self forKeyPath:@"currentTime"];
 }
 
 

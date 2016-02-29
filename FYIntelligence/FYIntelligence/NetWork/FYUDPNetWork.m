@@ -89,6 +89,14 @@
     self.mainBlock = nil;
 }
 
+- (void)fastResumeMainData
+{
+    __block ESPThread *thread = [ESPThread currentThread];
+    dispatch_async(udp_main_send_queue(), ^{
+        [thread interrupt];
+    });
+}
+
 static dispatch_queue_t udp_send_queue() {
     static dispatch_queue_t af_udp_send_queue;
     static dispatch_once_t onceToken;
@@ -103,10 +111,20 @@ static dispatch_queue_t udp_main_send_queue() {
     static dispatch_queue_t af_main_udp_send_queue;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        af_main_udp_send_queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        af_main_udp_send_queue = dispatch_queue_create("af_main_udp_send_queue", DISPATCH_QUEUE_CONCURRENT);
     });
 
     return af_main_udp_send_queue;
+}
+
+static dispatch_queue_t udp_sub_send_queue() {
+    static dispatch_queue_t af_sub_udp_send_queue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        af_sub_udp_send_queue = dispatch_queue_create("af_sub_udp_send_queue", DISPATCH_QUEUE_SERIAL);
+    });
+
+    return af_sub_udp_send_queue;
 }
 
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext
@@ -220,7 +238,11 @@ static dispatch_queue_t udp_main_send_queue() {
             if (weakSelf.mainSwitch) {
                 [weakSelf sendMessage:kAppDelegate.globleNumber];
                 kAppDelegate.globleNumber++;
-                [[ESPThread currentThread] sleep:25000];
+                if (weakSelf.mainType == FYMainTypeHot) {
+                    [[ESPThread currentThread] sleep:NSIntegerMax];
+                } else{
+                    [[ESPThread currentThread] sleep:25000];
+                }
             } else{
                 [[ESPThread currentThread] sleep:500];
             }
@@ -233,7 +255,7 @@ static dispatch_queue_t udp_main_send_queue() {
 {
     self.mainState = YES;
     __weak typeof(self) weakSelf = self;
-    dispatch_async(udp_main_send_queue(), ^{
+    dispatch_async(udp_sub_send_queue(), ^{
         NSInteger time = 0;
         while (time < 20 && weakSelf.mainSwitch && weakSelf.mainState) {
             time++;
