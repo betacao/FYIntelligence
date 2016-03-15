@@ -483,18 +483,18 @@
 
 - (IBAction)clickParamButton:(UIButton *)button
 {
-    NSString *number = [kAppDelegate.pinDictionary objectForKey:kAppDelegate.deviceID];
-    if(!number || number.length == 0){
-        FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
-        controller.delegate = self;
-        [self addChildViewController:controller];
-        [self.view addSubview:controller.view];
-        return;
-    }
-    kAppDelegate.pinNumber = number;
-    FYParamSettingViewController *controller = [[FYParamSettingViewController alloc] initWithNibName:@"FYParamSettingViewController" bundle:nil];
-    FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
-    [self presentViewController:nav animated:YES completion:nil];
+    //    NSString *number = [kAppDelegate.pinDictionary objectForKey:kAppDelegate.deviceID];
+    //    if(!number || number.length == 0){
+    FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
+    controller.delegate = self;
+    [self addChildViewController:controller];
+    [self.view addSubview:controller.view];
+    //    return;
+    //    }
+    //    kAppDelegate.pinNumber = number;
+    //    FYParamSettingViewController *controller = [[FYParamSettingViewController alloc] initWithNibName:@"FYParamSettingViewController" bundle:nil];
+    //    FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
+    //    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (IBAction)clickAddWater:(UIButton *)sender

@@ -57,7 +57,7 @@
 
 - (void)refreshUdpSocket
 {
-//    [self.sendUdpSocket close];
+    [self.sendUdpSocket close];
 //    [self createClientUdpSocket];
 }
 
@@ -279,5 +279,11 @@ static dispatch_queue_t udp_sub_send_queue() {
     });
 }
 
+- (void)udpSocketDidClose:(GCDAsyncUdpSocket *)sock withError:(NSError *)error
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self createClientUdpSocket];
+    });
+}
 
 @end

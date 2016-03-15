@@ -23,7 +23,7 @@
     self.title = @"关于";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.titleArray = @[@"服务热线:13355868768", @"官方网站:http://www.njhouxu.com", @"版本信息：V1.0"];
+    self.titleArray = @[@"服务热线:13355868768", @"官方网站:http://tpfydz.1688.com", @"版本信息：V1.0"];
 }
 
 - (void)backButtonClick:(UIButton *)button
@@ -57,7 +57,7 @@
     if (indexPath.row == 0) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://13355868768"]];
     } else if (indexPath.row == 1){
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.njhouxu.com"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://tpfydz.1688.com"]];
     } else if (indexPath.row == 2){
 
     }

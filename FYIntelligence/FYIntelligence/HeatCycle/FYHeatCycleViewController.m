@@ -302,17 +302,17 @@
 
 - (IBAction)paramClick:(id)sender
 {
-    NSString *number = [kAppDelegate.pinDictionary objectForKey:kAppDelegate.deviceID];
-    if(!number || number.length == 0){
-        FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
-        controller.delegate = self;
-        [self addChildViewController:controller];
-        [self.view addSubview:controller.view];
-        return;
-    }
-    kAppDelegate.pinNumber = number;
-    FYHeatCycleSettingViewController *controller = [[FYHeatCycleSettingViewController alloc] init];
-    [self.navigationController pushViewController:controller animated:YES];
+    //    NSString *number = [kAppDelegate.pinDictionary objectForKey:kAppDelegate.deviceID];
+    //    if(!number || number.length == 0){
+    FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
+    controller.delegate = self;
+    [self addChildViewController:controller];
+    [self.view addSubview:controller.view];
+    //        return;
+    //    }
+    //    kAppDelegate.pinNumber = number;
+    //    FYHeatCycleSettingViewController *controller = [[FYHeatCycleSettingViewController alloc] init];
+    //    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (IBAction)aboutClick:(id)sender
