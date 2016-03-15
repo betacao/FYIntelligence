@@ -31,7 +31,7 @@
             hud.labelText = message;
             [hud adjustFontToWidth];
             hud.removeFromSuperViewOnHide = YES;
-            [hud hide:YES afterDelay:20.0f];
+            [hud hide:YES afterDelay:10.0f];
         } else{
             [self performSelectorOnMainThread:@selector(showHudWithMessage:) withObject:message waitUntilDone:YES];
         }

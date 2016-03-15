@@ -42,6 +42,11 @@
     self.loginButton.layer.masksToBounds = YES;
     self.loginButton.layer.cornerRadius = 2.0f;
 
+    self.rememberPwdButton.layer.masksToBounds = YES;
+    self.rememberPwdButton.layer.cornerRadius = 3.0f;
+    self.rememberPwdButton.layer.borderColor = [UIColor grayColor].CGColor;
+    self.rememberPwdButton.layer.borderWidth = 1.0f;
+
     UIImage *normalImage = [UIImage imageNamed:@"btn_login_normal"];
     UIImage *pressImage = [UIImage imageNamed:@"btn_login_press"];
     [self.loginButton setBackgroundImage:[normalImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.0f, 15.0f, 15.0f, 15.0f) resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
@@ -52,11 +57,6 @@
 }
 
 - (IBAction)clickRememberButton:(UIButton *)sender {
-    if(self.isRemember){
-        [self.rememberPwdButton setImage:[UIImage imageNamed:@"blankButton"] forState:UIControlStateNormal];
-    } else{
-        [self.rememberPwdButton setImage:[UIImage imageNamed:@"selectButton"] forState:UIControlStateNormal];
-    }
     self.isRemember = !self.isRemember;
     __weak typeof(self) weakSelf = self;
     NSString *request = [NSString stringWithFormat:@"%@",kAddDeviceCmd];

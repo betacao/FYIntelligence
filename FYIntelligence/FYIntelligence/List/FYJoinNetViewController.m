@@ -354,9 +354,9 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if ([alertView isEqual:self.successAlert]) {
-        [FYProgressHUD showLoadingWithMessage:@"设备已入网，请等待8秒钟，设备重启"];
+        [FYProgressHUD showLoadingWithMessage:@"设备已入网，请等待12秒钟，设备重启"];
         __weak typeof(self) weakSelf = self;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(8.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(12.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [FYProgressHUD hideHud];
             FYAddDeviceViewController *controller = [[FYAddDeviceViewController alloc] init];
             [weakSelf.navigationController pushViewController:controller animated:YES];

@@ -9,8 +9,9 @@
 #import "FYHeatCycleViewController.h"
 #import "FYEnterPINViewController.h"
 #import "FYHeatCycleSettingViewController.h"
+#import "FYAboutViewController.h"
 
-@interface FYHeatCycleViewController ()<FYEnterPINDelegate>
+@interface FYHeatCycleViewController ()<FYEnterPINDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIImageView *stateImageView;
@@ -34,6 +35,7 @@
 @property (strong, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) NSInteger currentTime;
 @property (strong, nonatomic) NSString *responseString;
+@property (assign, nonatomic) NSInteger time;
 @end
 
 @implementation FYHeatCycleViewController
@@ -101,6 +103,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    self.time = 25;
     [[FYUDPNetWork shareNetEngine] resumeMainData];
 }
 
@@ -132,9 +135,16 @@
 - (void)countDown
 {
     if (self.currentTime <= 0) {
+        if (self.time == 0) {
+            self.time = 25;
+            [[FYUDPNetWork shareNetEngine] fastResumeMainData];
+            return;
+        }
+        self.time--;
         [self AnalyticalData:self.responseString];
         return;
     }
+    self.time = 25;
     self.bgzLabel.text = [self secondsToMinutes:self.currentTime];
     self.jxLabel.text = [self secondsToMinutes:self.currentTime];
     self.currentTime--;
@@ -285,23 +295,9 @@
 
 - (IBAction)powerClick:(id)sender
 {
-    [[FYUDPNetWork shareNetEngine] stopMainData];
-    __weak typeof(self) weakSelf = self;
-    NSString *request = @"";
-    NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-    if ([self.runState isEqualToString:@"00"]) {
-        request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"power$1"];
-    } else{
-        request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"power$0"];
-    }
-    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        [[FYUDPNetWork shareNetEngine] resumeMainData];
-        if(finish){
-            [weakSelf AnalyticalData:responseString];
-        } else{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"确认此操作？" delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+    [alert show];
 
-        }
-    }];
 }
 
 - (IBAction)paramClick:(id)sender
@@ -321,7 +317,8 @@
 
 - (IBAction)aboutClick:(id)sender
 {
-
+    FYAboutViewController *controller = [[FYAboutViewController alloc] initWithNibName:@"FYAboutViewController" bundle:nil];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)didEnterAllPIN:(NSString *)pinNumber index:(NSInteger)index
@@ -337,6 +334,29 @@
     [super viewWillDisappear:animated];
     [[FYUDPNetWork shareNetEngine] stopMainData];
     [FYProgressHUD hideHud];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != 0) {
+        [[FYUDPNetWork shareNetEngine] stopMainData];
+        __weak typeof(self) weakSelf = self;
+        NSString *request = @"";
+        NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
+        if ([self.runState isEqualToString:@"00"]) {
+            request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"power$1"];
+        } else{
+            request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"power$0"];
+        }
+        [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
+            [[FYUDPNetWork shareNetEngine] resumeMainData];
+            if(finish){
+                [weakSelf AnalyticalData:responseString];
+            } else{
+                
+            }
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning

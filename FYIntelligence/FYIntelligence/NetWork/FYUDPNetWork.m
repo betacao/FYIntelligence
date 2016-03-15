@@ -57,8 +57,8 @@
 
 - (void)refreshUdpSocket
 {
-    [self.sendUdpSocket close];
-    [self createClientUdpSocket];
+//    [self.sendUdpSocket close];
+//    [self createClientUdpSocket];
 }
 
 - (void)udpMainType:(FYMainType)type startRequestMainData:(void (^)(BOOL, NSString *))block
@@ -101,7 +101,7 @@ static dispatch_queue_t udp_send_queue() {
     static dispatch_queue_t af_udp_send_queue;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        af_udp_send_queue = dispatch_queue_create("af_udp_send_queue", DISPATCH_QUEUE_SERIAL);
+        af_udp_send_queue = dispatch_queue_create("af_udp_send_queue", DISPATCH_QUEUE_CONCURRENT);
     });
 
     return af_udp_send_queue;
@@ -121,7 +121,7 @@ static dispatch_queue_t udp_sub_send_queue() {
     static dispatch_queue_t af_sub_udp_send_queue;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        af_sub_udp_send_queue = dispatch_queue_create("af_sub_udp_send_queue", DISPATCH_QUEUE_SERIAL);
+        af_sub_udp_send_queue = dispatch_queue_create("af_sub_udp_send_queue", DISPATCH_QUEUE_CONCURRENT);
     });
 
     return af_sub_udp_send_queue;

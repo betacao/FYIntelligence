@@ -11,6 +11,7 @@
 #import "FYListViewController.h"
 #import "FYForgrtPWDViewController.h"
 #import "APService.h"
+#import "UIButton+EnlargeEdge.h"
 
 @interface FYLoginViewController ()
 @property (weak, nonatomic) IBOutlet UIView *inputBgView;
@@ -41,6 +42,8 @@
 
     self.loginButton.layer.masksToBounds = YES;
     self.loginButton.layer.cornerRadius = 2.0f;
+
+    [self.rememberPwdButton setEnlargeEdge:30.0f];
 
     UIImage *normalImage = [UIImage imageNamed:@"btn_login_normal"];
     UIImage *pressImage = [UIImage imageNamed:@"btn_login_press"];

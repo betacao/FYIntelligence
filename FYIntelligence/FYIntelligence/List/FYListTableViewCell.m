@@ -42,7 +42,7 @@
     NSString *deviceName = @"";
     switch (device.deviceName) {
         case DeviceTypeSun:
-            deviceName = @"工程样机";
+            deviceName = @"太阳能热水控制中心";
             break;
         case DeviceTypeHot:
             deviceName = @"热水循环系统";

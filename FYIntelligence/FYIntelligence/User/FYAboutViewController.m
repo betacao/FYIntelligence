@@ -7,21 +7,60 @@
 //
 
 #import "FYAboutViewController.h"
+#import "FYParamSettingTableViewCell.h"
 
-@interface FYAboutViewController ()
+@interface FYAboutViewController ()<UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *titleArray;
 
 @end
 
 @implementation FYAboutViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.title = @"关于";
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.titleArray = @[@"服务热线:13355868768", @"官方网站:http://www.njhouxu.com", @"版本信息：V1.0"];
 }
 
 - (void)backButtonClick:(UIButton *)button
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    NSInteger count = self.navigationController.viewControllers.count;
+    if (count == 1) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else{
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.titleArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    FYParamSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FYParamSettingTableViewCell"];
+    if(!cell){
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"FYParamSettingTableViewCell" owner:self options:nil] lastObject];
+    }
+    [cell loadCellTitle:[self.titleArray objectAtIndex:indexPath.row]];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://13355868768"]];
+    } else if (indexPath.row == 1){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.njhouxu.com"]];
+    } else if (indexPath.row == 2){
+
+    }
 }
 
 - (void)didReceiveMemoryWarning {

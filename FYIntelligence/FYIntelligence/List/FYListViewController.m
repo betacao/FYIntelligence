@@ -45,13 +45,12 @@
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
 
-
+    [self loadData];
     [self.tableView setTableFooterView:[[UIView alloc] init]];
 }
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self loadData];
 }
 
 - (void)loadData
