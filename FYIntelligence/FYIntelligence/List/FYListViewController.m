@@ -58,7 +58,7 @@
     __weak typeof(self) weakSelf = self;
     [[FYTCPNetWork shareNetEngine] sendRequest:[NSString stringWithFormat:@"%@%@#",kListAddress,kAppDelegate.userName] complete:^(NSDictionary *dic) {
         NSString *string = [dic objectForKey:kResponseString];
-        NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\d+" options:0 error:nil];
+        NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
         NSMutableArray *results = [NSMutableArray array];
         [regularExpression enumerateMatchesInString:string options:0 range:NSMakeRange(0, string.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
             [results addObject:result];
@@ -76,16 +76,19 @@
         NSString *resultString = [string substringWithRange:result.range];
         weakSelf.deviceCount = [resultString integerValue];
         [weakSelf.deviceArray removeAllObjects];
-        for (NSInteger i = 1; i <= (MResult.count - 1) / 3; i++) {
+
+        NSInteger total = [[string substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range] integerValue];
+
+        for (NSInteger i = 0; i < total; i++) {
             FYDevice *device = [[FYDevice alloc] init];
 
-            result = [MResult objectAtIndex:(i * 3 - 2)];
+            result = [MResult objectAtIndex:i * 3 + 2];
             device.deviceID = [string substringWithRange:result.range];
 
-            result = [MResult objectAtIndex:(i * 3 - 1)];
+            result = [MResult objectAtIndex:i * 3 + 3];
             device.deviceName = (FYDeviceType)[[string substringWithRange:result.range] integerValue];
 
-            result = [MResult objectAtIndex:(i * 3)];
+            result = [MResult objectAtIndex:i * 3 + 4];
             device.deviceCondition = (FYDeviceCondition)[[string substringWithRange:result.range] integerValue];
 
             [weakSelf.deviceArray addObject:device];
