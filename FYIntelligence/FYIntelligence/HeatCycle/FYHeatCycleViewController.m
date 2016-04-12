@@ -31,11 +31,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *thirdLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fourthLabel;
 @property (weak, nonatomic) IBOutlet UIButton *powerButton;
+
 @property (strong, nonatomic) NSString *runState;
 @property (strong, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) NSInteger currentTime;
-@property (strong, nonatomic) NSString *responseString;
-@property (assign, nonatomic) NSInteger time;
 @end
 
 @implementation FYHeatCycleViewController
@@ -95,16 +94,12 @@
 
     self.currentTime = 0;
 
-    [self addObserver:self forKeyPath:@"currentTime" options:NSKeyValueObservingOptionNew context:nil];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(countDown) userInfo:nil repeats:YES];
-    [self getInfo];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    self.time = 25;
-    [[FYUDPNetWork shareNetEngine] resumeMainData];
 }
 
 - (void)backButtonClick:(UIButton *)button
@@ -115,10 +110,13 @@
 
 - (void)getInfo
 {
-    __weak typeof(self) weakSelf = self;
-    [[FYUDPNetWork shareNetEngine] udpMainType:FYMainTypeHot startRequestMainData:^(BOOL success, NSString *responseString) {
-        weakSelf.responseString = responseString;
-    }];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+        NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kHotMainViewCmd type:0];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self AnalyticalData:responseString];
+        });
+    });
 }
 
 - (void)startAnimation
@@ -134,25 +132,19 @@
 
 - (void)countDown
 {
-    if (self.currentTime <= 0) {
-        if (self.time == 0) {
-            self.time = 25;
-            [[FYUDPNetWork shareNetEngine] fastResumeMainData];
-            return;
-        }
-        self.time--;
-        [self AnalyticalData:self.responseString];
-        return;
-    }
-    self.time = 25;
     self.bgzLabel.text = [self secondsToMinutes:self.currentTime];
     self.jxLabel.text = [self secondsToMinutes:self.currentTime];
     self.currentTime--;
+    if (self.currentTime < 0) {
+        [self.timer setFireDate:[NSDate distantFuture]];
+        [self getInfo];
+        return;
+    }
 }
 
 - (NSString *)secondsToMinutes:(NSInteger)seconds
 {
-    if (seconds <= 0) {
+    if (seconds == 0) {
         return @"";
     }
     return [NSString stringWithFormat:@"%ld秒",(long)seconds];
@@ -230,6 +222,9 @@
     //显示时间
     NSInteger time = [minute integerValue] * 60.0f + [second integerValue];
     self.currentTime = time;
+    if (time > 0) {
+        [self.timer setFireDate:[NSDate date]];
+    }
     //温度
     value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
     if ([value isEqualToString:@"111"]) {
@@ -262,35 +257,18 @@
     if ((mode & 0x08) != 0){
         self.firstLabel.textColor = [UIColor whiteColor];
     }
-    self.responseString = @"";
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
-{
-    if ([keyPath isEqualToString:@"currentTime"]) {
-        NSInteger time = [[change objectForKey:@"new"] integerValue];
-        if (time <= 0 && ([self.runState isEqualToString:@"02"] || [self.runState isEqualToString:@"03"])) {
-            [[FYUDPNetWork shareNetEngine] fastResumeMainData];
-        }
-    }
 }
 
 - (IBAction)userClick:(UIButton *)button
 {
-    [[FYUDPNetWork shareNetEngine] stopMainData];
     [button setImage:[UIImage imageNamed:@"rsxhsdxhp"] forState:UIControlStateNormal];
-    __weak typeof(self) weakSelf = self;
-    NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-    NSString *request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,kHotSDXHCmd];
-    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        [button setImage:[UIImage imageNamed:@"rsxhsdxh"] forState:UIControlStateNormal];
-        [[FYUDPNetWork shareNetEngine] resumeMainData];
-        if(finish){
-            [weakSelf AnalyticalData:responseString];
-        } else{
-            
-        }
-    }];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kHotSDXHCmd type:0];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [button setImage:[UIImage imageNamed:@"rsxhsdxh"] forState:UIControlStateNormal];
+            [self AnalyticalData:responseString];
+        });
+    });
 }
 
 - (IBAction)powerClick:(id)sender
@@ -302,17 +280,10 @@
 
 - (IBAction)paramClick:(id)sender
 {
-    //    NSString *number = [kAppDelegate.pinDictionary objectForKey:kAppDelegate.deviceID];
-    //    if(!number || number.length == 0){
     FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
     controller.delegate = self;
     [self addChildViewController:controller];
     [self.view addSubview:controller.view];
-    //        return;
-    //    }
-    //    kAppDelegate.pinNumber = number;
-    //    FYHeatCycleSettingViewController *controller = [[FYHeatCycleSettingViewController alloc] init];
-    //    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (IBAction)aboutClick:(id)sender
@@ -323,39 +294,27 @@
 
 - (void)didEnterAllPIN:(NSString *)pinNumber index:(NSInteger)index
 {
-    kAppDelegate.pinNumber = pinNumber;
-    [kAppDelegate.pinDictionary setObject:pinNumber forKey:kAppDelegate.deviceID];
+    kAppDelegate.pinCode = pinNumber;
     FYHeatCycleSettingViewController *controller = [[FYHeatCycleSettingViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [[FYUDPNetWork shareNetEngine] stopMainData];
-    [FYProgressHUD hideHud];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex != 0) {
-        [[FYUDPNetWork shareNetEngine] stopMainData];
-        __weak typeof(self) weakSelf = self;
-        NSString *request = @"";
-        NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-        if ([self.runState isEqualToString:@"00"]) {
-            request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"power$1"];
-        } else{
-            request = [NSString stringWithFormat:kNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"power$0"];
-        }
-        [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-            [[FYUDPNetWork shareNetEngine] resumeMainData];
-            if(finish){
-                [weakSelf AnalyticalData:responseString];
+
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSString *responseString = @"";
+            if ([self.runState isEqualToString:@"00"]) {
+                responseString = [[FYUDPNetWork sharedNetWork] sendMessage:@"power$1" type:0];
             } else{
-                
+                responseString = [[FYUDPNetWork sharedNetWork] sendMessage:@"power$0" type:0];
             }
-        }];
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self AnalyticalData:responseString];
+            });
+        });
     }
 }
 
@@ -367,7 +326,6 @@
 - (void)dealloc
 {
     self.timer = nil;
-    [self removeObserver:self forKeyPath:@"currentTime"];
 }
 
 

@@ -99,57 +99,45 @@
 
 - (void)getInfo
 {
-    NSString *request = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),kGETWCXHCmd];
-    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        if(finish){
-            NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
-            NSMutableArray *results = [NSMutableArray array];
-            [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
-                [results addObject:result];
-            }];
-            NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
-                if (obj1.range.location > obj2.range.location) {
-                    return (NSComparisonResult)NSOrderedDescending;
-                } else if (obj1.range.location < obj2.range.location) {
-                    return (NSComparisonResult)NSOrderedAscending;
-                }
-                return (NSComparisonResult)NSOrderedSame;
-            };
-            NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+    NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kGETWCXHCmd type:1];
 
-            NSString *value1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
-            self.firstValue = value1;
-            NSString *value2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
-            self.secondValue = value2;
-            NSString *value3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
-            self.thirdValue = value3;
-            if ([self.startArray indexOfObject:[value1 stringByAppendingString:@"°C"]] != NSNotFound) {
-                [self.startPickView selectRow:[self.startArray indexOfObject:[value1 stringByAppendingString:@"°C"]] inComponent:0 animated:NO];
-            }
-            if ([self.endArray indexOfObject:[value2 stringByAppendingString:@"°C"]] != NSNotFound) {
-                [self.endPickView selectRow:[self.endArray indexOfObject:[value2 stringByAppendingString:@"°C"]] inComponent:0 animated:NO];
-            }
-            if ([self.protectArray indexOfObject:[value3 stringByAppendingString:@"°C"]] != NSNotFound) {
-                [self.protectPickView selectRow:[self.protectArray indexOfObject:[value3 stringByAppendingString:@"°C"]] inComponent:0 animated:NO];
-            }
-        }
+
+    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
+    NSMutableArray *results = [NSMutableArray array];
+    [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+        [results addObject:result];
     }];
+    NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
+        if (obj1.range.location > obj2.range.location) {
+            return (NSComparisonResult)NSOrderedDescending;
+        } else if (obj1.range.location < obj2.range.location) {
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    };
+    NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+
+    NSString *value1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+    self.firstValue = value1;
+    NSString *value2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
+    self.secondValue = value2;
+    NSString *value3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+    self.thirdValue = value3;
+    if ([self.startArray indexOfObject:[value1 stringByAppendingString:@"°C"]] != NSNotFound) {
+        [self.startPickView selectRow:[self.startArray indexOfObject:[value1 stringByAppendingString:@"°C"]] inComponent:0 animated:NO];
+    }
+    if ([self.endArray indexOfObject:[value2 stringByAppendingString:@"°C"]] != NSNotFound) {
+        [self.endPickView selectRow:[self.endArray indexOfObject:[value2 stringByAppendingString:@"°C"]] inComponent:0 animated:NO];
+    }
+    if ([self.protectArray indexOfObject:[value3 stringByAppendingString:@"°C"]] != NSNotFound) {
+        [self.protectPickView selectRow:[self.protectArray indexOfObject:[value3 stringByAppendingString:@"°C"]] inComponent:0 animated:NO];
+    }
 }
 
 - (IBAction)sendMessage:(id)sender
 {
     NSString *string = [NSString stringWithFormat:kWCXHCmd, self.firstValue, self.secondValue, self.thirdValue];
-    NSString *UDPRequest = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),string];
-    [[FYUDPNetWork shareNetEngine] sendRequest:UDPRequest complete:^(BOOL finish, NSString *responseString) {
-        if(finish){
-
-        } else{
-            NSString *TCPRequest = [NSString stringWithFormat:kAppDelegate.deviceID, kNeedPINClearCmd,kAppDelegate.userName,kAppDelegate.pinNumber];
-            [[FYTCPNetWork shareNetEngine] sendRequest:TCPRequest complete:^(NSDictionary *dic) {
-
-            }];
-        }
-    }];
+    [[FYUDPNetWork sharedNetWork] sendMessage:string type:1];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -39,7 +39,7 @@
 }
 
 
-- (void)showHudWithMessage:(NSString *)message
++ (void)showHudWithMessage:(NSString *)message
 {
     UIView *view = [AppDelegate currentAppdelegate].window;
     MBProgressHUD  *HUD = [[MBProgressHUD alloc] initWithView:view];
@@ -52,15 +52,17 @@
 
 + (void)showMessageWithText:(NSString *)text
 {
-    UIView *view = [AppDelegate currentAppdelegate].window;
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.yOffset = -50;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIView *view = [AppDelegate currentAppdelegate].window;
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+        hud.yOffset = -50;
 
-    [view bringSubviewToFront:hud];
-    hud.mode = MBProgressHUDModeText;
-    hud.labelText = text;
-    hud.removeFromSuperViewOnHide = YES;
-    [hud hide:YES afterDelay:1.2];
+        [view bringSubviewToFront:hud];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = text;
+        hud.removeFromSuperViewOnHide = YES;
+        [hud hide:YES afterDelay:1.2];
+    });
 }
 
 + (void)showMessageWithLongText:(NSString *)text

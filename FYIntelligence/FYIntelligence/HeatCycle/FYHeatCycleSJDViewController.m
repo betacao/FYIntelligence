@@ -51,9 +51,9 @@
 
 - (void)getInfo
 {
-    NSString *request = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),@"read_rsjd_config"];
-    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        if(finish){
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:@"read_rsjd_config" type:1];
+        dispatch_async(dispatch_get_main_queue(), ^{
             NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
             NSMutableArray *results = [NSMutableArray array];
             [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
@@ -95,8 +95,8 @@
             NSString *hour32 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:13]).range];
             NSString *minute32 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:14]).range];
             [self.positionButton3 setTitle:[NSString stringWithFormat:@"%@:%@",hour32, minute32] forState:UIControlStateNormal];
-        }
-    }];
+        });
+    });
 }
 
 - (void)object:(UIButton *)button didSelectItem:(NSString *)itemString
@@ -130,18 +130,12 @@
     NSString *minute32 = [self.positionButton3.titleLabel.text substringFromIndex:[self.positionButton3.titleLabel.text rangeOfString:@":"].location + 1];
 
     NSString *string = [NSString stringWithFormat:@"rconfig_sjd$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@$%@", isOn1, hour11, minute11, hour12, minute12, isOn2, hour21, minute21, hour22, minute22, isOn3, hour31, minute31, hour32, minute32];
-    NSString *UDPRequest = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),string];
-    [[FYUDPNetWork shareNetEngine] sendRequest:UDPRequest complete:^(BOOL finish, NSString *responseString) {
-        if(finish){
 
-        } else{
-            NSString *TCPRequest = [NSString stringWithFormat:kAppDelegate.deviceID, kNeedPINClearCmd,kAppDelegate.userName,kAppDelegate.pinNumber];
-            [[FYTCPNetWork shareNetEngine] sendRequest:TCPRequest complete:^(NSDictionary *dic) {
-
-            }];
-        }
-    }];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[FYUDPNetWork sharedNetWork] sendMessage:string type:1];
+    });
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

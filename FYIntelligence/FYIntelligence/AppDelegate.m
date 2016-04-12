@@ -21,12 +21,8 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.globleNumber = 1;
-    self.pinNumber = @"";
-    self.pinDictionary = [NSMutableDictionary dictionary];
-    self.isRemember = NO;
     [[FYTCPNetWork shareNetEngine] createClientTcpSocket];
-    [[FYUDPNetWork shareNetEngine] createClientUdpSocket];
+    self.isRemember = NO;
     [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert) categories:nil];
     [APService setupWithOption:launchOptions];
 
@@ -45,7 +41,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     [application setApplicationIconBadgeNumber:0];
     [application cancelAllLocalNotifications];
-    [[FYUDPNetWork shareNetEngine] refreshUdpSocket];
+    [[FYUDPNetWork sharedNetWork] refreshUdpSocket];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

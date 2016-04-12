@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"添加设备";
-    self.userNameLabel.text = [self.userNameLabel.text stringByAppendingString:kAppDelegate.userName];
+    self.userNameLabel.text = [self.userNameLabel.text stringByAppendingString:kAppDelegate.userID];
     [self.userNameLabel sizeToFit];
 
     self.inputBgView.layer.masksToBounds = YES;
@@ -81,7 +81,7 @@
     if (self.pwdField.text.length == 0) {
         return;
     }
-    NSString *request = [NSString stringWithFormat:kAddedDeviceCmd,self.userField.text, self.pwdField.text, kAppDelegate.userName, kAppDelegate.userPWD];
+    NSString *request = [NSString stringWithFormat:kAddedDeviceCmd,self.userField.text, self.pwdField.text, kAppDelegate.userID, kAppDelegate.userPWD];
     __weak typeof(self) weakSelf = self;
     [[FYTCPNetWork shareNetEngine] sendRequest:request complete:^(NSDictionary *dic) {
         if ([[dic objectForKey:kResponseString] rangeOfString:@"SUC"].location != NSNotFound) {

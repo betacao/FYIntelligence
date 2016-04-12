@@ -11,12 +11,14 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (assign, nonatomic) NSInteger globleNumber;
-@property (strong, nonatomic) NSString *pinNumber;
-@property (strong, nonatomic) NSMutableDictionary *pinDictionary;
-@property (assign, nonatomic) BOOL isRemember;
+
 @property (strong, nonatomic) NSString *deviceID;
-@property (strong, nonatomic) NSString *userName;
+@property (strong, nonatomic) NSString *userID;
+@property (strong, nonatomic) NSString *pinCode;
+@property (strong, nonatomic) NSString *receivedStream;
+
+
+@property (assign, nonatomic) BOOL isRemember;
 @property (strong, nonatomic) NSString *userPWD;
 @property (strong, nonatomic) NSString *ESPDescription;
 

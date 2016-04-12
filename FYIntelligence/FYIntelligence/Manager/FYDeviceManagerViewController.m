@@ -103,7 +103,6 @@
 {
     [super viewDidAppear:animated];
     [self initUI];
-    [[FYUDPNetWork shareNetEngine] resumeMainData];
 }
 
 - (void)initUI
@@ -149,7 +148,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [[FYUDPNetWork shareNetEngine] stopMainData];
     [FYProgressHUD hideHud];
 }
 
@@ -272,13 +270,11 @@
 
 - (void)getInfo
 {
-    __weak typeof(self) weakSelf = self;
-    [[FYUDPNetWork shareNetEngine] udpMainType:FYMainTypeSun startRequestMainData:^(BOOL finish, NSString *responseString) {
-        if(finish){
-            [weakSelf AnalyticalData:responseString];
-        }
-    }];
+
+    NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kMainViewCmd type:0];
+    [self AnalyticalData:responseString];
 }
+
 - (void)AnalyticalData:(NSString *)responseString
 {
     NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
@@ -500,22 +496,12 @@
 - (IBAction)clickAddWater:(UIButton *)sender
 {
     //手动上水
-    [[FYUDPNetWork shareNetEngine] stopMainData];
-    __weak typeof(self) weakSelf = self;
-    NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-    NSString *state = (self.controlId&0x08) == 0 ? @"1" :@"0";
-    NSString *request = [NSString stringWithFormat:kMainNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_sdss",state];
-    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        [[FYUDPNetWork shareNetEngine] resumeMainData];
-        if(finish){
-            [weakSelf AnalyticalData:responseString];
-        } else{
-            NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,kAppDelegate.deviceID,kAppDelegate.userName];
-            [[FYTCPNetWork shareNetEngine] sendRequest:requset complete:^(NSDictionary *dic) {
 
-            }];
-        }
-    }];
+    NSString *state = (self.controlId&0x08) == 0 ? @"1" :@"0";
+
+    NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:[NSString stringWithFormat:@"cmd_sdss$%@",state] type:0];
+
+    [self AnalyticalData:responseString];
     
     
 }
@@ -523,75 +509,35 @@
 - (IBAction)clickUserWarm:(UIButton *)sender
 {
     //手动加热
-    [[FYUDPNetWork shareNetEngine] stopMainData];
-    __weak typeof(self) weakSelf = self;
-    NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
     NSString *state = (self.controlId&0x04) == 0 ? @"1" :@"0";
-    NSString *request = [NSString stringWithFormat:kMainNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_sdjr",state];
-    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        [[FYUDPNetWork shareNetEngine] resumeMainData];
-        if(finish){
-            [weakSelf AnalyticalData:responseString];
-        } else{
-            NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,kAppDelegate.deviceID,kAppDelegate.userName];
-            [[FYTCPNetWork shareNetEngine] sendRequest:requset complete:^(NSDictionary *dic) {
 
-            }];
-        }
-    }];
+    NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:[NSString stringWithFormat:@"cmd_sdjr$%@",state] type:0];
+
+    [self AnalyticalData:responseString];
+
 }
 
 - (IBAction)clickTemCircle:(UIButton *)sender
 {
     //温差循环
-    [[FYUDPNetWork shareNetEngine] stopMainData];
-    __weak typeof(self) weakSelf = self;
-    NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-
     NSString *state = (self.controlId&0x02) == 0 ? @"1" :@"0";
-    NSString *request = [NSString stringWithFormat:kMainNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_wcxh",state];
+    NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:[NSString stringWithFormat:@"cmd_wcxh$%@",state] type:0];
 
-    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        [[FYUDPNetWork shareNetEngine] resumeMainData];
-        if(finish){
-            [weakSelf AnalyticalData:responseString];
-
-        } else{
-            NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,kAppDelegate.deviceID,kAppDelegate.userName];
-            [[FYTCPNetWork shareNetEngine] sendRequest:requset complete:^(NSDictionary *dic) {
-
-            }];
-        }
-    }];
+    [self AnalyticalData:responseString];
 }
 
 - (IBAction)clickWaterCircle:(UIButton *)sender
 {
     //管道回水
-    [[FYUDPNetWork shareNetEngine] stopMainData];
-    __weak typeof(self) weakSelf = self;
-    NSString *globleString = [NSString stringWithFormat:@"%ld",(long)kAppDelegate.globleNumber];
-
     NSString *state = (self.controlId&0x01) == 0 ? @"1" :@"0";
-    NSString *request = [NSString stringWithFormat:kMainNoPINString,kAppDelegate.deviceID,kAppDelegate.userName,globleString,@"cmd_gdhs",state];
-    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        [[FYUDPNetWork shareNetEngine] resumeMainData];
-        if(finish){
-            [weakSelf AnalyticalData:responseString];
-        } else{
-            NSString *requset = [NSString stringWithFormat:kNoPINClearCmd,kAppDelegate.deviceID,kAppDelegate.userName];
-            [[FYTCPNetWork shareNetEngine] sendRequest:requset complete:^(NSDictionary *dic) {
+    NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:[NSString stringWithFormat:@"cmd_gdhs$%@",state] type:0];
 
-            }];
-        }
-
-    }];
+    [self AnalyticalData:responseString];
 }
 
 - (void)didEnterAllPIN:(NSString *)pinNumber index:(NSInteger)index
 {
-    kAppDelegate.pinNumber = pinNumber;
-    [kAppDelegate.pinDictionary setObject:pinNumber forKey:kAppDelegate.deviceID];
+    kAppDelegate.pinCode = pinNumber;
     FYParamSettingViewController *controller = [[FYParamSettingViewController alloc] initWithNibName:@"FYParamSettingViewController" bundle:nil];
     FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
     [self presentViewController:nav animated:YES completion:nil];

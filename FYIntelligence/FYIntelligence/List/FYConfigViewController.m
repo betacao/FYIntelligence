@@ -91,18 +91,12 @@
 - (IBAction)leftNextClick:(id)sender
 {
     NSString *string = [NSString stringWithFormat:kConfigDeviceCmd,self.leftSSidField.text, self.leftWifField.text];
-    NSString *requset = [NSString stringWithFormat:kNeedPINString,self.deviceID,self.leftPwdField.text,kAppDelegate.userName,@(kAppDelegate.globleNumber),string];
-    [[FYUDPNetWork shareNetEngine] sendRequest:requset complete:^(BOOL finish, NSString *responseString) {
-        [FYProgressHUD hideHud];
-        if (finish) {
-            [FYProgressHUD showMessageWithText:@"设置成功"];
-        }
-    }];
+    [[FYUDPNetWork sharedNetWork] sendMessage:string type:1];
 }
 
 - (IBAction)rightNextClick:(id)sender
 {
-    NSString *request = [NSString stringWithFormat:kDeleteDeviceCmd,self.deviceID, self.rightPwdField.text, kAppDelegate.userName];
+    NSString *request = [NSString stringWithFormat:kDeleteDeviceCmd,self.deviceID, self.rightPwdField.text, kAppDelegate.userID];
     [[FYTCPNetWork shareNetEngine] sendRequest:request complete:^(NSDictionary *dic) {
         [FYProgressHUD showMessageWithText:@"设置成功"];
         if (self.delegate && [self.delegate respondsToSelector:@selector(didDeleteDevice:)]) {

@@ -79,53 +79,39 @@
 
 - (void)getInfo
 {
-    NSString *request = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),kGETWKJSCmd];
-    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        if(finish){
-            NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
-            NSMutableArray *results = [NSMutableArray array];
-            [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
-                [results addObject:result];
-            }];
-            NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
-                if (obj1.range.location > obj2.range.location) {
-                    return (NSComparisonResult)NSOrderedDescending;
-                } else if (obj1.range.location < obj2.range.location) {
-                    return (NSComparisonResult)NSOrderedAscending;
-                }
-                return (NSComparisonResult)NSOrderedSame;
-            };
-            NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+    NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kGETWKJSCmd type:1];
 
-            NSString *value1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
-            NSString *value2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
-            if ([self.positionArray indexOfObject:value1] != NSNotFound) {
-                [self.postionPickView selectRow:[self.positionArray indexOfObject:value1] inComponent:0 animated:NO];
-                self.firstValue = value1;
-            }
-            if ([self.temArray indexOfObject:value2] != NSNotFound) {
-                [self.temPickView selectRow:[self.temArray indexOfObject:value2] inComponent:0 animated:NO];
-                self.secondValue = value2;
-            }
-
-        }
+    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
+    NSMutableArray *results = [NSMutableArray array];
+    [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+        [results addObject:result];
     }];
+    NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
+        if (obj1.range.location > obj2.range.location) {
+            return (NSComparisonResult)NSOrderedDescending;
+        } else if (obj1.range.location < obj2.range.location) {
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    };
+    NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+
+    NSString *value1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+    NSString *value2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
+    if ([self.positionArray indexOfObject:value1] != NSNotFound) {
+        [self.postionPickView selectRow:[self.positionArray indexOfObject:value1] inComponent:0 animated:NO];
+        self.firstValue = value1;
+    }
+    if ([self.temArray indexOfObject:value2] != NSNotFound) {
+        [self.temPickView selectRow:[self.temArray indexOfObject:value2] inComponent:0 animated:NO];
+        self.secondValue = value2;
+    }
 }
 
 - (IBAction)sendMessage:(id)sender
 {
     NSString *string = [NSString stringWithFormat:kWKJSCmd, self.firstValue, self.secondValue];
-    NSString *UDPRequest = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),string];
-    [[FYUDPNetWork shareNetEngine] sendRequest:UDPRequest complete:^(BOOL finish, NSString *responseString) {
-        if(finish){
-
-        } else{
-            NSString *TCPRequest = [NSString stringWithFormat:kAppDelegate.deviceID, kNeedPINClearCmd,kAppDelegate.userName,kAppDelegate.pinNumber];
-            [[FYTCPNetWork shareNetEngine] sendRequest:TCPRequest complete:^(NSDictionary *dic) {
-
-            }];
-        }
-    }];
+    [[FYUDPNetWork sharedNetWork] sendMessage:string type:1];
 }
 
 - (void)didReceiveMemoryWarning {

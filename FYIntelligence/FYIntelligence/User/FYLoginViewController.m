@@ -60,8 +60,8 @@
         [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:kPassWord];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-    kAppDelegate.userName = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
-    self.userField.text = kAppDelegate.userName;
+    kAppDelegate.userID = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
+    self.userField.text = kAppDelegate.userID;
     NSString *pwd = [[NSUserDefaults standardUserDefaults] objectForKey:kPassWord];
     self.pwdField.text = pwd;
     kAppDelegate.userPWD = pwd;
@@ -101,7 +101,7 @@
     if(pwd.length == 0){
         return;
     }
-    kAppDelegate.userName = userName;
+    kAppDelegate.userID = userName;
     kAppDelegate.userPWD = pwd;
     [[NSUserDefaults standardUserDefaults] setObject:userName forKey:kUserName];
     [[NSUserDefaults standardUserDefaults] setObject:pwd forKey:kPassWord];

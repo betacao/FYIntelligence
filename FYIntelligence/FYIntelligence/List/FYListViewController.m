@@ -56,7 +56,7 @@
 - (void)loadData
 {
     __weak typeof(self) weakSelf = self;
-    [[FYTCPNetWork shareNetEngine] sendRequest:[NSString stringWithFormat:@"%@%@#",kListAddress,kAppDelegate.userName] complete:^(NSDictionary *dic) {
+    [[FYTCPNetWork shareNetEngine] sendRequest:[NSString stringWithFormat:@"%@%@#",kListAddress,kAppDelegate.userID] complete:^(NSDictionary *dic) {
         NSString *string = [dic objectForKey:kResponseString];
         NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
         NSMutableArray *results = [NSMutableArray array];

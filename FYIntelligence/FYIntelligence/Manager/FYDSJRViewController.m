@@ -62,49 +62,46 @@
 
 - (void)getInfo
 {
-    NSString *request = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),kGETDSJRCmd];
-    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        if(finish){
-            NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
-            NSMutableArray *results = [NSMutableArray array];
-            [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
-                [results addObject:result];
-            }];
-            NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
-                if (obj1.range.location > obj2.range.location) {
-                    return (NSComparisonResult)NSOrderedDescending;
-                } else if (obj1.range.location < obj2.range.location) {
-                    return (NSComparisonResult)NSOrderedAscending;
-                }
-                return (NSComparisonResult)NSOrderedSame;
-            };
-            NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+    NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kGETDSJRCmd type:1];
 
-            NSString *isOn1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
-            [self.switch1 setOn: [isOn1 isEqualToString:@"01"] ? YES : NO];
-            NSString *hour1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
-            NSString *minute1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
-            [self.timeButton1 setTitle:[NSString stringWithFormat:@"%@:%@",hour1, minute1] forState:UIControlStateNormal];
-            NSString *tem1 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range] stringByAppendingString:@"°C"];
-            [self.positionButton1 setTitle:tem1 forState:UIControlStateNormal];
-
-            NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
-            [self.switch2 setOn: [isOn2 isEqualToString:@"01"] ? YES : NO];
-            NSString *hour2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range];
-            NSString *minute2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:6]).range];
-            [self.timeButton2 setTitle:[NSString stringWithFormat:@"%@:%@",hour2, minute2] forState:UIControlStateNormal];
-            NSString *tem2 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:7]).range] stringByAppendingString:@"°C"];
-            [self.positionButton2 setTitle:tem2 forState:UIControlStateNormal];
-
-            NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:8]).range];
-            [self.switch3 setOn: [isOn3 isEqualToString:@"01"] ? YES : NO];
-            NSString *hour3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:9]).range];
-            NSString *minute3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:10]).range];
-            [self.timeButton3 setTitle:[NSString stringWithFormat:@"%@:%@",hour3, minute3] forState:UIControlStateNormal];
-            NSString *tem3 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:11]).range] stringByAppendingString:@"°C"];
-            [self.positionButton3 setTitle:tem3 forState:UIControlStateNormal];
-        }
+    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
+    NSMutableArray *results = [NSMutableArray array];
+    [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+        [results addObject:result];
     }];
+    NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
+        if (obj1.range.location > obj2.range.location) {
+            return (NSComparisonResult)NSOrderedDescending;
+        } else if (obj1.range.location < obj2.range.location) {
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    };
+    NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+
+    NSString *isOn1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+    [self.switch1 setOn: [isOn1 isEqualToString:@"01"] ? YES : NO];
+    NSString *hour1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
+    NSString *minute1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+    [self.timeButton1 setTitle:[NSString stringWithFormat:@"%@:%@",hour1, minute1] forState:UIControlStateNormal];
+    NSString *tem1 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range] stringByAppendingString:@"°C"];
+    [self.positionButton1 setTitle:tem1 forState:UIControlStateNormal];
+
+    NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
+    [self.switch2 setOn: [isOn2 isEqualToString:@"01"] ? YES : NO];
+    NSString *hour2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range];
+    NSString *minute2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:6]).range];
+    [self.timeButton2 setTitle:[NSString stringWithFormat:@"%@:%@",hour2, minute2] forState:UIControlStateNormal];
+    NSString *tem2 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:7]).range] stringByAppendingString:@"°C"];
+    [self.positionButton2 setTitle:tem2 forState:UIControlStateNormal];
+
+    NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:8]).range];
+    [self.switch3 setOn: [isOn3 isEqualToString:@"01"] ? YES : NO];
+    NSString *hour3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:9]).range];
+    NSString *minute3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:10]).range];
+    [self.timeButton3 setTitle:[NSString stringWithFormat:@"%@:%@",hour3, minute3] forState:UIControlStateNormal];
+    NSString *tem3 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:11]).range] stringByAppendingString:@"°C"];
+    [self.positionButton3 setTitle:tem3 forState:UIControlStateNormal];
 }
 
 - (void)object:(UIButton *)button didSelectItem:(NSString *)itemString
@@ -135,17 +132,8 @@
     NSString *tem3 = [self.positionButton3.titleLabel.text substringToIndex:2];
 
     NSString *string = [NSString stringWithFormat:kDSJRCmd, isOn1, hour1, minute1, tem1, isOn2, hour2, minute2, tem2, isOn3, hour3, minute3, tem3];
-    NSString *UDPRequest = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),string];
-    [[FYUDPNetWork shareNetEngine] sendRequest:UDPRequest complete:^(BOOL finish, NSString *responseString) {
-        if(finish){
 
-        } else{
-            NSString *TCPRequest = [NSString stringWithFormat:kAppDelegate.deviceID, kNeedPINClearCmd,kAppDelegate.userName,kAppDelegate.pinNumber];
-            [[FYTCPNetWork shareNetEngine] sendRequest:TCPRequest complete:^(NSDictionary *dic) {
-
-            }];
-        }
-    }];
+    [[FYUDPNetWork sharedNetWork] sendMessage:string type:1];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

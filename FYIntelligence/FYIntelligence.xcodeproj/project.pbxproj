@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F9117AD61CBCCE350056A5F5 /* FYTCPSpecialNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F9117AD51CBCCE350056A5F5 /* FYTCPSpecialNetWork.m */; };
 		F91C1BED1BD23767002FC017 /* FYForgrtPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F91C1BEB1BD23767002FC017 /* FYForgrtPWDViewController.m */; };
 		F91C1BEE1BD23767002FC017 /* FYForgrtPWDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91C1BEC1BD23767002FC017 /* FYForgrtPWDViewController.xib */; };
-		F91FF3E41C40DDD1005EC47C /* ESPThread.m in Sources */ = {isa = PBXBuildFile; fileRef = F91FF3E31C40DDD1005EC47C /* ESPThread.m */; };
 		F93F982D1BCE6E3300FD46A8 /* FYPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F93F982C1BCE6E3300FD46A8 /* FYPickerView.m */; };
 		F93F98301BCE7C2800FD46A8 /* FYDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F93F982F1BCE7C2800FD46A8 /* FYDatePickerView.m */; };
 		F95113BF1BCD45D60058C7B2 /* FYParamSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95113BD1BCD45D60058C7B2 /* FYParamSettingViewController.m */; };
@@ -107,7 +107,6 @@
 		F9C3231A1C0ACF8D004D45E7 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C323191C0ACF8D004D45E7 /* CoreFoundation.framework */; };
 		F9C3231C1C0ACF95004D45E7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C3231B1C0ACF95004D45E7 /* CFNetwork.framework */; };
 		F9C3231E1C0AD2D7004D45E7 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9C3231D1C0AD2D7004D45E7 /* PushConfig.plist */; };
-		F9CEB4891BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F9CEB4881BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.m */; };
 		F9DE29101BD5E2BF0009F667 /* FYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DE290F1BD5E2BF0009F667 /* FYProgressHUD.m */; };
 		F9DE29131BD61AE60009F667 /* FYDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DE29121BD61AE60009F667 /* FYDevice.m */; };
 		F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B31BC7F5CC00520CAA /* main.m */; };
@@ -134,11 +133,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F9117AD41CBCCE350056A5F5 /* FYTCPSpecialNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYTCPSpecialNetWork.h; sourceTree = "<group>"; };
+		F9117AD51CBCCE350056A5F5 /* FYTCPSpecialNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYTCPSpecialNetWork.m; sourceTree = "<group>"; };
 		F91C1BEA1BD23767002FC017 /* FYForgrtPWDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYForgrtPWDViewController.h; sourceTree = "<group>"; };
 		F91C1BEB1BD23767002FC017 /* FYForgrtPWDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYForgrtPWDViewController.m; sourceTree = "<group>"; };
 		F91C1BEC1BD23767002FC017 /* FYForgrtPWDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYForgrtPWDViewController.xib; sourceTree = "<group>"; };
-		F91FF3E21C40DDD1005EC47C /* ESPThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPThread.h; sourceTree = "<group>"; };
-		F91FF3E31C40DDD1005EC47C /* ESPThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPThread.m; sourceTree = "<group>"; };
 		F93F982B1BCE6E3300FD46A8 /* FYPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYPickerView.h; sourceTree = "<group>"; };
 		F93F982C1BCE6E3300FD46A8 /* FYPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYPickerView.m; sourceTree = "<group>"; };
 		F93F982E1BCE7C2800FD46A8 /* FYDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDatePickerView.h; sourceTree = "<group>"; };
@@ -297,8 +296,6 @@
 		F9C323191C0ACF8D004D45E7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		F9C3231B1C0ACF95004D45E7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F9C3231D1C0AD2D7004D45E7 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
-		F9CEB4871BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYTCPSpecialNetWork.h; sourceTree = "<group>"; };
-		F9CEB4881BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYTCPSpecialNetWork.m; sourceTree = "<group>"; };
 		F9DE290E1BD5E2BF0009F667 /* FYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYProgressHUD.h; sourceTree = "<group>"; };
 		F9DE290F1BD5E2BF0009F667 /* FYProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYProgressHUD.m; sourceTree = "<group>"; };
 		F9DE29111BD61AE60009F667 /* FYDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDevice.h; sourceTree = "<group>"; };
@@ -474,14 +471,12 @@
 		F9B441C91BD4F323005148D1 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
-				F91FF3E21C40DDD1005EC47C /* ESPThread.h */,
-				F91FF3E31C40DDD1005EC47C /* ESPThread.m */,
 				F9B441CA1BD4F339005148D1 /* FYTCPNetWork.h */,
 				F9B441CB1BD4F339005148D1 /* FYTCPNetWork.m */,
 				F9B0636C1BD7A41A00471DF4 /* FYUDPNetWork.h */,
 				F9B0636D1BD7A41A00471DF4 /* FYUDPNetWork.m */,
-				F9CEB4871BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.h */,
-				F9CEB4881BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.m */,
+				F9117AD41CBCCE350056A5F5 /* FYTCPSpecialNetWork.h */,
+				F9117AD51CBCCE350056A5F5 /* FYTCPSpecialNetWork.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -832,7 +827,6 @@
 				F99463AD1BD6822E008B9F54 /* FYAboutViewController.m in Sources */,
 				F96E2FE31BCE6A7600B6AF4B /* FYDSSSViewController.m in Sources */,
 				F98351691BCA270A00809E14 /* FYListTableViewCell.m in Sources */,
-				F9CEB4891BDBC5F700C0AEA1 /* FYTCPSpecialNetWork.m in Sources */,
 				F98B9FF91BCF9D0300B5FEAF /* FYDSJRViewController.m in Sources */,
 				F9859DAF1BF211AC0049B5CA /* IPAddress.c in Sources */,
 				F9859DAC1BF211AC0049B5CA /* ESPTouchTaskParameter.m in Sources */,
@@ -879,9 +873,9 @@
 				F9859DA81BF211AC0049B5CA /* ESPGuideCode.m in Sources */,
 				F95A636B1BC7F7BB002B949A /* FYBaseNavigationViewController.m in Sources */,
 				F97340A21BCFECEF006D1740 /* FYGDXHViewController.m in Sources */,
+				F9117AD61CBCCE350056A5F5 /* FYTCPSpecialNetWork.m in Sources */,
 				F97ED2A01C982E57009CF4B5 /* UIButton+EnlargeEdge.m in Sources */,
 				F9859DA61BF211AC0049B5CA /* ESPDataCode.m in Sources */,
-				F91FF3E41C40DDD1005EC47C /* ESPThread.m in Sources */,
 				F9859DAB1BF211AC0049B5CA /* ESPTouchTask.m in Sources */,
 				F95E36631C40F67100E34689 /* FYHeatCycleHSWDViewController.m in Sources */,
 				F96E2F981BCE385500B6AF4B /* FYSDSSViewController.m in Sources */,

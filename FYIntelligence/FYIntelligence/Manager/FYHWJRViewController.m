@@ -75,63 +75,61 @@
 
 - (void)getInfo
 {
-    NSString *request = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),kGETHWJRCmd];
-    [[FYUDPNetWork shareNetEngine] sendRequest:request complete:^(BOOL finish, NSString *responseString) {
-        if(finish){
-            NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
-            NSMutableArray *results = [NSMutableArray array];
-            [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
-                [results addObject:result];
-            }];
-            NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
-                if (obj1.range.location > obj2.range.location) {
-                    return (NSComparisonResult)NSOrderedDescending;
-                } else if (obj1.range.location < obj2.range.location) {
-                    return (NSComparisonResult)NSOrderedAscending;
-                }
-                return (NSComparisonResult)NSOrderedSame;
-            };
-            NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
 
-            NSString *isOn1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
-            [self.switch1 setOn: [isOn1 isEqualToString:@"01"] ? YES : NO];
-            NSString *hour11 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
-            NSString *minute11 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
-            [self.timeButton1 setTitle:[NSString stringWithFormat:@"%@:%@",hour11, minute11] forState:UIControlStateNormal];
-            NSString *hour12 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
-            NSString *minute12 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
-            [self.timeButton4 setTitle:[NSString stringWithFormat:@"%@:%@",hour12, minute12] forState:UIControlStateNormal];
-            NSString *tem1 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range] stringByAppendingString:@"°C"];
-            [self.positionButton1 setTitle:tem1 forState:UIControlStateNormal];
+    NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kGETHWJRCmd type:1];
 
-            NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:6]).range];
-            [self.switch2 setOn: [isOn2 isEqualToString:@"01"] ? YES : NO];
-            NSString *hour21 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:7]).range];
-            NSString *minute21 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:8]).range];
-            [self.timeButton2 setTitle:[NSString stringWithFormat:@"%@:%@",hour21, minute21] forState:UIControlStateNormal];
-
-            NSString *hour22 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:9]).range];
-            NSString *minute22 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:10]).range];
-            [self.timeButton5 setTitle:[NSString stringWithFormat:@"%@:%@",hour22, minute22] forState:UIControlStateNormal];
-
-            NSString *tem2 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:11]).range] stringByAppendingString:@"°C"];
-            [self.positionButton2 setTitle:tem2 forState:UIControlStateNormal];
-
-            NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:12]).range];
-            [self.switch3 setOn: [isOn3 isEqualToString:@"01"] ? YES : NO];
-            NSString *hour31 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:13]).range];
-            NSString *minute31 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:14]).range];
-            [self.timeButton3 setTitle:[NSString stringWithFormat:@"%@:%@",hour31, minute31] forState:UIControlStateNormal];
-
-
-            NSString *hour32 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:15]).range];
-            NSString *minute32 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:16]).range];
-            [self.timeButton6 setTitle:[NSString stringWithFormat:@"%@:%@",hour32, minute32] forState:UIControlStateNormal];
-
-            NSString *tem3 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:17]).range] stringByAppendingString:@"°C"];
-            [self.positionButton3 setTitle:tem3 forState:UIControlStateNormal];
-        }
+    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
+    NSMutableArray *results = [NSMutableArray array];
+    [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+        [results addObject:result];
     }];
+    NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
+        if (obj1.range.location > obj2.range.location) {
+            return (NSComparisonResult)NSOrderedDescending;
+        } else if (obj1.range.location < obj2.range.location) {
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    };
+    NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+
+    NSString *isOn1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+    [self.switch1 setOn: [isOn1 isEqualToString:@"01"] ? YES : NO];
+    NSString *hour11 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
+    NSString *minute11 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+    [self.timeButton1 setTitle:[NSString stringWithFormat:@"%@:%@",hour11, minute11] forState:UIControlStateNormal];
+    NSString *hour12 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range];
+    NSString *minute12 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
+    [self.timeButton4 setTitle:[NSString stringWithFormat:@"%@:%@",hour12, minute12] forState:UIControlStateNormal];
+    NSString *tem1 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:5]).range] stringByAppendingString:@"°C"];
+    [self.positionButton1 setTitle:tem1 forState:UIControlStateNormal];
+
+    NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:6]).range];
+    [self.switch2 setOn: [isOn2 isEqualToString:@"01"] ? YES : NO];
+    NSString *hour21 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:7]).range];
+    NSString *minute21 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:8]).range];
+    [self.timeButton2 setTitle:[NSString stringWithFormat:@"%@:%@",hour21, minute21] forState:UIControlStateNormal];
+
+    NSString *hour22 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:9]).range];
+    NSString *minute22 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:10]).range];
+    [self.timeButton5 setTitle:[NSString stringWithFormat:@"%@:%@",hour22, minute22] forState:UIControlStateNormal];
+
+    NSString *tem2 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:11]).range] stringByAppendingString:@"°C"];
+    [self.positionButton2 setTitle:tem2 forState:UIControlStateNormal];
+
+    NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:12]).range];
+    [self.switch3 setOn: [isOn3 isEqualToString:@"01"] ? YES : NO];
+    NSString *hour31 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:13]).range];
+    NSString *minute31 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:14]).range];
+    [self.timeButton3 setTitle:[NSString stringWithFormat:@"%@:%@",hour31, minute31] forState:UIControlStateNormal];
+
+
+    NSString *hour32 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:15]).range];
+    NSString *minute32 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:16]).range];
+    [self.timeButton6 setTitle:[NSString stringWithFormat:@"%@:%@",hour32, minute32] forState:UIControlStateNormal];
+
+    NSString *tem3 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:17]).range] stringByAppendingString:@"°C"];
+    [self.positionButton3 setTitle:tem3 forState:UIControlStateNormal];
 }
 
 
@@ -159,17 +157,8 @@
     NSString *tem3 = [self.positionButton3.titleLabel.text substringToIndex:2];
 
     NSString *string = [NSString stringWithFormat:kHWJRCmd, isOn1, hour11, minute11, hour12, minute12, tem1, isOn2, hour21, minute21, hour22, minute22, tem2, isOn3, hour31, minute31, hour32, minute32,tem3];
-    NSString *UDPRequest = [NSString stringWithFormat:kNeedPINString,kAppDelegate.deviceID,kAppDelegate.pinNumber,kAppDelegate.userName,@(kAppDelegate.globleNumber),string];
-    [[FYUDPNetWork shareNetEngine] sendRequest:UDPRequest complete:^(BOOL finish, NSString *responseString) {
-        if(finish){
 
-        } else{
-            NSString *TCPRequest = [NSString stringWithFormat:kAppDelegate.deviceID, kNeedPINClearCmd,kAppDelegate.userName,kAppDelegate.pinNumber];
-            [[FYTCPNetWork shareNetEngine] sendRequest:TCPRequest complete:^(NSDictionary *dic) {
-
-            }];
-        }
-    }];
+    [[FYUDPNetWork sharedNetWork] sendMessage:string type:1];
 }
 
 - (void)didReceiveMemoryWarning {
