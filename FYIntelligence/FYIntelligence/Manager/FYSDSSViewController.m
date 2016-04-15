@@ -78,36 +78,44 @@
 
 - (void)getInfo
 {
-    NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kGETSDSSCmd type:1];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
-    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
-    NSMutableArray *results = [NSMutableArray array];
-    [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
-        [results addObject:result];
-    }];
-    NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
-        if (obj1.range.location > obj2.range.location) {
-            return (NSComparisonResult)NSOrderedDescending;
-        } else if (obj1.range.location < obj2.range.location) {
-            return (NSComparisonResult)NSOrderedAscending;
-        }
-        return (NSComparisonResult)NSOrderedSame;
-    };
-    NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+        NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kGETSDSSCmd type:1];
+        dispatch_async(dispatch_get_main_queue(), ^{
 
-    NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
-    if ([self.dataArray indexOfObject:value] != NSNotFound) {
-        NSInteger index = [self.dataArray indexOfObject:value];
-        [self.pickerView selectRow:index inComponent:0 animated:NO];
-        [self changeImage:index];
-        self.selectedValue = value;
-    }
+            NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
+            NSMutableArray *results = [NSMutableArray array];
+            [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+                [results addObject:result];
+            }];
+            NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
+                if (obj1.range.location > obj2.range.location) {
+                    return (NSComparisonResult)NSOrderedDescending;
+                } else if (obj1.range.location < obj2.range.location) {
+                    return (NSComparisonResult)NSOrderedAscending;
+                }
+                return (NSComparisonResult)NSOrderedSame;
+            };
+            NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+
+            NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+            if ([self.dataArray indexOfObject:value] != NSNotFound) {
+                NSInteger index = [self.dataArray indexOfObject:value];
+                [self.pickerView selectRow:index inComponent:0 animated:NO];
+                [self changeImage:index];
+                self.selectedValue = value;
+            }
+        });
+    });
+
 }
 
 - (IBAction)sendMessage:(id)sender
 {
     NSString *string = [NSString stringWithFormat:kSDSSCmd, self.selectedValue];
-    [[FYUDPNetWork sharedNetWork] sendMessage:string type:1];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[FYUDPNetWork sharedNetWork] sendMessage:string type:1];
+    });
 }
 
 - (void)didReceiveMemoryWarning {

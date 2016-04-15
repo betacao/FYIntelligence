@@ -59,32 +59,39 @@
 
 - (void)getInfo
 {
-    NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kGETSDJRCmd type:1];
-    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
-    NSMutableArray *results = [NSMutableArray array];
-    [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
-        [results addObject:result];
-    }];
-    NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
-        if (obj1.range.location > obj2.range.location) {
-            return (NSComparisonResult)NSOrderedDescending;
-        } else if (obj1.range.location < obj2.range.location) {
-            return (NSComparisonResult)NSOrderedAscending;
-        }
-        return (NSComparisonResult)NSOrderedSame;
-    };
-    NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kGETSDJRCmd type:1];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
+            NSMutableArray *results = [NSMutableArray array];
+            [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+                [results addObject:result];
+            }];
+            NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
+                if (obj1.range.location > obj2.range.location) {
+                    return (NSComparisonResult)NSOrderedDescending;
+                } else if (obj1.range.location < obj2.range.location) {
+                    return (NSComparisonResult)NSOrderedAscending;
+                }
+                return (NSComparisonResult)NSOrderedSame;
+            };
+            NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
 
-    NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
-    if ([self.dataArray indexOfObject:value] != NSNotFound) {
-        [self.pickerView selectRow:[self.dataArray indexOfObject:value] inComponent:0 animated:NO];
-        self.selectedValue = value;
-    }
+            NSString *value = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+            if ([self.dataArray indexOfObject:value] != NSNotFound) {
+                [self.pickerView selectRow:[self.dataArray indexOfObject:value] inComponent:0 animated:NO];
+                self.selectedValue = value;
+            }
+        });
+    });
 }
+
 - (IBAction)sendMessage:(id)sender
 {
     NSString *string = [NSString stringWithFormat:kSDJRCmd, self.selectedValue];
-    [[FYUDPNetWork sharedNetWork] sendMessage:string type:1];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[FYUDPNetWork sharedNetWork] sendMessage:string type:1];
+    });
 }
 
 

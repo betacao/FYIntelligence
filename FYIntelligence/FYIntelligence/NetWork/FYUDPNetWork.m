@@ -101,10 +101,10 @@
 
     if ([steam containsString:@"ERROR_PIN"]) {
         [FYProgressHUD showMessageWithText:@"PIN码输入错误"];
-        return @"";
+        return @"ERROR_PIN";
     } else if([steam containsString:@"OFFLINE"]) {
         [FYProgressHUD showMessageWithText:@"设备离线"];
-        return @"";
+        return @"OFFLINE";
     }
     return steam;
 }

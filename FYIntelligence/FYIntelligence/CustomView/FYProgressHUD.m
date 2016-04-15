@@ -25,10 +25,9 @@
     if (!hasShow) {
         if ([NSThread currentThread].isMainThread) {
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:superView animated:YES];
-            hud.yOffset = -50;
             [superView bringSubviewToFront:hud];
             hud.mode = MBProgressHUDModeIndeterminate;
-            hud.labelText = message;
+            hud.opacity = 0.0f;
             [hud adjustFontToWidth];
             hud.removeFromSuperViewOnHide = YES;
             [hud hide:YES afterDelay:12.0f];
@@ -43,10 +42,9 @@
 {
     UIView *view = [AppDelegate currentAppdelegate].window;
     MBProgressHUD  *HUD = [[MBProgressHUD alloc] initWithView:view];
-    HUD.yOffset = -50;
+    HUD.opacity = 0.0f;
     [view addSubview:HUD];
     HUD.mode = MBProgressHUDModeIndeterminate;
-    HUD.labelText = message;
     [HUD show:YES];
 }
 
@@ -55,8 +53,6 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         UIView *view = [AppDelegate currentAppdelegate].window;
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-        hud.yOffset = -50;
-
         [view bringSubviewToFront:hud];
         hud.mode = MBProgressHUDModeText;
         hud.labelText = text;
@@ -69,7 +65,6 @@
 {
     UIView *view = [AppDelegate currentAppdelegate].window;
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.yOffset = -50;
 
     [view bringSubviewToFront:hud];
     hud.mode = MBProgressHUDModeText;

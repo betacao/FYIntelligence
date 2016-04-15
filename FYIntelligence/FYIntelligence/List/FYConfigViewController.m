@@ -91,7 +91,9 @@
 - (IBAction)leftNextClick:(id)sender
 {
     NSString *string = [NSString stringWithFormat:kConfigDeviceCmd,self.leftSSidField.text, self.leftWifField.text];
-    [[FYUDPNetWork sharedNetWork] sendMessage:string type:1];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[FYUDPNetWork sharedNetWork] sendMessage:string type:1];
+    });
 }
 
 - (IBAction)rightNextClick:(id)sender

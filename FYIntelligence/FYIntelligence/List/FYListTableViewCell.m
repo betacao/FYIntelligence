@@ -47,6 +47,8 @@
         case DeviceTypeHot:
             deviceName = @"热水循环系统";
             break;
+        case DeviceTypeAir:
+            deviceName = @"空气能工程";
         default:
             break;
     }

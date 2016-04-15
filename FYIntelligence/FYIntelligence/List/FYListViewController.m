@@ -141,7 +141,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FYDevice *device = [self.deviceArray objectAtIndex:indexPath.row];
-    if (device.deviceName == DeviceTypeSun) {
+    if (device.deviceName == DeviceTypeSun || device.deviceName == DeviceTypeAir) {
         FYDeviceManagerViewController *controller = [[FYDeviceManagerViewController alloc] initWithNibName:@"FYDeviceManagerViewController" bundle:nil];
         FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
         kAppDelegate.deviceID = device.deviceID;

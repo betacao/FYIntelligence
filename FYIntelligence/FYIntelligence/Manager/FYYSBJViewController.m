@@ -87,42 +87,48 @@
 
 - (void)getInfo
 {
-    NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kGETYSBJCmd type:1];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kGETYSBJCmd type:1];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
+            NSMutableArray *results = [NSMutableArray array];
+            [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+                [results addObject:result];
+            }];
+            NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
+                if (obj1.range.location > obj2.range.location) {
+                    return (NSComparisonResult)NSOrderedDescending;
+                } else if (obj1.range.location < obj2.range.location) {
+                    return (NSComparisonResult)NSOrderedAscending;
+                }
+                return (NSComparisonResult)NSOrderedSame;
+            };
+            NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
 
-    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
-    NSMutableArray *results = [NSMutableArray array];
-    [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
-        [results addObject:result];
-    }];
-    NSComparator cmptr = ^(NSTextCheckingResult *obj1, NSTextCheckingResult *obj2){
-        if (obj1.range.location > obj2.range.location) {
-            return (NSComparisonResult)NSOrderedDescending;
-        } else if (obj1.range.location < obj2.range.location) {
-            return (NSComparisonResult)NSOrderedAscending;
-        }
-        return (NSComparisonResult)NSOrderedSame;
-    };
-    NSArray *MResult = [results sortedArrayUsingComparator:cmptr];
+            NSString *isOn1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
+            [self.switch1 setOn: [isOn1 isEqualToString:@"01"] ? YES : NO];
 
-    NSString *isOn1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:0]).range];
-    [self.switch1 setOn: [isOn1 isEqualToString:@"01"] ? YES : NO];
+            NSString *value1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
+            if ([self.positionArray indexOfObject:value1] != NSNotFound) {
+                [self.postionPickView selectRow:[self.positionArray indexOfObject:value1] inComponent:0 animated:NO];
+                self.firstValue = value1;
+            }
 
-    NSString *value1 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:1]).range];
-    if ([self.positionArray indexOfObject:value1] != NSNotFound) {
-        [self.postionPickView selectRow:[self.positionArray indexOfObject:value1] inComponent:0 animated:NO];
-        self.firstValue = value1;
-    }
+            NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
+            [self.switch2 setOn: [isOn2 isEqualToString:@"01"] ? YES : NO];
 
-    NSString *isOn2 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:2]).range];
-    [self.switch2 setOn: [isOn2 isEqualToString:@"01"] ? YES : NO];
+            NSString *value2 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range] stringByAppendingString:@"°C"];
+            NSInteger index = [self.temArray indexOfObject:value2] != NSNotFound ? [self.temArray indexOfObject:value2] : 0;
+            [self.temPickView selectRow:index inComponent:0 animated:NO];
+            self.secondValue = [value2 substringToIndex:2];
 
-    NSString *value2 = [[responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:3]).range] stringByAppendingString:@"°C"];
-    NSInteger index = [self.temArray indexOfObject:value2] != NSNotFound ? [self.temArray indexOfObject:value2] : 0;
-    [self.temPickView selectRow:index inComponent:0 animated:NO];
-    self.secondValue = [value2 substringToIndex:2];
+            NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
+            [self.switch3 setOn: [isOn3 isEqualToString:@"01"] ? YES : NO];
 
-    NSString *isOn3 = [responseString substringWithRange:((NSTextCheckingResult *)[MResult objectAtIndex:4]).range];
-    [self.switch3 setOn: [isOn3 isEqualToString:@"01"] ? YES : NO];
+        });
+    });
+    
+    
 }
 
 - (IBAction)sendMessage:(id)sender
@@ -131,7 +137,10 @@
     NSString *isOn2 = self.switch2.isOn ? @"01": @"00";
     NSString *isOn3 = self.switch3.isOn ? @"01": @"00";
     NSString *string = [NSString stringWithFormat:kYSBJCmd, isOn1,self.firstValue,isOn2,self.secondValue,isOn3];
-    [[FYUDPNetWork sharedNetWork] sendMessage:string type:1];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[FYUDPNetWork sharedNetWork] sendMessage:string type:1];
+    });
+
 }
 
 - (void)didReceiveMemoryWarning {

@@ -12,7 +12,9 @@
 #import "FYEnterPINViewController.h"
 
 @interface FYDeviceManagerViewController ()<FYEnterPINDelegate>
-
+{
+    NSThread *thread;
+}
 @property (weak, nonatomic) IBOutlet UIImageView *leftView;
 @property (weak, nonatomic) IBOutlet UIImageView *middleView;
 @property (weak, nonatomic) IBOutlet UIImageView *rightView;
@@ -41,6 +43,7 @@
 @property (strong, nonatomic) NSArray *array13;
 @property (assign, nonatomic) NSInteger controlId;
 
+@property (assign, nonatomic) BOOL isShowView;
 
 @end
 
@@ -49,6 +52,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"飞羽智能";
+
+
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *normalImage = [UIImage imageNamed:@"right_about"];
     [rightButton setImage:normalImage forState:UIControlStateNormal];
@@ -80,7 +85,7 @@
     self.waterCircleButton.layer.cornerRadius = 2.0f;
     [self.waterCircleButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"8FBC8F"]]forState:UIControlStateNormal];
     [self.waterCircleButton setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]forState:UIControlStateHighlighted];
-    [self getInfo];
+    self.isShowView = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -102,6 +107,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    self.isShowView = YES;
     [self initUI];
 }
 
@@ -148,6 +154,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    self.isShowView = NO;
     [FYProgressHUD hideHud];
 }
 
@@ -268,15 +275,40 @@
     return _array7;
 }
 
+- (void)setIsShowView:(BOOL)isShowView
+{
+    BOOL new = isShowView;
+    BOOL old = _isShowView;
+    if (new && !old) {
+        thread = [[NSThread alloc] initWithTarget:self selector:@selector(getInfo) object:nil];
+        [thread start];
+    } else if (!new) {
+        [thread cancel];
+    }
+    _isShowView = isShowView;
+}
 - (void)getInfo
 {
-
-    NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kMainViewCmd type:0];
-    [self AnalyticalData:responseString];
+    __weak typeof(self) weakSelf = self;
+    while (1) {
+        if ([NSThread currentThread].isCancelled) {
+            break;
+        } else {
+            NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kMainViewCmd type:0];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf AnalyticalData:responseString];
+            });
+            [NSThread sleepForTimeInterval:25.0f];
+        }
+    }
+    
 }
 
 - (void)AnalyticalData:(NSString *)responseString
 {
+    if (responseString.length == 0) {
+        return;
+    }
     NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
     NSMutableArray *results = [NSMutableArray array];
     [regularExpression enumerateMatchesInString:responseString options:0 range:NSMakeRange(0, responseString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
@@ -479,29 +511,26 @@
 
 - (IBAction)clickParamButton:(UIButton *)button
 {
-    //    NSString *number = [kAppDelegate.pinDictionary objectForKey:kAppDelegate.deviceID];
-    //    if(!number || number.length == 0){
     FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
     controller.delegate = self;
     [self addChildViewController:controller];
     [self.view addSubview:controller.view];
-    //    return;
-    //    }
-    //    kAppDelegate.pinNumber = number;
-    //    FYParamSettingViewController *controller = [[FYParamSettingViewController alloc] initWithNibName:@"FYParamSettingViewController" bundle:nil];
-    //    FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
-    //    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (IBAction)clickAddWater:(UIButton *)sender
 {
     //手动上水
 
-    NSString *state = (self.controlId&0x08) == 0 ? @"1" :@"0";
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
-    NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:[NSString stringWithFormat:@"cmd_sdss$%@",state] type:0];
+        NSString *state = (self.controlId&0x08) == 0 ? @"1" :@"0";
 
-    [self AnalyticalData:responseString];
+        NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:[NSString stringWithFormat:@"cmd_sdss$%@",state] type:0];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self AnalyticalData:responseString];
+        });
+    });
+
     
     
 }
@@ -509,30 +538,49 @@
 - (IBAction)clickUserWarm:(UIButton *)sender
 {
     //手动加热
-    NSString *state = (self.controlId&0x04) == 0 ? @"1" :@"0";
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSString *state = (self.controlId&0x04) == 0 ? @"1" :@"0";
 
-    NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:[NSString stringWithFormat:@"cmd_sdjr$%@",state] type:0];
+        NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:[NSString stringWithFormat:@"cmd_sdjr$%@",state] type:0];
+        dispatch_async(dispatch_get_main_queue(), ^{
 
-    [self AnalyticalData:responseString];
+            [self AnalyticalData:responseString];
+        });
+    });
+
+
+
 
 }
 
 - (IBAction)clickTemCircle:(UIButton *)sender
 {
     //温差循环
-    NSString *state = (self.controlId&0x02) == 0 ? @"1" :@"0";
-    NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:[NSString stringWithFormat:@"cmd_wcxh$%@",state] type:0];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
-    [self AnalyticalData:responseString];
+        NSString *state = (self.controlId&0x02) == 0 ? @"1" :@"0";
+        NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:[NSString stringWithFormat:@"cmd_wcxh$%@",state] type:0];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self AnalyticalData:responseString];
+
+        });
+    });
+
 }
 
 - (IBAction)clickWaterCircle:(UIButton *)sender
 {
     //管道回水
-    NSString *state = (self.controlId&0x01) == 0 ? @"1" :@"0";
-    NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:[NSString stringWithFormat:@"cmd_gdhs$%@",state] type:0];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSString *state = (self.controlId&0x01) == 0 ? @"1" :@"0";
+        NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:[NSString stringWithFormat:@"cmd_gdhs$%@",state] type:0];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self AnalyticalData:responseString];
+        });
+    });
 
-    [self AnalyticalData:responseString];
+
+
 }
 
 - (void)didEnterAllPIN:(NSString *)pinNumber index:(NSInteger)index
@@ -563,7 +611,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc
+{
 
-
-
+}
 @end

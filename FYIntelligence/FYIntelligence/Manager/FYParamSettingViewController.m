@@ -33,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"参数设置";
-    self.titleArray = @[@"手动上水",@"定时上水",@"温控进水",@"手动加热",@"定时加热",@"恒温加热",@"管道循环",@"防冻保护",@"预设报警",@"恒水位",@"集热器温差循环"];
+    self.titleArray = @[@"手动上水",@"定时上水",@"手动加热",@"定时加热",@"恒温加热",@"管道循环",@"预设报警",@"恒水位"];
     self.imageArray = @[@"sdss",@"dsss",@"wkjs",@"sdjr",@"dsjr",@"hwjr",@"gdxh",@"fdbh",@"ysbj",@"hsw",@"wcxh"];
     [self.tableView setTableFooterView:[[UIView alloc] init]];
 }
@@ -87,47 +87,32 @@
         }
             break;
         case 2:{
-            FYWKJSViewController *controller = [[FYWKJSViewController alloc] initWithNibName:@"FYWKJSViewController" bundle:nil];
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-            break;
-        case 3:{
             FYSDJRViewController *controller = [[FYSDJRViewController alloc] initWithNibName:@"FYSDJRViewController" bundle:nil];
             [self.navigationController pushViewController:controller animated:YES];
         }
             break;
-        case 4:{
+        case 3:{
             FYDSJRViewController *controller = [[FYDSJRViewController alloc] initWithNibName:@"FYDSJRViewController" bundle:nil];
             [self.navigationController pushViewController:controller animated:YES];
         }
             break;
-        case 5:{
+        case 4:{
             FYHWJRViewController *controller = [[FYHWJRViewController alloc] initWithNibName:@"FYHWJRViewController" bundle:nil];
             [self.navigationController pushViewController:controller animated:YES];
         }
             break;
-        case 6:{
+        case 5:{
             FYGDXHViewController *controller = [[FYGDXHViewController alloc] initWithNibName:@"FYGDXHViewController" bundle:nil];
             [self.navigationController pushViewController:controller animated:YES];
         }
             break;
-        case 7:{
-            FYFDBHViewController *controller = [[FYFDBHViewController alloc] initWithNibName:@"FYFDBHViewController" bundle:nil];
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-            break;
-        case 8:{
+        case 6:{
             FYYSBJViewController *controller = [[FYYSBJViewController alloc] initWithNibName:@"FYYSBJViewController" bundle:nil];
             [self.navigationController pushViewController:controller animated:YES];
         }
             break;
-        case 9:{
+        case 7:{
             FYHSWViewController *controller = [[FYHSWViewController alloc] initWithNibName:@"FYHSWViewController" bundle:nil];
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-            break;
-        case 10:{
-            FYWCXHViewController *controller = [[FYWCXHViewController alloc] initWithNibName:@"FYWCXHViewController" bundle:nil];
             [self.navigationController pushViewController:controller animated:YES];
         }
             break;
