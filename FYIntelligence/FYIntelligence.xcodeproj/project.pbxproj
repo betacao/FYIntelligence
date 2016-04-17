@@ -347,6 +347,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F94279ED1CC3591900106079 /* AIR */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AIR;
+			sourceTree = "<group>";
+		};
 		F95A63681BC7F7A5002B949A /* FYBaseViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +525,7 @@
 		F9DEF7B01BC7F5CC00520CAA /* FYIntelligence */ = {
 			isa = PBXGroup;
 			children = (
+				F94279ED1CC3591900106079 /* AIR */,
 				F9FFE0181C3CF3E900EB8779 /* HeatCycle */,
 				F9F0606B1BF1EE240006F266 /* ESP */,
 				F9B441C91BD4F323005148D1 /* NetWork */,
@@ -732,7 +740,7 @@
 				TargetAttributes = {
 					F9DEF7AD1BC7F5CC00520CAA = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 2VV68TRUL6;
+						DevelopmentTeam = N65WEX6NUE;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1017,7 +1025,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu SHGOO Technology Co., Ltd";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhang jian wei (CTF777WCLU)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = automatic;
@@ -1032,7 +1040,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FYIntelligence.FYIntelligence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a877a03d-8de1-4de4-b940-5a437e09224b";
+				PROVISIONING_PROFILE = "a3c82eb8-d7fe-4585-ba04-d5fde392c939";
 			};
 			name = Debug;
 		};
@@ -1041,7 +1049,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu SHGOO Technology Co., Ltd";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhang jian wei (CTF777WCLU)";
 				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -1055,7 +1063,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FYIntelligence.FYIntelligence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a877a03d-8de1-4de4-b940-5a437e09224b";
+				PROVISIONING_PROFILE = "a3c82eb8-d7fe-4585-ba04-d5fde392c939";
 			};
 			name = Release;
 		};

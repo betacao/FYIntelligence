@@ -7,6 +7,7 @@
 //
 
 #import "FYAddDeviceViewController.h"
+#import "FYListViewController.h"
 
 @interface FYAddDeviceViewController ()
 
@@ -87,7 +88,10 @@
         if ([[dic objectForKey:kResponseString] rangeOfString:@"SUC"].location != NSNotFound) {
             [FYProgressHUD showMessageWithText:@"添加设备成功"];
             UIViewController *controller = [weakSelf.navigationController.viewControllers objectAtIndex:1];
-            [weakSelf.navigationController popToViewController:controller animated:YES];
+            if ([controller isKindOfClass:[FYListViewController class]]) {
+                ((FYListViewController *)controller).needRefresh = YES;
+                [weakSelf.navigationController popToViewController:controller animated:YES];
+            }
         }
     }];
 }

@@ -10,4 +10,5 @@
 
 @interface FYListViewController : FYBaseViewController
 
+@property (assign, nonatomic) BOOL needRefresh;
 @end

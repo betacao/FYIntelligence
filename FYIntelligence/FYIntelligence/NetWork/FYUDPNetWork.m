@@ -90,7 +90,6 @@
         usleep(200 * 1000);
     }
 
-    [FYProgressHUD hideHud];
     if (self.sendCount >= 3) {
         //tcp清理掉数据
         [FYProgressHUD showMessageWithText:@"设备离线"];
@@ -99,6 +98,7 @@
     NSString *steam = kAppDelegate.receivedStream;
     kAppDelegate.receivedStream = @"";
 
+    [FYProgressHUD hideHud];
     if ([steam containsString:@"ERROR_PIN"]) {
         [FYProgressHUD showMessageWithText:@"PIN码输入错误"];
         return @"ERROR_PIN";

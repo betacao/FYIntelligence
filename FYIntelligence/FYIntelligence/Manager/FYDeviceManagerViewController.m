@@ -51,7 +51,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"飞羽智能";
+    self.title = @"云智能";
 
 
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -306,7 +306,7 @@
 
 - (void)AnalyticalData:(NSString *)responseString
 {
-    if (responseString.length == 0) {
+    if (responseString.length == 0||[responseString isEqualToString:@"OFFLINE"]) {
         return;
     }
     NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];

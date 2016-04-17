@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYDeviceManagerViewController">
             <connections>
                 <outlet property="firstButton" destination="VJ3-vi-5SB" id="Xou-cF-ury"/>
-                <outlet property="fourthButton" destination="f94-ie-jdF" id="36N-zt-atS"/>
+                <outlet property="fourthButton" destination="ips-uW-Y64" id="CvB-H2-pj4"/>
                 <outlet property="leftView" destination="47w-Fc-uI0" id="5fk-cX-pQe"/>
                 <outlet property="middleView" destination="aSh-L8-duf" id="qEO-lC-BLx"/>
                 <outlet property="paramButton" destination="SB6-1y-gf3" id="6sc-F1-huY"/>
                 <outlet property="rightView" destination="R07-4v-SWT" id="KeF-X9-xCq"/>
-                <outlet property="secondButton" destination="ips-uW-Y64" id="dUW-pp-7dd"/>
+                <outlet property="secondButton" destination="f94-ie-jdF" id="qFd-HG-GMU"/>
                 <outlet property="temCircleButton" destination="N5y-7B-uRx" id="lkr-s7-FfW"/>
-                <outlet property="thirdButton" destination="VQc-Dw-bU6" id="WjB-rN-e53"/>
+                <outlet property="thirdButton" destination="VQc-Dw-bU6" id="FBh-t0-SCv"/>
                 <outlet property="userAddButton" destination="n92-Bj-w9g" id="wDN-Jg-wcg"/>
                 <outlet property="userWarmButton" destination="RuF-y0-glz" id="Ske-OC-pbT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -30,22 +30,18 @@
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left" id="47w-Fc-uI0">
                     <rect key="frame" x="0.0" y="0.0" width="227" height="320"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <animations/>
                 </imageView>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right" id="R07-4v-SWT">
                     <rect key="frame" x="324" y="0.0" width="244" height="320"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <animations/>
                 </imageView>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="middle_100" id="aSh-L8-duf">
                     <rect key="frame" x="227" y="0.0" width="97" height="320"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <animations/>
                 </imageView>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SB6-1y-gf3">
                     <rect key="frame" x="21.5" y="282" width="88.5" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="参数设置"/>
                     <connections>
@@ -55,7 +51,6 @@
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n92-Bj-w9g">
                     <rect key="frame" x="131.5" y="282" width="88.5" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="手动上水"/>
                     <connections>
@@ -65,7 +60,6 @@
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RuF-y0-glz">
                     <rect key="frame" x="241.5" y="282" width="88.5" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="手动加热"/>
                     <connections>
@@ -75,7 +69,6 @@
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="N5y-7B-uRx">
                     <rect key="frame" x="351.5" y="282" width="88.5" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="温差循环"/>
                     <connections>
@@ -85,7 +78,6 @@
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hcD-J5-pZK">
                     <rect key="frame" x="461.5" y="282" width="89" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="管道回水"/>
                     <connections>
@@ -95,7 +87,6 @@
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VJ3-vi-5SB">
                     <rect key="frame" x="55" y="80" width="50" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" backgroundImage="sw_bj">
@@ -105,17 +96,6 @@
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="f94-ie-jdF">
                     <rect key="frame" x="176" y="160" width="50" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <animations/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" backgroundImage="sw_bj">
-                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ips-uW-Y64">
-                    <rect key="frame" x="432" y="80" width="50" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" backgroundImage="sw_bj">
@@ -125,7 +105,15 @@
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VQc-Dw-bU6">
                     <rect key="frame" x="335" y="89" width="50" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" backgroundImage="sw_bj">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ips-uW-Y64">
+                    <rect key="frame" x="432" y="80" width="50" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" backgroundImage="sw_bj">
@@ -133,7 +121,6 @@
                     </state>
                 </button>
             </subviews>
-            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <point key="canvasLocation" x="-81" y="101"/>

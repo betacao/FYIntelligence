@@ -44,13 +44,17 @@
     [leftButton sizeToFit];
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
-
+    self.needRefresh = NO;
     [self loadData];
     [self.tableView setTableFooterView:[[UIView alloc] init]];
 }
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    if (self.needRefresh) {
+        [self loadData];
+        self.needRefresh = NO;
+    }
 }
 
 - (void)loadData
