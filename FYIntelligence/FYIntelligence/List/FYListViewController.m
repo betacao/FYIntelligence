@@ -14,6 +14,7 @@
 #import "FYDevice.h"
 #import "FYConfigViewController.h"
 #import "FYHeatCycleViewController.h"
+#import "FYAirViewController.h"
 
 @interface FYListViewController ()<UITableViewDataSource,UITableViewDelegate, FYListDelegate, FYConfigDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -145,15 +146,20 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FYDevice *device = [self.deviceArray objectAtIndex:indexPath.row];
-    if (device.deviceName == DeviceTypeSun || device.deviceName == DeviceTypeAir) {
+    if (device.deviceName == DeviceTypeSun) {
         FYDeviceManagerViewController *controller = [[FYDeviceManagerViewController alloc] initWithNibName:@"FYDeviceManagerViewController" bundle:nil];
         FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
         kAppDelegate.deviceID = device.deviceID;
         [self presentViewController:nav animated:YES completion:nil];
-    } else{
+    } else if(device.deviceName == DeviceTypeHot) {
         FYHeatCycleViewController *controller = [[FYHeatCycleViewController alloc] init];
         kAppDelegate.deviceID = device.deviceID;
         [self.navigationController pushViewController:controller animated:YES];
+    } else {
+        FYAirViewController *controller = [[FYAirViewController alloc] init];
+        FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
+        kAppDelegate.deviceID = device.deviceID;
+        [self presentViewController:nav animated:YES completion:nil];
     }
 }
 

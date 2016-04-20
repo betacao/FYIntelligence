@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59C8E8166A24364345283D3D /* libPods-FYIntelligence.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C031A5C4932F93690286F5CF /* libPods-FYIntelligence.a */; };
 		F9117AD61CBCCE350056A5F5 /* FYTCPSpecialNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F9117AD51CBCCE350056A5F5 /* FYTCPSpecialNetWork.m */; };
 		F91C1BED1BD23767002FC017 /* FYForgrtPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F91C1BEB1BD23767002FC017 /* FYForgrtPWDViewController.m */; };
 		F91C1BEE1BD23767002FC017 /* FYForgrtPWDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91C1BEC1BD23767002FC017 /* FYForgrtPWDViewController.xib */; };
 		F93F982D1BCE6E3300FD46A8 /* FYPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F93F982C1BCE6E3300FD46A8 /* FYPickerView.m */; };
 		F93F98301BCE7C2800FD46A8 /* FYDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F93F982F1BCE7C2800FD46A8 /* FYDatePickerView.m */; };
+		F94279F11CC35BD000106079 /* FYAirViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F94279EF1CC35BD000106079 /* FYAirViewController.m */; };
+		F94279F21CC35BD000106079 /* FYAirViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F94279F01CC35BD000106079 /* FYAirViewController.xib */; };
 		F95113BF1BCD45D60058C7B2 /* FYParamSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95113BD1BCD45D60058C7B2 /* FYParamSettingViewController.m */; };
 		F95113C01BCD45D60058C7B2 /* FYParamSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95113BE1BCD45D60058C7B2 /* FYParamSettingViewController.xib */; };
 		F95113C41BCD464A0058C7B2 /* FYParamSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F95113C21BCD464A0058C7B2 /* FYParamSettingTableViewCell.m */; };
@@ -133,6 +136,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0004420E424DC1C7D8C64705 /* Pods-FYIntelligence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FYIntelligence.release.xcconfig"; path = "Pods/Target Support Files/Pods-FYIntelligence/Pods-FYIntelligence.release.xcconfig"; sourceTree = "<group>"; };
+		C031A5C4932F93690286F5CF /* libPods-FYIntelligence.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FYIntelligence.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2BA7ACD04816668D83AF58B /* Pods-FYIntelligence.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FYIntelligence.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FYIntelligence/Pods-FYIntelligence.debug.xcconfig"; sourceTree = "<group>"; };
 		F9117AD41CBCCE350056A5F5 /* FYTCPSpecialNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYTCPSpecialNetWork.h; sourceTree = "<group>"; };
 		F9117AD51CBCCE350056A5F5 /* FYTCPSpecialNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYTCPSpecialNetWork.m; sourceTree = "<group>"; };
 		F91C1BEA1BD23767002FC017 /* FYForgrtPWDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYForgrtPWDViewController.h; sourceTree = "<group>"; };
@@ -142,6 +148,9 @@
 		F93F982C1BCE6E3300FD46A8 /* FYPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYPickerView.m; sourceTree = "<group>"; };
 		F93F982E1BCE7C2800FD46A8 /* FYDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDatePickerView.h; sourceTree = "<group>"; };
 		F93F982F1BCE7C2800FD46A8 /* FYDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYDatePickerView.m; sourceTree = "<group>"; };
+		F94279EE1CC35BD000106079 /* FYAirViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYAirViewController.h; sourceTree = "<group>"; };
+		F94279EF1CC35BD000106079 /* FYAirViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYAirViewController.m; sourceTree = "<group>"; };
+		F94279F01CC35BD000106079 /* FYAirViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYAirViewController.xib; sourceTree = "<group>"; };
 		F95113BC1BCD45D60058C7B2 /* FYParamSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYParamSettingViewController.h; sourceTree = "<group>"; };
 		F95113BD1BCD45D60058C7B2 /* FYParamSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYParamSettingViewController.m; sourceTree = "<group>"; };
 		F95113BE1BCD45D60058C7B2 /* FYParamSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYParamSettingViewController.xib; sourceTree = "<group>"; };
@@ -334,6 +343,7 @@
 				F9C323141C0ACF6C004D45E7 /* libz.tbd in Frameworks */,
 				F9859DB11BF218850049B5CA /* libstdc++.6.0.9.tbd in Frameworks */,
 				F9C323121C0ACD67004D45E7 /* libPushSDK-1.8.8.a in Frameworks */,
+				59C8E8166A24364345283D3D /* libPods-FYIntelligence.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,9 +357,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66559AD7975DAF080A126B8A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2BA7ACD04816668D83AF58B /* Pods-FYIntelligence.debug.xcconfig */,
+				0004420E424DC1C7D8C64705 /* Pods-FYIntelligence.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9B1823AF5B77F54DBD3F78E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C031A5C4932F93690286F5CF /* libPods-FYIntelligence.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F94279ED1CC3591900106079 /* AIR */ = {
 			isa = PBXGroup;
 			children = (
+				F94279EE1CC35BD000106079 /* FYAirViewController.h */,
+				F94279EF1CC35BD000106079 /* FYAirViewController.m */,
+				F94279F01CC35BD000106079 /* FYAirViewController.xib */,
 			);
 			path = AIR;
 			sourceTree = "<group>";
@@ -510,6 +540,8 @@
 				F9DEF7B01BC7F5CC00520CAA /* FYIntelligence */,
 				F9DEF7CA1BC7F5CC00520CAA /* FYIntelligenceTests */,
 				F9DEF7AF1BC7F5CC00520CAA /* Products */,
+				66559AD7975DAF080A126B8A /* Pods */,
+				9B1823AF5B77F54DBD3F78E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -698,9 +730,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9DEF7D11BC7F5CC00520CAA /* Build configuration list for PBXNativeTarget "FYIntelligence" */;
 			buildPhases = (
+				0CE60320EAE4610060DE66C4 /* 📦 Check Pods Manifest.lock */,
 				F9DEF7AA1BC7F5CC00520CAA /* Sources */,
 				F9DEF7AB1BC7F5CC00520CAA /* Frameworks */,
 				F9DEF7AC1BC7F5CC00520CAA /* Resources */,
+				9F6CD659939EF70C55D9A756 /* 📦 Embed Pods Frameworks */,
+				152C479630F18528AA75BFB4 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -791,6 +826,7 @@
 				F9DEF7C21BC7F5CC00520CAA /* LaunchScreen.xib in Resources */,
 				F96E2FE41BCE6A7600B6AF4B /* FYDSSSViewController.xib in Resources */,
 				F98B9FF51BCF928200B5FEAF /* FYSDJRViewController.xib in Resources */,
+				F94279F21CC35BD000106079 /* FYAirViewController.xib in Resources */,
 				F97340B21BCFED73006D1740 /* FYHSWViewController.xib in Resources */,
 				F99463AE1BD6822E008B9F54 /* FYAboutViewController.xib in Resources */,
 				F95113C01BCD45D60058C7B2 /* FYParamSettingViewController.xib in Resources */,
@@ -826,6 +862,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CE60320EAE4610060DE66C4 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		152C479630F18528AA75BFB4 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FYIntelligence/Pods-FYIntelligence-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F6CD659939EF70C55D9A756 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FYIntelligence/Pods-FYIntelligence-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F9DEF7AA1BC7F5CC00520CAA /* Sources */ = {
@@ -891,6 +975,7 @@
 				F97340B61BCFED8F006D1740 /* FYWCXHViewController.m in Sources */,
 				F9F90D061BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m in Sources */,
 				F95E36771C40F6C000E34689 /* FYHeatCycleSJDViewController.m in Sources */,
+				F94279F11CC35BD000106079 /* FYAirViewController.m in Sources */,
 				F9DE29101BD5E2BF0009F667 /* FYProgressHUD.m in Sources */,
 				F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */,
 				F93F98301BCE7C2800FD46A8 /* FYDatePickerView.m in Sources */,
@@ -1022,10 +1107,11 @@
 		};
 		F9DEF7D21BC7F5CC00520CAA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2BA7ACD04816668D83AF58B /* Pods-FYIntelligence.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zhang jian wei (CTF777WCLU)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu SHGOO Technology Co., Ltd";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = automatic;
@@ -1040,16 +1126,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FYIntelligence.FYIntelligence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a3c82eb8-d7fe-4585-ba04-d5fde392c939";
+				PROVISIONING_PROFILE = "a121914f-8d94-4700-84e7-0ce223138f59";
 			};
 			name = Debug;
 		};
 		F9DEF7D31BC7F5CC00520CAA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0004420E424DC1C7D8C64705 /* Pods-FYIntelligence.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zhang jian wei (CTF777WCLU)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu SHGOO Technology Co., Ltd";
 				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -1063,7 +1150,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FYIntelligence.FYIntelligence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a3c82eb8-d7fe-4585-ba04-d5fde392c939";
+				PROVISIONING_PROFILE = "a121914f-8d94-4700-84e7-0ce223138f59";
 			};
 			name = Release;
 		};

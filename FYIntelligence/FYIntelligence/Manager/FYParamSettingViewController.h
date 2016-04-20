@@ -7,6 +7,8 @@
 //
 
 #import "FYBaseViewController.h"
+#import "FYDevice.h"
 
 @interface FYParamSettingViewController : FYBaseViewController
+@property (assign, nonatomic) FYDeviceType devideType;
 @end

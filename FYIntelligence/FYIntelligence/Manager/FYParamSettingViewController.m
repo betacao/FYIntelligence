@@ -33,8 +33,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"参数设置";
-    self.titleArray = @[@"手动上水",@"定时上水",@"温控进水",@"手动加热",@"定时加热",@"恒温加热",@"管道循环",@"防冻保护",@"预设报警",@"恒水位",@"集热器温差循环"];
-    self.imageArray = @[@"sdss",@"dsss",@"wkjs",@"sdjr",@"dsjr",@"hwjr",@"gdxh",@"fdbh",@"ysbj",@"hsw",@"wcxh"];
+    if (self.devideType == DeviceTypeSun) {
+        self.titleArray = @[@"手动上水",@"定时上水",@"温控进水",@"手动加热",@"定时加热",@"恒温加热",@"管道循环",@"防冻保护",@"预设报警",@"恒水位",@"集热器温差循环"];
+        self.imageArray = @[@"sdss",@"dsss",@"wkjs",@"sdjr",@"dsjr",@"hwjr",@"gdxh",@"fdbh",@"ysbj",@"hsw",@"wcxh"];
+    } else if (self.devideType == DeviceTypeAir) {
+        self.titleArray = @[@"手动上水",@"定时上水",@"手动加热",@"定时加热",@"恒温加热",@"管道循环",@"预设报警",@"恒水位"];
+        self.imageArray = @[@"sdss",@"dsss",@"sdjr",@"dsjr",@"hwjr",@"gdxh",@"ysbj",@"hsw"];
+    }
     [self.tableView setTableFooterView:[[UIView alloc] init]];
 }
 
@@ -69,70 +74,46 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self didSelectViewController:indexPath.row];
+    NSString *title = [self.titleArray objectAtIndex:indexPath.row];
+    [self didSelectViewController:title];
 
 }
 
-- (void)didSelectViewController:(NSInteger)index
+- (void)didSelectViewController:(NSString *)title
 {
-    switch (index) {
-        case 0:{
-            FYSDSSViewController *controller = [[FYSDSSViewController alloc] initWithNibName:@"FYSDSSViewController" bundle:nil];
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-            break;
-        case 1:{
-            FYDSSSViewController *controller = [[FYDSSSViewController alloc] initWithNibName:@"FYDSSSViewController" bundle:nil];
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-            break;
-        case 2:{
-            FYWKJSViewController *controller = [[FYWKJSViewController alloc] initWithNibName:@"FYWKJSViewController" bundle:nil];
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-            break;
-        case 3:{
-            FYSDJRViewController *controller = [[FYSDJRViewController alloc] initWithNibName:@"FYSDJRViewController" bundle:nil];
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-            break;
-        case 4:{
-            FYDSJRViewController *controller = [[FYDSJRViewController alloc] initWithNibName:@"FYDSJRViewController" bundle:nil];
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-            break;
-        case 5:{
-            FYHWJRViewController *controller = [[FYHWJRViewController alloc] initWithNibName:@"FYHWJRViewController" bundle:nil];
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-            break;
-        case 6:{
-            FYGDXHViewController *controller = [[FYGDXHViewController alloc] initWithNibName:@"FYGDXHViewController" bundle:nil];
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-            break;
-        case 7:{
-            FYFDBHViewController *controller = [[FYFDBHViewController alloc] initWithNibName:@"FYFDBHViewController" bundle:nil];
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-            break;
-        case 8:{
-            FYYSBJViewController *controller = [[FYYSBJViewController alloc] initWithNibName:@"FYYSBJViewController" bundle:nil];
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-            break;
-        case 9:{
-            FYHSWViewController *controller = [[FYHSWViewController alloc] initWithNibName:@"FYHSWViewController" bundle:nil];
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-            break;
-        case 10:{
-            FYWCXHViewController *controller = [[FYWCXHViewController alloc] initWithNibName:@"FYWCXHViewController" bundle:nil];
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-            break;
-        default:
-            break;
+    if ([title isEqualToString:@"手动上水"]) {
+        FYSDSSViewController *controller = [[FYSDSSViewController alloc] initWithNibName:@"FYSDSSViewController" bundle:nil];
+        [self.navigationController pushViewController:controller animated:YES];
+    } else if ([title isEqualToString:@"定时上水"]) {
+        FYDSSSViewController *controller = [[FYDSSSViewController alloc] initWithNibName:@"FYDSSSViewController" bundle:nil];
+        [self.navigationController pushViewController:controller animated:YES];
+    } else if ([title isEqualToString:@"温控进水"]) {
+        FYWKJSViewController *controller = [[FYWKJSViewController alloc] initWithNibName:@"FYWKJSViewController" bundle:nil];
+        [self.navigationController pushViewController:controller animated:YES];
+    } else if ([title isEqualToString:@"手动加热"]) {
+        FYSDJRViewController *controller = [[FYSDJRViewController alloc] initWithNibName:@"FYSDJRViewController" bundle:nil];
+        [self.navigationController pushViewController:controller animated:YES];
+    } else if ([title isEqualToString:@"定时加热"]) {
+        FYDSJRViewController *controller = [[FYDSJRViewController alloc] initWithNibName:@"FYDSJRViewController" bundle:nil];
+        [self.navigationController pushViewController:controller animated:YES];
+    } else if ([title isEqualToString:@"恒温加热"]) {
+        FYHWJRViewController *controller = [[FYHWJRViewController alloc] initWithNibName:@"FYHWJRViewController" bundle:nil];
+        [self.navigationController pushViewController:controller animated:YES];
+    } else if ([title isEqualToString:@"管道循环"]) {
+        FYGDXHViewController *controller = [[FYGDXHViewController alloc] initWithNibName:@"FYGDXHViewController" bundle:nil];
+        [self.navigationController pushViewController:controller animated:YES];
+    } else if ([title isEqualToString:@"防冻保护"]) {
+        FYFDBHViewController *controller = [[FYFDBHViewController alloc] initWithNibName:@"FYFDBHViewController" bundle:nil];
+        [self.navigationController pushViewController:controller animated:YES];
+    } else if ([title isEqualToString:@"预设报警"]) {
+        FYYSBJViewController *controller = [[FYYSBJViewController alloc] initWithNibName:@"FYYSBJViewController" bundle:nil];
+        [self.navigationController pushViewController:controller animated:YES];
+    } else if ([title isEqualToString:@"恒水位"]) {
+        FYHSWViewController *controller = [[FYHSWViewController alloc] initWithNibName:@"FYHSWViewController" bundle:nil];
+        [self.navigationController pushViewController:controller animated:YES];
+    } else if ([title isEqualToString:@"集热器温差循环"]) {
+        FYWCXHViewController *controller = [[FYWCXHViewController alloc] initWithNibName:@"FYWCXHViewController" bundle:nil];
+        [self.navigationController pushViewController:controller animated:YES];
     }
 }
 

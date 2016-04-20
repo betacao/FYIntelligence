@@ -587,6 +587,7 @@
 {
     kAppDelegate.pinCode = pinNumber;
     FYParamSettingViewController *controller = [[FYParamSettingViewController alloc] initWithNibName:@"FYParamSettingViewController" bundle:nil];
+    controller.devideType = DeviceTypeSun;
     FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
     [self presentViewController:nav animated:YES completion:nil];
 }

@@ -7,6 +7,7 @@
 //
 
 #import "FYUDPNetWork.h"
+#import "FYTCPNetWork.h"
 
 @interface FYUDPNetWork()<GCDAsyncUdpSocketDelegate>
 
@@ -48,7 +49,7 @@
     self.socket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dQueue];
     NSError *error = nil;
 
-    if (![self.socket bindToPort:11102 error:&error]) {
+    if (![self.socket bindToPort:0 error:&error]) {
         NSLog(@"error------%@", error.description);
         return;
     }
@@ -89,16 +90,22 @@
         i++;
         usleep(200 * 1000);
     }
-
+    [FYProgressHUD hideHud];
     if (self.sendCount >= 3) {
         //tcp清理掉数据
+        NSString *request = @"";
+        if (type == 1) {
+            request = [@"fyzn2015#1#11#" stringByAppendingFormat:@"%@#U#%@#%@#%@",kAppDelegate.deviceID, kAppDelegate.pinCode, kAppDelegate.userID, message];
+        } else{
+            request = [@"fyzn2015#1#11#" stringByAppendingFormat:@"%@#U#G7S3#%@#%@",kAppDelegate.deviceID, kAppDelegate.userID, message];
+        }
+        [[FYTCPNetWork shareNetEngine] sendRequest:request complete:nil];
         [FYProgressHUD showMessageWithText:@"设备离线"];
-        return @"";
+        return @"OFFLINE";
     }
     NSString *steam = kAppDelegate.receivedStream;
     kAppDelegate.receivedStream = @"";
 
-    [FYProgressHUD hideHud];
     if ([steam containsString:@"ERROR_PIN"]) {
         [FYProgressHUD showMessageWithText:@"PIN码输入错误"];
         return @"ERROR_PIN";

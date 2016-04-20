@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYAirViewController">
+            <connections>
+                <outlet property="aboutButton" destination="Yyu-mr-CAz" id="kU2-pp-ygY"/>
+                <outlet property="bgView" destination="75n-vS-buP" id="IAd-tc-WfN"/>
+                <outlet property="firstButton" destination="5Tu-ul-HRL" id="H3Y-sv-BmJ"/>
+                <outlet property="fourthButton" destination="bRa-ir-K6e" id="blM-41-CAK"/>
+                <outlet property="leftButton" destination="6kR-X4-BMu" id="T9T-he-BXN"/>
+                <outlet property="leftImageView" destination="571-t1-0f9" id="Vji-6O-xoe"/>
+                <outlet property="middleImageView" destination="cfN-ah-8yD" id="1ay-e0-AQn"/>
+                <outlet property="rightButton" destination="NMt-y1-Gph" id="xpq-nJ-lD1"/>
+                <outlet property="rightImageView" destination="kMK-V1-VCe" id="V9n-29-OOL"/>
+                <outlet property="secondButton" destination="zeC-WY-kRr" id="cbp-0W-rHG"/>
+                <outlet property="thirdButton" destination="j2c-wQ-Ltu" id="0wm-RT-K9P"/>
+                <outlet property="titleImageView" destination="XLt-wU-Yra" id="Son-7i-6KY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kqnbj" id="75n-vS-buP">
+                    <rect key="frame" x="14" y="31" width="130" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="air_title" id="XLt-wU-Yra">
+                    <rect key="frame" x="143" y="18" width="130" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kqnleft" id="571-t1-0f9">
+                    <rect key="frame" x="24" y="41" width="130" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kqnmiddle" id="cfN-ah-8yD">
+                    <rect key="frame" x="34" y="51" width="130" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kqnright" id="kMK-V1-VCe">
+                    <rect key="frame" x="44" y="61" width="130" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Yyu-mr-CAz">
+                    <rect key="frame" x="50" y="164" width="200" height="56"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="air_about"/>
+                    <connections>
+                        <action selector="aboutButtonClicked:" destination="-1" eventType="touchUpInside" id="sPQ-jR-cQI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5Tu-ul-HRL">
+                    <rect key="frame" x="96" y="253" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="kqncssz"/>
+                    <connections>
+                        <action selector="firstButtonClicked:" destination="-1" eventType="touchUpInside" id="bG3-ua-HIA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zeC-WY-kRr">
+                    <rect key="frame" x="106" y="263" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="kqnsdss"/>
+                    <connections>
+                        <action selector="secondButtonClicked:" destination="-1" eventType="touchUpInside" id="jTr-ga-mXi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j2c-wQ-Ltu">
+                    <rect key="frame" x="125" y="284" width="49" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="kqnsdjr"/>
+                    <connections>
+                        <action selector="thirdButtonClicked:" destination="-1" eventType="touchUpInside" id="GDc-Fb-jm9"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bRa-ir-K6e">
+                    <rect key="frame" x="135" y="294" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="kqngdhs"/>
+                    <connections>
+                        <action selector="fourthButtonClicked:" destination="-1" eventType="touchUpInside" id="LeH-y8-I8V"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="289" y="276"/>
+        </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6kR-X4-BMu">
+            <rect key="frame" x="0.0" y="0.0" width="46" height="26"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" backgroundImage="sw_bj"/>
+            <point key="canvasLocation" x="39" y="236"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NMt-y1-Gph">
+            <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" backgroundImage="sw_bj"/>
+        </button>
+    </objects>
+    <resources>
+        <image name="air_about" width="200" height="56"/>
+        <image name="air_title" width="300" height="78"/>
+        <image name="kqnbj" width="667" height="375"/>
+        <image name="kqncssz" width="200" height="79"/>
+        <image name="kqngdhs" width="200" height="79"/>
+        <image name="kqnleft" width="474" height="521"/>
+        <image name="kqnmiddle" width="266" height="521"/>
+        <image name="kqnright" width="660" height="521"/>
+        <image name="kqnsdjr" width="200" height="79"/>
+        <image name="kqnsdss" width="200" height="79"/>
+        <image name="sw_bj" width="40" height="25"/>
+    </resources>
+</document>

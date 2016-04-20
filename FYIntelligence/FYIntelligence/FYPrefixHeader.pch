@@ -9,6 +9,10 @@
 #ifndef FYPrefixHeader_pch
 #define FYPrefixHeader_pch
 
+#define SCREENWIDTH [[UIScreen mainScreen] bounds].size.width
+
+#define MarginFactor(x) floorf(SCREENWIDTH / 375.0f * x)
+
 #import "FYBaseViewController.h"
 #import "const.h"
 #import "UIColor+FYColor.h"
@@ -18,5 +22,6 @@
 #import "FYProgressHUD.h"
 #import "AppDelegate.h"
 #import "FYTCPSpecialNetWork.h"
+#import "UIButton+EnlargeEdge.h"
 
 #endif /* FYPrefixHeader_pch */
