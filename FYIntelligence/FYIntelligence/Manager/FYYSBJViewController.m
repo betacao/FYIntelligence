@@ -19,6 +19,9 @@
 @property (strong, nonatomic) NSArray *temArray;
 @property (strong, nonatomic) NSString *firstValue;
 @property (strong, nonatomic) NSString *secondValue;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *third_firstLabel;
+@property (weak, nonatomic) IBOutlet UILabel *third_secondLabel;
 
 @end
 
@@ -31,6 +34,12 @@
     self.title = @"预设报警";
     self.firstValue = [self.positionArray firstObject];
     self.secondValue = [self.temArray firstObject];
+
+    if (self.deviceName == DeviceTypeAir) {
+        self.imageView.image = [UIImage imageNamed:@"kqnshow"];
+        self.third_firstLabel.text = @"传感器报警";
+        self.third_secondLabel.hidden = YES;
+    }
     [self getInfo];
     self.postionPickView.clipsToBounds = YES;
     self.temPickView.clipsToBounds = YES;
@@ -89,6 +98,9 @@
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kGETYSBJCmd type:1];
+        if ([responseString containsString:@"OFF"]||[responseString containsString:@"ERROR"]) {
+            return ;
+        }
         dispatch_async(dispatch_get_main_queue(), ^{
             NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
             NSMutableArray *results = [NSMutableArray array];

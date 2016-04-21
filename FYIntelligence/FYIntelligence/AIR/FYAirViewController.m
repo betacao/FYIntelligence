@@ -493,8 +493,8 @@
 {
     FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
     controller.delegate = self;
-    [self addChildViewController:controller];
-    [self.view addSubview:controller.view];
+    [self.parentViewController addChildViewController:controller];
+    [self.parentViewController.view addSubview:controller.view];
 }
 
 - (IBAction)secondButtonClicked:(id)sender

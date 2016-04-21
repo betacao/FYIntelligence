@@ -101,12 +101,14 @@
         [self.navigationController pushViewController:controller animated:YES];
     } else if ([title isEqualToString:@"管道循环"]) {
         FYGDXHViewController *controller = [[FYGDXHViewController alloc] initWithNibName:@"FYGDXHViewController" bundle:nil];
+        controller.deviceName = self.devideType;
         [self.navigationController pushViewController:controller animated:YES];
     } else if ([title isEqualToString:@"防冻保护"]) {
         FYFDBHViewController *controller = [[FYFDBHViewController alloc] initWithNibName:@"FYFDBHViewController" bundle:nil];
         [self.navigationController pushViewController:controller animated:YES];
     } else if ([title isEqualToString:@"预设报警"]) {
         FYYSBJViewController *controller = [[FYYSBJViewController alloc] initWithNibName:@"FYYSBJViewController" bundle:nil];
+        controller.deviceName = self.devideType;
         [self.navigationController pushViewController:controller animated:YES];
     } else if ([title isEqualToString:@"恒水位"]) {
         FYHSWViewController *controller = [[FYHSWViewController alloc] initWithNibName:@"FYHSWViewController" bundle:nil];

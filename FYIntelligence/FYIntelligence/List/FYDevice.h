@@ -12,7 +12,8 @@ typedef NS_ENUM(NSInteger, FYDeviceType)
 {
     DeviceTypeSun = 0,
     DeviceTypeHot = 1,
-    DeviceTypeAir = 2
+    DeviceTypeAir = 2,
+    DeviceTypeCFCP
 };
 
 typedef NS_ENUM(NSInteger, FYDeviceCondition)

@@ -78,6 +78,9 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
         NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kGETHWJRCmd type:1];
+        if ([responseString containsString:@"OFF"]||[responseString containsString:@"ERROR"]) {
+            return ;
+        }
         dispatch_async(dispatch_get_main_queue(), ^{
 
 

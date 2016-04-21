@@ -15,6 +15,7 @@
 #import "FYConfigViewController.h"
 #import "FYHeatCycleViewController.h"
 #import "FYAirViewController.h"
+#import "FYCFCPViewController.h"
 
 @interface FYListViewController ()<UITableViewDataSource,UITableViewDelegate, FYListDelegate, FYConfigDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -155,11 +156,15 @@
         FYHeatCycleViewController *controller = [[FYHeatCycleViewController alloc] init];
         kAppDelegate.deviceID = device.deviceID;
         [self.navigationController pushViewController:controller animated:YES];
-    } else {
+    } else if(device.deviceName == DeviceTypeAir) {
         FYAirViewController *controller = [[FYAirViewController alloc] init];
         FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
         kAppDelegate.deviceID = device.deviceID;
         [self presentViewController:nav animated:YES completion:nil];
+    } else {
+        FYCFCPViewController *controller = [[FYCFCPViewController alloc] init];
+        kAppDelegate.deviceID = device.deviceID;
+        [self.navigationController pushViewController:controller animated:YES];
     }
 }
 

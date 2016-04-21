@@ -89,6 +89,8 @@
 		F9859DAE1BF211AC0049B5CA /* ESPUDPSocketServer.m in Sources */ = {isa = PBXBuildFile; fileRef = F9859DA01BF211AC0049B5CA /* ESPUDPSocketServer.m */; };
 		F9859DAF1BF211AC0049B5CA /* IPAddress.c in Sources */ = {isa = PBXBuildFile; fileRef = F9859DA11BF211AC0049B5CA /* IPAddress.c */; };
 		F9859DB11BF218850049B5CA /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9859DB01BF218850049B5CA /* libstdc++.6.0.9.tbd */; };
+		F98B62711CC7593400553330 /* FYCFCPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98B626F1CC7593400553330 /* FYCFCPViewController.m */; };
+		F98B62721CC7593400553330 /* FYCFCPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98B62701CC7593400553330 /* FYCFCPViewController.xib */; };
 		F98B9FF41BCF928200B5FEAF /* FYSDJRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98B9FF21BCF928200B5FEAF /* FYSDJRViewController.m */; };
 		F98B9FF51BCF928200B5FEAF /* FYSDJRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98B9FF31BCF928200B5FEAF /* FYSDJRViewController.xib */; };
 		F98B9FF91BCF9D0300B5FEAF /* FYDSJRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98B9FF71BCF9D0300B5FEAF /* FYDSJRViewController.m */; };
@@ -273,6 +275,9 @@
 		F9859DA11BF211AC0049B5CA /* IPAddress.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = IPAddress.c; sourceTree = "<group>"; };
 		F9859DA21BF211AC0049B5CA /* IPAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPAddress.h; sourceTree = "<group>"; };
 		F9859DB01BF218850049B5CA /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		F98B626E1CC7593400553330 /* FYCFCPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCFCPViewController.h; sourceTree = "<group>"; };
+		F98B626F1CC7593400553330 /* FYCFCPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCFCPViewController.m; sourceTree = "<group>"; };
+		F98B62701CC7593400553330 /* FYCFCPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYCFCPViewController.xib; sourceTree = "<group>"; };
 		F98B9FF11BCF928200B5FEAF /* FYSDJRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYSDJRViewController.h; sourceTree = "<group>"; };
 		F98B9FF21BCF928200B5FEAF /* FYSDJRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYSDJRViewController.m; sourceTree = "<group>"; };
 		F98B9FF31BCF928200B5FEAF /* FYSDJRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYSDJRViewController.xib; sourceTree = "<group>"; };
@@ -472,6 +477,16 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
+		F98B626D1CC757A600553330 /* CFCP */ = {
+			isa = PBXGroup;
+			children = (
+				F98B626E1CC7593400553330 /* FYCFCPViewController.h */,
+				F98B626F1CC7593400553330 /* FYCFCPViewController.m */,
+				F98B62701CC7593400553330 /* FYCFCPViewController.xib */,
+			);
+			path = CFCP;
+			sourceTree = "<group>";
+		};
 		F9B441B71BD4F2DA005148D1 /* SocketKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -557,6 +572,7 @@
 		F9DEF7B01BC7F5CC00520CAA /* FYIntelligence */ = {
 			isa = PBXGroup;
 			children = (
+				F98B626D1CC757A600553330 /* CFCP */,
 				F94279ED1CC3591900106079 /* AIR */,
 				F9FFE0181C3CF3E900EB8779 /* HeatCycle */,
 				F9F0606B1BF1EE240006F266 /* ESP */,
@@ -847,6 +863,7 @@
 				F95E367D1C40F6CC00E34689 /* FYHeatCycleYXMSViewController.xib in Resources */,
 				F95E36781C40F6C000E34689 /* FYHeatCycleSJDViewController.xib in Resources */,
 				F95E36691C40F69300E34689 /* FYHeatCycleHSSJViewController.xib in Resources */,
+				F98B62721CC7593400553330 /* FYCFCPViewController.xib in Resources */,
 				F95E366E1C40F6A200E34689 /* FYHeatCycleJXSJViewController.xib in Resources */,
 				F9DEF7BF1BC7F5CC00520CAA /* Images.xcassets in Resources */,
 				F98351791BCA370400809E14 /* FYJoinNetViewController.xib in Resources */,
@@ -935,6 +952,7 @@
 				F95E365E1C40F31700E34689 /* FYHeatCycleSettingViewController.m in Sources */,
 				F98B9FF41BCF928200B5FEAF /* FYSDJRViewController.m in Sources */,
 				F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */,
+				F98B62711CC7593400553330 /* FYCFCPViewController.m in Sources */,
 				F9B441C41BD4F2DA005148D1 /* GCDAsyncSocket.m in Sources */,
 				F9859DA71BF211AC0049B5CA /* ESPDatumCode.m in Sources */,
 				F9859DAA1BF211AC0049B5CA /* ESPTouchResult.m in Sources */,

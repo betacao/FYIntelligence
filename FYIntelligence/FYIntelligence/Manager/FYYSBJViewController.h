@@ -7,7 +7,7 @@
 //
 
 #import "FYBaseViewController.h"
-
+#import "FYDevice.h"
 @interface FYYSBJViewController : FYBaseViewController
-
+@property (assign, nonatomic) FYDeviceType deviceName;
 @end

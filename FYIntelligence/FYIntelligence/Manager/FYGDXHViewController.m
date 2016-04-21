@@ -11,6 +11,7 @@
 #import "FYDatePickerView.h"
 
 @interface FYGDXHViewController ()<FYPickerViewDelegate ,FYDatePickerViewDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (weak, nonatomic) IBOutlet UISwitch *switch1;
 @property (weak, nonatomic) IBOutlet UISwitch *switch2;
@@ -32,6 +33,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"管道循环";
+    if (self.deviceName == DeviceTypeAir) {
+        self.imageView.image = [UIImage imageNamed:@"kqngdxh"];
+    }
     [self getInfo];
 }
 - (IBAction)positionButtonClick:(UIButton *)sender {
@@ -75,6 +79,9 @@
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kGETGDXHCmd type:1];
+        if ([responseString containsString:@"OFF"]||[responseString containsString:@"ERROR"]) {
+            return;
+        }
         dispatch_async(dispatch_get_main_queue(), ^{
             NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern: @"\\w+" options:0 error:nil];
             NSMutableArray *results = [NSMutableArray array];

@@ -14,7 +14,7 @@
 @property (assign, nonatomic) long tag;
 @property (assign, nonatomic) BOOL isReceived;
 @property (assign, nonatomic) long sendCount;
-@property (assign, nonatomic) NSString *code;
+@property (strong, nonatomic) NSString *code;
 @end
 
 @implementation FYUDPNetWork
