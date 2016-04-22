@@ -15,7 +15,7 @@
 #import "FYConfigViewController.h"
 #import "FYHeatCycleViewController.h"
 #import "FYAirViewController.h"
-#import "FYCFCPViewController.h"
+#import "FYCFCPSettingViewController.h"
 
 @interface FYListViewController ()<UITableViewDataSource,UITableViewDelegate, FYListDelegate, FYConfigDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -147,25 +147,25 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FYDevice *device = [self.deviceArray objectAtIndex:indexPath.row];
-    if (device.deviceName == DeviceTypeSun) {
-        FYDeviceManagerViewController *controller = [[FYDeviceManagerViewController alloc] initWithNibName:@"FYDeviceManagerViewController" bundle:nil];
-        FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
-        kAppDelegate.deviceID = device.deviceID;
-        [self presentViewController:nav animated:YES completion:nil];
-    } else if(device.deviceName == DeviceTypeHot) {
-        FYHeatCycleViewController *controller = [[FYHeatCycleViewController alloc] init];
+//    if (device.deviceName == DeviceTypeSun) {
+//        FYDeviceManagerViewController *controller = [[FYDeviceManagerViewController alloc] initWithNibName:@"FYDeviceManagerViewController" bundle:nil];
+//        FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
+//        kAppDelegate.deviceID = device.deviceID;
+//        [self presentViewController:nav animated:YES completion:nil];
+//    } else if(device.deviceName == DeviceTypeHot) {
+//        FYHeatCycleViewController *controller = [[FYHeatCycleViewController alloc] init];
+//        kAppDelegate.deviceID = device.deviceID;
+//        [self.navigationController pushViewController:controller animated:YES];
+//    } else if(device.deviceName == DeviceTypeAir) {
+//        FYAirViewController *controller = [[FYAirViewController alloc] init];
+//        FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
+//        kAppDelegate.deviceID = device.deviceID;
+//        [self presentViewController:nav animated:YES completion:nil];
+//    } else {
+        FYCFCPSettingViewController *controller = [[FYCFCPSettingViewController alloc] init];
         kAppDelegate.deviceID = device.deviceID;
         [self.navigationController pushViewController:controller animated:YES];
-    } else if(device.deviceName == DeviceTypeAir) {
-        FYAirViewController *controller = [[FYAirViewController alloc] init];
-        FYBaseNavigationViewController *nav = [[FYBaseNavigationViewController alloc] initWithRootViewController:controller];
-        kAppDelegate.deviceID = device.deviceID;
-        [self presentViewController:nav animated:YES completion:nil];
-    } else {
-        FYCFCPViewController *controller = [[FYCFCPViewController alloc] init];
-        kAppDelegate.deviceID = device.deviceID;
-        [self.navigationController pushViewController:controller animated:YES];
-    }
+//    }
 }
 
 - (void)clickCongfigButton:(FYDevice *)device
@@ -174,7 +174,7 @@
     controller.deviceID = device.deviceID;
     controller.delegate = self;
     [self addChildViewController:controller];
-    controller.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+    controller.view.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
     [self.view addSubview:controller.view];
 }
 

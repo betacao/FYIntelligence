@@ -89,14 +89,16 @@
 		F9859DAE1BF211AC0049B5CA /* ESPUDPSocketServer.m in Sources */ = {isa = PBXBuildFile; fileRef = F9859DA01BF211AC0049B5CA /* ESPUDPSocketServer.m */; };
 		F9859DAF1BF211AC0049B5CA /* IPAddress.c in Sources */ = {isa = PBXBuildFile; fileRef = F9859DA11BF211AC0049B5CA /* IPAddress.c */; };
 		F9859DB11BF218850049B5CA /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9859DB01BF218850049B5CA /* libstdc++.6.0.9.tbd */; };
-		F98B62711CC7593400553330 /* FYCFCPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98B626F1CC7593400553330 /* FYCFCPViewController.m */; };
-		F98B62721CC7593400553330 /* FYCFCPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98B62701CC7593400553330 /* FYCFCPViewController.xib */; };
+		F98B62711CC7593400553330 /* FYCFCPSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98B626F1CC7593400553330 /* FYCFCPSettingViewController.m */; };
+		F98B62721CC7593400553330 /* FYCFCPSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98B62701CC7593400553330 /* FYCFCPSettingViewController.xib */; };
 		F98B9FF41BCF928200B5FEAF /* FYSDJRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98B9FF21BCF928200B5FEAF /* FYSDJRViewController.m */; };
 		F98B9FF51BCF928200B5FEAF /* FYSDJRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98B9FF31BCF928200B5FEAF /* FYSDJRViewController.xib */; };
 		F98B9FF91BCF9D0300B5FEAF /* FYDSJRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98B9FF71BCF9D0300B5FEAF /* FYDSJRViewController.m */; };
 		F98B9FFA1BCF9D0300B5FEAF /* FYDSJRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98B9FF81BCF9D0300B5FEAF /* FYDSJRViewController.xib */; };
 		F99463AD1BD6822E008B9F54 /* FYAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99463AB1BD6822E008B9F54 /* FYAboutViewController.m */; };
 		F99463AE1BD6822E008B9F54 /* FYAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99463AC1BD6822E008B9F54 /* FYAboutViewController.xib */; };
+		F99F53681CC8C3FA0099AB25 /* FYCFCPAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99F53661CC8C3FA0099AB25 /* FYCFCPAboutViewController.m */; };
+		F99F53691CC8C3FA0099AB25 /* FYCFCPAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99F53671CC8C3FA0099AB25 /* FYCFCPAboutViewController.xib */; };
 		F9A1E05C1BCCF6AE00A92B90 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A1E05B1BCCF6AE00A92B90 /* SystemConfiguration.framework */; };
 		F9B0636E1BD7A41A00471DF4 /* FYUDPNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B0636D1BD7A41A00471DF4 /* FYUDPNetWork.m */; };
 		F9B441C41BD4F2DA005148D1 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441BB1BD4F2DA005148D1 /* GCDAsyncSocket.m */; };
@@ -275,9 +277,9 @@
 		F9859DA11BF211AC0049B5CA /* IPAddress.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = IPAddress.c; sourceTree = "<group>"; };
 		F9859DA21BF211AC0049B5CA /* IPAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPAddress.h; sourceTree = "<group>"; };
 		F9859DB01BF218850049B5CA /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
-		F98B626E1CC7593400553330 /* FYCFCPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCFCPViewController.h; sourceTree = "<group>"; };
-		F98B626F1CC7593400553330 /* FYCFCPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCFCPViewController.m; sourceTree = "<group>"; };
-		F98B62701CC7593400553330 /* FYCFCPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYCFCPViewController.xib; sourceTree = "<group>"; };
+		F98B626E1CC7593400553330 /* FYCFCPSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCFCPSettingViewController.h; sourceTree = "<group>"; };
+		F98B626F1CC7593400553330 /* FYCFCPSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCFCPSettingViewController.m; sourceTree = "<group>"; };
+		F98B62701CC7593400553330 /* FYCFCPSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYCFCPSettingViewController.xib; sourceTree = "<group>"; };
 		F98B9FF11BCF928200B5FEAF /* FYSDJRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYSDJRViewController.h; sourceTree = "<group>"; };
 		F98B9FF21BCF928200B5FEAF /* FYSDJRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYSDJRViewController.m; sourceTree = "<group>"; };
 		F98B9FF31BCF928200B5FEAF /* FYSDJRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYSDJRViewController.xib; sourceTree = "<group>"; };
@@ -287,6 +289,9 @@
 		F99463AA1BD6822E008B9F54 /* FYAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYAboutViewController.h; sourceTree = "<group>"; };
 		F99463AB1BD6822E008B9F54 /* FYAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYAboutViewController.m; sourceTree = "<group>"; };
 		F99463AC1BD6822E008B9F54 /* FYAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYAboutViewController.xib; sourceTree = "<group>"; };
+		F99F53651CC8C3FA0099AB25 /* FYCFCPAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCFCPAboutViewController.h; sourceTree = "<group>"; };
+		F99F53661CC8C3FA0099AB25 /* FYCFCPAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCFCPAboutViewController.m; sourceTree = "<group>"; };
+		F99F53671CC8C3FA0099AB25 /* FYCFCPAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYCFCPAboutViewController.xib; sourceTree = "<group>"; };
 		F9A1E05B1BCCF6AE00A92B90 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F9B0636C1BD7A41A00471DF4 /* FYUDPNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYUDPNetWork.h; sourceTree = "<group>"; };
 		F9B0636D1BD7A41A00471DF4 /* FYUDPNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYUDPNetWork.m; sourceTree = "<group>"; };
@@ -480,9 +485,12 @@
 		F98B626D1CC757A600553330 /* CFCP */ = {
 			isa = PBXGroup;
 			children = (
-				F98B626E1CC7593400553330 /* FYCFCPViewController.h */,
-				F98B626F1CC7593400553330 /* FYCFCPViewController.m */,
-				F98B62701CC7593400553330 /* FYCFCPViewController.xib */,
+				F98B626E1CC7593400553330 /* FYCFCPSettingViewController.h */,
+				F98B626F1CC7593400553330 /* FYCFCPSettingViewController.m */,
+				F98B62701CC7593400553330 /* FYCFCPSettingViewController.xib */,
+				F99F53651CC8C3FA0099AB25 /* FYCFCPAboutViewController.h */,
+				F99F53661CC8C3FA0099AB25 /* FYCFCPAboutViewController.m */,
+				F99F53671CC8C3FA0099AB25 /* FYCFCPAboutViewController.xib */,
 			);
 			path = CFCP;
 			sourceTree = "<group>";
@@ -846,6 +854,7 @@
 				F97340B21BCFED73006D1740 /* FYHSWViewController.xib in Resources */,
 				F99463AE1BD6822E008B9F54 /* FYAboutViewController.xib in Resources */,
 				F95113C01BCD45D60058C7B2 /* FYParamSettingViewController.xib in Resources */,
+				F99F53691CC8C3FA0099AB25 /* FYCFCPAboutViewController.xib in Resources */,
 				F98351741BCA333000809E14 /* FYAddDeviceViewController.xib in Resources */,
 				F9FFE01D1C3CF41000EB8779 /* FYHeatCycleViewController.xib in Resources */,
 				F98351651BCA26E400809E14 /* FYListViewController.xib in Resources */,
@@ -863,7 +872,7 @@
 				F95E367D1C40F6CC00E34689 /* FYHeatCycleYXMSViewController.xib in Resources */,
 				F95E36781C40F6C000E34689 /* FYHeatCycleSJDViewController.xib in Resources */,
 				F95E36691C40F69300E34689 /* FYHeatCycleHSSJViewController.xib in Resources */,
-				F98B62721CC7593400553330 /* FYCFCPViewController.xib in Resources */,
+				F98B62721CC7593400553330 /* FYCFCPSettingViewController.xib in Resources */,
 				F95E366E1C40F6A200E34689 /* FYHeatCycleJXSJViewController.xib in Resources */,
 				F9DEF7BF1BC7F5CC00520CAA /* Images.xcassets in Resources */,
 				F98351791BCA370400809E14 /* FYJoinNetViewController.xib in Resources */,
@@ -936,6 +945,7 @@
 				F99463AD1BD6822E008B9F54 /* FYAboutViewController.m in Sources */,
 				F96E2FE31BCE6A7600B6AF4B /* FYDSSSViewController.m in Sources */,
 				F98351691BCA270A00809E14 /* FYListTableViewCell.m in Sources */,
+				F99F53681CC8C3FA0099AB25 /* FYCFCPAboutViewController.m in Sources */,
 				F98B9FF91BCF9D0300B5FEAF /* FYDSJRViewController.m in Sources */,
 				F9859DAF1BF211AC0049B5CA /* IPAddress.c in Sources */,
 				F9859DAC1BF211AC0049B5CA /* ESPTouchTaskParameter.m in Sources */,
@@ -952,7 +962,7 @@
 				F95E365E1C40F31700E34689 /* FYHeatCycleSettingViewController.m in Sources */,
 				F98B9FF41BCF928200B5FEAF /* FYSDJRViewController.m in Sources */,
 				F9DEF7BA1BC7F5CC00520CAA /* ViewController.m in Sources */,
-				F98B62711CC7593400553330 /* FYCFCPViewController.m in Sources */,
+				F98B62711CC7593400553330 /* FYCFCPSettingViewController.m in Sources */,
 				F9B441C41BD4F2DA005148D1 /* GCDAsyncSocket.m in Sources */,
 				F9859DA71BF211AC0049B5CA /* ESPDatumCode.m in Sources */,
 				F9859DAA1BF211AC0049B5CA /* ESPTouchResult.m in Sources */,
@@ -1144,7 +1154,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FYIntelligence.FYIntelligence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a121914f-8d94-4700-84e7-0ce223138f59";
+				PROVISIONING_PROFILE = "b938bbaf-10e5-4c6c-a1a3-a77ebf9ceab2";
 			};
 			name = Debug;
 		};
@@ -1168,7 +1178,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FYIntelligence.FYIntelligence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a121914f-8d94-4700-84e7-0ce223138f59";
+				PROVISIONING_PROFILE = "b938bbaf-10e5-4c6c-a1a3-a77ebf9ceab2";
 			};
 			name = Release;
 		};

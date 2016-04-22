@@ -7,7 +7,6 @@
 //
 
 #import "FYAirViewController.h"
-#import "UIView+SDAutoLayout.h"
 #import "FYAboutViewController.h"
 #import "FYBaseNavigationViewController.h"
 #import "FYEnterPINViewController.h"

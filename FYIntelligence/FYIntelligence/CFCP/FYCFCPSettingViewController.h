@@ -8,6 +8,6 @@
 
 #import "FYBaseViewController.h"
 
-@interface FYCFCPViewController : FYBaseViewController
+@interface FYCFCPSettingViewController : FYBaseViewController
 
 @end

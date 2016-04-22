@@ -28,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.frame = CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight);
+    self.view.frame = CGRectMake(0.0f, 0.0f, SCREENWIDTH, SCREENHEIGHT);
     self.view.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.3f];
     self.bgView.backgroundColor = [UIColor colorWithHexString:@"345654" alpha:0.9];
     self.nextButton.layer.masksToBounds = YES;

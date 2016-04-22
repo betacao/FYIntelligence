@@ -130,22 +130,22 @@
     CGRect frame = self.leftView.frame;
     frame.origin.x = 0.0f;
     frame.origin.y = 0.0f;
-    frame.size.height = kScreenHeight;
-    frame.size.width = kScreenWidth / 35.0f * 14.0f;
+    frame.size.height = SCREENHEIGHT;
+    frame.size.width = SCREENWIDTH / 35.0f * 14.0f;
     self.leftView.frame = frame;
 
     frame = self.middleView.frame;
     frame.origin.x = CGRectGetMaxX(self.leftView.frame);
     frame.origin.y = 0.0f;
-    frame.size.height = kScreenHeight;
-    frame.size.width = kScreenWidth / 35.0f * 6.0f;
+    frame.size.height = SCREENHEIGHT;
+    frame.size.width = SCREENWIDTH / 35.0f * 6.0f;
     self.middleView.frame = frame;
 
     frame = self.rightView.frame;
     frame.origin.x = CGRectGetMaxX(self.middleView.frame);
     frame.origin.y = 0.0f;
-    frame.size.height = kScreenHeight;
-    frame.size.width = kScreenWidth / 35.0f * 15.0f;
+    frame.size.height = SCREENHEIGHT;
+    frame.size.width = SCREENWIDTH / 35.0f * 15.0f;
     self.rightView.frame = frame;
 
 }

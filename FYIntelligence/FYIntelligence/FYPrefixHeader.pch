@@ -9,9 +9,14 @@
 #ifndef FYPrefixHeader_pch
 #define FYPrefixHeader_pch
 
-#define SCREENWIDTH [[UIScreen mainScreen] bounds].size.width
+#define SCREENWIDTH CGRectGetWidth([UIScreen mainScreen].bounds)
+#define SCREENHEIGHT CGRectGetHeight([UIScreen mainScreen].bounds)
 
+#define XFACTOR SCREENWIDTH / 320.0f
+#define YFACTOR SCREENHEIGHT / 568.0f
 #define MarginFactor(x) floorf(SCREENWIDTH / 375.0f * x)
+#define FontFactor(font)  [UIFont systemFontOfSize:(SCREENWIDTH >= 375.0f ? font : (font - 1.0f))]
+#define BoldFontFactor(font)  [UIFont boldSystemFontOfSize:(SCREENWIDTH >= 375.0f ? font : (font - 1.0f))]
 
 #import "FYBaseViewController.h"
 #import "const.h"
@@ -23,5 +28,6 @@
 #import "AppDelegate.h"
 #import "FYTCPSpecialNetWork.h"
 #import "UIButton+EnlargeEdge.h"
+#import "UIView+SDAutoLayout.h"
 
 #endif /* FYPrefixHeader_pch */

@@ -11,11 +11,7 @@
 
 #define kAppDelegate [AppDelegate currentAppdelegate]
 
-#define kScreenWidth CGRectGetWidth([UIScreen mainScreen].bounds)
-#define kScreenHeight CGRectGetHeight([UIScreen mainScreen].bounds)
 
-#define XFACTOR kScreenWidth / 320.0f
-#define YFACTOR kScreenHeight / 568.0f
 #define kRememberUserName @"rememberUserName"
 #define kUserName @"userName"
 #define kPassWord @"passWord"

@@ -35,7 +35,7 @@
 
 - (IBAction)timeButtonClick:(UIButton *)sender
 {
-    FYDatePickerView *pickView = [[FYDatePickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight)];
+    FYDatePickerView *pickView = [[FYDatePickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, SCREENWIDTH, SCREENHEIGHT)];
     pickView.responseObject = sender;
     pickView.delegate = self;
     NSString *title = sender.titleLabel.text;

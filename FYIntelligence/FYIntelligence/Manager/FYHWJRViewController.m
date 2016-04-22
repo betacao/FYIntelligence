@@ -35,7 +35,7 @@
     [self getInfo];
 }
 - (IBAction)positionButtonClick:(UIButton *)sender {
-    FYPickerView *pickView = [[FYPickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight) unit:@""];
+    FYPickerView *pickView = [[FYPickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, SCREENWIDTH, SCREENHEIGHT) unit:@""];
 
     NSArray *array = @[@"41°C", @"42°C", @"43°C", @"44°C", @"45°C", @"46°C", @"47°C", @"48°C", @"49°C", @"50°C", @"51°C", @"52°C", @"53°C", @"54°C", @"55°C", @"56°C", @"57°C", @"58°C", @"59°C", @"60°C", @"61°C", @"62°C", @"63°C", @"64°C", @"65°C", @"66°C", @"67°C", @"68°C", @"69°C", @"70°C"];
     [pickView loadDataArray:array];
@@ -49,7 +49,7 @@
 
 - (IBAction)timeButtonClick:(UIButton *)sender
 {
-    FYDatePickerView *pickView = [[FYDatePickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kScreenWidth, kScreenHeight)];
+    FYDatePickerView *pickView = [[FYDatePickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, SCREENWIDTH, SCREENHEIGHT)];
     pickView.responseObject = sender;
     pickView.delegate = self;
     NSString *title = sender.titleLabel.text;
