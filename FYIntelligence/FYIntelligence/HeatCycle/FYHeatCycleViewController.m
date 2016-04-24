@@ -12,7 +12,9 @@
 #import "FYAboutViewController.h"
 
 @interface FYHeatCycleViewController ()<FYEnterPINDelegate, UIAlertViewDelegate>
-
+{
+    NSThread *thread;
+}
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIImageView *stateImageView;
 
@@ -35,6 +37,8 @@
 @property (strong, nonatomic) NSString *runState;
 @property (strong, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) NSInteger currentTime;
+
+@property (assign, nonatomic) BOOL isShowView;
 @end
 
 @implementation FYHeatCycleViewController
@@ -100,6 +104,13 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    self.isShowView = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.isShowView = NO;
 }
 
 - (void)backButtonClick:(UIButton *)button
@@ -108,14 +119,62 @@
     [super backButtonClick:button];
 }
 
-- (void)getInfo
+- (void)setIsShowView:(BOOL)isShowView
+{
+    BOOL new = isShowView;
+    BOOL old = _isShowView;
+    if (new && !old) {
+        thread = [[NSThread alloc] initWithTarget:self selector:@selector(threadGetinfo) object:nil];
+        [thread start];
+    } else if (!new) {
+        [thread cancel];
+    }
+    _isShowView = isShowView;
+}
+
+- (void)threadGetinfo
+{
+    __weak typeof(self) weakSelf = self;
+    while (1) {
+        if ([NSThread currentThread].isCancelled) {
+            break;
+        } else {
+            if (!kAppDelegate.refreshing) {
+                kAppDelegate.refreshing = YES;
+                NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kHotMainViewCmd type:0];
+                kAppDelegate.refreshing = NO;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf AnalyticalData:responseString];
+                });
+            }
+            [NSThread sleepForTimeInterval:25.0f];
+        }
+    }
+}
+
+- (void)countDown
+{
+    self.bgzLabel.text = [self secondsToMinutes:self.currentTime];
+    self.jxLabel.text = [self secondsToMinutes:self.currentTime];
+    self.currentTime--;
+    if (self.currentTime < 0) {
+        [self.timer setFireDate:[NSDate distantFuture]];
+        [self timerGetInfo];
+        return;
+    }
+}
+
+- (void)timerGetInfo
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-
-        NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kHotMainViewCmd type:0];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self AnalyticalData:responseString];
-        });
+        if (!kAppDelegate.refreshing) {
+            kAppDelegate.refreshing = YES;
+            NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:kHotMainViewCmd type:0];
+            kAppDelegate.refreshing = NO;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self AnalyticalData:responseString];
+            });
+        }
     });
 }
 
@@ -128,18 +187,6 @@
 - (void)stopAnimation
 {
     self.fanImageView.image = [UIImage imageNamed:@"yelun"];
-}
-
-- (void)countDown
-{
-    self.bgzLabel.text = [self secondsToMinutes:self.currentTime];
-    self.jxLabel.text = [self secondsToMinutes:self.currentTime];
-    self.currentTime--;
-    if (self.currentTime < 0) {
-        [self.timer setFireDate:[NSDate distantFuture]];
-        [self getInfo];
-        return;
-    }
 }
 
 - (NSString *)secondsToMinutes:(NSInteger)seconds

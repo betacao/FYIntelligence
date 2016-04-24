@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		59C8E8166A24364345283D3D /* libPods-FYIntelligence.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C031A5C4932F93690286F5CF /* libPods-FYIntelligence.a */; };
 		F9117AD61CBCCE350056A5F5 /* FYTCPSpecialNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F9117AD51CBCCE350056A5F5 /* FYTCPSpecialNetWork.m */; };
+		F918B4121CCA084600175CA8 /* FYCFCPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F918B4101CCA084600175CA8 /* FYCFCPViewController.m */; };
+		F918B4131CCA084600175CA8 /* FYCFCPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F918B4111CCA084600175CA8 /* FYCFCPViewController.xib */; };
 		F91C1BED1BD23767002FC017 /* FYForgrtPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F91C1BEB1BD23767002FC017 /* FYForgrtPWDViewController.m */; };
 		F91C1BEE1BD23767002FC017 /* FYForgrtPWDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91C1BEC1BD23767002FC017 /* FYForgrtPWDViewController.xib */; };
 		F93F982D1BCE6E3300FD46A8 /* FYPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F93F982C1BCE6E3300FD46A8 /* FYPickerView.m */; };
@@ -145,6 +147,9 @@
 		D2BA7ACD04816668D83AF58B /* Pods-FYIntelligence.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FYIntelligence.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FYIntelligence/Pods-FYIntelligence.debug.xcconfig"; sourceTree = "<group>"; };
 		F9117AD41CBCCE350056A5F5 /* FYTCPSpecialNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYTCPSpecialNetWork.h; sourceTree = "<group>"; };
 		F9117AD51CBCCE350056A5F5 /* FYTCPSpecialNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYTCPSpecialNetWork.m; sourceTree = "<group>"; };
+		F918B40F1CCA084600175CA8 /* FYCFCPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYCFCPViewController.h; sourceTree = "<group>"; };
+		F918B4101CCA084600175CA8 /* FYCFCPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYCFCPViewController.m; sourceTree = "<group>"; };
+		F918B4111CCA084600175CA8 /* FYCFCPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYCFCPViewController.xib; sourceTree = "<group>"; };
 		F91C1BEA1BD23767002FC017 /* FYForgrtPWDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYForgrtPWDViewController.h; sourceTree = "<group>"; };
 		F91C1BEB1BD23767002FC017 /* FYForgrtPWDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYForgrtPWDViewController.m; sourceTree = "<group>"; };
 		F91C1BEC1BD23767002FC017 /* FYForgrtPWDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYForgrtPWDViewController.xib; sourceTree = "<group>"; };
@@ -485,6 +490,9 @@
 		F98B626D1CC757A600553330 /* CFCP */ = {
 			isa = PBXGroup;
 			children = (
+				F918B40F1CCA084600175CA8 /* FYCFCPViewController.h */,
+				F918B4101CCA084600175CA8 /* FYCFCPViewController.m */,
+				F918B4111CCA084600175CA8 /* FYCFCPViewController.xib */,
 				F98B626E1CC7593400553330 /* FYCFCPSettingViewController.h */,
 				F98B626F1CC7593400553330 /* FYCFCPSettingViewController.m */,
 				F98B62701CC7593400553330 /* FYCFCPSettingViewController.xib */,
@@ -863,6 +871,7 @@
 				F97340AD1BCFED60006D1740 /* FYYSBJViewController.xib in Resources */,
 				F97340BC1BCFEE65006D1740 /* FYWKJSViewController.xib in Resources */,
 				F973409E1BCFE8B2006D1740 /* FYHWJRViewController.xib in Resources */,
+				F918B4131CCA084600175CA8 /* FYCFCPViewController.xib in Resources */,
 				F983515F1BCA0B5C00809E14 /* FYRegisterViewController.xib in Resources */,
 				F96E2F991BCE385500B6AF4B /* FYSDSSViewController.xib in Resources */,
 				F97340A81BCFED4E006D1740 /* FYFDBHViewController.xib in Resources */,
@@ -1009,6 +1018,7 @@
 				F93F98301BCE7C2800FD46A8 /* FYDatePickerView.m in Sources */,
 				F96E2F941BCE284600B6AF4B /* UIImage+FYImage.m in Sources */,
 				F98351731BCA333000809E14 /* FYAddDeviceViewController.m in Sources */,
+				F918B4121CCA084600175CA8 /* FYCFCPViewController.m in Sources */,
 				F973409D1BCFE8B2006D1740 /* FYHWJRViewController.m in Sources */,
 				F9B441CC1BD4F339005148D1 /* FYTCPNetWork.m in Sources */,
 			);

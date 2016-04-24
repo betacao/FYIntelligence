@@ -7,12 +7,14 @@
 //
 
 #import "FYCFCPAboutViewController.h"
+#import "FYCFCPSettingViewController.h"
 
 @interface FYCFCPAboutViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phoneField;
 @property (weak, nonatomic) IBOutlet UITextField *webField;
 @property (weak, nonatomic) IBOutlet UITextField *versionField;
 @property (weak, nonatomic) IBOutlet UITextField *settingField;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -21,6 +23,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.imageView.sd_layout.spaceToSuperView(UIEdgeInsetsZero);
+
     self.phoneField.sd_layout
     .leftSpaceToView(self.view, MarginFactor(36.0f))
     .topSpaceToView(self.view, MarginFactor(225.0f))
@@ -63,8 +68,13 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
+    if ([textField isEqual:self.settingField]) {
+        FYCFCPSettingViewController *controller = [[FYCFCPSettingViewController alloc] init];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
     return NO;
 }
+
 
 - (void)didReceiveMemoryWarning
 {

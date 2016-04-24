@@ -51,8 +51,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"云智能";
-
+    self.title = @"智 能 云";
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, FontFactor(20.0f),NSFontAttributeName, nil];
+    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
 
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *normalImage = [UIImage imageNamed:@"right_about"];

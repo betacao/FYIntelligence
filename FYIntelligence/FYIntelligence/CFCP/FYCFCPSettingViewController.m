@@ -7,7 +7,6 @@
 //
 
 #import "FYCFCPSettingViewController.h"
-#import "FYCFCPAboutViewController.h"
 
 @interface FYCFCPSettingViewController ()<UITextFieldDelegate, UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -107,8 +106,6 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     [self.currentField resignFirstResponder];
-    FYCFCPAboutViewController *controller = [[FYCFCPAboutViewController alloc] init];
-    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

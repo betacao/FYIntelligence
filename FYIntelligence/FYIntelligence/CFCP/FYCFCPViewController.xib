@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYCFCPViewController">
+            <connections>
+                <outlet property="fifthButton" destination="dkr-cJ-91t" id="4Vn-ZL-xvz"/>
+                <outlet property="firstButton" destination="EHl-ez-778" id="Xlv-r3-k1N"/>
+                <outlet property="firstField" destination="qNr-BS-HLb" id="5kN-sl-1r9"/>
+                <outlet property="fourthButton" destination="Ett-fc-Qqr" id="aN0-0Y-ueZ"/>
+                <outlet property="imageView" destination="1Lz-q1-AmA" id="Ifp-5b-5I6"/>
+                <outlet property="scrollView" destination="Zfq-67-ibT" id="j1X-HI-Pkg"/>
+                <outlet property="secondButton" destination="LL2-8T-thh" id="eP4-dX-wSl"/>
+                <outlet property="secondField" destination="BD5-kM-16b" id="UOi-uv-7OX"/>
+                <outlet property="seventhButton" destination="ss9-fC-fMp" id="rX3-0F-zFf"/>
+                <outlet property="sixthButton" destination="QEL-Yl-UWG" id="eNk-M6-gGp"/>
+                <outlet property="thirdButton" destination="nzD-yg-mac" id="D1i-OU-Uio"/>
+                <outlet property="thirdField" destination="Jkh-ti-nYf" id="8tb-8s-Tmu"/>
+                <outlet property="titleImageView" destination="eF3-Xy-5ql" id="g4l-Ud-GyV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kqnbj" id="1Lz-q1-AmA">
+                    <rect key="frame" x="40" y="220" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Zfq-67-ibT">
+                    <rect key="frame" x="21" y="58" width="240" height="466"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bpqtitle" id="eF3-Xy-5ql">
+                            <rect key="frame" x="13" y="0.0" width="240" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.0Hz" textAlignment="natural" minimumFontSize="17" background="bpqpl" id="qNr-BS-HLb">
+                            <rect key="frame" x="72" y="157" width="97" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="B6q-4N-uH7"/>
+                            </connections>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.0Mpa" textAlignment="natural" minimumFontSize="17" background="bpqsdyl" id="BD5-kM-16b">
+                            <rect key="frame" x="71" y="190" width="97" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="MEO-tm-OLU"/>
+                            </connections>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.0Mpa" textAlignment="natural" minimumFontSize="17" background="bpqsjyl" id="Jkh-ti-nYf">
+                            <rect key="frame" x="81" y="200" width="97" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="tXj-gp-tCE"/>
+                            </connections>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LL2-8T-thh">
+                            <rect key="frame" x="33" y="276" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" backgroundImage="bpqbpgz"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nzD-yg-mac">
+                            <rect key="frame" x="43" y="286" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" backgroundImage="bpqcgqgz"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ett-fc-Qqr">
+                            <rect key="frame" x="53" y="296" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" backgroundImage="bpqconfirm"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dkr-cJ-91t">
+                            <rect key="frame" x="63" y="306" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" backgroundImage="bpqup"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QEL-Yl-UWG">
+                            <rect key="frame" x="73" y="316" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" backgroundImage="bpqdown"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ss9-fC-fMp">
+                            <rect key="frame" x="83" y="326" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" backgroundImage="bpqabout"/>
+                            <connections>
+                                <action selector="aboutButtonClick:" destination="-1" eventType="touchUpInside" id="l54-QD-n4V"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EHl-ez-778">
+                            <rect key="frame" x="71" y="218" width="117" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" backgroundImage="bpqqsbh"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="HdD-et-Gtd"/>
+                    </connections>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="314" y="248"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bpqabout" width="393" height="189"/>
+        <image name="bpqbpgz" width="588" height="169"/>
+        <image name="bpqcgqgz" width="588" height="169"/>
+        <image name="bpqconfirm" width="477" height="477"/>
+        <image name="bpqdown" width="234" height="234"/>
+        <image name="bpqpl" width="700" height="96"/>
+        <image name="bpqqsbh" width="588" height="169"/>
+        <image name="bpqsdyl" width="700" height="96"/>
+        <image name="bpqsjyl" width="700" height="96"/>
+        <image name="bpqtitle" width="400" height="42"/>
+        <image name="bpqup" width="234" height="234"/>
+        <image name="kqnbj" width="667" height="375"/>
+    </resources>
+</document>

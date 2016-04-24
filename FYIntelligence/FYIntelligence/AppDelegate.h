@@ -22,6 +22,7 @@
 @property (strong, nonatomic) NSString *userPWD;
 @property (strong, nonatomic) NSString *ESPDescription;
 
+@property (assign, nonatomic) BOOL refreshing;
 + (AppDelegate *)currentAppdelegate;
 
 @end

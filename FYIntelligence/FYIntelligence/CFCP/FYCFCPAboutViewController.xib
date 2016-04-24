@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FYCFCPAboutViewController">
             <connections>
+                <outlet property="imageView" destination="iJL-sL-Jbw" id="qpr-Fl-0R4"/>
                 <outlet property="phoneField" destination="xf0-sL-fkC" id="mOD-uf-Uq3"/>
                 <outlet property="settingField" destination="hjI-yv-IxM" id="qrs-I5-ahC"/>
                 <outlet property="versionField" destination="dDh-HL-nGb" id="YQW-01-YdQ"/>
@@ -19,6 +20,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kqnbj" id="iJL-sL-Jbw">
+                    <rect key="frame" x="40" y="220" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://tpfyd2.1688.com" textAlignment="natural" minimumFontSize="17" background="bpqgfwz" id="QF9-Wo-Cnc">
                     <rect key="frame" x="59" y="268" width="185" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -69,5 +74,6 @@
         <image name="bpqgfwz" width="1000" height="103"/>
         <image name="bpqgjsz" width="1000" height="103"/>
         <image name="bpqrjbb" width="1000" height="103"/>
+        <image name="kqnbj" width="667" height="375"/>
     </resources>
 </document>

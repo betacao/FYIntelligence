@@ -42,16 +42,16 @@
     NSString *deviceName = @"";
     switch (device.deviceName) {
         case DeviceTypeSun:
-            deviceName = @"智能云太阳能中央系统";
+            deviceName = @"太阳能智能云中央系统";
             break;
         case DeviceTypeHot:
-            deviceName = @"智能云热水循环系统";
+            deviceName = @"热水智能云循环系统";
             break;
         case DeviceTypeAir:
-            deviceName = @"智能云热泵中央系统";
+            deviceName = @"热泵智能云中央系统";
             break;
         case DeviceTypeCFCP:
-            deviceName = @"智能云变频恒压系统";
+            deviceName = @"变频恒压智能云系统";
         default:
             break;
     }
