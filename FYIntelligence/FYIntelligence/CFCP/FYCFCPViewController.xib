@@ -40,7 +40,7 @@
                             <rect key="frame" x="13" y="0.0" width="240" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.0Hz" textAlignment="natural" minimumFontSize="17" background="bpqpl" id="qNr-BS-HLb">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="bpqpl" id="qNr-BS-HLb">
                             <rect key="frame" x="72" y="157" width="97" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -50,7 +50,7 @@
                                 <outlet property="delegate" destination="-1" id="B6q-4N-uH7"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.0Mpa" textAlignment="natural" minimumFontSize="17" background="bpqsdyl" id="BD5-kM-16b">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="bpqsdyl" id="BD5-kM-16b">
                             <rect key="frame" x="71" y="190" width="97" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,7 +60,7 @@
                                 <outlet property="delegate" destination="-1" id="MEO-tm-OLU"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.0Mpa" textAlignment="natural" minimumFontSize="17" background="bpqsjyl" id="Jkh-ti-nYf">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="bpqsjyl" id="Jkh-ti-nYf">
                             <rect key="frame" x="81" y="200" width="97" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,12 +70,12 @@
                                 <outlet property="delegate" destination="-1" id="tXj-gp-tCE"/>
                             </connections>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LL2-8T-thh">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LL2-8T-thh">
                             <rect key="frame" x="33" y="276" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" backgroundImage="bpqbpgz"/>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nzD-yg-mac">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nzD-yg-mac">
                             <rect key="frame" x="43" y="286" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" backgroundImage="bpqcgqgz"/>
@@ -84,16 +84,25 @@
                             <rect key="frame" x="53" y="296" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" backgroundImage="bpqconfirm"/>
+                            <connections>
+                                <action selector="settingButtonClick:" destination="-1" eventType="touchUpInside" id="9dr-EJ-Rco"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dkr-cJ-91t">
                             <rect key="frame" x="63" y="306" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" backgroundImage="bpqup"/>
+                            <connections>
+                                <action selector="upButtonClick:" destination="-1" eventType="touchUpInside" id="Nq4-cu-nH8"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QEL-Yl-UWG">
                             <rect key="frame" x="73" y="316" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" backgroundImage="bpqdown"/>
+                            <connections>
+                                <action selector="downButtonClick:" destination="-1" eventType="touchUpInside" id="CuA-QQ-XC0"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ss9-fC-fMp">
                             <rect key="frame" x="83" y="326" width="46" height="30"/>
@@ -103,7 +112,7 @@
                                 <action selector="aboutButtonClick:" destination="-1" eventType="touchUpInside" id="l54-QD-n4V"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EHl-ez-778">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EHl-ez-778">
                             <rect key="frame" x="71" y="218" width="117" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" backgroundImage="bpqqsbh"/>

@@ -70,12 +70,13 @@
     self.code = [@"accept" stringByAppendingFormat:@"%ld", self.tag];
 
     message = [[NSString stringWithFormat:@"%ld#",self.tag] stringByAppendingFormat:@"%@#",message];
+    NSString *request = @"";
     if (type == 1) {
-        message = [@"ICP2P0259#" stringByAppendingFormat:@"%@#U#%@#%@#%@",kAppDelegate.deviceID, kAppDelegate.pinCode, kAppDelegate.userID, message];
+        request = [@"ICP2P0259#" stringByAppendingFormat:@"%@#U#%@#%@#%@",kAppDelegate.deviceID, kAppDelegate.pinCode, kAppDelegate.userID, message];
     } else{
-        message = [@"ICP2P0259#" stringByAppendingFormat:@"%@#U#G7S3#%@#%@",kAppDelegate.deviceID, kAppDelegate.userID, message];
+        request = [@"ICP2P0259#" stringByAppendingFormat:@"%@#U#G7S3#%@#%@",kAppDelegate.deviceID, kAppDelegate.userID, message];
     }
-    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [request dataUsingEncoding:NSUTF8StringEncoding];
 
     long port = strtoul([kAppDelegate.deviceID UTF8String], 0, 16);
     port = [self getPort:port];
@@ -93,7 +94,6 @@
     [FYProgressHUD hideHud];
     if (self.sendCount >= 3) {
         //tcp清理掉数据
-        NSString *request = @"";
         if (type == 1) {
             request = [@"fyzn2015#1#11#" stringByAppendingFormat:@"%@#U#%@#%@#%@",kAppDelegate.deviceID, kAppDelegate.pinCode, kAppDelegate.userID, message];
         } else{

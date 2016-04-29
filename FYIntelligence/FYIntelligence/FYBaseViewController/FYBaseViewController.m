@@ -27,7 +27,7 @@
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
     self.bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, SCREENWIDTH, SCREENHEIGHT)];
-    self.bgImageView.image = [UIImage imageNamed:@"fyzn_bj"];
+    self.bgImageView.image = [UIImage imageNamed:@"kqnbj"];
     [self.view addSubview:self.bgImageView];
     [self.view sendSubviewToBack:self.bgImageView];
 }

@@ -172,6 +172,7 @@
 {
     FYConfigViewController *controller = [[FYConfigViewController alloc] initWithNibName:@"FYConfigViewController" bundle:nil];
     controller.deviceID = device.deviceID;
+    kAppDelegate.deviceID = device.deviceID;
     controller.delegate = self;
     [self addChildViewController:controller];
     controller.view.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);

@@ -24,7 +24,7 @@
                     <rect key="frame" x="40" y="220" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://tpfyd2.1688.com" textAlignment="natural" minimumFontSize="17" background="bpqgfwz" id="QF9-Wo-Cnc">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://www.rc2004.com" textAlignment="natural" minimumFontSize="17" background="bpqgfwz" id="QF9-Wo-Cnc">
                     <rect key="frame" x="59" y="268" width="185" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,7 +54,7 @@
                         <outlet property="delegate" destination="-1" id="rhY-mA-sGz"/>
                     </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4000222191" textAlignment="natural" minimumFontSize="17" background="bpqfwrx" id="xf0-sL-fkC">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4006686046" textAlignment="natural" minimumFontSize="17" background="bpqfwrx" id="xf0-sL-fkC">
                     <rect key="frame" x="59" y="149" width="185" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

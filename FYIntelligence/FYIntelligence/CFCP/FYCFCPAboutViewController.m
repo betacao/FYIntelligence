@@ -8,8 +8,9 @@
 
 #import "FYCFCPAboutViewController.h"
 #import "FYCFCPSettingViewController.h"
+#import "FYEnterPINViewController.h"
 
-@interface FYCFCPAboutViewController ()<UITextFieldDelegate>
+@interface FYCFCPAboutViewController ()<FYEnterPINDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phoneField;
 @property (weak, nonatomic) IBOutlet UITextField *webField;
 @property (weak, nonatomic) IBOutlet UITextField *versionField;
@@ -69,10 +70,30 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     if ([textField isEqual:self.settingField]) {
-        FYCFCPSettingViewController *controller = [[FYCFCPSettingViewController alloc] init];
-        [self.navigationController pushViewController:controller animated:YES];
+
+        FYEnterPINViewController *controller = [[FYEnterPINViewController alloc] initWithNibName:@"FYEnterPINViewController" bundle:nil];
+        controller.delegate = self;
+        [self.parentViewController addChildViewController:controller];
+        [self.parentViewController.view addSubview:controller.view];
+    } else if ([textField isEqual:self.phoneField]) {
+
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://4006686046"]];
+
+    } else if ([textField isEqual:self.webField]) {
+
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.rc2004.com"]];
     }
     return NO;
+}
+
+
+
+- (void)didEnterAllPIN:(NSString *)pinNumber index:(NSInteger)index
+{
+    kAppDelegate.pinCode = pinNumber;
+
+    FYCFCPSettingViewController *controller = [[FYCFCPSettingViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 

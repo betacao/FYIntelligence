@@ -91,6 +91,7 @@
 - (IBAction)leftNextClick:(id)sender
 {
     NSString *string = [NSString stringWithFormat:kConfigDeviceCmd,self.leftSSidField.text, self.leftWifField.text];
+    kAppDelegate.pinCode = [self.leftPwdField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [[FYUDPNetWork sharedNetWork] sendMessage:string type:1];
     });

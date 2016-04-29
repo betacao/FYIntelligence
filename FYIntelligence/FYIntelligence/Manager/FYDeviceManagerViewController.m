@@ -51,7 +51,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"智 能 云";
+    self.title = @"智    能    云";
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, FontFactor(20.0f),NSFontAttributeName, nil];
     [self.navigationController.navigationBar setTitleTextAttributes:attributes];
 

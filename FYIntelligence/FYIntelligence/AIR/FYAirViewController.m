@@ -18,7 +18,6 @@
 }
 @property (weak, nonatomic) IBOutlet UIImageView *bgView;
 
-@property (weak, nonatomic) IBOutlet UIImageView *titleImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *leftImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *middleImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *rightImageView;
@@ -57,18 +56,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"智    能    云";
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, FontFactor(20.0f),NSFontAttributeName, nil];
+    [self.navigationController.navigationBar setTitleTextAttributes:attributes];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.aboutButton];
-    
+
     [self.leftImageView addSubview:self.leftButton];
     [self.rightImageView addSubview:self.rightButton];
+
+    self.leftButton.titleLabel.font = self.rightButton.titleLabel.font = FontFactor(15.0f);
     self.bgView.sd_layout
     .spaceToSuperView(UIEdgeInsetsZero);
-
-    self.titleImageView.sd_layout
-    .centerXEqualToView(self.view)
-    .topSpaceToView(self.view, -20.0f)
-    .widthIs(MarginFactor(100.0f))
-    .heightIs(MarginFactor(50.0f));
 
     self.aboutButton.sd_layout
     .widthIs(MarginFactor(100.0f))
@@ -80,26 +78,26 @@
 
     self.leftImageView.sd_layout
     .leftSpaceToView(self.view, MarginFactor(10.0f))
-    .topSpaceToView(self.titleImageView, MarginFactor(0.0f))
+    .topSpaceToView(self.view, MarginFactor(30.0f))
     .widthIs(self.leftImageView.image.size.width / width * margin)
     .heightIs(self.leftImageView.image.size.height / width * margin);
 
     self.middleImageView.sd_layout
     .leftSpaceToView(self.leftImageView, 0.0f)
-    .topSpaceToView(self.titleImageView, MarginFactor(0.0f))
+    .topEqualToView(self.leftImageView)
     .widthIs(self.middleImageView.image.size.width / width * margin)
     .heightIs(self.middleImageView.image.size.height / width * margin);
 
     self.rightImageView.sd_layout
     .leftSpaceToView(self.middleImageView, 0.0f)
-    .topSpaceToView(self.titleImageView, MarginFactor(0.0f))
+    .topEqualToView(self.leftImageView)
     .widthIs(self.rightImageView.image.size.width / width * margin)
     .heightIs(self.rightImageView.image.size.height / width * margin);
 
     margin = (margin - 4 * 80.0f) / 3.0f;
     self.firstButton.sd_layout
     .leftEqualToView(self.leftImageView)
-    .topSpaceToView(self.leftImageView, MarginFactor(5.0f))
+    .topSpaceToView(self.leftImageView, MarginFactor(20.0f))
     .widthIs(80.0f)
     .heightIs(32.0f);
 
@@ -124,13 +122,13 @@
     self.leftButton.sd_layout
     .leftSpaceToView(self.leftImageView, MarginFactor(20.0f))
     .topSpaceToView(self.leftImageView, MarginFactor(30.0f))
-    .widthIs(46.0f)
+    .widthIs(50.0f)
     .heightIs(30.0f);
 
     self.rightButton.sd_layout
     .leftSpaceToView(self.rightImageView, MarginFactor(2.0f))
     .topSpaceToView(self.rightImageView, MarginFactor(50.0f))
-    .widthIs(46.0f)
+    .widthIs(50.0f)
     .heightIs(30.0f);
 
     self.isShowView = YES;

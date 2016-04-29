@@ -18,7 +18,6 @@
                 <outlet property="rightImageView" destination="kMK-V1-VCe" id="V9n-29-OOL"/>
                 <outlet property="secondButton" destination="zeC-WY-kRr" id="cbp-0W-rHG"/>
                 <outlet property="thirdButton" destination="j2c-wQ-Ltu" id="0wm-RT-K9P"/>
-                <outlet property="titleImageView" destination="XLt-wU-Yra" id="Son-7i-6KY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,10 +28,6 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kqnbj" id="75n-vS-buP">
                     <rect key="frame" x="14" y="31" width="130" height="77"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="air_title" id="XLt-wU-Yra">
-                    <rect key="frame" x="143" y="18" width="130" height="77"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kqnleft" id="571-t1-0f9">
@@ -94,18 +89,21 @@
         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6kR-X4-BMu">
             <rect key="frame" x="0.0" y="0.0" width="46" height="26"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <state key="normal" backgroundImage="sw_bj"/>
+            <state key="normal" backgroundImage="sw_bj">
+                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
             <point key="canvasLocation" x="39" y="236"/>
         </button>
         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NMt-y1-Gph">
             <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <state key="normal" backgroundImage="sw_bj"/>
+            <state key="normal" backgroundImage="sw_bj">
+                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
         </button>
     </objects>
     <resources>
         <image name="air_about" width="200" height="56"/>
-        <image name="air_title" width="300" height="78"/>
         <image name="kqnbj" width="667" height="375"/>
         <image name="kqncssz" width="200" height="79"/>
         <image name="kqngdhs" width="200" height="79"/>
