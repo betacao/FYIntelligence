@@ -95,9 +95,9 @@
     if (self.sendCount >= 3) {
         //tcp清理掉数据
         if (type == 1) {
-            request = [@"fyzn2015#1#11#" stringByAppendingFormat:@"%@#U#%@#%@#%@",kAppDelegate.deviceID, kAppDelegate.pinCode, kAppDelegate.userID, message];
+            request = [NSString stringWithFormat:@"fyzn2015#1#11#%@#%@#%@#", kAppDelegate.deviceID, kAppDelegate.pinCode, kAppDelegate.userID];
         } else{
-            request = [@"fyzn2015#1#11#" stringByAppendingFormat:@"%@#U#G7S3#%@#%@",kAppDelegate.deviceID, kAppDelegate.userID, message];
+            request = [NSString stringWithFormat:@"fyzn2015#1#11#%@#G7S3#%@#", kAppDelegate.deviceID, kAppDelegate.userID];
         }
         [[FYTCPNetWork shareNetEngine] sendRequest:request complete:nil];
         [FYProgressHUD showMessageWithText:@"设备离线"];

@@ -93,7 +93,13 @@
     NSString *string = [NSString stringWithFormat:kConfigDeviceCmd,self.leftSSidField.text, self.leftWifField.text];
     kAppDelegate.pinCode = [self.leftPwdField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [[FYUDPNetWork sharedNetWork] sendMessage:string type:1];
+        NSString *responseString = [[FYUDPNetWork sharedNetWork] sendMessage:string type:1];
+        if ([responseString containsString:@"SUCCESS"]) {
+            [FYProgressHUD showMessageWithText:@"设置成功"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self removeSelf];
+            });
+        }
     });
 }
 
@@ -102,6 +108,7 @@
     NSString *request = [NSString stringWithFormat:kDeleteDeviceCmd,self.deviceID, self.rightPwdField.text, kAppDelegate.userID];
     [[FYTCPNetWork shareNetEngine] sendRequest:request complete:^(NSDictionary *dic) {
         [FYProgressHUD showMessageWithText:@"设置成功"];
+        [self performSelector:@selector(removeSelf) withObject:nil afterDelay:0.1f];
         if (self.delegate && [self.delegate respondsToSelector:@selector(didDeleteDevice:)]) {
             [self.delegate didDeleteDevice:self.deviceID];
         }
@@ -109,6 +116,12 @@
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [super touchesEnded:touches withEvent:event];
+    [self removeSelf];
+}
+
+- (void)removeSelf
 {
     [self removeFromParentViewController];
     [self.view removeFromSuperview];
