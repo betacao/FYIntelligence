@@ -9,6 +9,21 @@
 #ifndef const_h
 #define const_h
 
+#define kFY//飞羽
+#define kRC//日成
+
+#ifdef kFY
+
+#define kAboutPhone @"13355868768"
+#define kAboutWebSite @"http://tpfydz.1688.com"
+
+#else
+
+#define kAboutPhone @"4006686046"
+#define kAboutWebSite @"http://www.rc2004.com"
+
+#endif
+
 #define kAppDelegate [AppDelegate currentAppdelegate]
 
 

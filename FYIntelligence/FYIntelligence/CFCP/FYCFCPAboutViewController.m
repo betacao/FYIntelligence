@@ -64,6 +64,9 @@
     self.versionField.leftViewMode = UITextFieldViewModeAlways;
     self.settingField.leftViewMode = UITextFieldViewModeAlways;
 
+    self.phoneField.text = kAboutPhone;
+    self.webField.text = kAboutWebSite;
+
     self.phoneField.font = self.webField.font = self.versionField.font = self.settingField.font = BoldFontFactor(15.0f);
 }
 
@@ -77,11 +80,11 @@
         [self.parentViewController.view addSubview:controller.view];
     } else if ([textField isEqual:self.phoneField]) {
 
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://4006686046"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"tel://" stringByAppendingFormat:kAboutPhone]]];
 
     } else if ([textField isEqual:self.webField]) {
 
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.rc2004.com"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kAboutWebSite]];
     }
     return NO;
 }
