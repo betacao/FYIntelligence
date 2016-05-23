@@ -14,7 +14,7 @@
 
 #ifdef kFY
 
-#define kAboutPhone @"13355868768"
+#define kAboutPhone @"4000222191"
 #define kAboutWebSite @"http://tpfydz.1688.com"
 
 #else
