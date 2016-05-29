@@ -9,7 +9,7 @@
 #ifndef const_h
 #define const_h
 
-#define kFY//飞羽
+//#define kFY//飞羽
 #define kRC//日成
 
 #ifdef kFY
