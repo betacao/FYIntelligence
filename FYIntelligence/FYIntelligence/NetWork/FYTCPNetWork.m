@@ -34,6 +34,7 @@
     // 2. 连接服务器端. 只有连接成功后才能相互通讯 如果60s连接不上就出错
     NSString *host = kHostAddress;
     uint16_t port = kTCPHostPort;
+    self.sendTcpSocket.IPv4PreferredOverIPv6 = NO;
     [self.sendTcpSocket connectToHost:host onPort:port withTimeout:60 error:nil];
     // 连接必须服务器在线
 }
