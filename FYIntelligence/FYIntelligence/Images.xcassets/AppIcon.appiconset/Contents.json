@@ -30,8 +30,9 @@
       "scale" : "3x"
     },
     {
-      "idiom" : "iphone",
       "size" : "57x57",
+      "idiom" : "iphone",
+      "filename" : "57.png",
       "scale" : "1x"
     },
     {
