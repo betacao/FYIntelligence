@@ -19,14 +19,11 @@
 #define BoldFontFactor(font)  [UIFont boldSystemFontOfSize:(SCREENWIDTH >= 375.0f ? font : (font - 1.0f))]
 
 #import "FYBaseViewController.h"
-#import "const.h"
+
 #import "UIColor+FYColor.h"
 #import "UIImage+FYImage.h"
-#import "FYTCPNetWork.h"
-#import "FYUDPNetWork.h"
-#import "FYProgressHUD.h"
+#import <NetWork/NetWork.h>
 #import "AppDelegate.h"
-#import "FYTCPSpecialNetWork.h"
 #import "UIButton+EnlargeEdge.h"
 #import "UIView+SDAutoLayout.h"
 

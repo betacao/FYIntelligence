@@ -15,14 +15,11 @@
 
 @implementation AppDelegate
 
-+ (AppDelegate *)currentAppdelegate
-{
-    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[FYTCPNetWork shareNetEngine] createClientTcpSocket];
-    self.isRemember = NO;
+    kAppDelegate.isRemember = NO;
+    kAppDelegate.window = self.window;
     [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert) categories:nil];
     [APService setupWithOption:launchOptions];
 

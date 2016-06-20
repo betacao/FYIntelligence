@@ -6,6 +6,7 @@
 //  Copyright © 2015年 changxicao. All rights reserved.
 //
 
+#import "FYGlobleManager.h"
 #ifndef const_h
 #define const_h
 
@@ -24,7 +25,7 @@
 
 #endif
 
-#define kAppDelegate [AppDelegate currentAppdelegate]
+#define kAppDelegate [FYGlobleManager sharedGlobleManager]
 
 
 #define kRememberUserName @"rememberUserName"
