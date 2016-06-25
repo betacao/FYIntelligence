@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "APService.h"
+#import "JPUSHService.h"
 
 @interface AppDelegate ()
 
@@ -23,8 +23,22 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[FYTCPNetWork shareNetEngine] createClientTcpSocket];
     self.isRemember = NO;
-    [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert) categories:nil];
-    [APService setupWithOption:launchOptions];
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+        //可以添加自定义categories
+        [JPUSHService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |
+                                                          UIUserNotificationTypeSound |
+                                                          UIUserNotificationTypeAlert)
+                                              categories:nil];
+    } else {
+        //categories 必须为nil
+        [JPUSHService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                                          UIRemoteNotificationTypeSound |
+                                                          UIRemoteNotificationTypeAlert)
+                                              categories:nil];
+    }
+
+    //如不需要使用IDFA，advertisingIdentifier 可为nil
+    [JPUSHService setupWithOption:launchOptions appKey:appKey channel:channel apsForProduction:isProduction advertisingIdentifier:nil];
 
     return YES;
 }
@@ -54,7 +68,7 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSLog(@"%@", [NSString stringWithFormat:@"Device Token: %@", deviceToken]);
-    [APService registerDeviceToken:deviceToken];
+    [JPUSHService registerDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -70,10 +84,7 @@
 // A nil action identifier indicates the default action.
 // You should call the completion handler as soon as you've finished handling
 // the action.
-- (void)application:(UIApplication *)application
-handleActionWithIdentifier:(NSString *)identifier
-forLocalNotification:(UILocalNotification *)notification
-  completionHandler:(void (^)())completionHandler {
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void (^)())completionHandler {
 }
 
 // Called when your app has been activated by the user selecting an action from
@@ -86,7 +97,7 @@ forLocalNotification:(UILocalNotification *)notification
 #endif
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [APService handleRemoteNotification:userInfo];
+    [JPUSHService handleRemoteNotification:userInfo];
     NSLog(@"收到通知:%@", [self logDic:userInfo]);
     NSString *string = [self logDic:userInfo];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:string delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
@@ -95,7 +106,7 @@ forLocalNotification:(UILocalNotification *)notification
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:
 (void (^)(UIBackgroundFetchResult))completionHandler {
-    [APService handleRemoteNotification:userInfo];
+    [JPUSHService handleRemoteNotification:userInfo];
     NSLog(@"收到通知:%@", [self logDic:userInfo]);
 
     NSString *string = [self logDic:userInfo];
@@ -106,7 +117,7 @@ forLocalNotification:(UILocalNotification *)notification
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-    [APService showLocalNotificationAtFront:notification identifierKey:nil];
+    [JPUSHService showLocalNotificationAtFront:notification identifierKey:nil];
 }
 
 // log NSSet with UTF8
@@ -128,8 +139,6 @@ forLocalNotification:(UILocalNotification *)notification
                                      mutabilityOption:NSPropertyListImmutable
                                                format:NULL
                                      errorDescription:NULL];
-
-
     return str;
 }
 

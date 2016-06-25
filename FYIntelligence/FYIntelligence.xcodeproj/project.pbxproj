@@ -109,13 +109,11 @@
 		F9B441C71BD4F2DA005148D1 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441C21BD4F2DA005148D1 /* AsyncUdpSocket.m */; };
 		F9B441C81BD4F2DA005148D1 /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = F9B441C31BD4F2DA005148D1 /* Documentation.html */; };
 		F9B441CC1BD4F339005148D1 /* FYTCPNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B441CB1BD4F339005148D1 /* FYTCPNetWork.m */; };
-		F9C323121C0ACD67004D45E7 /* libPushSDK-1.8.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C323111C0ACD67004D45E7 /* libPushSDK-1.8.8.a */; };
 		F9C323141C0ACF6C004D45E7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C323131C0ACF6C004D45E7 /* libz.tbd */; };
 		F9C323161C0ACF71004D45E7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C323151C0ACF71004D45E7 /* Security.framework */; };
 		F9C323181C0ACF88004D45E7 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C323171C0ACF88004D45E7 /* CoreTelephony.framework */; };
 		F9C3231A1C0ACF8D004D45E7 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C323191C0ACF8D004D45E7 /* CoreFoundation.framework */; };
 		F9C3231C1C0ACF95004D45E7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C3231B1C0ACF95004D45E7 /* CFNetwork.framework */; };
-		F9C3231E1C0AD2D7004D45E7 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9C3231D1C0AD2D7004D45E7 /* PushConfig.plist */; };
 		F9DE29101BD5E2BF0009F667 /* FYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DE290F1BD5E2BF0009F667 /* FYProgressHUD.m */; };
 		F9DE29131BD61AE60009F667 /* FYDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DE29121BD61AE60009F667 /* FYDevice.m */; };
 		F9DEF7B41BC7F5CC00520CAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7B31BC7F5CC00520CAA /* main.m */; };
@@ -125,6 +123,7 @@
 		F9DEF7BF1BC7F5CC00520CAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9DEF7BE1BC7F5CC00520CAA /* Images.xcassets */; };
 		F9DEF7C21BC7F5CC00520CAA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DEF7C01BC7F5CC00520CAA /* LaunchScreen.xib */; };
 		F9DEF7CE1BC7F5CC00520CAA /* FYIntelligenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DEF7CD1BC7F5CC00520CAA /* FYIntelligenceTests.m */; };
+		F9F822FE1D1EA77B001BC61B /* jpush-ios-2.1.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F822FC1D1EA77B001BC61B /* jpush-ios-2.1.8.a */; };
 		F9F90D061BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F90D041BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m */; };
 		F9F90D071BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F90D051BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib */; };
 		F9FFE01C1C3CF41000EB8779 /* FYHeatCycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FFE01A1C3CF41000EB8779 /* FYHeatCycleViewController.m */; };
@@ -312,14 +311,11 @@
 		F9B441C31BD4F2DA005148D1 /* Documentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Documentation.html; sourceTree = "<group>"; };
 		F9B441CA1BD4F339005148D1 /* FYTCPNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYTCPNetWork.h; sourceTree = "<group>"; };
 		F9B441CB1BD4F339005148D1 /* FYTCPNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYTCPNetWork.m; sourceTree = "<group>"; };
-		F9C323101C0ACD67004D45E7 /* APService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APService.h; sourceTree = "<group>"; };
-		F9C323111C0ACD67004D45E7 /* libPushSDK-1.8.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPushSDK-1.8.8.a"; sourceTree = "<group>"; };
 		F9C323131C0ACF6C004D45E7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F9C323151C0ACF71004D45E7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F9C323171C0ACF88004D45E7 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		F9C323191C0ACF8D004D45E7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		F9C3231B1C0ACF95004D45E7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		F9C3231D1C0AD2D7004D45E7 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
 		F9DE290E1BD5E2BF0009F667 /* FYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYProgressHUD.h; sourceTree = "<group>"; };
 		F9DE290F1BD5E2BF0009F667 /* FYProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYProgressHUD.m; sourceTree = "<group>"; };
 		F9DE29111BD61AE60009F667 /* FYDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDevice.h; sourceTree = "<group>"; };
@@ -337,6 +333,8 @@
 		F9DEF7C71BC7F5CC00520CAA /* FYIntelligenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FYIntelligenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DEF7CC1BC7F5CC00520CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9DEF7CD1BC7F5CC00520CAA /* FYIntelligenceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYIntelligenceTests.m; sourceTree = "<group>"; };
+		F9F822FC1D1EA77B001BC61B /* jpush-ios-2.1.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.8.a"; sourceTree = "<group>"; };
+		F9F822FD1D1EA77B001BC61B /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		F9F90D031BCBA5DC0036F9B7 /* FYDeviceManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYDeviceManagerViewController.h; sourceTree = "<group>"; };
 		F9F90D041BCBA5DC0036F9B7 /* FYDeviceManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYDeviceManagerViewController.m; sourceTree = "<group>"; };
 		F9F90D051BCBA5DC0036F9B7 /* FYDeviceManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYDeviceManagerViewController.xib; sourceTree = "<group>"; };
@@ -356,8 +354,8 @@
 				F9A1E05C1BCCF6AE00A92B90 /* SystemConfiguration.framework in Frameworks */,
 				F9C323161C0ACF71004D45E7 /* Security.framework in Frameworks */,
 				F9C323141C0ACF6C004D45E7 /* libz.tbd in Frameworks */,
+				F9F822FE1D1EA77B001BC61B /* jpush-ios-2.1.8.a in Frameworks */,
 				F9859DB11BF218850049B5CA /* libstdc++.6.0.9.tbd in Frameworks */,
-				F9C323121C0ACD67004D45E7 /* libPushSDK-1.8.8.a in Frameworks */,
 				59C8E8166A24364345283D3D /* libPods-FYIntelligence.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -552,9 +550,8 @@
 		F9C3230F1C0ACD67004D45E7 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				F9C323101C0ACD67004D45E7 /* APService.h */,
-				F9C3231D1C0AD2D7004D45E7 /* PushConfig.plist */,
-				F9C323111C0ACD67004D45E7 /* libPushSDK-1.8.8.a */,
+				F9F822FC1D1EA77B001BC61B /* jpush-ios-2.1.8.a */,
+				F9F822FD1D1EA77B001BC61B /* JPUSHService.h */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -848,7 +845,6 @@
 				F97340B71BCFED8F006D1740 /* FYWCXHViewController.xib in Resources */,
 				F983516F1BCA307100809E14 /* FYDeviceInitViewController.xib in Resources */,
 				F981582D1BEDC78C0038F18A /* FYConfigViewController.xib in Resources */,
-				F9C3231E1C0AD2D7004D45E7 /* PushConfig.plist in Resources */,
 				F91C1BEE1BD23767002FC017 /* FYForgrtPWDViewController.xib in Resources */,
 				F95E36731C40F6B000E34689 /* FYHeatCycleSLJCViewController.xib in Resources */,
 				F9B441C81BD4F2DA005148D1 /* Documentation.html in Resources */,

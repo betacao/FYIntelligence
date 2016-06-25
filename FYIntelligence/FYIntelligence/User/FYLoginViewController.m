@@ -10,7 +10,7 @@
 #import "FYRegisterViewController.h"
 #import "FYListViewController.h"
 #import "FYForgrtPWDViewController.h"
-#import "APService.h"
+#import "JPUSHService.h"
 
 @interface FYLoginViewController ()
 @property (weak, nonatomic) IBOutlet UIView *inputBgView;
@@ -112,7 +112,7 @@
             if(controller){
                 [weakSelf.navigationController pushViewController:controller animated:YES];
             }
-            [APService setAlias:userName callbackSelector:@selector(tagsAliasCallback:tags:alias:) object:self];
+            [JPUSHService setAlias:userName callbackSelector:@selector(tagsAliasCallback:tags:alias:) object:self];
         } else{
             [FYProgressHUD showMessageWithText:@"登录失败"];
         }
