@@ -84,7 +84,7 @@
 //首页指令
 #define kMainViewCmd @"read_dev_info"
 
-#define kAddedDeviceCmd @"fyzn2015#1#12#%@#%@#%@#%@#0#"
+#define kAddedDeviceCmd @"fyzn2015#1#12#%@#%@#%@#%@#5#"
 
 #define kDeleteDeviceCmd @"fyzn2015#1#13#%@#%@#%@#"
 
