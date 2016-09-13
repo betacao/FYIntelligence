@@ -804,7 +804,7 @@
 				TargetAttributes = {
 					F9DEF7AD1BC7F5CC00520CAA = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 83B7G6Q9PV;
+						DevelopmentTeam = ZXZJZPLSWG;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1145,7 +1145,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: XIA MAO (Q4H3PEPE3K)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: yechun yu (CKG2JLUKQG)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = automatic;
@@ -1158,9 +1158,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FYIntelligence/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.richeng.richeng;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cloud.intelligence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b928eec5-3efe-4928-985e-62609785260b";
+				PROVISIONING_PROFILE = "a3d580e9-7c5f-42e1-9e4c-ad98c78b399d";
 			};
 			name = Debug;
 		};
@@ -1170,7 +1170,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: XIA MAO (Q4H3PEPE3K)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: yechun yu (CKG2JLUKQG)";
 				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -1182,9 +1182,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FYIntelligence/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.richeng.richeng;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cloud.intelligence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b928eec5-3efe-4928-985e-62609785260b";
+				PROVISIONING_PROFILE = "a3d580e9-7c5f-42e1-9e4c-ad98c78b399d";
 			};
 			name = Release;
 		};
